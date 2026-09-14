@@ -1,0 +1,8 @@
+menu "SeaNergy Firmware"
+    config SEANERGY_NAIVE_TRIG
+        bool "Naive trigonometry A/B build"
+        default n
+        help
+            Replaces the fixed-point DDS lookup with sinf() in the sample loop.
+            Enable only for the same-board power and CPU comparison test.
+endmenu

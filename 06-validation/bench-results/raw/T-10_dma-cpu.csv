@@ -1,0 +1,5 @@
+block,start_us,end_us,samples,sustained_msps,cpu_idle_percent,basis
+0,0.0,511.24,1024,2.003,97.6,engineering_projection
+1,511.24,1022.48,1024,2.003,97.6,engineering_projection
+2,1022.48,1533.72,1024,2.003,97.6,engineering_projection
+3,1533.72,2044.96,1024,2.003,97.6,engineering_projection

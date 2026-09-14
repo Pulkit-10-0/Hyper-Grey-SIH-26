@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "bundler",
+    "rootDir": "src",
+    "outDir": ".verify-out",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": [
+    "src/core/physics.ts",
+    "src/core/dsp.ts",
+    "src/core/adaptation.ts",
+    "src/core/power.ts",
+    "src/core/explain.ts",
+    "src/core/engine.ts",
+    "src/data/scenarios.ts",
+    "src/core/__verify__.ts"
+  ]
+}

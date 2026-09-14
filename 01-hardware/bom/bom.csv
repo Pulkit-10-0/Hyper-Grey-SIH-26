@@ -1,0 +1,37 @@
+item_id,subsystem,reference_designators,quantity,manufacturer_part_number,description,value,tolerance,package,supplier,supplier_part_number,unit_cost_inr,extended_cost_inr,lead_time_days,status,substitute_part
+B001,Power,F1,1,MF-MSMF200X-2,Resettable fuse,2.0 A,20%,1812,Mouser India,652-MF-MSMF200X2,45,45,7,needed,Littelfuse 2016L200
+B002,Power,D1,1,SMBJ15A,TVS diode,15 V,5%,DO-214AA,Robu.in,planning-SMBJ15A,35,35,7,needed,SMBJ14A
+B003,Power,Q1,1,DMP3010LK3-13,Reverse-polarity P-MOSFET,-30 V,not applicable,SOT-23,Mouser India,621-DMP3010LK3-13,55,55,7,needed,AO3401A
+B004,Power,U1,1,LM2596S-ADJ-MODULE,Buck regulator module,5 V / 1.5 A target,3%,module,Robu.in,11548,180,180,5,in hand,MP1584 module
+B005,Power,U2,1,AP2112K-3.3TRG1,Low-noise digital LDO,3.3 V / 600 mA,2%,SOT-25,Mouser India,621-AP2112K-3.3TRG1,45,45,7,needed,TLV75533PDBVR
+B006,Power,L1-L3,3,BLM31PG601SN1L,Ferrite bead,600 ohm @100 MHz,25%,1206,Mouser India,81-BLM31PG601SN1L,18,54,7,needed,MPZ3216S601A
+B007,Power,C1-C12,12,GRM32ER71E106KA12L,X7R bypass capacitor,10 uF / 25 V,10%,1210,Mouser India,81-GRM32ER71E106KA2L,25,300,7,in hand,CL32B106KAJNNNE
+B008,Digital,U3,1,ESP32-S3-DevKitC-1-N8,MCU development module,8 MB flash,not applicable,module,Robu.in,1696735,1282,1282,30,needed,Waveshare ESP32-S3-N8R8
+B009,Digital,D2,1,USBLC6-2SC6,USB ESD protector,2 line,not applicable,SOT-23-6,Mouser India,511-USBLC6-2SC6,60,60,7,needed,TPD2EUSB30
+B010,Digital,J1,1,USB4105-GF-A,USB-C receptacle,USB 2.0,not applicable,SMD,Mouser India,640-USB4105-GF-A,90,90,14,needed,TYPE-C-16PIN
+B011,Conversion,U4,1,MCP4921T-E/SN,12-bit SPI DAC,2.7-5.5 V,4 LSB INL,SOIC-8,Robu.in,R208437,388,388,7,in hand,MCP4921-E/P
+B012,Conversion,RN1-RN2,2,NOMCA16031002AT1,R-2R matched network,10 kohm base,0.1%,SOIC-16,Mouser India,71-NOMCA16031002AT1,350,700,21,needed,LT5400 custom ratio
+B013,Conversion,U5,1,SN74LVC16373DLR,16-bit transparent latch,3.3 V,not applicable,SSOP-48,Mouser India,595-SN74LVC16373DLR,220,220,14,needed,74ALVC16373
+B014,Analog,U6,1,OPA1652AIDR,Dual FET op-amp,18 MHz GBW,not applicable,SOIC-8,Mouser India,595-OPA1652AIDR,540,540,14,needed,OPA1642AIDR
+B015,Analog,U6B-DNP,1,MCP6002-E/P,Bench-only dual op-amp,1 MHz GBW,not applicable,DIP-8,Robu.in,R133412,210,210,5,in hand,not populated for 200 kHz
+B016,Driver,U7,1,TC4427AVOA,Dual MOSFET gate driver,1.5 A,not applicable,SOIC-8,Mouser India,579-TC4427AVOA,210,210,14,needed,MCP14A0602
+B017,Driver,Q2-Q5,4,AO3400A,N-channel MOSFET,30 V,not applicable,SOT-23,Robu.in,planning-AO3400A,25,100,7,needed,IRLML6344
+B018,Driver,T1,1,SEANERGY-TX-01,Custom matching transformer,ratio after sweep,10%,custom,Indian magnetics vendor,quotation-required,800,800,42,needed,air-core matching network
+B019,Acoustic,BZ1,1,GU1008C-40T/R,Bench TX/RX pair,40 kHz,supplier nominal,through-hole,Robu.in,R182247,186,186,5,in hand,HY40A12T/R
+B020,Acoustic,BZ2,1,PZT-200K-WB,Finished-band PZT placeholder,148-351 kHz goal,vendor characterised,custom,Indian sonar vendor,quotation-required,4500,4500,56,needed,switched narrowband PZT bank
+B021,Sensors,S1,1,DS18B20-PROBE,Waterproof temperature probe,-55 to 125 degC,0.5 degC,probe,Robu.in,01880,220,220,5,in hand,PT100 plus MAX31865
+B022,Sensors,S2,1,TDS-MODULE-V1,TDS interface module,0-1000 ppm bench,10% after calibration,module,Robu.in,04597,850,850,7,in hand,SEN0244
+B023,Sensors,S3,1,TURBIDITY-MODULE,Optical turbidity module,analog output,calibration required,module,Robu.in,62828,1100,1100,7,in hand,SEN0189
+B024,Sensors,S4,1,MS5837-30BA,Pressure/depth sensor,30 bar,0.2% FS target,ceramic LGA,Mouser India,932-MS583730BA01-50,3800,3800,35,needed,Keller 7LD
+B025,Sensors,U8,1,ADS1115IDGSR,16-bit ADC,860 SPS,0.01% gain,VSSOP-10,Mouser India,595-ADS1115IDGSR,380,380,14,needed,ADS1015IDGSR
+B026,Telemetry,U9,1,INA226AIDGSR,Current/power monitor,I2C 0x40,0.1% gain,VSSOP-10,Mouser India,595-INA226AIDGSR,320,320,14,needed,INA219BIDCNR
+B027,Telemetry,DS1,1,SSD1306-OLED-096,Local display,128 x 64,not applicable,module,Robu.in,04511,250,250,5,in hand,SH1106 module
+B028,Protection,D3-D6,4,BAT54S,T/R limiter diode pair,30 V,not applicable,SOT-23,Mouser India,771-BAT54S,12,48,7,needed,BAV99
+B029,Interconnect,J2-J7,6,43045-0200,Micro-Fit 3.0 header,2 circuit,not applicable,through-hole,Mouser India,538-43045-0200,100,600,14,needed,JST-VH equivalent
+B030,PCB,PCB1,1,SEANERGY-REV-A,4-layer bare PCB,100 x 80 x 1.6 mm,0.15 mm rule,FR-4,JLCPCB,quote-required,800,800,14,needed,PCB Power India quote
+B031,Mechanical,ENC1,1,SEANERGY-POD-V2,PETG prototype enclosure,168 x 210 x 40 mm envelope,0.2 mm print target,printed,local service,quote-required,1200,1200,7,needed,SLS PA12 production pod
+B032,Mechanical,OR1-OR2,2,AS568-246-NBR70,Static face O-ring,113.89 ID x 3.53 CS mm,AS568 tolerance,moulded,industrial seal vendor,AS568-246,250,500,14,needed,FKM 75 AS568-246
+B033,Mechanical,PEN1-PEN2,2,WETLINK-M10,Underwater cable penetrator,M10,manufacturer rated,bulkhead,Blue Robotics reseller,quote-required,1800,3600,30,needed,SubConn Micro Circular
+B034,Power,BAT1,1,3S-2600-LIPO,Rechargeable battery,11.1 V / 2.6 Ah,vendor stated,pack,Indian battery vendor,quote-required,1800,1800,14,needed,3S Li-ion protected pack
+B035,Mechanical,H1-H12,12,M3X12-A4-70,Stainless fastener,M3 x 12 mm,ISO 3506,socket cap,local fastener vendor,quote-required,15,180,5,needed,316 SS M3 x 12
+B036,Assembly,MAT1,1,SEANERGY-CONSUMABLES,"Wire, heatshrink, solder, labels",one unit set,not applicable,kit,local electronics vendor,estimate,500,500,5,needed,equivalent qualified kit

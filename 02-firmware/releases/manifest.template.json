@@ -1,0 +1,14 @@
+{
+  "product": "SeaNergy Payload Firmware",
+  "problemStatement": "SIH 2026-26058",
+  "version": "0.0.0",
+  "sourceCommit": "REPLACE_AFTER_BUILD",
+  "boardRevision": "Rev-A",
+  "espIdfVersion": "REPLACE_AFTER_BUILD",
+  "builtAtUtc": "REPLACE_AFTER_BUILD",
+  "files": {
+    "bootloader.bin": "SHA256_REQUIRED",
+    "partition-table.bin": "SHA256_REQUIRED",
+    "seanergy_payload.bin": "SHA256_REQUIRED"
+  }
+}

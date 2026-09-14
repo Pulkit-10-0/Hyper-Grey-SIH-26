@@ -1,0 +1,13 @@
+SEANERGY PCB FABRICATION ORDER
+STATUS: HOLD - NOT ORDERED
+REVISION: A-PRELIMINARY
+DATE: 2026-09-07
+VENDOR TARGET: JLCPCB or qualified Indian equivalent
+BOARD: 100 x 80 mm, 4 layers, FR-4 Tg >=150 C, 1.6 mm, 1 oz copper
+RULE: 0.15/0.15 mm minimum trace/space, 0.30 mm drill / 0.60 mm via
+FINISH: ENIG target
+MASK / SILK: green / white
+QUANTITY: 5
+COST: INR 3,500-5,500 landed planning range for five boards; live quote required
+HOLD REASON: footprints, placement, routing, DRC, Gerbers and drill exports are not complete
+RELEASE AUTHORITY: hardware lead plus independent Gerber review

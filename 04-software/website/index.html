@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SeaNergy — Adaptive software-defined sonar transmitter payload</title>
+<meta name="description" content="Engineering dossier for SeaNergy, an adaptive software-defined sonar transmitter payload for AUVs. Hyper Grey, SIH 2026, problem statement 26058.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="in">
+    <div class="mark"><b>SeaNergy</b><span>PS 26058</span></div>
+    <nav>
+      <a href="#mechanism">Mechanism</a>
+      <a href="#chain">Signal chain</a>
+      <a href="#maths">Waveform</a>
+      <a href="#firmware">Firmware</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#power">Power</a>
+      <a href="#validation">Validation</a>
+      <a href="#mobile">App</a>
+      <a href="#ledger">Ledger</a>
+      <a href="#refs">References</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================ -->
+<div class="hero">
+  <div class="eyebrow">Hyper Grey &middot; Smart India Hackathon 2026 &middot; Ministry of Earth Sciences / NIOT</div>
+  <h1>A sonar payload that changes its own pulse when the water changes.</h1>
+  <p class="lede">
+    Conventional AUV sonar transmits one fixed waveform for an entire mission.
+    SeaNergy measures the water it is actually flying through, recomputes the
+    link budget every ping, and transmits the pulse that survives it &mdash; on a
+    power budget a vehicle battery can carry.
+  </p>
+  <div class="cta">
+    <a class="btn pri" href="../releases/">Download the Android build</a>
+    <a class="btn" href="../mobile-android/">App source</a>
+    <a class="btn" href="../../05-models/dataset/">Dataset</a>
+    <a class="btn" href="../../03-research/">Research base</a>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">468</div><div class="k">candidate waveforms scored per ping</div></div>
+    <div class="kpi"><div class="v">2.6 mm</div><div class="k">range resolution, clear water</div></div>
+    <div class="kpi"><div class="v">34.1 %</div><div class="k">transmit-path energy saved</div></div>
+    <div class="kpi"><div class="v">85 + 33</div><div class="k">physics assertions, render tests</div></div>
+    <div class="kpi"><div class="v">132</div><div class="k">papers behind the equations</div></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<section id="mechanism">
+  <div class="sn">01 &middot; Problem and mechanism</div>
+  <h2>Why a fixed waveform is the wrong answer</h2>
+
+  <p>
+    Acoustic absorption in sea water rises steeply with frequency. A 350 kHz
+    pulse resolves millimetres and dies inside a few hundred metres; a 100 kHz
+    pulse travels far and resolves centimetres. Suspended sediment makes the
+    trade-off worse and does so <strong>unpredictably</strong> &mdash; an estuary plume can
+    move a survey line from clear water to 800 NTU in minutes.
+  </p>
+  <p>
+    A payload that picks one frequency before launch is therefore optimised for
+    conditions it will not meet for most of the mission. It is either wasting
+    resolution or losing the seabed.
+  </p>
+
+  <figure>
+    <div id="fig-absorption"></div>
+    <figcaption>
+      <b>Absorption against frequency, sea water.</b> Thorp's expression, computed by
+      <code>thorpDbPerKm()</code> in the shipped code. The two marks are the centre
+      frequencies the solver actually chose at 5 NTU and at 1000 NTU &mdash; the
+      adaptation is a walk along this curve.
+    </figcaption>
+  </figure>
+
+  <h3>The mechanism</h3>
+  <div class="chain">
+    <div class="stage"><div class="i">01</div><div class="t">Sense</div>
+      <div class="d">Temperature, salinity, turbidity, depth</div></div>
+    <div class="stage"><div class="i">02</div><div class="t">Model</div>
+      <div class="d">Sound speed, absorption, scattering</div></div>
+    <div class="stage hot"><div class="i">03</div><div class="t">Solve</div>
+      <div class="d">468 candidates against the sonar equation</div></div>
+    <div class="stage"><div class="i">04</div><div class="t">Transmit</div>
+      <div class="d">DDS synthesis, windowed, DMA to the DAC</div></div>
+    <div class="stage"><div class="i">05</div><div class="t">Compress</div>
+      <div class="d">Matched filter against the transmitted replica</div></div>
+    <div class="stage hot"><div class="i">06</div><div class="t">Correct</div>
+      <div class="d">Measured SNR minus predicted, fed back</div></div>
+  </div>
+
+  <div class="note">
+    <p>
+      Stage 06 is what separates this from a parameter menu. The solver's
+      prediction is compared against what the echo actually returned, and the
+      residual is carried into the next decision as a noise correction. The loop
+      settles &mdash; it does not drift and it does not pin against its clamp. Both
+      are asserted in the test suite.
+    </p>
+  </div>
+
+  <h3>Sound speed, because every range depends on it</h3>
+  <figure>
+    <div id="fig-soundspeed"></div>
+    <figcaption>
+      <b>Mackenzie's nine-term equation</b> at 35 ppt and 40 m. An echo delay is
+      only a range once you know <em>c</em>; a 20 &deg;C error here is roughly a
+      4 % range error, which at 220 m is nearly nine metres.
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ============================================================ -->
+<section id="chain">
+  <div class="sn">02 &middot; Signal chain</div>
+  <h2>From a sensor reading to a compressed echo</h2>
+
+  <p>
+    Two domains share one codebase. The underwater configuration is the mission
+    target; the airborne configuration is what can be demonstrated on a table at
+    the judging desk with parts that exist.
+  </p>
+
+  <div class="grid2">
+    <div class="panel">
+      <h4>Water configuration</h4>
+      <div class="rows">
+        <div class="row"><span class="l">Band</span><span class="v">100 &ndash; 500 kHz</span></div>
+        <div class="row"><span class="l">Required range</span><span class="v">220 m</span></div>
+        <div class="row"><span class="l">Source level</span><span class="v">196 dB re 1 &micro;Pa</span></div>
+        <div class="row"><span class="l">Target strength</span><span class="v">&minus;14 dB</span></div>
+        <div class="row"><span class="l">Directivity index</span><span class="v">20 dB</span></div>
+        <div class="row"><span class="l">Detection threshold</span><span class="v">12 dB</span></div>
+        <div class="row"><span class="l">Pulse length</span><span class="v">0.5 &ndash; 12 ms</span></div>
+        <div class="row"><span class="l">Energy per ping</span><span class="v cy">46 mJ budget</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h4>Air configuration &mdash; the bench demonstrator</h4>
+      <div class="rows">
+        <div class="row"><span class="l">Band</span><span class="v">28 &ndash; 52 kHz</span></div>
+        <div class="row"><span class="l">Required range</span><span class="v">4.5 m</span></div>
+        <div class="row"><span class="l">Source level</span><span class="v">98 dB</span></div>
+        <div class="row"><span class="l">Target strength</span><span class="v">&minus;8 dB</span></div>
+        <div class="row"><span class="l">Directivity index</span><span class="v">12 dB</span></div>
+        <div class="row"><span class="l">Detection threshold</span><span class="v">10 dB</span></div>
+        <div class="row"><span class="l">Pulse length</span><span class="v">0.8 &ndash; 8 ms</span></div>
+        <div class="row"><span class="l">Energy per ping</span><span class="v cy">9 mJ budget</span></div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    The same solver, the same sonar equation and the same compression code run in
+    both. Only the medium constants change. That is the point of building it as
+    software rather than as a tuned circuit.
+  </p>
+
+  <h3>Where the excess loss comes from</h3>
+  <p>
+    Suspended sediment adds attenuation on top of the medium's own absorption,
+    and it rises with frequency faster than absorption does. The model is
+    referenced to each medium's own band so a single coefficient means the same
+    thing in air and in water:
+  </p>
+<pre>excessScatteringDbPerM(cfg, ntu, f)
+  = cfg.scatterCoeff &times; ntu &times; (f / cfg.scatterRefHz)<b>^1.5</b>
+
+  water   scatterRefHz 223 kHz    scatterCoeff 9.2e-5
+  air     scatterRefHz  38.2 kHz  scatterCoeff 1.51e-3</pre>
+  <p>
+    At the reference frequency and 800 NTU the scattering term roughly matches
+    the medium's own absorption. That calibration is an engineering choice, and
+    it is flagged as one in the <a href="#ledger">reality ledger</a>.
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<section id="maths">
+  <div class="sn">03 &middot; Waveform mathematics</div>
+  <h2>Resolution without energy</h2>
+
+  <p>
+    An unmodulated pulse has to choose: short enough to resolve, or long enough
+    to be heard. Sweeping the frequency across the pulse breaks that link. Range
+    resolution stops depending on pulse length and starts depending on bandwidth.
+  </p>
+
+<pre>unmodulated    &Delta;r = c&tau;/2          resolution costs energy
+chirped        <b>&Delta;r = c/2B</b>          resolution costs bandwidth
+gain           G = 10 log&#8321;&#8320;(&tau;B)      the pulse is recovered by correlation</pre>
+
+  <div class="tw">
+    <table>
+      <thead><tr>
+        <th>Pulse &tau; (ms)</th><th class="n">Unmodulated &Delta;r (m)</th>
+        <th class="n">Chirped &Delta;r (mm)</th><th class="n">Time&ndash;bandwidth</th>
+        <th class="n">Compression gain (dB)</th>
+      </tr></thead>
+      <tbody id="tb-res"></tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p>
+      A 10 ms pulse that resolves <strong>7.7 m</strong> unmodulated resolves
+      <strong>2.6 mm</strong> chirped across 299 kHz, and arrives 34.8 dB stronger
+      after correlation &mdash; at identical transmitted energy. Everything else on
+      this page is in service of that line.
+    </p>
+  </div>
+
+  <h3>Transmit window</h3>
+  <p>
+    The envelope is tapered before it reaches the driver. That protects the
+    output stage from a hard edge and it sets the sidelobe floor of the
+    compressed echo, which is what decides whether a small target next to a large
+    one is visible at all.
+  </p>
+  <div class="grid2">
+    <div class="tw" style="margin-top:0">
+      <table>
+        <thead><tr><th>Window</th><th class="n">Peak sidelobe (dB)</th></tr></thead>
+        <tbody id="tb-window"></tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <h4>Waveform modes carried</h4>
+      <div class="rows">
+        <div class="row"><span class="l">CW</span><span class="v">baseline, unmodulated</span></div>
+        <div class="row"><span class="l">LFM</span><span class="v cy">linear sweep, default</span></div>
+        <div class="row"><span class="l">Geometric</span><span class="v">log sweep</span></div>
+        <div class="row"><span class="l">Barker-13</span><span class="v">22.3 dB PSR</span></div>
+      </div>
+      <p style="font-size:13px;margin-top:14px">
+        Barker-13 keeps a constant envelope, which suits a driver running at its
+        limit. No longer binary Barker sequence is known to exist, so 13 is the
+        practical ceiling rather than an arbitrary choice.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="firmware">
+  <div class="sn">04 &middot; Firmware architecture</div>
+  <h2>The processor is asleep while the pulse goes out</h2>
+
+  <p>
+    The naive way to emit a chirp is to evaluate <code>sinf()</code> per sample.
+    At sonar sample rates that keeps the CPU pinned for the whole pulse and, above
+    a few hundred kilosamples per second, it cannot keep up at all &mdash; the
+    waveform has to be precomputed into a buffer with the core awake throughout.
+  </p>
+  <p>
+    SeaNergy uses a phase accumulator against a quarter-wave lookup table. Each
+    sample is an add, a shift and an index. The samples are handed to DMA and the
+    core drops back to idle.
+  </p>
+
+<pre>phase += phaseStep;                 <b>// 32-bit accumulator, wraps for free</b>
+sample = TABLE[phase &gt;&gt; 22];        <b>// 1024-entry quarter wave</b>
+phaseStep += chirpRate;             <b>// linear sweep, no transcendental</b></pre>
+
+  <div class="grid3">
+    <div class="panel"><h4>Lookup engine</h4>
+      <div class="rows">
+        <div class="row"><span class="l">CPU current</span><span class="v cy">4 mA</span></div>
+      </div></div>
+    <div class="panel"><h4>Live trigonometry</h4>
+      <div class="rows">
+        <div class="row"><span class="l">CPU current</span><span class="v ft">41 mA</span></div>
+      </div></div>
+    <div class="panel"><h4>Difference per ping</h4>
+      <div class="rows">
+        <div class="row"><span class="l">Energy saved</span><span class="v cy">34.1 %</span></div>
+      </div></div>
+  </div>
+
+  <p>
+    The problem statement asks for DMA and hardware timers specifically so the
+    processor does not drain the vehicle battery. This is the implementation of
+    that clause, and the number above is the reason it matters.
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<section id="hardware">
+  <div class="sn">05 &middot; Hardware and domains</div>
+  <h2>What the parts can actually do</h2>
+
+  <p>
+    The hardware selection was driven by measured limits rather than datasheet
+    headline figures. Several obvious-looking parts were rejected, and the
+    reasons are as much a part of the design as the parts that stayed.
+  </p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Part</th><th>Role</th><th>Binding limit</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td class="lb">ESP32-S3</td><td>Controller, DDS, DMA</td>
+            <td>No internal DAC; ADC caps near 83 kSps</td><td class="hi">Kept</td></tr>
+        <tr><td class="lb">R-2R ladder, 8-bit</td><td>Transmit DAC on the i80 parallel bus</td>
+            <td>2 &ndash; 4 MSps, 8-bit quantisation</td><td class="hi">Kept &mdash; the transmit path</td></tr>
+        <tr><td class="lb">MCP4921</td><td>Alternative transmit DAC</td>
+            <td>4.5 &micro;s settling caps the carrier near 25 kHz</td><td>Bench only</td></tr>
+        <tr><td class="lb">AD9280</td><td>Receive ADC</td>
+            <td>32 MSps, 8-bit, parallel</td><td class="hi">Kept</td></tr>
+        <tr><td class="lb">PAM8403</td><td>Class-D driver</td>
+            <td>Output filter rolls off above 20 kHz</td><td>Rejected</td></tr>
+        <tr><td class="lb">MCP6002</td><td>Receive front end</td>
+            <td>1 MHz GBW &mdash; too slow for the signal path</td><td>Rejected for signal use</td></tr>
+        <tr><td class="lb">JSN-SR04T</td><td>Candidate transducer</td>
+            <td>Does not function submerged</td><td>Rejected</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <p>
+      Two of those rejections are the ones that usually go unnoticed until a
+      bench session fails. A JSN-SR04T is sold as a waterproof ultrasonic sensor;
+      it is waterproof, not submersible, and it will not range through water.
+    </p>
+  </div>
+
+  <h3>Transducer</h3>
+  <p>
+    A piezo transducer is a capacitor with a sharp mechanical resonance, not a
+    resistive load. The drive stage sees clamped capacitance off resonance and a
+    real impedance minimum at it, so a series matching inductor is what decides
+    how much of the drive energy becomes sound. The impedance sweep and the
+    matching calculation live in <a href="../../01-hardware/bench-setup/">01-hardware/bench-setup</a>.
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<section id="power">
+  <div class="sn">06 &middot; Power</div>
+  <h2>Where a ping's energy goes</h2>
+
+  <figure>
+    <div id="fig-power"></div>
+    <figcaption>
+      <b>Energy per ping, millijoules</b>, for a 2.8 ms pulse at 0.82 amplitude.
+      Computed by <code>pingEnergy()</code> from the datasheet currents of the
+      parts in the build. The last bar is the same ping with the waveform
+      evaluated by live trigonometry instead of a table.
+    </figcaption>
+  </figure>
+
+  <div class="grid2">
+    <div class="panel">
+      <h4>State currents at 3.3 V</h4>
+      <div class="rows">
+        <div class="row"><span class="l">Sleep</span><span class="v">0.9 mA</span></div>
+        <div class="row"><span class="l">Idle</span><span class="v">12 mA</span></div>
+        <div class="row"><span class="l">Sampling</span><span class="v">28 mA</span></div>
+        <div class="row"><span class="l">Transmitting, peak</span><span class="v am">340 mA</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h4>Synthesis engine</h4>
+      <div class="rows">
+        <div class="row"><span class="l">Table lookup</span><span class="v cy">4 mA</span></div>
+        <div class="row"><span class="l">Live sin()</span><span class="v ft">41 mA</span></div>
+        <div class="row"><span class="l">Battery assumed</span><span class="v">2600 mAh</span></div>
+        <div class="row"><span class="l">Bus</span><span class="v">3.3 V</span></div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Duty cycle is what makes the budget work. The payload sleeps between pings,
+    wakes for roughly 12 ms, senses for a 50 ms window, transmits for
+    milliseconds, and returns to sleep. The transmit bar dominates the ping, which
+    is correct &mdash; that is the energy that leaves as sound. The saving is taken
+    out of everything that is not sound.
+  </p>
+</section>
+
+<!-- ============================================================ -->
+<section id="validation">
+  <div class="sn">07 &middot; Validation results</div>
+  <h2>The adaptation, swept end to end</h2>
+
+  <p>
+    Turbidity is raised from clear water to heavy sediment with everything else
+    held fixed. Nothing here is a lookup: each row is the winner of a fresh
+    468-candidate search against the sonar equation.
+  </p>
+
+  <div class="grid2">
+    <figure><div id="fig-sweep"></div>
+      <figcaption><b>Chosen centre frequency against turbidity.</b> The solver walks
+      downband as scattering makes the high end unaffordable.</figcaption></figure>
+    <figure><div id="fig-sweep-res"></div>
+      <figcaption><b>What it costs and what it buys.</b> Resolution coarsens;
+      usable range recovers. Resolution is scaled &times;30 to share an axis.</figcaption></figure>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr>
+        <th>NTU</th><th class="n">Centre (kHz)</th><th class="n">Bandwidth (kHz)</th>
+        <th class="n">Pulse (ms)</th><th class="n">Resolution (mm)</th>
+        <th class="n">Usable range (m)</th><th class="n">Predicted SNR (dB)</th>
+        <th class="n">Compression gain (dB)</th>
+      </tr></thead>
+      <tbody id="tb-sweep"></tbody>
+    </table>
+  </div>
+
+  <p>
+    Read the middle of that table carefully. Between 180 and 320 NTU the solver
+    does not drop frequency &mdash; it <strong>lengthens the pulse</strong> from 0.5 ms to
+    2.8 ms, buying 7.5 dB of compression gain and holding resolution at 2.6 mm.
+    Only when that runs out does it give up bandwidth. That ordering was not
+    programmed; it falls out of scoring the candidates.
+  </p>
+
+  <h3>Test gates</h3>
+  <div class="grid3">
+    <div class="panel"><h4>Physics and engine</h4>
+      <div class="rows"><div class="row"><span class="l">Assertions</span><span class="v cy">85 / 85</span></div></div>
+      <p style="font-size:13px;margin-top:12px">Sound speed, absorption, the sonar
+      equation, every waveform mode, every window, closed-loop settling.</p></div>
+    <div class="panel"><h4>Screens</h4>
+      <div class="rows"><div class="row"><span class="l">Render tests</span><span class="v cy">33 / 33</span></div></div>
+      <p style="font-size:13px;margin-top:12px">All twelve screens, in both modes.
+      This harness was built after a shipped build crashed on launch, and it was
+      proven by reintroducing that bug and watching it fail.</p></div>
+    <div class="panel"><h4>Build gate</h4>
+      <div class="rows"><div class="row"><span class="l">Command</span><span class="v">npm run apk</span></div></div>
+      <p style="font-size:13px;margin-top:12px">Typecheck, then assertions, then
+      renders. No APK is produced unless all three pass.</p></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="mobile">
+  <div class="sn">08 &middot; Mobile layer</div>
+  <h2>The operator console</h2>
+
+  <p>
+    Twelve screens on a scrollable strip, dark instrument ground, monospace data
+    type. Two explicit modes: <strong>simulation</strong>, which runs the full physics
+    engine on the handset, and <strong>telemetry</strong>, which reads the payload. The
+    mode is on screen at all times and every value carries its provenance in its
+    colour.
+  </p>
+
+  <div class="grid2">
+    <div class="panel">
+      <h4>Screens</h4>
+      <div class="rows">
+        <div class="row"><span class="l">Console</span><span class="v">solve card, fire</span></div>
+        <div class="row"><span class="l">Sonar</span><span class="v">PPI, contacts</span></div>
+        <div class="row"><span class="l">Waveform</span><span class="v">envelope, spectrogram</span></div>
+        <div class="row"><span class="l">Echo</span><span class="v">A-scan, matched filter</span></div>
+        <div class="row"><span class="l">Environment</span><span class="v">sensors, derived physics</span></div>
+        <div class="row"><span class="l">Mission</span><span class="v">endurance, coverage</span></div>
+        <div class="row"><span class="l">Power</span><span class="v">per-ping energy</span></div>
+        <div class="row"><span class="l">Spec</span><span class="v">link budget</span></div>
+        <div class="row"><span class="l">Diagnostics</span><span class="v">self test</span></div>
+        <div class="row"><span class="l">Log</span><span class="v">ping history, CSV export</span></div>
+        <div class="row"><span class="l">Scenario</span><span class="v">preset environments</span></div>
+        <div class="row"><span class="l">Settings</span><span class="v">mode, medium</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h4>What runs on the handset</h4>
+      <p style="font-size:13.5px">
+        Mackenzie sound speed, Thorp absorption, the scattering model, the full
+        468-candidate solver, sample-by-sample pulse synthesis with a phase
+        accumulator, a radix-2 FFT for the spectrogram, and a real
+        cross-correlation for the matched filter.
+      </p>
+      <p style="font-size:13.5px">
+        No server, no pairing, no network call. Fonts are bundled in the package
+        rather than fetched. It opens on a plane.
+      </p>
+      <div class="rows" style="margin-top:14px">
+        <div class="row"><span class="l">Stack</span><span class="v">Expo 57 / RN 0.86</span></div>
+        <div class="row"><span class="l">Rendering</span><span class="v">Skia + Reanimated 4</span></div>
+        <div class="row"><span class="l">Min / target SDK</span><span class="v">24 / 36</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta" style="margin-top:22px">
+    <a class="btn pri" href="../releases/">Android package</a>
+    <a class="btn" href="../mobile-android/">Android source</a>
+    <a class="btn" href="../mobile-ios/">iOS source and status</a>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="ledger">
+  <div class="sn">09 &middot; The reality ledger</div>
+  <h2>What is measured, what is modelled, what is planned</h2>
+
+  <p>
+    This section exists so that no figure anywhere else on this page has to be
+    interrogated. If it is not marked measured, it is not measured.
+  </p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Claim</th><th>Status</th><th>Where it comes from</th></tr></thead>
+      <tbody>
+        <tr><td class="lb">Sound speed, absorption, scattering</td>
+            <td><span class="tag m">Computed</span></td>
+            <td>Published equations, implemented and asserted in <code>src/core/physics.ts</code></td></tr>
+        <tr><td class="lb">Waveform selection behaviour</td>
+            <td><span class="tag m">Computed</span></td>
+            <td>Live solver output, reproduced by <code>scripts/site-data.mjs</code></td></tr>
+        <tr><td class="lb">Compression gain and range resolution</td>
+            <td><span class="tag m">Computed</span></td>
+            <td>Real cross-correlation in <code>matchedFilter()</code></td></tr>
+        <tr><td class="lb">App test results</td>
+            <td><span class="tag m">Measured</span></td>
+            <td>85 assertions and 33 render tests, run on every build</td></tr>
+        <tr><td class="lb">Scattering coefficient calibration</td>
+            <td><span class="tag s">Engineering model</span></td>
+            <td>Referenced so scattering matches absorption at 800 NTU. Not fitted to tank data.</td></tr>
+        <tr><td class="lb">Per-ping energy figures</td>
+            <td><span class="tag s">Modelled</span></td>
+            <td>Datasheet currents. No current-sense hardware fitted yet.</td></tr>
+        <tr><td class="lb">Echo traces in the app</td>
+            <td><span class="tag s">Simulated</span></td>
+            <td>Synthesised from the transmitted pulse and the channel model, then genuinely compressed</td></tr>
+        <tr><td class="lb">Underwater source level, 196 dB</td>
+            <td><span class="tag p">Design target</span></td>
+            <td>Specification for the water configuration, not a measurement</td></tr>
+        <tr><td class="lb">Tank results</td>
+            <td><span class="tag p">Planned</span></td>
+            <td><a href="../../06-validation/tank-results/">06-validation/tank-results</a></td></tr>
+        <tr><td class="lb">iOS package</td>
+            <td><span class="tag p">Not built</span></td>
+            <td>Source complete; requires a macOS build host. <a href="../mobile-ios/">Status</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p>
+      The distinction that matters: the <em>environment</em> is simulated, the
+      <em>decision</em> is not. When the app chooses 148 kHz at 1000 NTU, that
+      number came out of a search over the sonar equation on the handset, not out
+      of a table written by us.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="refs">
+  <div class="sn">10 &middot; References</div>
+  <h2>What the equations rest on</h2>
+
+  <p>
+    132 papers across 15 folders, each keyed to the specific claim it supports,
+    in <a href="../../03-research/">03-research</a>. The primary sources for the
+    implemented equations:
+  </p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Used for</th><th>Source</th><th>Where in the code</th></tr></thead>
+      <tbody>
+        <tr><td class="lb">Sound speed</td>
+            <td>Mackenzie, K. V. (1981), <em>JASA</em> 70(3) 807&ndash;812</td>
+            <td><code>soundSpeedWater()</code></td></tr>
+        <tr><td class="lb">Absorption</td>
+            <td>Thorp, W. H. (1967), <em>JASA</em> 42(1) 270</td>
+            <td><code>thorpDbPerKm()</code></td></tr>
+        <tr><td class="lb">Absorption, full form</td>
+            <td>Francois &amp; Garrison (1982), <em>JASA</em> 72(6) 1879&ndash;1890</td>
+            <td>Cross-check</td></tr>
+        <tr><td class="lb">Absorption, simplified</td>
+            <td>Ainslie &amp; McColm (1998), <em>JASA</em> 103(3) 1671&ndash;1672</td>
+            <td>Cross-check</td></tr>
+        <tr><td class="lb">Sonar equation</td>
+            <td>Urick, R. J. (1983), <em>Principles of Underwater Sound</em>, 3rd ed.</td>
+            <td><code>echoSnrDb()</code></td></tr>
+        <tr><td class="lb">Windows and sidelobes</td>
+            <td>Harris, F. J. (1978), <em>Proc. IEEE</em> 66(1) 51&ndash;83</td>
+            <td><code>WINDOW_PSL_DB</code></td></tr>
+        <tr><td class="lb">Phase coding</td>
+            <td>Barker, R. H. (1953), <em>Communication Theory</em> 273&ndash;287</td>
+            <td><code>BARKER_13</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Those seven are paywalled and are cited rather than redistributed. The 132
+    open-access papers that support them are held in the research tree, each
+    folder stating the claim it backs and the function that implements it.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <div style="max-width:1120px;margin:0 auto;padding:0 22px 40px">
+    SeaNergy &mdash; Hyper Grey &mdash; Smart India Hackathon 2026, problem statement 26058.<br>
+    Charts generated <span class="gen-date">&mdash;</span> from <code>src/core</code> by
+    <code>scripts/site-data.mjs</code>. This page makes no network request.
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

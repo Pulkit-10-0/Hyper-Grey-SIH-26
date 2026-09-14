@@ -1,0 +1,37 @@
+# SeaNergy - website.
+#
+# There is no build step. index.html, assets/style.css and assets/app.js are
+# source and are tracked.
+#
+# assets/data.js is GENERATED but is tracked deliberately: the page has to open
+# from a USB stick with no toolchain present. Regenerate it with
+#   npm run site-data   (from ../mobile-android)
+# and commit the result alongside whatever physics change caused it.
+
+# ---- local servers and tooling ----------------------------------------------
+node_modules/
+.cache/
+.parcel-cache/
+.vscode/
+.idea/
+
+# ---- deploy output ----------------------------------------------------------
+# Only present if a host's CLI is run from this folder.
+.vercel/
+.netlify/
+.firebase/
+.wrangler/
+_site/
+out/
+
+# ---- OS ---------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+
+# ---- logs -------------------------------------------------------------------
+*.log
+npm-debug.*
+
+# ---- local env --------------------------------------------------------------
+.env
+.env*.local

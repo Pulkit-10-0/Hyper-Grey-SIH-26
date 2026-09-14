@@ -1,0 +1,33 @@
+# 05-models
+#
+# Tracked on purpose, despite being generated:
+#   dataset/adaptive_sonar_waveform_selection.csv   the published artefact
+#   notebook/figures/, notebook/run-metrics.json    quoted by the report
+#   evaluation/figures/, evaluation/metrics.json    quoted by the report
+#
+# A generated file that a document quotes has to be committed, or the document
+# cannot be checked without a Python environment.
+
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.virtual_documents/
+*.log
+
+# Environments
+.venv/
+venv/
+env/
+
+# Model binaries. None are committed - the models are cheap to refit
+# (1.7 s total) and a pickle pins a scikit-learn version.
+*.pkl
+*.joblib
+*.onnx
+*.h5
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

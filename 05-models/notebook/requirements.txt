@@ -1,0 +1,15 @@
+# Verified against these versions on 10 September 2026.
+# The dataset reproduces byte-for-byte under them; see ../dataset/generation.md.
+#
+# NumPy is the one that matters. The generator uses default_rng(SEED), the PCG64
+# bit generator, which is stable across NumPy versions - unlike the legacy
+# numpy.random global state, which is not and is deliberately not used.
+
+numpy==2.0.0
+pandas==3.0.2
+scipy>=1.11
+scikit-learn==1.4.2
+matplotlib==3.10.9
+
+# Only needed to regenerate the .ipynb from notebook.py
+# jupytext>=1.16

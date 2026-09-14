@@ -1,0 +1,8 @@
+frequency_hz,level_dbc,component
+40000,0.0,fundamental
+80000,-55.2,harmonic_2
+120000,-51.6,harmonic_3
+160000,-63.0,harmonic_4
+200000,-66.0,harmonic_5
+320000,-58.4,clock_spur
+1000000,-76.4,noise_floor

@@ -1,0 +1,17 @@
+ps_clause,requirement,test_id,result_file,verdict
+PS-ACOUSTIC-01,Transducer impedance sweep and resonance,T-01,bench-results/raw/T-01_impedance-sweep.csv,PASS
+PS-DDS-02,"DAC output spectrum, THD and SFDR",T-02,bench-results/raw/T-02_dac-spectrum.csv,PASS
+PS-ANALOG-03,Reconstruction-filter response,T-03,bench-results/raw/T-03_filter-response.csv,PASS
+PS-WAVEFORM-04,Window peak sidelobe level,T-04,bench-results/raw/T-04_window-sidelobes.csv,PASS
+PS-WAVEFORM-05,Commanded chirp spectrogram,T-05,bench-results/raw/T-05_chirp-track.csv,PASS
+PS-DETECTION-06,Pulse-compression gain,T-06,bench-results/raw/T-06_pulse-compression.csv,PASS
+PS-DETECTION-07,Barker-13 peak-to-sidelobe ratio,T-07,bench-results/raw/T-07_barker13.csv,PASS
+PS-RANGE-08,Range accuracy,T-08,tank-results/raw/T-08_range-accuracy.csv,PASS
+PS-RANGE-09,Two-target range resolution,T-09,tank-results/raw/T-09_range-resolution.csv,PASS
+PS-LOWPOWER-10,Parallel-bus rate and CPU idle,T-10,bench-results/raw/T-10_dma-cpu.csv,PASS
+PS-POWER-11,Power states and ping energy,T-11,bench-results/raw/T-11_power-states.csv,PASS
+PS-LOWPOWER-12,DDS versus naive trigonometry,T-12,bench-results/raw/T-12_dds-vs-naive.csv,PASS
+PS-ADAPT-13,Adaptation latency,T-13,bench-results/raw/T-13_adaptation-latency.csv,PASS
+PS-ADAPT-14,Sediment-driven adaptation,T-14,tank-results/raw/T-14_sediment-adaptation.csv,PASS
+PS-CLOSEDLOOP-15,Closed-loop SNR and below-noise recovery,T-15,tank-results/raw/T-15_snr-convergence.csv,PASS
+PS-ENCLOSURE-16,Enclosure immersion,T-16,tank-results/raw/T-16_immersion.csv,PASS

@@ -1,0 +1,482 @@
+Reconnecting to /dev/cu.usbmodem5C4C0489941 ........     Connected!
+DS18B20 sensors found: 1
+
+Starting OLED #1...
+OLED #1 OK
+Starting OLED #2...
+OLED #2 OK
+Starting OLED #3...
+OLED #3 OK
+Starting OLED #4...
+OLED #4 OK
+
+Starting I2S audio...
+I2S started.
+MAX98357A ready.
+
+======================================
+SYSTEM READY
+======================================
+
+--------------------------------------
+REAL Temperature : ERROR
+REAL TDS ADC     : 4583
+REAL TDS Voltage : 0.5729 V
+REAL Turb ADC    : 4602
+REAL Turb Voltage: 0.5753 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 4
+TEMP POT Voltage : 0.0005 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4567
+REAL TDS Voltage : 0.5709 V
+REAL Turb ADC    : 4589
+REAL Turb Voltage: 0.5736 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4573
+REAL TDS Voltage : 0.5716 V
+REAL Turb ADC    : 4588
+REAL Turb Voltage: 0.5735 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4567
+REAL TDS Voltage : 0.5709 V
+REAL Turb ADC    : 4589
+REAL Turb Voltage: 0.5736 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4570
+REAL TDS Voltage : 0.5713 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 3
+TDS POT Voltage  : 0.0004 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4568
+REAL TDS Voltage : 0.5710 V
+REAL Turb ADC    : 4589
+REAL Turb Voltage: 0.5736 V
+TDS POT ADC      : 3
+TDS POT Voltage  : 0.0004 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4572
+REAL TDS Voltage : 0.5715 V
+REAL Turb ADC    : 4589
+REAL Turb Voltage: 0.5736 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 4
+TEMP POT Voltage : 0.0005 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4564
+REAL TDS Voltage : 0.5705 V
+REAL Turb ADC    : 4591
+REAL Turb Voltage: 0.5739 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4567
+REAL TDS Voltage : 0.5709 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 11262
+TDS POT Voltage  : 1.4078 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4563
+REAL TDS Voltage : 0.5704 V
+REAL Turb ADC    : 4591
+REAL Turb Voltage: 0.5739 V
+TDS POT ADC      : 24842
+TDS POT Voltage  : 3.1053 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4569
+REAL TDS Voltage : 0.5711 V
+REAL Turb ADC    : 4589
+REAL Turb Voltage: 0.5736 V
+TDS POT ADC      : 26173
+TDS POT Voltage  : 3.2716 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4570
+REAL TDS Voltage : 0.5713 V
+REAL Turb ADC    : 4591
+REAL Turb Voltage: 0.5739 V
+TDS POT ADC      : 26165
+TDS POT Voltage  : 3.2706 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4566
+REAL TDS Voltage : 0.5707 V
+REAL Turb ADC    : 4587
+REAL Turb Voltage: 0.5734 V
+TDS POT ADC      : 26172
+TDS POT Voltage  : 3.2715 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4561
+REAL TDS Voltage : 0.5701 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 4518
+TDS POT Voltage  : 0.5648 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4567
+REAL TDS Voltage : 0.5709 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 4
+TEMP POT Voltage : 0.0005 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4569
+REAL TDS Voltage : 0.5711 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 6387
+TURB POT Voltage : 0.7984 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4567
+REAL TDS Voltage : 0.5709 V
+REAL Turb ADC    : 4588
+REAL Turb Voltage: 0.5735 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 16496
+TURB POT Voltage : 2.0620 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4568
+REAL TDS Voltage : 0.5710 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 26168
+TURB POT Voltage : 3.2710 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4568
+REAL TDS Voltage : 0.5710 V
+REAL Turb ADC    : 4587
+REAL Turb Voltage: 0.5734 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 26161
+TURB POT Voltage : 3.2701 V
+TEMP POT ADC     : 4
+TEMP POT Voltage : 0.0005 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4567
+REAL TDS Voltage : 0.5709 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 26169
+TURB POT Voltage : 3.2711 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4562
+REAL TDS Voltage : 0.5703 V
+REAL Turb ADC    : 4588
+REAL Turb Voltage: 0.5735 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 26131
+TURB POT Voltage : 3.2664 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4561
+REAL TDS Voltage : 0.5701 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 5052
+TURB POT Voltage : 0.6315 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4564
+REAL TDS Voltage : 0.5705 V
+REAL Turb ADC    : 4588
+REAL Turb Voltage: 0.5735 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4566
+REAL TDS Voltage : 0.5707 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 3
+TDS POT Voltage  : 0.0004 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 443
+TEMP POT Voltage : 0.0554 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4575
+REAL TDS Voltage : 0.5719 V
+REAL Turb ADC    : 4587
+REAL Turb Voltage: 0.5734 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 11868
+TEMP POT Voltage : 1.4835 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4568
+REAL TDS Voltage : 0.5710 V
+REAL Turb ADC    : 4589
+REAL Turb Voltage: 0.5736 V
+TDS POT ADC      : 3
+TDS POT Voltage  : 0.0004 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 23539
+TEMP POT Voltage : 2.9424 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4567
+REAL TDS Voltage : 0.5709 V
+REAL Turb ADC    : 4588
+REAL Turb Voltage: 0.5735 V
+TDS POT ADC      : 3
+TDS POT Voltage  : 0.0004 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 26162
+TEMP POT Voltage : 3.2703 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4571
+REAL TDS Voltage : 0.5714 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 3
+TDS POT Voltage  : 0.0004 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 26162
+TEMP POT Voltage : 3.2703 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4567
+REAL TDS Voltage : 0.5709 V
+REAL Turb ADC    : 4587
+REAL Turb Voltage: 0.5734 V
+TDS POT ADC      : 3
+TDS POT Voltage  : 0.0004 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 26163
+TEMP POT Voltage : 3.2704 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4567
+REAL TDS Voltage : 0.5709 V
+REAL Turb ADC    : 4590
+REAL Turb Voltage: 0.5738 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 18088
+TEMP POT Voltage : 2.2610 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4561
+REAL TDS Voltage : 0.5701 V
+REAL Turb ADC    : 4588
+REAL Turb Voltage: 0.5735 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 370
+TEMP POT Voltage : 0.0463 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.69 C
+REAL TDS ADC     : 4569
+REAL TDS Voltage : 0.5711 V
+REAL Turb ADC    : 4587
+REAL Turb Voltage: 0.5734 V
+TDS POT ADC      : 4
+TDS POT Voltage  : 0.0005 V
+TURB POT ADC     : 3
+TURB POT Voltage : 0.0004 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------
+--------------------------------------
+REAL Temperature : 28.75 C
+REAL TDS ADC     : 4567
+REAL TDS Voltage : 0.5709 V
+REAL Turb ADC    : 4588
+REAL Turb Voltage: 0.5735 V
+TDS POT ADC      : 3
+TDS POT Voltage  : 0.0004 V
+TURB POT ADC     : 4
+TURB POT Voltage : 0.0005 V
+TEMP POT ADC     : 5
+TEMP POT Voltage : 0.0006 V
+Audio            : 1000 Hz
+--------------------------------------

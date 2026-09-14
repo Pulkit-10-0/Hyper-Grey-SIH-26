@@ -1,0 +1,282 @@
+{
+ "seed": 20260829,
+ "rows": 20000,
+ "train_rows": 12750,
+ "test_rows": 4250,
+ "stress_rows": 3000,
+ "accuracy": [
+  {
+   "target": "f_centre_hz",
+   "baseline_mae": 69567.08229757784,
+   "model_mae": 3584.0054656739662,
+   "reduction_pct": 94.84813025456043,
+   "median_abs_err": 1083.358123518483,
+   "p95_abs_err": 12810.6928355959,
+   "bias": -96.57129457149954,
+   "stress_mae": 1847.2830225889497
+  },
+  {
+   "target": "bandwidth_hz",
+   "baseline_mae": 61298.16575409461,
+   "model_mae": 3995.288144489788,
+   "reduction_pct": 93.4822060410137,
+   "median_abs_err": 938.9338978571323,
+   "p95_abs_err": 16297.805752381328,
+   "bias": -83.9228336473154,
+   "stress_mae": 2805.1949082479773
+  },
+  {
+   "target": "pulse_s",
+   "baseline_mae": 0.002404142047520184,
+   "model_mae": 0.0016663540090760443,
+   "reduction_pct": 30.688204933861996,
+   "median_abs_err": 0.0012763796749325315,
+   "p95_abs_err": 0.0055187898895728655,
+   "bias": -3.980076643029268e-05,
+   "stress_mae": 0.0007044166279026761
+  }
+ ],
+ "safety": {
+  "routine_violation_pct": 2.3529411764705883,
+  "routine_violations": 100,
+  "stress_violation_pct": 100.0,
+  "solver_violation_pct_on_same_rows": 3.2470588235294118,
+  "solver_violations_on_same_rows": 138,
+  "model_induced_violations": 13,
+  "model_induced_violation_pct": 0.3058823529411765,
+  "rows_model_passed_but_solver_failed": 51,
+  "rows_both_failed": 87,
+  "solver_infeasible_stress_pct": 100.0,
+  "by_turbidity": {
+   "(-0.001, 100.0]": {
+    "violation_pct": 0.0,
+    "rows": 862
+   },
+   "(100.0, 250.0]": {
+    "violation_pct": 0.0,
+    "rows": 726
+   },
+   "(250.0, 400.0]": {
+    "violation_pct": 0.0,
+    "rows": 438
+   },
+   "(400.0, 600.0]": {
+    "violation_pct": 0.1564945226917058,
+    "rows": 639
+   },
+   "(600.0, 800.0]": {
+    "violation_pct": 3.875968992248062,
+    "rows": 903
+   },
+   "(800.0, 1000.0]": {
+    "violation_pct": 9.3841642228739,
+    "rows": 682
+   }
+  },
+  "by_required_range": {
+   "(-0.001, 150.0]": {
+    "violation_pct": 0.0,
+    "rows": 597
+   },
+   "(150.0, 200.0]": {
+    "violation_pct": 0.0,
+    "rows": 1099
+   },
+   "(200.0, 250.0]": {
+    "violation_pct": 0.0,
+    "rows": 1068
+   },
+   "(250.0, 300.0]": {
+    "violation_pct": 0.0,
+    "rows": 989
+   },
+   "(300.0, 400.0]": {
+    "violation_pct": 20.12072434607646,
+    "rows": 497
+   }
+  }
+ },
+ "latency": {
+  "solver_reference": {
+   "median_us": 69.19994484633207,
+   "p95_us": 98.22004940360783,
+   "mean_us": 72.22699901709954
+  },
+  "solver_precomputed": {
+   "median_us": 40.30007403343916,
+   "p95_us": 58.90498287044465,
+   "mean_us": 42.441602485875286
+  },
+  "solver_forms_agree": true,
+  "surrogate_single_row": {
+   "median_us": 7445.249997545034,
+   "p95_us": 11046.95494286716,
+   "mean_us": 7453.081931453198
+  },
+  "surrogate_batched_us_per_row": 10.457543936581715,
+  "surrogate_python_overhead_ratio": 711.9501522246229,
+  "solver_faster_by": 184.74531811944826,
+  "candidates_per_decision": 468,
+  "tree_ensembles": 3,
+  "boosting_iterations_per_target": {
+   "f_centre_hz": 111,
+   "bandwidth_hz": 176,
+   "pulse_s": 30
+  },
+  "total_tree_nodes_per_target": {
+   "f_centre_hz": 6771,
+   "bandwidth_hz": 10736,
+   "pulse_s": 1830
+  },
+  "total_tree_nodes": 19337,
+  "fit_seconds": {
+   "f_centre_hz": 0.61,
+   "bandwidth_hz": 0.73,
+   "pulse_s": 0.15
+  },
+  "host": "development laptop, x86-64, CPython, NumPy vectorised",
+  "finding": "On this host the solver is faster than the surrogate, not slower. The frequency-dependent terms precompute into a boot-time table, leaving multiply-add and compare over 468 candidates with no transcendental calls. The surrogate has to walk 19337 tree nodes and cannot beat that.",
+  "caveat": "These are host timings, not payload timings. The MCU has no NumPy and no float64 SIMD, so both paths cost more there. What transfers is the ratio and the operation counts, not the absolute numbers."
+ },
+ "feasible_by_stratum_pct": {
+  "adversarial": 0.0,
+  "fill": 81.52000000000001,
+  "scenario": 95.075,
+  "sweep": 94.0
+ },
+ "residual_model": {
+  "target": "error_db  (predicted_snr_db - measured_snr_db)",
+  "features": [
+   "temp_c",
+   "salinity_ppt",
+   "turbidity_ntu",
+   "depth_m",
+   "mission_range_m",
+   "sound_speed_ms",
+   "absorption_ref_db_km",
+   "scatter_ref_db_km"
+  ],
+  "train_rows": 12750,
+  "test_rows": 4250,
+  "fit_seconds": 0.24,
+  "tree_nodes": 3965,
+  "scores": {
+   "constant": {
+    "mae_db": 1.963387348164152,
+    "residual_sd_db": 2.3759718384032653
+   },
+   "linear_in_turbidity": {
+    "mae_db": 1.0046196719372253,
+    "residual_sd_db": 1.3058073739107314
+   },
+   "gradient_boosting": {
+    "mae_db": 0.7286497783365465,
+    "residual_sd_db": 0.9159434460103392
+   }
+  },
+  "noise_floor_db": 0.9,
+  "noise_floor_mae_db": 0.7180961047225789,
+  "eyeballed_linear_fit": {
+   "intercept": -0.022150922790401196,
+   "slope_per_ntu": 0.0062433096743889855
+  },
+  "margin": {
+   "current_mean_db": 9.133124486032772,
+   "learned_mean_db": 5.474738159810823,
+   "returned_db": 3.658386326221949,
+   "coverage_current_pct": 100.0,
+   "coverage_learned_pct": 99.88235294117646,
+   "required_range_m": 220.0,
+   "table": [
+    {
+     "turbidity_ntu": 5,
+     "margin_now_db": 3.07,
+     "margin_learned_db": 2.81,
+     "f_now_khz": 350.7,
+     "f_learned_khz": 350.7,
+     "res_now_mm": 2.51,
+     "res_learned_mm": 2.51,
+     "improvement_pct": 0.0
+    },
+    {
+     "turbidity_ntu": 100,
+     "margin_now_db": 4.43,
+     "margin_learned_db": 3.52,
+     "f_now_khz": 350.7,
+     "f_learned_khz": 350.7,
+     "res_now_mm": 2.51,
+     "res_learned_mm": 2.51,
+     "improvement_pct": 0.0
+    },
+    {
+     "turbidity_ntu": 250,
+     "margin_now_db": 6.57,
+     "margin_learned_db": 4.19,
+     "f_now_khz": 350.7,
+     "f_learned_khz": 350.7,
+     "res_now_mm": 2.51,
+     "res_learned_mm": 2.51,
+     "improvement_pct": 0.0
+    },
+    {
+     "turbidity_ntu": 400,
+     "margin_now_db": 8.71,
+     "margin_learned_db": 4.85,
+     "f_now_khz": 325.3,
+     "f_learned_khz": 350.7,
+     "res_now_mm": 2.56,
+     "res_learned_mm": 2.51,
+     "improvement_pct": 2.0
+    },
+    {
+     "turbidity_ntu": 550,
+     "margin_now_db": 10.86,
+     "margin_learned_db": 5.61,
+     "f_now_khz": 274.7,
+     "f_learned_khz": 274.7,
+     "res_now_mm": 3.03,
+     "res_learned_mm": 3.03,
+     "improvement_pct": 0.0
+    },
+    {
+     "turbidity_ntu": 700,
+     "margin_now_db": 13.0,
+     "margin_learned_db": 6.82,
+     "f_now_khz": 224.0,
+     "f_learned_khz": 249.3,
+     "res_now_mm": 3.72,
+     "res_learned_mm": 3.34,
+     "improvement_pct": 10.2
+    },
+    {
+     "turbidity_ntu": 850,
+     "margin_now_db": 15.0,
+     "margin_learned_db": 7.77,
+     "f_now_khz": 173.3,
+     "f_learned_khz": 198.7,
+     "res_now_mm": 5.11,
+     "res_learned_mm": 4.19,
+     "improvement_pct": 18.0
+    },
+    {
+     "turbidity_ntu": 1000,
+     "margin_now_db": 15.0,
+     "margin_learned_db": 8.37,
+     "f_now_khz": 148.0,
+     "f_learned_khz": 173.3,
+     "res_now_mm": 7.81,
+     "res_learned_mm": 5.11,
+     "improvement_pct": 34.5
+    }
+   ],
+   "best_improvement_pct": 34.5
+  }
+ },
+ "figures": [
+  "eval-1-error-distribution.png",
+  "eval-2-downband-walk.png",
+  "eval-3-violation-by-condition.png",
+  "eval-4-feasibility-by-stratum.png",
+  "eval-5-residual-model.png"
+ ]
+}

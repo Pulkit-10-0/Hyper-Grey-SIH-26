@@ -1,0 +1,74 @@
+# SeaNergy - Android target.
+#
+# The native android/ project IS tracked here, unlike a stock Expo repo.
+# The submission has to show the real Gradle configuration, the signing setup
+# and the manifest, not just a command that would regenerate them.
+# What is excluded below is build output and machine-local state only.
+
+# ---- dependencies -----------------------------------------------------------
+node_modules/
+.npm/
+
+# ---- Expo -------------------------------------------------------------------
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+.metro-health-check*
+
+# ---- generated output -------------------------------------------------------
+.verify-out/
+.verify-ios/
+*.tsbuildinfo
+
+# ---- Gradle and NDK ---------------------------------------------------------
+android/build/
+android/app/build/
+android/.gradle/
+android/.kotlin/
+android/.cxx/
+android/app/.cxx/
+android/local.properties
+android/app/src/main/assets/index.android.bundle
+.kotlin/
+
+# ---- signing: never commit a key -------------------------------------------
+# android/app/seanergy-release.keystore is deliberately absent from this tree.
+# See ../releases/keystore-note.md for where it lives and why.
+*.keystore
+*.jks
+*.p8
+*.p12
+*.key
+*.pem
+*.mobileprovision
+keystore.properties
+
+# ---- binaries ---------------------------------------------------------------
+# Shipped builds live in ../releases/, not in the source tree.
+*.apk
+*.aab
+
+# ---- self-contained toolchain ----------------------------------------------
+# The downloaded Node, JDK and Android SDK live under .toolchain/ so the entire
+# machine setup can be deleted with one folder. Only the launcher is source.
+.toolchain/*
+!.toolchain/env.ps1
+
+# ---- editors and OS ---------------------------------------------------------
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+*.orig.*
+
+# ---- logs -------------------------------------------------------------------
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# ---- local env --------------------------------------------------------------
+.env
+.env*.local

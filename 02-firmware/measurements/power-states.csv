@@ -1,0 +1,6 @@
+state,voltage_v,current_ma,power_mw,basis,instrument,sample_interval_ms
+deep_sleep,3.70,0.18,0.666,engineering_estimate,INA226,100
+light_sleep,3.70,0.85,3.145,engineering_estimate,INA226,100
+ready_ble,3.70,28.0,103.600,engineering_estimate,INA226,10
+sensor_sampling,3.70,41.0,151.700,engineering_estimate,INA226,10
+transmitting,3.70,68.0,251.600,engineering_estimate,INA226,1

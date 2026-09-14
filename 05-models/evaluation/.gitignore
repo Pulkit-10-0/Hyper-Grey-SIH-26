@@ -1,0 +1,8 @@
+# metrics.json and figures/ ARE tracked. Every number in results.md,
+# safety-analysis.md and latency.md is quoted from metrics.json, so it has to be
+# present for the documents to be checkable without running anything.
+run.log
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

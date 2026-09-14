@@ -1,0 +1,8 @@
+(kicad_sch (version 20231120) (generator eeschema)
+  (uuid 3b9f8f92-2154-4b2d-9a36-260580000001)
+  (paper "A4")
+  (lib_symbols)
+  (text "SEANERGY REV A - PRELIMINARY LOGICAL CONTAINER - SEE schematic.pdf AND netlist.net" (exclude_from_sim no) (at 50.8 50.8 0) (effects (font (size 2 2) (thickness 0.3))))
+  (text "NOT FOR FABRICATION: native symbols, wires, footprints and ERC remain open" (exclude_from_sim no) (at 50.8 63.5 0) (effects (font (size 1.5 1.5) (thickness 0.25))))
+  (sheet_instances (path "/" (page "1")))
+)

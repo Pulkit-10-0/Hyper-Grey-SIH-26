@@ -1,0 +1,18 @@
+{
+  "board": {},
+  "boards": [],
+  "cvpcb": {},
+  "erc": {},
+  "libraries": {},
+  "meta": {
+    "filename": "seanergy.kicad_pro",
+    "version": 1
+  },
+  "net_settings": {},
+  "pcbnew": {},
+  "schematic": {},
+  "text_variables": {
+    "PROJECT_STATUS": "PRELIMINARY_NOT_FOR_FABRICATION",
+    "REVISION": "A"
+  }
+}

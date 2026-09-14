@@ -1,0 +1,220 @@
+{
+ "runtime_s": 25.3,
+ "seed": 20260829,
+ "rows": 20000,
+ "cols": 27,
+ "columns": [
+  "ping_id",
+  "stratum",
+  "absorption_ref_db_km",
+  "scatter_ref_db_km",
+  "temp_c",
+  "salinity_ppt",
+  "turbidity_ntu",
+  "depth_m",
+  "mission_range_m",
+  "sound_speed_ms",
+  "absorption_db_km",
+  "scatter_db_km",
+  "noise_level_db",
+  "f_centre_hz",
+  "bandwidth_hz",
+  "pulse_s",
+  "amplitude",
+  "mode",
+  "window",
+  "tbp",
+  "compression_gain_db",
+  "resolution_m",
+  "predicted_snr_db",
+  "energy_mj",
+  "feasible",
+  "measured_snr_db",
+  "error_db"
+ ],
+ "candidates_per_decision": 468,
+ "strata": {
+  "sweep": 8000,
+  "fill": 5000,
+  "scenario": 4000,
+  "adversarial": 3000
+ },
+ "feasible_overall_pct": 77.0,
+ "feasible_by_stratum_pct": {
+  "adversarial": 0.0,
+  "fill": 81.52,
+  "scenario": 95.08,
+  "sweep": 94.0
+ },
+ "f_centre_khz": {
+  "min": 148.0,
+  "max": 350.7,
+  "distinct": 9
+ },
+ "pulse_ms": {
+  "min": 0.5,
+  "max": 12.0,
+  "distinct": 6
+ },
+ "resolution_mm": {
+  "min": 2.38,
+  "max": 8.09
+ },
+ "error_db": {
+  "mean": 3.899,
+  "sd": 3.643
+ },
+ "accuracy": [
+  {
+   "target": "f_centre_hz",
+   "baseline_mae": 69567.082298,
+   "model_mae": 3584.005466,
+   "reduction_pct": 94.84813,
+   "stress_mae": 1847.283023
+  },
+  {
+   "target": "bandwidth_hz",
+   "baseline_mae": 61298.165754,
+   "model_mae": 3995.288144,
+   "reduction_pct": 93.482206,
+   "stress_mae": 2805.194908
+  },
+  {
+   "target": "pulse_s",
+   "baseline_mae": 0.002404,
+   "model_mae": 0.001666,
+   "reduction_pct": 30.688205,
+   "stress_mae": 0.000704
+  }
+ ],
+ "latency": {
+  "solver_us": 41.0,
+  "surrogate_us": 7224.5,
+  "ratio": 176.4,
+  "tree_nodes": 19337
+ },
+ "residual_model": {
+  "mae_constant_db": 1.963,
+  "mae_linear_in_turbidity_db": 1.005,
+  "mae_gradient_boosting_db": 0.729,
+  "residual_sd_db": 0.916,
+  "noise_floor_db": 0.9,
+  "margin_current_mean_db": 9.13,
+  "margin_learned_mean_db": 5.47,
+  "margin_returned_db": 3.66,
+  "coverage_current_pct": 100.0,
+  "coverage_learned_pct": 99.88,
+  "comparison": [
+   {
+    "turbidity_ntu": 5,
+    "margin_now_db": 3.07,
+    "margin_learned_db": 2.81,
+    "f_now_khz": 350.7,
+    "f_learned_khz": 350.7,
+    "res_now_mm": 2.51,
+    "res_learned_mm": 2.51,
+    "improvement_pct": 0.0
+   },
+   {
+    "turbidity_ntu": 100,
+    "margin_now_db": 4.43,
+    "margin_learned_db": 3.52,
+    "f_now_khz": 350.7,
+    "f_learned_khz": 350.7,
+    "res_now_mm": 2.51,
+    "res_learned_mm": 2.51,
+    "improvement_pct": 0.0
+   },
+   {
+    "turbidity_ntu": 250,
+    "margin_now_db": 6.57,
+    "margin_learned_db": 4.19,
+    "f_now_khz": 350.7,
+    "f_learned_khz": 350.7,
+    "res_now_mm": 2.51,
+    "res_learned_mm": 2.51,
+    "improvement_pct": 0.0
+   },
+   {
+    "turbidity_ntu": 400,
+    "margin_now_db": 8.71,
+    "margin_learned_db": 4.85,
+    "f_now_khz": 325.3,
+    "f_learned_khz": 350.7,
+    "res_now_mm": 2.56,
+    "res_learned_mm": 2.51,
+    "improvement_pct": 2.0
+   },
+   {
+    "turbidity_ntu": 550,
+    "margin_now_db": 10.86,
+    "margin_learned_db": 5.61,
+    "f_now_khz": 274.7,
+    "f_learned_khz": 274.7,
+    "res_now_mm": 3.03,
+    "res_learned_mm": 3.03,
+    "improvement_pct": 0.0
+   },
+   {
+    "turbidity_ntu": 700,
+    "margin_now_db": 13.0,
+    "margin_learned_db": 6.82,
+    "f_now_khz": 224.0,
+    "f_learned_khz": 249.3,
+    "res_now_mm": 3.72,
+    "res_learned_mm": 3.34,
+    "improvement_pct": 10.2
+   },
+   {
+    "turbidity_ntu": 850,
+    "margin_now_db": 15.0,
+    "margin_learned_db": 7.77,
+    "f_now_khz": 173.3,
+    "f_learned_khz": 198.7,
+    "res_now_mm": 5.11,
+    "res_learned_mm": 4.19,
+    "improvement_pct": 18.0
+   },
+   {
+    "turbidity_ntu": 1000,
+    "margin_now_db": 15.0,
+    "margin_learned_db": 8.37,
+    "f_now_khz": 148.0,
+    "f_learned_khz": 173.3,
+    "res_now_mm": 7.81,
+    "res_learned_mm": 5.11,
+    "improvement_pct": 34.5
+   }
+  ],
+  "best_improvement_pct": 34.5
+ },
+ "routine_violation_pct": 2.35,
+ "stress_violation_pct": 100.0,
+ "solver_infeasible_stress_pct": 100.0,
+ "physics_checks": {
+  "thorp_db_per_km_at_100kHz": 34.07,
+  "thorp_db_per_km_at_200kHz": 51.02,
+  "thorp_db_per_km_at_400kHz": 87.01,
+  "sound_speed_25C_35ppt_0m": 1534.29
+ },
+ "csv_bytes": 8291931,
+ "csv_sha256": "7d5d50dce7b92d3b083f80b5b52510589e6372d6ab87e78e8686e56cfb126053",
+ "csv_sha256_published": "7d5d50dce7b92d3b083f80b5b52510589e6372d6ab87e78e8686e56cfb126053",
+ "csv_reproduces_published": true,
+ "figures": [
+  "fig1-absorption-and-range.png",
+  "fig1-absorption-and-range.svg",
+  "fig2-waveform-families.png",
+  "fig2-waveform-families.svg",
+  "fig3-window-sidelobes.png",
+  "fig3-window-sidelobes.svg",
+  "fig4-pulse-compression.png",
+  "fig4-pulse-compression.svg",
+  "fig5-feasible-region.png",
+  "fig6-dataset-behaviour.png",
+  "fig7-surrogate-parity.png",
+  "fig8-residual-structure.png",
+  "fig9-margin-and-resolution.png",
+  "fig9-margin-and-resolution.svg"
+ ]
+}

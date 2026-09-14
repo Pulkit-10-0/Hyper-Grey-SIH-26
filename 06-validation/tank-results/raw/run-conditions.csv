@@ -1,0 +1,6 @@
+run_id,test_id,water_l,temperature_c,salt_mass_g,salinity_ppt,turbidity_ntu,target,geometry
+W-01,T-08,450,26.8,189,0.42,8.4,300 x 300 mm aluminium plate,0.5-10.0 m surveyed rail
+W-02,T-09,450,27.0,189,0.42,8.7,Two 300 x 300 mm aluminium plates,10-30 mm precision separation
+W-03,T-14,450,26.9,189,0.42,8.4,300 x 300 mm aluminium plate,Prepared kaolin slurry; verified 8.4-145 NTU
+W-04,T-15,450,27.1,189,0.42,52.0,300 x 300 mm aluminium plate,Fixed 5.0 m path; controlled noise injection
+W-05,T-16,450,26.7,189,0.42,8.5,Complete sealed enclosure,1.5 m hydrostatic depth for 120 min

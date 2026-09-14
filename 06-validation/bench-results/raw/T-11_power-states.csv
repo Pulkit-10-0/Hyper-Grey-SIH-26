@@ -1,0 +1,6 @@
+state,voltage_v,current_ma,power_mw
+deep_sleep,3.7,0.18,0.666
+light_sleep,3.7,0.85,3.145
+ready_ble,3.7,28.0,103.6
+sensor_sampling,3.7,41.0,151.7
+transmitting,3.7,68.0,251.6

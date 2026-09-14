@@ -1,0 +1,16 @@
+frequency_hz,gain_db,basis
+10000,0.098,engineering_projection
+20000,0.074,engineering_projection
+24000,0.023,engineering_projection
+30000,-0.088,engineering_projection
+40000,-0.314,engineering_projection
+50000,-0.564,engineering_projection
+60000,-0.922,engineering_projection
+70000,-1.534,engineering_projection
+80000,-2.459,engineering_projection
+100000,-4.647,engineering_projection
+150000,-10.293,engineering_projection
+200000,-15.004,engineering_projection
+300000,-21.936,engineering_projection
+500000,-30.786,engineering_projection
+1000000,-42.823,engineering_projection

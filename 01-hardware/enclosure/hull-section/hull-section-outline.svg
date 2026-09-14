@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250mm" height="210mm" viewBox="0 0 250 210">
+  <rect width="250" height="210" fill="white"/>
+  <path d="M25,175 Q35,25 125,20 Q215,25 225,175" fill="none" stroke="#102A43" stroke-width="2"/>
+  <rect x="41" y="105" width="168" height="40" rx="10" fill="#edf4f6" stroke="#087e8b" stroke-width="2"/>
+  <line x1="41" y1="151" x2="209" y2="151" stroke="#e59f23" stroke-width="1"/>
+  <text x="125" y="98" text-anchor="middle" font-family="Times New Roman" font-size="7" fill="#102A43">SeaNergy maximum envelope 168 x 210 x 40 mm</text>
+  <line x1="20" y1="195" x2="120" y2="195" stroke="#102A43" stroke-width="2"/>
+  <text x="70" y="204" text-anchor="middle" font-family="Times New Roman" font-size="6">100 mm scale check</text>
+</svg>

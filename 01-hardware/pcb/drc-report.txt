@@ -1,0 +1,6 @@
+SEANERGY REV A DRC REPORT
+STATUS: NOT RUN
+DATE: 2026-09-07
+REASON: KiCad CLI is unavailable and the preliminary board contains only outline and documentation text, not footprints or routing.
+CLAIM: No DRC-clean claim is made.
+REQUIRED BEFORE RELEASE: complete board, run DRC with zero unwaived violations, archive report and inspect Gerbers in an independent viewer.

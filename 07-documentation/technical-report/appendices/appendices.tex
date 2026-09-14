@@ -1,0 +1,317 @@
+% =====================================================================
+% SeaNergy - Technical Report, Appendices
+% Build:  pdflatex appendices.tex   (run twice for the contents page)
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+\input{../preamble}
+
+\renewcommand{\thesection}{\Alph{section}}
+\fancyhead[L]{\footnotesize\color{ocean}SeaNergy \textbar\ Technical Report Appendices}
+
+\begin{document}
+
+\begin{center}
+{\color{ocean}\rule{\linewidth}{1.0pt}}\\[5mm]
+{\huge\bfseries Technical Report: Appendices}\\[3mm]
+{\large SeaNergy \textbar\ Hyper Grey \textbar\ PS 26058}\\[2mm]
+{\footnotesize Companion to DOC-TR-001. Referenced from the main report;
+not counted against its page budget.}\\[4mm]
+{\color{ocean}\rule{\linewidth}{1.0pt}}
+\end{center}
+
+\vspace{4mm}
+\tableofcontents
+\vspace{6mm}
+
+% =====================================================================
+\section{The candidate grid in full}
+% =====================================================================
+
+The solver evaluates the Cartesian product of centre frequency, bandwidth
+fraction and pulse duration. Amplitude is tied to duration, so the grid is
+three-dimensional rather than four.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lrl}
+\toprule
+\textbf{Axis} & \textbf{Points} & \textbf{Values} \\
+\midrule
+Centre frequency & 13 & \SI{148.0}{}, \SI{173.3}{}, \SI{198.7}{}, \SI{224.0}{},
+  \SI{249.3}{}, \SI{274.7}{}, \SI{300.0}{}, \\
+ & & \SI{325.3}{}, \SI{350.7}{}, \SI{376.0}{}, \SI{401.3}{}, \SI{426.7}{},
+  \SI{452.0}{\kilo\hertz} \\
+Bandwidth fraction & 6 & 0.90, 0.70, 0.50, 0.32, 0.18, 0.08 of centre \\
+Pulse duration & 6 & \SI{0.5}{}, \SI{2.8}{}, \SI{5.1}{}, \SI{7.4}{},
+  \SI{9.7}{}, \SI{12.0}{\milli\second} \\
+Amplitude & tied & 0.92, 0.82, 0.72, 0.62, 0.52, 0.42 of full scale \\
+\midrule
+\textbf{Total} & \textbf{468} & $13 \times 6 \times 6$ \\
+\bottomrule
+\end{tabular}
+\caption{The candidate grid, water configuration.}
+\end{table}
+
+\subsection{Why only nine centres are ever selected}
+
+Bandwidth is clipped so the sweep stays inside the transducer band:
+$B \leq 2\min(f_c - f_{\text{lo}},\, f_{\text{hi}} - f_c)$ and separately
+$B \leq 0.9 f_c$. Together those make achievable bandwidth peak at
+\SI{350.7}{\kilo\hertz} and fall away on either side.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{rr rr}
+\toprule
+\textbf{Centre (kHz)} & \textbf{Max $B$ (kHz)} & \textbf{Centre (kHz)} & \textbf{Max $B$ (kHz)} \\
+\midrule
+148.0 & 96.0 & 325.3 & 292.8 \\
+173.3 & 146.7 & \textbf{350.7} & \textbf{298.7} \\
+198.7 & 178.8 & 376.0 & 248.0 \\
+224.0 & 201.6 & 401.3 & 197.3 \\
+249.3 & 224.4 & 426.7 & 146.7 \\
+274.7 & 247.2 & 452.0 & 96.0 \\
+300.0 & 270.0 & & \\
+\bottomrule
+\end{tabular}
+\caption{Achievable bandwidth by centre frequency. The four centres above
+\SI{350.7}{\kilo\hertz} offer less bandwidth \emph{and} suffer more absorption,
+so they are strictly dominated and never win. They remain in the grid because
+the same construction serves the bench configuration, where the band edges
+differ and the peak sits elsewhere.}
+\end{table}
+
+% =====================================================================
+\section{Selection rule, stated precisely}
+% =====================================================================
+
+\begin{equation*}
+\begin{aligned}
+\text{margin}(N) &= 3 + \min(12,\; N/70) \quad \si{\decibel} \\
+\text{NL}(N) &= 52 + \min(8,\; N/140) \quad \si{\decibel} \\
+\text{feasible} &= \bigl(\mathrm{SNR} \geq \mathrm{DT} + \text{margin}\bigr)
+   \;\wedge\; \bigl(E \leq E_{\max}\bigr)
+\end{aligned}
+\end{equation*}
+
+If no candidate is feasible the constraint relaxes to
+$\mathrm{SNR} \geq \mathrm{DT}$. If that set is also empty the candidate with
+the greatest predicted SNR is selected and the decision is flagged infeasible,
+so the mission is told the request cannot be met rather than being handed a
+pulse that appears ordinary. Ties are broken on widest bandwidth first, then
+lowest energy.
+
+Mode and window follow from the achieved margin $m = \mathrm{SNR} - \mathrm{DT}$:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Condition} & \textbf{Mode} & \textbf{Window} \\
+\midrule
+$m < \SI{2}{\decibel}$ & Barker-13 & Hann \\
+$m < \SI{3}{\decibel}$ & LFM or geometric & Hann \\
+Depth $> \SI{90}{\metre}$ & Geometric & by turbidity \\
+$N > \SI{400}{\NTU}$ & by margin & Blackman \\
+Otherwise & LFM & Hamming \\
+\bottomrule
+\end{tabular}
+\caption{Mode and window selection.}
+\end{table}
+
+% =====================================================================
+\section{Complete uncertainty budget}
+% =====================================================================
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\linewidth}{L{0.24\linewidth}YR{0.15\linewidth}R{0.15\linewidth}}
+\toprule
+\textbf{Quantity} & \textbf{Primary contributors} & \textbf{Standard} & \textbf{$k=2$} \\
+\midrule
+Frequency at \SI{40}{\kilo\hertz} & Timebase \SI{50}{ppm}, transform interpolation & \SI{18}{\hertz} & \SI{36}{\hertz} \\
+Spectral level & Window correction, amplitude accuracy, noise & \SI{0.30}{\decibel} & \SI{0.60}{\decibel} \\
+Total harmonic distortion & Harmonic-bin integration, noise subtraction & 0.04 pt & 0.08 pt \\
+Current below \SI{2}{\milli\ampere} & Shunt tolerance, offset, quantisation & \SI{0.07}{\milli\ampere} & \SI{0.14}{\milli\ampere} \\
+Current \SIrange{20}{100}{\milli\ampere} & Shunt tolerance and gain & \SI{0.65}{\percent} & \SI{1.30}{\percent} \\
+Complete-ping energy & Voltage, current and timing propagation & \SI{2.1}{\percent} & \SI{4.2}{\percent} \\
+Water temperature & Probe accuracy, spatial gradient & \SI{0.29}{\celsius} & \SI{0.58}{\celsius} \\
+Tape range at \SI{10}{\metre} & Reading, alignment, target plane & \SI{5.8}{\milli\metre} & \SI{11.6}{\milli\metre} \\
+Sonar range at \SI{10}{\metre} & Sound speed, peak interpolation, timing & \SI{7.4}{\milli\metre} & \SI{14.8}{\milli\metre} \\
+Turbidity & Sensor repeatability and settling & \SI{3.2}{\percent} + \SI{0.6}{\NTU} & \SI{6.4}{\percent} + \SI{1.2}{\NTU} \\
+Salinity preparation & Scale resolution, tank volume & \SI{0.012}{\ppt} & \SI{0.024}{\ppt} \\
+Enclosure mass & Scale resolution, surface water removal & \SI{0.10}{\gram} & \SI{0.20}{\gram} \\
+\bottomrule
+\end{tabularx}
+\caption{Full uncertainty budget, root-sum-square propagation. Range
+uncertainty uses $R = ct/2$ with the temperature-derived sound-speed term and
+the round-trip timing term treated as independent.}
+\end{table}
+
+\keyresult{Sonar range uncertainty at \SI{10}{\metre} is
+\SI{7.4}{\milli\metre} standard, against \SI{5.8}{\milli\metre} for the tape
+measure serving as the reference. The two are the same order, which is the
+correct relationship: the system is not being validated far beyond the
+precision of the instrument validating it.}
+
+% =====================================================================
+\section{Bill of materials by subsystem}
+% =====================================================================
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\linewidth}{L{0.13\linewidth}L{0.30\linewidth}YL{0.09\linewidth}}
+\toprule
+\textbf{Ref} & \textbf{Part} & \textbf{Function} & \textbf{Qty} \\
+\midrule
+\multicolumn{4}{l}{\textit{Power and protection}} \\
+F1 & MF-MSMF200X-2 & \SI{2.0}{\ampere} resettable fuse & 1 \\
+D1 & SMBJ15A & \SI{15}{\volt} transient suppressor & 1 \\
+Q1 & DMP3010LK3-13 & Reverse-polarity blocking & 1 \\
+U1 & LM2596S-ADJ & Switching pre-regulator & 1 \\
+U2 & AP2112K-3.3 & \SI{3.3}{\volt} low-dropout regulator & 1 \\
+BAT1 & 3S-2600-LIPO & Protected battery pack & 1 \\
+\midrule
+\multicolumn{4}{l}{\textit{Control and transmit}} \\
+U3 & ESP32-S3-DevKitC-1-N8 & Controller & 1 \\
+U5 & SN74LVC16373DLR & Parallel bus latch & 1 \\
+RN1--RN2 & NOMCA16031002AT1 & R-2R ladder networks & 2 \\
+U4 & MCP4921T-E/SN & Bench converter & 1 \\
+U7 & TC4427AVOA & Gate driver & 1 \\
+Q2--Q5 & AO3400A & Bridge output stage & 4 \\
+T1 & SEANERGY-TX-01 & Matching transformer & 1 \\
+\midrule
+\multicolumn{4}{l}{\textit{Receive and sensing}} \\
+D3--D6 & BAT54S & Receive limiter & 4 \\
+U6 & OPA1652AIDR & Receive amplifier & 1 \\
+U8 & ADS1115IDGSR & Sensor front end & 1 \\
+U9 & INA226AIDGSR & Current and energy monitor & 1 \\
+S1--S4 & Probe set & Temperature, TDS, turbidity, pressure & 4 \\
+BZ1--BZ2 & GU1008C-40T/R, PZT-200K-WB & Transducers & 2 \\
+\midrule
+\multicolumn{4}{l}{\textit{Mechanical}} \\
+ENC1 & SEANERGY-POD-V2 & Enclosure & 1 \\
+OR1--OR2 & AS568-246-NBR70 & Face seals & 2 \\
+PEN1--PEN2 & WETLINK-M10 & Cable penetrators & 2 \\
+H1--H12 & M3X12-A4-70 & Closure fasteners & 12 \\
+\bottomrule
+\end{tabularx}
+\caption{Principal line items by subsystem. The complete bill, with supplier
+references, tolerances, lead times and unit costs, is
+\texttt{01-hardware/bom/bom.csv}: 36 line items covering every reference
+designator on the board.}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{rrrrrr}
+\toprule
+\textbf{Qty} & \textbf{Component factor} & \textbf{PCB} & \textbf{Enclosure} & \textbf{Assembly} & \textbf{Unit cost} \\
+\midrule
+1 & 1.00 & INR 800 & INR 1{,}200 & INR 1{,}500 & INR 27{,}648 \\
+10 & 0.82 & INR 500 & INR 800 & INR 650 & INR 21{,}751 \\
+100 & 0.68 & INR 250 & INR 480 & INR 350 & INR 17{,}501 \\
+\bottomrule
+\end{tabular}
+\caption{Quantity cost model. A planning model built on the quantity-one bill,
+not a quotation.}
+\end{table}
+
+% =====================================================================
+\section{Test index and raw data}
+% =====================================================================
+
+Every test identifier used in the report resolves to a result entry and a raw
+data file under \texttt{06-validation/}.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\linewidth}{L{0.06\linewidth}L{0.22\linewidth}L{0.09\linewidth}Y}
+\toprule
+\textbf{ID} & \textbf{Test} & \textbf{Domain} & \textbf{Raw data} \\
+\midrule
+T-01 & Transducer impedance & Bench & \texttt{T-01\_impedance-sweep.csv} \\
+T-02 & Converter spectrum & Bench & \texttt{T-02\_dac-spectrum.csv} \\
+T-03 & Reconstruction filter & Bench & \texttt{T-03\_filter-response.csv} \\
+T-04 & Window sidelobes & Bench & \texttt{T-04\_window-sidelobes.csv} \\
+T-05 & Chirp tracking & Bench & \texttt{T-05\_chirp-track.csv} \\
+T-06 & Pulse compression & Bench & \texttt{T-06\_pulse-compression.csv} \\
+T-07 & Barker-13 & Bench & \texttt{T-07\_barker13.csv} \\
+T-08 & Range accuracy & Tank & \texttt{T-08\_range-accuracy.csv} \\
+T-09 & Range resolution & Tank & \texttt{T-09\_range-resolution.csv} \\
+T-10 & DMA and CPU idle & Bench & \texttt{T-10\_dma-cpu.csv} \\
+T-11 & Power and energy & Bench & \texttt{T-11\_power-states.csv}, \texttt{T-11\_ping-energy.csv} \\
+T-12 & Synthesis comparison & Bench & \texttt{T-12\_dds-vs-naive.csv} \\
+T-13 & Adaptation latency & Bench & \texttt{T-13\_adaptation-latency.csv} \\
+T-14 & Sediment adaptation & Tank & \texttt{T-14\_sediment-adaptation.csv} \\
+T-15 & Closed loop and noise & Tank & \texttt{T-15\_snr-convergence.csv}, \texttt{T-15\_noise-recovery.csv} \\
+T-16 & Enclosure immersion & Tank & \texttt{T-16\_immersion.csv} \\
+\bottomrule
+\end{tabularx}
+\caption{Test index. Bench files are under
+\texttt{06-validation/bench-results/raw/}, tank files under
+\texttt{06-validation/tank-results/raw/}.}
+\end{table}
+
+% =====================================================================
+\section{Firmware pin allocation}
+% =====================================================================
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\linewidth}{L{0.24\linewidth}L{0.14\linewidth}Y}
+\toprule
+\textbf{Function} & \textbf{GPIO} & \textbf{Rationale} \\
+\midrule
+Temperature probe & 4 & Preserved from the working prototype \\
+Legacy audio bus & 5, 6, 7 & Preserved for bench A/B comparison \\
+I\textsuperscript{2}C data and clock & 8, 9 & Shared sensor, monitor and display bus \\
+Idle and envelope markers & 2, 3 & Oscilloscope evidence for \tid{T-10} \\
+Rail gate, transmit enable & 17, 18 & Power gating and driver safe state \\
+8-bit converter bus & 35--42 & Contiguous high GPIO bank \\
+Converter write, chip select & 47, 48 & i80 hardware strobes \\
+\bottomrule
+\end{tabularx}
+\caption{Pin allocation. GPIO 2 and GPIO 3 exist to make processor occupancy
+and transmit envelope externally measurable rather than inferred; GPIO 18 is
+the transmit enable line held low in \texttt{BOOT}, \texttt{READY} and
+\texttt{FAULT}.}
+\end{table}
+
+% =====================================================================
+\section{Reproducing every figure and number}
+% =====================================================================
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\linewidth}{L{0.30\linewidth}Y}
+\toprule
+\textbf{Command} & \textbf{Regenerates} \\
+\midrule
+\texttt{npm run check} & The build gate: type check, 85 physics assertions, 33 render tests \\
+\texttt{python run\_local.py} & The published dataset, nine notebook figures, run metrics; hashes the result against the committed copy \\
+\texttt{python evaluate.py} & Model metrics and five evaluation figures \\
+\texttt{python qa.py} & 58 cross-checks that every number quoted in \texttt{05-models} matches its generated source \\
+\texttt{python make-figures.py} & Figures 8, 14, 15, 16 and 17 of the main report, from the validation raw data \\
+\texttt{pdflatex technical-report} & The report itself, three passes \\
+\bottomrule
+\end{tabularx}
+\caption{Reproduction. Directories are given in Table 25 of the main report.}
+\end{table}
+
+The dataset regenerates byte for byte from seed \num{20260829}:
+
+\begin{center}
+\texttt{\small 7d5d50dce7b92d3b083f80b5b52510589e6372d6ab87e78e8686e56cfb126053}
+\end{center}
+
+\end{document}

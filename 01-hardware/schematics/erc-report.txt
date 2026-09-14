@@ -1,0 +1,13 @@
+SEANERGY REV A ELECTRICAL RULES CHECK
+STATUS: NOT RUN
+DATE: 2026-09-07
+TOOL STATE: KiCad CLI is not installed in the current environment; the native schematic is a labelled preliminary container, not a complete wired design.
+UNWAIVED ERRORS: UNKNOWN UNTIL NATIVE CAPTURE IS COMPLETE
+CLAIM: No ERC-clean claim is made.
+
+Planned waivers requiring explicit review:
+1. Intentional AGND/DGND join through one 0-ohm star link.
+2. Alternative converter outputs are mutually exclusive DNP options.
+3. External module pins may be passive in the library despite carrying power.
+
+Release gate: all six sheets captured natively, footprints assigned, power flags reviewed, zero unwaived ERC errors, netlist cross-checked against PCB and report archived here.

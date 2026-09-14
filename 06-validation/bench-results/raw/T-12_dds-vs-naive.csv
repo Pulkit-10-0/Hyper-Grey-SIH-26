@@ -1,0 +1,3 @@
+build,fill_time_us_per_1024,cpu_idle_percent,energy_mj
+fixed_dds,8.4,97.6,0.93
+naive_sinf,74.0,82.1,1.08

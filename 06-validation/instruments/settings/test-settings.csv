@@ -1,0 +1,17 @@
+test_id,instrument_settings,data_record
+T-01,1 Vrms; 20-90 kHz; 100 Hz step; fixture compensation,bench-results/raw/T-01_impedance-sweep.csv
+T-02,10x probe; 1 Mohm; 10 MSa/s; 262144-point FFT; Blackman-Harris analyser window,bench-results/raw/T-02_dac-spectrum.csv
+T-03,10x probe; 1 Mohm; 10 MSa/s; 262144-point FFT; Blackman-Harris analyser window,bench-results/raw/T-03_filter-response.csv
+T-04,10x probe; 1 Mohm; 10 MSa/s; 262144-point FFT; Blackman-Harris analyser window,bench-results/raw/T-04_window-sidelobes.csv
+T-05,10x probe; 1 Mohm; 10 MSa/s; 262144-point FFT; Blackman-Harris analyser window,bench-results/raw/T-05_chirp-track.csv
+T-06,10x probe; 1 Mohm; 10 MSa/s; 262144-point FFT; Blackman-Harris analyser window,bench-results/raw/T-06_pulse-compression.csv
+T-07,10x probe; 1 Mohm; 10 MSa/s; 262144-point FFT; Blackman-Harris analyser window,bench-results/raw/T-07_barker13.csv
+T-08,450 L tank; 26.7-27.1 deg C; fixed rail; three-run minimum,tank-results/raw/T-08_range-accuracy.csv
+T-09,450 L tank; 26.7-27.1 deg C; fixed rail; three-run minimum,tank-results/raw/T-09_range-resolution.csv
+T-10,GPIO markers; 100 MSa/s logic; 1 GSa/s scope; single-shot trigger,bench-results/raw/T-10_dma-cpu.csv
+T-11,INA226 0.1 mA LSB; 1 ms transmit logging; 30 pings,bench-results/raw/T-11_power-states.csv
+T-12,GPIO markers; 100 MSa/s logic; 1 GSa/s scope; single-shot trigger,bench-results/raw/T-12_dds-vs-naive.csv
+T-13,GPIO markers; 100 MSa/s logic; 1 GSa/s scope; single-shot trigger,bench-results/raw/T-13_adaptation-latency.csv
+T-14,450 L tank; 26.7-27.1 deg C; fixed rail; three-run minimum,tank-results/raw/T-14_sediment-adaptation.csv
+T-15,450 L tank; 26.7-27.1 deg C; fixed rail; three-run minimum,tank-results/raw/T-15_snr-convergence.csv
+T-16,450 L tank; 26.7-27.1 deg C; fixed rail; three-run minimum,tank-results/raw/T-16_immersion.csv
