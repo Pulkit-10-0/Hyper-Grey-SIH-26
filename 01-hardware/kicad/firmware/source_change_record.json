@@ -1,0 +1,19 @@
+{
+  "original_file": "/Users/pulkit/Documents/AUV V3 DSO TEST FIRMWARE/AUV V3 DSO TEST FIRMWARE/src/main.cpp",
+  "original_sha256": "782367ad910adbe45c1b3f21bc07bad11863d2347fcc2a536eb7db6a9240ac6e",
+  "copied_file": "firmware/ESP32-S3/src/main.cpp",
+  "copied_sha256": "3f1d4bc718f42f5c2d43dc8e0009946b81c43d6b55ef0c508e39ff37a1dcaf2b",
+  "changes": [
+    "Multiply ADS1115 #1 TDS sensor voltage by 2",
+    "Multiply ADS1115 #1 turbidity sensor voltage by 2"
+  ],
+  "unchanged": [
+    "All GPIO assignments",
+    "ADS1115 addresses and gain",
+    "Three potentiometer voltage calculations",
+    "TX timing and polarity",
+    "I2S and OLED behavior",
+    "Original source files"
+  ],
+  "validation": "Exact source-diff and numerical divider-scaling checks; no claim of a firmware toolchain build or hardware test."
+}

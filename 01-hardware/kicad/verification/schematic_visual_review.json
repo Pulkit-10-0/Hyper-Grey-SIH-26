@@ -1,0 +1,22 @@
+{
+  "pdf": "AUV_V3_Combined_Schematic.pdf",
+  "pages": 7,
+  "reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "result": "Final seven-page PDF re-rendered. Conventional RX and TX wiring layouts reviewed at high resolution; no clipped titles, overlapping references/values, or unclear feedback connections observed.",
+  "schematic_type": "One overview and six hierarchical functional sheets. RX and TX critical paths use continuous wires; global labels connect power and functional blocks.",
+  "latest_review_details": [
+    "RX connector through C14 to U1B, visible R22 bias, R24/R23 feedback, and R25-to-GPIO34 output path.",
+    "R20/R21/C13 reference divider and actual U1A follower feedback loop.",
+    "GPIO16 through R15/Q2/U2/R17/Q1 to piezo, with actual R27/R16/R18/R19 wiring.",
+    "Vertical resistor/capacitor references and values remain horizontal and separated."
+  ],
+  "native_ids": "All original physical references and symbol UUIDs preserved; unit-A PCB association remains unchanged and is accepted by schematic-parity DRC."
+}

@@ -1,13 +1,27 @@
-SEANERGY REV A ELECTRICAL RULES CHECK
-STATUS: NOT RUN
-DATE: 2026-09-07
-TOOL STATE: KiCad CLI is not installed in the current environment; the native schematic is a labelled preliminary container, not a complete wired design.
-UNWAIVED ERRORS: UNKNOWN UNTIL NATIVE CAPTURE IS COMPLETE
-CLAIM: No ERC-clean claim is made.
+AUV V3 COMPACT REVISION B - ELECTRICAL RULES CHECK
+STATUS: PASS
+TOOL: KiCad 9.0.7
+DATE: 2026-09-15T23:12:53+0530
+SOURCE: AUV_V3_Combined.kicad_sch
 
-Planned waivers requiring explicit review:
-1. Intentional AGND/DGND join through one 0-ohm star link.
-2. Alternative converter outputs are mutually exclusive DNP options.
-3. External module pins may be passive in the library despite carrying power.
+UNWAIVED ERRORS: 0
+WAIVERS: none. No rule was disabled and no violation was excluded.
 
-Release gate: all six sheets captured natively, footprints assigned, power flags reviewed, zero unwaived ERC errors, netlist cross-checked against PCB and report archived here.
+Sheets checked, violations each:
+  /                                          0
+  /Controllers and power interfaces/         0
+  /External 5 V distribution/                0
+  /Four OLED buses and temperature sensor/   0
+  /ADS1115 modules and sensor inputs/        0
+  /40 kHz TX and I2S audio interfaces/       0
+  /40 kHz receive amplifier/                 0
+
+Seven sheets, zero violations, no exclusions.
+
+CLAIM: The schematic passes ERC clean. That is a statement about electrical
+consistency of the captured design, not about measured circuit behaviour. No
+board has been built.
+
+Machine-readable original: erc-report.json
+Netlist exported from this schematic: netlist.xml
+Cross-check against the board: ../pcb/drc-report.txt reports 0 parity differences.

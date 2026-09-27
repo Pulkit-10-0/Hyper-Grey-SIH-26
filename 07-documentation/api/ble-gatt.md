@@ -1,9 +1,15 @@
 # BLE GATT protocol
 
 This document defines SeaNergy BLE GATT protocol version `1`. It is the client
-contract for the payload firmware in `02-firmware/src/components/link/link.cpp`.
+contract for the **flight firmware** in `02-firmware/src/components/link/link.cpp`.
 All multi-byte integers are little-endian. A client must treat all packets as
 binary data, not text.
+
+> **This is not the link the console app speaks to the bench payload.** That one
+> is newline-delimited JSON over USB, Wi-Fi or BLE, and it is specified in
+> [`console-link.md`](console-link.md). The two are different interfaces for
+> different hardware, not competing versions of one; the comparison is at the end
+> of that document. Do not implement this one against an ESP32-S3 bench board.
 
 ## Discovery
 

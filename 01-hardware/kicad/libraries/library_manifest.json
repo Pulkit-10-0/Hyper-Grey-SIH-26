@@ -1,0 +1,354 @@
+{
+  "source": "KiCad 9.0.7 macOS installed official libraries",
+  "footprint_count": 14,
+  "model_file_count": 24,
+  "model_bytes": 2040014,
+  "custom_library_preserved": true,
+  "pcb_and_schematic_modified": false,
+  "footprints": [
+    {
+      "identifier": "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm",
+      "project_path": "libraries/Capacitor_THT.pretty/CP_Radial_D5.0mm_P2.00mm.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Capacitor_THT.pretty/CP_Radial_D5.0mm_P2.00mm.kicad_mod",
+      "source_sha256": "aeab8f323b2ce3d2ff7249ca1ebb77e79574b2ff582824476b890b8447360a6e",
+      "project_sha256": "aef4b0b667a1ebc45b9b1d60ddac8095b15ab7cead7ef5639edf17c39e0108be",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Capacitor_THT.3dshapes/CP_Radial_D5.0mm_P2.00mm.step"
+      ]
+    },
+    {
+      "identifier": "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm",
+      "project_path": "libraries/Capacitor_THT.pretty/CP_Radial_D6.3mm_P2.50mm.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Capacitor_THT.pretty/CP_Radial_D6.3mm_P2.50mm.kicad_mod",
+      "source_sha256": "a9a66ac464b7df0cea654f31286b4b1d881ac9fec4935753f18b7a0bf03a7cdf",
+      "project_sha256": "ec09524913019ab3f1426855d4645bacf28f0264bd7c63023fe79a3f8ef5db7e",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Capacitor_THT.3dshapes/CP_Radial_D6.3mm_P2.50mm.step"
+      ]
+    },
+    {
+      "identifier": "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm",
+      "project_path": "libraries/Capacitor_THT.pretty/CP_Radial_D8.0mm_P3.50mm.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Capacitor_THT.pretty/CP_Radial_D8.0mm_P3.50mm.kicad_mod",
+      "source_sha256": "a408de9854a71cfd369e8d996c82712decfe96402c4331e1233c3ee62cc94653",
+      "project_sha256": "9ebad92ce78e4c73290e59d3e602fae413743b492dfbac1892bdc60d7930f313",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Capacitor_THT.3dshapes/CP_Radial_D8.0mm_P3.50mm.step"
+      ]
+    },
+    {
+      "identifier": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "project_path": "libraries/Capacitor_THT.pretty/C_Disc_D3.0mm_W1.6mm_P2.50mm.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Capacitor_THT.pretty/C_Disc_D3.0mm_W1.6mm_P2.50mm.kicad_mod",
+      "source_sha256": "7e7dd572abd36a3a4487186b067ed67b11acdd32621e943eb2ae5306e608c922",
+      "project_sha256": "7c72fc1eba4dd966094c4c465b6e5cfdc763f8907af36988fb756a6716b29bbd",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.step"
+      ]
+    },
+    {
+      "identifier": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      "project_path": "libraries/Connector_PinHeader_2.54mm.pretty/PinHeader_1x03_P2.54mm_Vertical.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Connector_PinHeader_2.54mm.pretty/PinHeader_1x03_P2.54mm_Vertical.kicad_mod",
+      "source_sha256": "05fa5e02cf58c822430aaccc2d4e048b704caa95316b6c44d50f635608ee9093",
+      "project_sha256": "3f5002562f11d069a779457014e3c682f58223c96d26c9c6516859c693635404",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x03_P2.54mm_Vertical.step"
+      ]
+    },
+    {
+      "identifier": "Fuse:Fuse_1206_3216Metric",
+      "project_path": "libraries/Fuse.pretty/Fuse_1206_3216Metric.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Fuse.pretty/Fuse_1206_3216Metric.kicad_mod",
+      "source_sha256": "04cc22c125b2ba35ad77430d27889a64d84a493743f03f6cf463c44bf27e0174",
+      "project_sha256": "bb6e713e2e53fb09dfd398b790fa9ae352f69924c3aaf0c7f19d06cad92b771f",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Fuse.3dshapes/Fuse_1206_3216Metric.step"
+      ]
+    },
+    {
+      "identifier": "MountingHole:MountingHole_3.2mm_M3",
+      "project_path": "libraries/MountingHole.pretty/MountingHole_3.2mm_M3.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/MountingHole.pretty/MountingHole_3.2mm_M3.kicad_mod",
+      "source_sha256": "2ba7f517f7eee2a5644aaa8f6b038579bacc38aef2117213a6c04baa7335af1d",
+      "project_sha256": "2ba7f517f7eee2a5644aaa8f6b038579bacc38aef2117213a6c04baa7335af1d",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": []
+    },
+    {
+      "identifier": "Package_DIP:DIP-8_W7.62mm_Socket_LongPads",
+      "project_path": "libraries/Package_DIP.pretty/DIP-8_W7.62mm_Socket_LongPads.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Package_DIP.pretty/DIP-8_W7.62mm_Socket_LongPads.kicad_mod",
+      "source_sha256": "2120fef8be3879a087f9558c35eb56590249f82b28e04082c532fd9bd081a047",
+      "project_sha256": "ba3c2f71053a11c2fb9c0e197b83eca00157006a9d69260a97ca6b76ffc08132",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Package_DIP.3dshapes/DIP-8_W7.62mm_Socket.step"
+      ]
+    },
+    {
+      "identifier": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "project_path": "libraries/Package_SO.pretty/TSSOP-14_4.4x5mm_P0.65mm.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Package_SO.pretty/TSSOP-14_4.4x5mm_P0.65mm.kicad_mod",
+      "source_sha256": "62080c59452b1636e3cca9f28ff46273208d197b7d57aa89484c019238e3d892",
+      "project_sha256": "5c23c39d2423bbf0a157ae677c579fa56d56261a6df41c28137160e9dadb7dba",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.step"
+      ]
+    },
+    {
+      "identifier": "Package_TO_SOT_SMD:SOT-23",
+      "project_path": "libraries/Package_TO_SOT_SMD.pretty/SOT-23.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Package_TO_SOT_SMD.pretty/SOT-23.kicad_mod",
+      "source_sha256": "5fbcd830e62b2a7096210c50f4507b6110c79a844412200da276e0ee2e27ed14",
+      "project_sha256": "3faf759b59ae104ed82e77c35479163ce5da2dad9ed62f080ca5fc55cb4fbf1d",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
+      ]
+    },
+    {
+      "identifier": "Package_TO_SOT_THT:TO-220-3_Vertical",
+      "project_path": "libraries/Package_TO_SOT_THT.pretty/TO-220-3_Vertical.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Package_TO_SOT_THT.pretty/TO-220-3_Vertical.kicad_mod",
+      "source_sha256": "6b833c0eb0487be34d2a77aac4eeb30814b709a8ee52fa8d958820204ae3d48b",
+      "project_sha256": "aafb41e3536a505e1bc6c48993bb171feb651e7aaa99183acada6f0f1a96528c",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Package_TO_SOT_THT.3dshapes/TO-220-3_Vertical.step"
+      ]
+    },
+    {
+      "identifier": "Package_TO_SOT_THT:TO-92_Inline_Wide",
+      "project_path": "libraries/Package_TO_SOT_THT.pretty/TO-92_Inline_Wide.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Package_TO_SOT_THT.pretty/TO-92_Inline_Wide.kicad_mod",
+      "source_sha256": "9571c1104162a0ad65e8653cc89108dacc32e0130fde2c2a05f637de2d2c3717",
+      "project_sha256": "a59a6c839a11462835610482650f2524dbfddceafd645d60d79c6d5016ff3a9a",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Package_TO_SOT_THT.3dshapes/TO-92_Inline_Wide.step"
+      ]
+    },
+    {
+      "identifier": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "project_path": "libraries/Resistor_THT.pretty/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/Resistor_THT.pretty/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod",
+      "source_sha256": "4c980b9a171c62ff460771abd72ba97b57ac66c4a3755de8bb80264935fee4d6",
+      "project_sha256": "d7b7e4a0e4241ae6a4d1049c0dbc183100239d2f2611598b8aeb1af39c8935e6",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": [
+        "${KIPRJMOD}/3dmodels/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step"
+      ]
+    },
+    {
+      "identifier": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "project_path": "libraries/TestPoint.pretty/TestPoint_THTPad_D2.0mm_Drill1.0mm.kicad_mod",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints/TestPoint.pretty/TestPoint_THTPad_D2.0mm_Drill1.0mm.kicad_mod",
+      "source_sha256": "39632bc1e5a9f13aae2dfe5be366fc018ef75e19afec90cc33bf09973a440b85",
+      "project_sha256": "39632bc1e5a9f13aae2dfe5be366fc018ef75e19afec90cc33bf09973a440b85",
+      "changes": "Only the 3D-model URI prefix changed to ${KIPRJMOD}/3dmodels/",
+      "model_uris": []
+    }
+  ],
+  "models": [
+    {
+      "project_path": "3dmodels/Capacitor_THT.3dshapes/CP_Radial_D5.0mm_P2.00mm.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Capacitor_THT.3dshapes/CP_Radial_D5.0mm_P2.00mm.step",
+      "sha256": "96f77599ffdd30a40b9738a02543510138a4977d6427f42fef3fdd584405fc1d",
+      "bytes": 139943,
+      "original_headers_preserved": true,
+      "license_notice": "GPL-3.0-or-later with the design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Capacitor_THT.3dshapes/CP_Radial_D5.0mm_P2.00mm.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Capacitor_THT.3dshapes/CP_Radial_D5.0mm_P2.00mm.wrl",
+      "sha256": "6f56f23692c99f425855be19c610d16ad0de121cb506a36d9160c503c2532f03",
+      "bytes": 76170,
+      "original_headers_preserved": true,
+      "license_notice": "GPL-3.0-or-later with the design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Capacitor_THT.3dshapes/CP_Radial_D6.3mm_P2.50mm.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Capacitor_THT.3dshapes/CP_Radial_D6.3mm_P2.50mm.step",
+      "sha256": "39dc7bf95fed00917ab20af81ff9e25a70f8d003bc07cffea11840489a11933e",
+      "bytes": 122699,
+      "original_headers_preserved": true,
+      "license_notice": "GPL-3.0-or-later with the design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Capacitor_THT.3dshapes/CP_Radial_D6.3mm_P2.50mm.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Capacitor_THT.3dshapes/CP_Radial_D6.3mm_P2.50mm.wrl",
+      "sha256": "f8fa389bb2bfb51c10fe7b9638d8a5a0854f2fd0bb80edded2fde3ba53ac995a",
+      "bytes": 78627,
+      "original_headers_preserved": true,
+      "license_notice": "GPL-3.0-or-later with the design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Capacitor_THT.3dshapes/CP_Radial_D8.0mm_P3.50mm.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Capacitor_THT.3dshapes/CP_Radial_D8.0mm_P3.50mm.step",
+      "sha256": "abedfe603cd28231e16fb158d7b3f8875be74514f602e356364f48f073d0ef8e",
+      "bytes": 171217,
+      "original_headers_preserved": true,
+      "license_notice": "GPL-3.0-or-later with the design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Capacitor_THT.3dshapes/CP_Radial_D8.0mm_P3.50mm.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Capacitor_THT.3dshapes/CP_Radial_D8.0mm_P3.50mm.wrl",
+      "sha256": "41bd18fc2d31f92cdcaeaae49dc04b3837f60cc94ccf6774c2b70b2dffda1fcc",
+      "bytes": 92961,
+      "original_headers_preserved": true,
+      "license_notice": "GPL-3.0-or-later with the design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.step",
+      "sha256": "6d3d1b0baf252db55b60891d13619da7638f6452aff6f3e494442cec6dca3625",
+      "bytes": 42174,
+      "original_headers_preserved": true,
+      "license_notice": "GPL-3.0-or-later with the design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl",
+      "sha256": "17f4e3a2cd94242c50a922e636d0ad1ad292aa0afc7d2f9ae9f1ce679c2fe949",
+      "bytes": 31581,
+      "original_headers_preserved": true,
+      "license_notice": "GPL-3.0-or-later with the design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x03_P2.54mm_Vertical.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x03_P2.54mm_Vertical.step",
+      "sha256": "b91b4ac5acf1a0d28a676703db972d17b8f11ef26a85b58d60786a69246b921b",
+      "bytes": 110633,
+      "original_headers_preserved": true,
+      "license_notice": "CC-BY-SA-4.0 with the KiCad design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x03_P2.54mm_Vertical.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x03_P2.54mm_Vertical.wrl",
+      "sha256": "977905893df24d3b78b6df51920b8336ea447e26281c3eb48e068c636685cc1f",
+      "bytes": 21880,
+      "original_headers_preserved": true,
+      "license_notice": "CC-BY-SA-4.0 with the KiCad design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Fuse.3dshapes/Fuse_1206_3216Metric.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Fuse.3dshapes/Fuse_1206_3216Metric.step",
+      "sha256": "5e6dcbe286696143d35a8ea37d91eef4b54ff3d1bd7c2c2b4dedda83d3f8e203",
+      "bytes": 40429,
+      "original_headers_preserved": true,
+      "license_notice": "CC-BY-SA-4.0 with the KiCad design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Fuse.3dshapes/Fuse_1206_3216Metric.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Fuse.3dshapes/Fuse_1206_3216Metric.wrl",
+      "sha256": "778f45add1215d06ce7bf91860d47dfb35401b1875277c1346333d195a76a1b8",
+      "bytes": 14807,
+      "original_headers_preserved": true,
+      "license_notice": "CC-BY-SA-4.0 with the KiCad design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Package_DIP.3dshapes/DIP-8_W7.62mm_Socket.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_DIP.3dshapes/DIP-8_W7.62mm_Socket.step",
+      "sha256": "e9e924c35c1ea13ec22f2e0b440051d9c16ecc760001c0c3c038a33043ec7e0d",
+      "bytes": 187620,
+      "original_headers_preserved": true,
+      "license_notice": "GPL-3.0-or-later with the design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Package_DIP.3dshapes/DIP-8_W7.62mm_Socket.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_DIP.3dshapes/DIP-8_W7.62mm_Socket.wrl",
+      "sha256": "a8aca66527e49b131b16d05880ee6630dbd27357f83e634e06c844fd49432f5b",
+      "bytes": 182695,
+      "original_headers_preserved": true,
+      "license_notice": "GPL-3.0-or-later with the design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.step",
+      "sha256": "3ee5786aae56190997aa793ba3cfc003fd616782770e29719b4562f012982245",
+      "bytes": 198789,
+      "original_headers_preserved": true,
+      "license_notice": "CC-BY-SA-4.0 with the KiCad design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.wrl",
+      "sha256": "6e58982b4923f49a4fb5a7acccabacc446b222e222a7ae16340d82720dc4ceaf",
+      "bytes": 111208,
+      "original_headers_preserved": true,
+      "license_notice": "CC-BY-SA-4.0 with the KiCad design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+      "sha256": "dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0",
+      "bytes": 60296,
+      "original_headers_preserved": true,
+      "license_notice": "CC-BY-SA-4.0 with the KiCad design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Package_TO_SOT_SMD.3dshapes/SOT-23.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_TO_SOT_SMD.3dshapes/SOT-23.wrl",
+      "sha256": "cac58d49b8f959e3e42236d2cf99617859905637f612ad68304c26f674733dd9",
+      "bytes": 31297,
+      "original_headers_preserved": true,
+      "license_notice": "CC-BY-SA-4.0 with the KiCad design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Package_TO_SOT_THT.3dshapes/TO-220-3_Vertical.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_TO_SOT_THT.3dshapes/TO-220-3_Vertical.step",
+      "sha256": "7cb065d935df5771f0ba6e48ddd180863a121af76483dad7f18e667a7b68204a",
+      "bytes": 85145,
+      "original_headers_preserved": true,
+      "license_notice": "Upstream KiCad collection license; no individual override found in model header"
+    },
+    {
+      "project_path": "3dmodels/Package_TO_SOT_THT.3dshapes/TO-220-3_Vertical.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_TO_SOT_THT.3dshapes/TO-220-3_Vertical.wrl",
+      "sha256": "d709bcacac23ef48788483fa8e39c36602b0e1ea05e54ea8110e3ae5b5b4a6f5",
+      "bytes": 29081,
+      "original_headers_preserved": true,
+      "license_notice": "Upstream KiCad collection license; no individual override found in model header"
+    },
+    {
+      "project_path": "3dmodels/Package_TO_SOT_THT.3dshapes/TO-92_Inline_Wide.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_TO_SOT_THT.3dshapes/TO-92_Inline_Wide.step",
+      "sha256": "85b7de23bf92112c1cc60ca5fdb644f1a44e150a99f8c6f4f5f29010f50282b9",
+      "bytes": 41814,
+      "original_headers_preserved": true,
+      "license_notice": "Upstream KiCad collection license; no individual override found in model header"
+    },
+    {
+      "project_path": "3dmodels/Package_TO_SOT_THT.3dshapes/TO-92_Inline_Wide.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_TO_SOT_THT.3dshapes/TO-92_Inline_Wide.wrl",
+      "sha256": "4f88be1260d7a25d5576cc26d4ed12bc2f4c38b78735dce3a8b76011f37faf35",
+      "bytes": 24020,
+      "original_headers_preserved": true,
+      "license_notice": "Upstream KiCad collection license; no individual override found in model header"
+    },
+    {
+      "project_path": "3dmodels/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step",
+      "sha256": "46710ac36957e4073ef7e80153823ef7db1ea12932074cb71f43bc4b476a74dc",
+      "bytes": 47008,
+      "original_headers_preserved": true,
+      "license_notice": "CC-BY-SA-4.0 with the KiCad design exception in the original model header"
+    },
+    {
+      "project_path": "3dmodels/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl",
+      "source_path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl",
+      "sha256": "1c2bf3f4c3159d558a91f2b539eec05de80d28c5350b74b08284e7b15e18f82a",
+      "bytes": 97920,
+      "original_headers_preserved": true,
+      "license_notice": "CC-BY-SA-4.0 with the KiCad design exception in the original model header"
+    }
+  ]
+}

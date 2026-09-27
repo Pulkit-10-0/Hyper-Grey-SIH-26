@@ -42,6 +42,12 @@ ios/*.xcodeproj/project.xcworkspace/xcuserdata/
 *.dSYM.zip
 *.dSYM
 
+# The local native module is a real Gradle library on Android. Its iOS half is
+# not built here, but the rule is kept identical across both trees on purpose.
+modules/*/android/build/
+modules/*/android/.gradle/
+modules/*/ios/Pods/
+
 # ---- signing: never commit a credential ------------------------------------
 *.mobileprovision
 *.provisionprofile

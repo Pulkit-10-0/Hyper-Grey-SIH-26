@@ -1,0 +1,15 @@
+﻿Quantity,External item,PCB connection,What must be checked on the actual item
+1,ESP32-S3 board,"J1, J2","GPIO4–16 and 3V3/GND labels; regulator/USB current budget; physical mounting. Supplied firmware targets esp32-s3-devkitc-1, which is not proof of the physical model."
+1,Classic ESP32 DevKit board,J3,"GPIO34, 3V3 and GND labels; do not use an ESP32-S3 ADC pin map for this board."
+2,ADS1115 modules,"J10, J11",Actual supply/ground terminals (VDD/AVDD versus VIN); address strap; 3.3 V pull-ups; A0/A1/A2 physical locations.
+4,SSD1306 128x64 I2C OLED modules,J5–J8,3.3 V operation; GND/VCC/SCL/SDA pin order; 0x3C address; onboard pull-ups.
+1,DS18B20 sensor/probe,J9,3-wire VDD/DQ/GND mapping; supplier wire colors; duplicate pull-up if using an adapter.
+1,TDS sensor module,"J12, J14",Exact supply requirement before fitting shunt; output 0–5 V; ability to drive 20 kΩ load; calibration.
+1,Turbidity sensor module,"J13, J15",Exact supply requirement before fitting shunt; analog output 0–5 V; ability to drive 20 kΩ load; calibration.
+3,Potentiometer modules,J16–J18,3.3 V/GND/wiper order; output stays between 0 and 3.3 V.
+1,MAX98357A I2S amplifier module,J19,5 V VIN support; physical I2S/SD terminals; existing SD/GAIN resistors; speaker output terminals.
+1,Speaker,J20,Impedance and power rating compatible with amplifier module; neither terminal connected to grounded metal.
+1,GU1008C-40T transmit piezo,J21,Exact transducer model and electrical rating; two-wire connection and mechanical mount.
+1,Bare 40 kHz receiving piezo element,J22,"Bare element, not powered HC-SR04 module; identify any case-connected lead for ground; acoustic mount."
+1,Regulated external 5.0 V supply,J4,Correct polarity; load budget <=1 A; maintains >=4.5 V at the gate driver.
+2,USB power connections for the controllers,Each controller USB port,Power capability and regulator current budget; PCB has no VIN/VBUS tie.

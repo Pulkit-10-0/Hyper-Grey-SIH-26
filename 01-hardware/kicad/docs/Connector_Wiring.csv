@@ -1,0 +1,91 @@
+﻿Connector,Connects to,PCB pad number,Function / module terminal,Electrical net,Assembly note
+J1,ESP32-S3 MAIN / A,1,3V3 OUT,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J1,ESP32-S3 MAIN / A,2,GND,GND,PCB feature: solder wires to pads; no part to buy
+J1,ESP32-S3 MAIN / A,3,GPIO4,TEMP_DATA,PCB feature: solder wires to pads; no part to buy
+J1,ESP32-S3 MAIN / A,4,GPIO5,I2S_BCLK,PCB feature: solder wires to pads; no part to buy
+J1,ESP32-S3 MAIN / A,5,GPIO6,I2S_LRC,PCB feature: solder wires to pads; no part to buy
+J1,ESP32-S3 MAIN / A,6,GPIO7,I2S_DIN,PCB feature: solder wires to pads; no part to buy
+J1,ESP32-S3 MAIN / A,7,GPIO8,I2C1_SDA,PCB feature: solder wires to pads; no part to buy
+J1,ESP32-S3 MAIN / A,8,GPIO9,I2C1_SCL,PCB feature: solder wires to pads; no part to buy
+J2,ESP32-S3 MAIN / B,1,GPIO10,I2C2_SDA,PCB feature: solder wires to pads; no part to buy
+J2,ESP32-S3 MAIN / B,2,GPIO11,I2C2_SCL,PCB feature: solder wires to pads; no part to buy
+J2,ESP32-S3 MAIN / B,3,GPIO12,I2C3_SDA,PCB feature: solder wires to pads; no part to buy
+J2,ESP32-S3 MAIN / B,4,GPIO13,I2C3_SCL,PCB feature: solder wires to pads; no part to buy
+J2,ESP32-S3 MAIN / B,5,GPIO14,I2C4_SDA,PCB feature: solder wires to pads; no part to buy
+J2,ESP32-S3 MAIN / B,6,GPIO15,I2C4_SCL,PCB feature: solder wires to pads; no part to buy
+J2,ESP32-S3 MAIN / B,7,GPIO16,TX_PWM,PCB feature: solder wires to pads; no part to buy
+J2,ESP32-S3 MAIN / B,8,GND,GND,PCB feature: solder wires to pads; no part to buy
+J3,ESP32 DEVKIT RX,1,3V3 OUT,RX3V3,PCB feature: solder wires to pads; no part to buy
+J3,ESP32 DEVKIT RX,2,GND,GND,PCB feature: solder wires to pads; no part to buy
+J3,ESP32 DEVKIT RX,3,GPIO34,RX_ADC,PCB feature: solder wires to pads; no part to buy
+J4,REGULATED 5 V INPUT,1,5V IN,EXT5V_IN,PCB feature: solder wires to pads; no part to buy
+J4,REGULATED 5 V INPUT,2,GND,GND,PCB feature: solder wires to pads; no part to buy
+J5,OLED1 0x3C,1,3V3,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J5,OLED1 0x3C,2,GND,GND,PCB feature: solder wires to pads; no part to buy
+J5,OLED1 0x3C,3,SCL,I2C1_SCL,PCB feature: solder wires to pads; no part to buy
+J5,OLED1 0x3C,4,SDA,I2C1_SDA,PCB feature: solder wires to pads; no part to buy
+J6,OLED2 0x3C,1,3V3,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J6,OLED2 0x3C,2,GND,GND,PCB feature: solder wires to pads; no part to buy
+J6,OLED2 0x3C,3,SCL,I2C2_SCL,PCB feature: solder wires to pads; no part to buy
+J6,OLED2 0x3C,4,SDA,I2C2_SDA,PCB feature: solder wires to pads; no part to buy
+J7,OLED3 0x3C,1,3V3,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J7,OLED3 0x3C,2,GND,GND,PCB feature: solder wires to pads; no part to buy
+J7,OLED3 0x3C,3,SCL,I2C3_SCL,PCB feature: solder wires to pads; no part to buy
+J7,OLED3 0x3C,4,SDA,I2C3_SDA,PCB feature: solder wires to pads; no part to buy
+J8,OLED4 0x3C,1,3V3,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J8,OLED4 0x3C,2,GND,GND,PCB feature: solder wires to pads; no part to buy
+J8,OLED4 0x3C,3,SCL,I2C4_SCL,PCB feature: solder wires to pads; no part to buy
+J8,OLED4 0x3C,4,SDA,I2C4_SDA,PCB feature: solder wires to pads; no part to buy
+J9,DS18B20,1,3V3,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J9,DS18B20,2,DATA,TEMP_DATA,PCB feature: solder wires to pads; no part to buy
+J9,DS18B20,3,GND,GND,PCB feature: solder wires to pads; no part to buy
+J10,ADS1115 #1 0x48,1,VDD/AVDD,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J10,ADS1115 #1 0x48,2,GND/AGND,GND,PCB feature: solder wires to pads; no part to buy
+J10,ADS1115 #1 0x48,3,SDA,I2C1_SDA,PCB feature: solder wires to pads; no part to buy
+J10,ADS1115 #1 0x48,4,SCL,I2C1_SCL,PCB feature: solder wires to pads; no part to buy
+J10,ADS1115 #1 0x48,5,A0 TDS,TDS_ADC,PCB feature: solder wires to pads; no part to buy
+J10,ADS1115 #1 0x48,6,A1 TURB,TURB_ADC,PCB feature: solder wires to pads; no part to buy
+J10,ADS1115 #1 0x48,7,ADDR GND,GND,PCB feature: solder wires to pads; no part to buy
+J11,ADS1115 #2 0x49,1,VDD/AVDD,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J11,ADS1115 #2 0x49,2,GND/AGND,GND,PCB feature: solder wires to pads; no part to buy
+J11,ADS1115 #2 0x49,3,SDA,I2C1_SDA,PCB feature: solder wires to pads; no part to buy
+J11,ADS1115 #2 0x49,4,SCL,I2C1_SCL,PCB feature: solder wires to pads; no part to buy
+J11,ADS1115 #2 0x49,5,A0 TDS POT,POT_TDS,PCB feature: solder wires to pads; no part to buy
+J11,ADS1115 #2 0x49,6,A1 TURB POT,POT_TURB,PCB feature: solder wires to pads; no part to buy
+J11,ADS1115 #2 0x49,7,A2 TEMP POT,POT_TEMP,PCB feature: solder wires to pads; no part to buy
+J11,ADS1115 #2 0x49,8,ADDR 3V3,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J12,TDS SENSOR,1,VCC SELECT,TDS_VCC,PCB feature: solder wires to pads; no part to buy
+J12,TDS SENSOR,2,GND,GND,PCB feature: solder wires to pads; no part to buy
+J12,TDS SENSOR,3,OUT 0-5V,TDS_RAW,PCB feature: solder wires to pads; no part to buy
+J13,TURBIDITY SENSOR,1,VCC SELECT,TURB_VCC,PCB feature: solder wires to pads; no part to buy
+J13,TURBIDITY SENSOR,2,GND,GND,PCB feature: solder wires to pads; no part to buy
+J13,TURBIDITY SENSOR,3,OUT 0-5V,TURB_RAW,PCB feature: solder wires to pads; no part to buy
+J14,TDS_VCC SELECT,1,3V3,MAIN3V3,Fit 1x3 header; leave shunt OFF until sensor voltage is confirmed
+J14,TDS_VCC SELECT,2,SENSOR VCC,TDS_VCC,Fit 1x3 header; leave shunt OFF until sensor voltage is confirmed
+J14,TDS_VCC SELECT,3,5V,EXT5V,Fit 1x3 header; leave shunt OFF until sensor voltage is confirmed
+J15,TURB_VCC SELECT,1,3V3,MAIN3V3,Fit 1x3 header; leave shunt OFF until sensor voltage is confirmed
+J15,TURB_VCC SELECT,2,SENSOR VCC,TURB_VCC,Fit 1x3 header; leave shunt OFF until sensor voltage is confirmed
+J15,TURB_VCC SELECT,3,5V,EXT5V,Fit 1x3 header; leave shunt OFF until sensor voltage is confirmed
+J16,TDS POT,1,3V3,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J16,TDS POT,2,WIPER/OUT,POT_TDS,PCB feature: solder wires to pads; no part to buy
+J16,TDS POT,3,GND,GND,PCB feature: solder wires to pads; no part to buy
+J17,TURBIDITY POT,1,3V3,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J17,TURBIDITY POT,2,WIPER/OUT,POT_TURB,PCB feature: solder wires to pads; no part to buy
+J17,TURBIDITY POT,3,GND,GND,PCB feature: solder wires to pads; no part to buy
+J18,TEMPERATURE POT,1,3V3,MAIN3V3,PCB feature: solder wires to pads; no part to buy
+J18,TEMPERATURE POT,2,WIPER/OUT,POT_TEMP,PCB feature: solder wires to pads; no part to buy
+J18,TEMPERATURE POT,3,GND,GND,PCB feature: solder wires to pads; no part to buy
+J19,MAX98357A MODULE,1,VIN 5V,EXT5V,PCB feature: solder wires to pads; no part to buy
+J19,MAX98357A MODULE,2,GND,GND,PCB feature: solder wires to pads; no part to buy
+J19,MAX98357A MODULE,3,BCLK,I2S_BCLK,PCB feature: solder wires to pads; no part to buy
+J19,MAX98357A MODULE,4,LRC/WS,I2S_LRC,PCB feature: solder wires to pads; no part to buy
+J19,MAX98357A MODULE,5,DIN,I2S_DIN,PCB feature: solder wires to pads; no part to buy
+J19,MAX98357A MODULE,6,SD/MODE,AMP_SD,PCB feature: solder wires to pads; no part to buy
+J19,MAX98357A MODULE,7,SPK+,SPK_P,PCB feature: solder wires to pads; no part to buy
+J19,MAX98357A MODULE,8,SPK-,SPK_N,PCB feature: solder wires to pads; no part to buy
+J20,SPEAKER,1,SPK+,SPK_P,PCB feature: solder wires to pads; no part to buy
+J20,SPEAKER,2,SPK-,SPK_N,PCB feature: solder wires to pads; no part to buy
+J21,GU1008C-40T TX,1,TX +5V,EXT5V,PCB feature: solder wires to pads; no part to buy
+J21,GU1008C-40T TX,2,TX DRAIN,TX_DRAIN,PCB feature: solder wires to pads; no part to buy
+J22,BARE RX ELEMENT,1,RX SIGNAL,RX_RAW,PCB feature: solder wires to pads; no part to buy
+J22,BARE RX ELEMENT,2,RX GND,GND,PCB feature: solder wires to pads; no part to buy

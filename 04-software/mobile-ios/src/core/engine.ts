@@ -38,6 +38,7 @@ import { clamp, Medium } from './physics';
 import { endurance, Endurance, pingEnergy, PingEnergy } from './power';
 import { SCENARIOS, ScenarioId } from '../data/scenarios';
 import { link } from './link';
+import { environmentOf, type TelemetryPacket } from './protocol';
 
 /* ------------------------------------------------------------------ */
 /* Types                                                               */
@@ -107,6 +108,8 @@ export type EngineSnapshot = {
   lastPing: PingRecord | null;
   tick: number;
   bootedAt: number;
+  /** Last packet decoded from the payload. Null in simulation. */
+  telemetry: TelemetryPacket | null;
 };
 
 /* ------------------------------------------------------------------ */
@@ -131,6 +134,7 @@ class PayloadEngine {
   private rand = makeRandom(0x5ea0);
   private nextId = 1;
   private snap: EngineSnapshot;
+  private unsubscribeLink: (() => void) | null = null;
 
   constructor() {
     // Default to the underwater configuration: that is the band the payload
@@ -142,11 +146,13 @@ class PayloadEngine {
       salinityPpt: s.salinityPpt,
       turbidityNtu: s.turbidityNtu,
       depthM: s.depthM,
+      ph: s.ph,
     };
     const decision = decide(env, cfg, 0);
     this.snap = {
       running: false,
       source: 'sim',
+      telemetry: null,
       medium: 'water',
       config: cfg,
       env: { ...env },
@@ -200,6 +206,7 @@ class PayloadEngine {
 
   start() {
     if (this.timer) return;
+    if (!this.unsubscribeLink) this.unsubscribeLink = link.onChange(this.onTelemetry);
     this.timer = setInterval(() => this.step(), TICK_MS);
     this.set({ running: true });
   }
@@ -216,6 +223,13 @@ class PayloadEngine {
    */
   private step() {
     const s = this.snap;
+    // In telemetry mode the payload owns the environment. Drifting a simulated
+    // one underneath real readings would overwrite them between packets.
+    if (s.source === 'live') {
+      this.snap = { ...this.snap, tick: this.snap.tick + 1 };
+      this.emit();
+      return;
+    }
     const t = s.envTarget;
     const e = s.env;
     const pull = 0.14;
@@ -232,6 +246,7 @@ class PayloadEngine {
         e.turbidityNtu + (t.turbidityNtu - e.turbidityNtu) * pull + n() * 1.6,
       ),
       depthM: Math.max(0, e.depthM + (t.depthM - e.depthM) * pull + n() * 0.06),
+      ph: clamp(e.ph + (t.ph - e.ph) * pull + n() * 0.004, 6, 9.5),
     };
 
     this.snap = { ...this.snap, env, tick: this.snap.tick + 1 };
@@ -256,7 +271,8 @@ class PayloadEngine {
       Math.abs(env.tempC - p.tempC) > 0.15 ||
       Math.abs(env.salinityPpt - p.salinityPpt) > 0.15 ||
       Math.abs(env.turbidityNtu - p.turbidityNtu) > 4 ||
-      Math.abs(env.depthM - p.depthM) > 0.5
+      Math.abs(env.depthM - p.depthM) > 0.5 ||
+      Math.abs(env.ph - p.ph) > 0.05
     );
   }
 
@@ -294,6 +310,30 @@ class PayloadEngine {
       };
     }
 
+    // Telemetry mode: the payload already chose. Show what it actually
+    // transmitted rather than what this handset would have picked, and derive
+    // the dependent quantities from those reported parameters so resolution and
+    // compression gain describe the real pulse.
+    const p = s.source === 'live' ? s.telemetry : null;
+    if (p && p.fCentre > 0 && p.tau > 0) {
+      const swept = p.bandwidth > 0;
+      const bandwidth = swept ? p.bandwidth : 1 / p.tau;
+      decision = {
+        ...decision,
+        fCentre: p.fCentre,
+        bandwidth,
+        fStart: swept ? p.fCentre - bandwidth / 2 : p.fCentre,
+        fStop: swept ? p.fCentre + bandwidth / 2 : p.fCentre,
+        tau: p.tau,
+        amplitude: p.amplitude > 0 ? p.amplitude : decision.amplitude,
+        tbp: p.tau * bandwidth,
+        compressionGainDb: 10 * Math.log10(Math.max(1, p.tau * bandwidth)),
+        resolutionM: decision.soundSpeed / (2 * bandwidth),
+        cwResolutionM: (decision.soundSpeed * p.tau) / 2,
+        predictedSnrDb: p.predictedSnrDb !== 0 ? p.predictedSnrDb : decision.predictedSnrDb,
+      };
+    }
+
     const energy = pingEnergy(decision.tau, decision.amplitude);
     this.snap = {
       ...this.snap,
@@ -307,12 +347,29 @@ class PayloadEngine {
     this.emit();
   }
 
+  /**
+   * A packet arrived. The payload's sensors become the environment and its
+   * chosen parameters become the decision.
+   */
+  private onTelemetry = () => {
+    if (this.snap.source !== 'live') return;
+    const p = link.latest();
+    if (!p || p === this.snap.telemetry) return;
+    this.snap = { ...this.snap, telemetry: p, env: environmentOf(p) };
+    this.recompute();
+  };
+
   /* ---- commands ---- */
 
   setSource(source: Source) {
     if (source === this.snap.source) return;
     if (source === 'sim') link.disconnect();
+    this.snap = { ...this.snap, telemetry: null };
     this.set({ source });
+    // Clear any telemetry override from the decision now rather than on the
+    // next tick, which may never arrive if the engine is paused.
+    this.recompute();
+    if (source === 'live') this.onTelemetry();
   }
 
   setMedium(medium: Medium) {
@@ -344,6 +401,7 @@ class PayloadEngine {
         salinityPpt: s.salinityPpt,
         turbidityNtu: s.turbidityNtu,
         depthM: s.depthM,
+        ph: s.ph,
       },
     };
     this.emit();

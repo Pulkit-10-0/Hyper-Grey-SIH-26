@@ -1,0 +1,22 @@
+[
+  {
+    "file": "libraries/LICENSE_KiCad_Libraries.md",
+    "source": "https://raw.githubusercontent.com/KiCad/kicad-footprints/master/LICENSE.md",
+    "sha256": "285b027a721577d0bc0198f36e948c6c282ddaa4b58fef8ed826749576eb0aef"
+  },
+  {
+    "file": "3dmodels/LICENSE_KiCad_Libraries.md",
+    "source": "https://raw.githubusercontent.com/KiCad/kicad-packages3D/master/LICENSE.md",
+    "sha256": "285b027a721577d0bc0198f36e948c6c282ddaa4b58fef8ed826749576eb0aef"
+  },
+  {
+    "file": "libraries/CC-BY-SA-4.0.txt",
+    "source": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/CC-BY-SA-4.0.txt",
+    "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
+  },
+  {
+    "file": "libraries/GPL-3.0-or-later.txt",
+    "source": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-or-later.txt",
+    "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+  }
+]

@@ -1,0 +1,52 @@
+# KiCad working state. The project, libraries and 3D models ARE tracked; only
+# per-user state and lock files are not.
+*.kicad_prl
+*~*.lck
+fp-info-cache
+*-backups/*.kicad_*
+
+# Node
+node_modules/
+.expo/
+dist/
+.verify-out/
+.verify-ios/
+*.tsbuildinfo
+
+# Gradle and Android
+**/android/build/
+**/android/app/build/
+**/android/.gradle/
+**/android/.kotlin/
+**/android/.cxx/
+**/android/local.properties
+**/modules/*/android/build/
+**/modules/*/android/.gradle/
+
+# Xcode and CocoaPods
+**/ios/Pods/
+**/ios/build/
+*.xcuserstate
+xcuserdata/
+
+# The project-local toolchains. Downloaded, not source.
+**/.toolchain/*
+!**/.toolchain/env.ps1
+
+# Signing material never belongs in this repository.
+*.keystore
+*.jks
+*.p8
+*.p12
+*.key
+*.pem
+*.mobileprovision
+keystore.properties
+
+# OS and editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.log

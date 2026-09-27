@@ -16,6 +16,9 @@ const MODE_OPTS: { value: Source; label: string }[] = [
   { value: 'live', label: 'Telemetry' },
 ];
 
+/** A stable empty array, so the fault selector does not re-render every tick. */
+const EMPTY: string[] = [];
+
 function uptime(from: number): string {
   const s = Math.floor((Date.now() - from) / 1000);
   const p = (n: number) => String(n).padStart(2, '0');
@@ -28,6 +31,9 @@ export default function HomeScreen() {
 
   const source = useEngine((s) => s.source);
   const live = source === 'live';
+  // Dash out the solve only until the first packet lands. After that the
+  // payload's own choice is what these rows report.
+  const waiting = useEngine((s) => s.source === 'live' && s.telemetry === null);
   const tone = live ? 'live' : 'sim';
 
   const st = useLink();
@@ -49,6 +55,11 @@ export default function HomeScreen() {
     }),
     shallowEqual,
   );
+
+  // The payload's own sequence counter and fault list, shown in place of this
+  // console's ping count and self test when the payload is the one talking.
+  const seq = useEngine((s) => s.telemetry?.seq ?? 0);
+  const faults = useEngine((s) => s.telemetry?.faults ?? EMPTY, shallowEqual);
 
   const onFire = useCallback(() => {
     setFiring(true);
@@ -92,22 +103,33 @@ export default function HomeScreen() {
       <Panel label="System" subtitle={d.medium === 'water' ? 'underwater configuration' : 'air bench configuration'}>
         <Rows
           data={[
-            ['link', live ? st.status.toUpperCase() : 'SIMULATED', live ? 'fault' : 'sim'],
-            ['mode', live ? dash : `${MODE_SHORT[d.mode]} CHIRP`, live ? 'sim' : 'live'],
-            ['ping', live ? dash : String(d.pings).padStart(4, '0'), tone],
+            ['link', live ? st.status.toUpperCase() : 'SIMULATED',
+              live ? (waiting ? 'fault' : 'live') : 'sim'],
+            ['mode', waiting ? dash : `${MODE_SHORT[d.mode]} CHIRP`, waiting ? 'sim' : 'live'],
+            ['ping', live ? (waiting ? dash : String(seq).padStart(4, '0'))
+              : String(d.pings).padStart(4, '0'), tone],
             ['uptime', uptime(d.booted), 'plain'],
           ]}
         />
       </Panel>
 
-      <Panel label="Last solve" subtitle={live ? 'awaiting link' : d.headline.toLowerCase()}>
+      <Panel
+        label={live ? 'Transmitting' : 'Last solve'}
+        subtitle={
+          live
+            ? waiting
+              ? 'awaiting link'
+              : 'as reported by the payload'
+            : d.headline.toLowerCase()
+        }
+      >
         <Rows
           data={[
-            ['fc', live ? dash : fmtHz(d.fCentre), tone],
-            ['b', live ? dash : fmtHz(d.bandwidth), tone],
-            ['window', live ? dash : WINDOW_LABEL[d.window].toUpperCase(), 'plain'],
-            ['res', live ? dash : fmtMetres(d.resolutionM), tone],
-            ['tau', live ? dash : fmtSeconds(d.tau), 'plain'],
+            ['fc', waiting ? dash : fmtHz(d.fCentre), tone],
+            ['b', waiting ? dash : fmtHz(d.bandwidth), tone],
+            ['window', waiting ? dash : WINDOW_LABEL[d.window].toUpperCase(), 'plain'],
+            ['res', waiting ? dash : fmtMetres(d.resolutionM), tone],
+            ['tau', waiting ? dash : fmtSeconds(d.tau), 'plain'],
           ]}
         />
       </Panel>
@@ -117,7 +139,10 @@ export default function HomeScreen() {
           data={[
             ['rails', live ? dash : 'OK', live ? 'sim' : 'live'],
             ['dac loopback', live ? dash : 'OK', live ? 'sim' : 'live'],
-            ['sensors', live ? dash : 'MODELLED', 'sim'],
+            ['sensors', live ? (waiting ? dash : 'SENSED') : 'MODELLED',
+              live && !waiting ? 'live' : 'sim'],
+            ['payload faults', live ? (waiting ? dash : (faults.length ? faults.join(' ') : 'NONE')) : dash,
+              faults.length ? 'fault' : live && !waiting ? 'live' : 'sim'],
             ['solver', d.feasible ? 'WITHIN MARGIN' : 'BEST EFFORT', d.feasible ? 'live' : 'warn'],
             ['radio', live ? st.status.toUpperCase() : 'OFF', live ? 'warn' : 'plain'],
           ]}

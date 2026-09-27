@@ -9,10 +9,10 @@ both mobile platforms, the engineering dossier website, and the shipped packages
 
 | Folder | What is in it | State |
 |---|---|---|
-| [`mobile-android/`](mobile-android/) | Full Expo React Native project including the native `android/` project | **Built.** v2.1.0, gate passing |
+| [`mobile-android/`](mobile-android/) | Full Expo React Native project including the native `android/` project and the local native link module | **Built.** v2.2.0, gate passing |
 | [`mobile-ios/`](mobile-ios/) | The same project including the native `ios/` Xcode project | **Source complete, package not built** — needs macOS |
 | [`website/`](website/) | The engineering dossier, static, no build step | **Complete** |
-| [`releases/`](releases/) | Shipped packages, hashes, signature record, keystore note | **4 Android packages, v2.1.0** |
+| [`releases/`](releases/) | Shipped packages, hashes, signature record, keystore note | **4 Android packages, v2.2.0** |
 
 ---
 
@@ -31,7 +31,8 @@ either finds a complete project rather than half of one.
 |---|---|---|
 | Application source | identical | identical |
 | Native project | `android/`, tracked | `ios/`, tracked |
-| Typecheck, 85 assertions, 33 render tests | passing | passing |
+| Native link module | autolinked | declares `platforms: [android]`, so iOS has Wi-Fi telemetry and not USB or BLE |
+| Typecheck, 106 assertions, 33 render tests | passing | passing |
 | Platform bundle built | yes, inside the APK | yes, 4.4 MB Hermes, verified |
 | Installable package | **yes** — 4 APKs in `releases/` | **no** — requires macOS and Xcode |
 
@@ -48,11 +49,11 @@ form field or a filename-sanitising upload widget without being mistaken for par
 of the version.
 
 ```
-SeaNergy-2.1.0___android.apk               <- install this one
-SeaNergy-2.1.0___android-arm64-v8a.apk
-SeaNergy-2.1.0___android-armeabi-v7a.apk
-SeaNergy-2.1.0___android-x86_64.apk
-SeaNergy-2.1.0___ios.ipa                   <- does not exist yet, and is not faked
+SeaNergy-2.2.0___android.apk               <- install this one
+SeaNergy-2.2.0___android-arm64-v8a.apk
+SeaNergy-2.2.0___android-armeabi-v7a.apk
+SeaNergy-2.2.0___android-x86_64.apk
+SeaNergy-2.2.0___ios.ipa                   <- does not exist yet, and is not faked
 ```
 
 ---
@@ -67,18 +68,28 @@ npm install
 npm run apk
 ```
 
-`npm run apk` will not call Gradle unless `tsc --noEmit`, the 85 physics
-assertions and the 33 render tests all pass first. That gate exists because
+`npm run apk` will not call Gradle unless `tsc --noEmit`, the 106 physics and
+protocol assertions and the 33 render tests all pass first. That gate exists because
 version 2.0.0 shipped and crashed on launch — the harness was written afterwards
 and proved by putting the bug back and watching the suite go red.
 
-## Version 2.1.0, in one line each
+## Version 2.2.0, in one line each
 
-- Physics, solver and screens unchanged from 2.0.1 — the assertions produce
-  identical values
-- iOS target added: native project generated, iOS bundle built and verified
-- `ios.buildNumber` tracks `versionCode`
-- Website chart data is now generated from `src/core` rather than transcribed
+- Two sensors were added to the payload, **pH and depth**, so absorption moved
+  from Thorp to **Francois-Garrison**, which is the model that has a term for
+  each of them
+- **The telemetry link was built.** One NDJSON wire format across USB-C, Wi-Fi
+  and Bluetooth LE, with a local Kotlin native module behind the first and third
+- Wi-Fi falls back from WebSocket to HTTP polling, so the firmware needs no
+  WebSocket library — only `WebServer.h` from the ESP32 core
+- The engine now consumes packets: in telemetry mode the payload's probes are
+  the environment and the pulse it reports is the displayed decision
+- The wire format is now under test; the suite went from 85 assertions to **106**
+- **First release that requests permissions.** USB host, Bluetooth and a network
+  socket. `releases/README.md` lists every one and when it is asked for
+
+Previous release: 2.1.0 added the iOS target. Full history in
+[`releases/BUILDS.md`](releases/BUILDS.md).
 
 Full record: [`releases/BUILDS.md`](releases/BUILDS.md).
 

@@ -1,0 +1,1 @@
+(sym_lib_table (version 7) (lib (name "AUV") (type "KiCad") (uri "${KIPRJMOD}/AUV.kicad_sym") (options "") (descr "Self-contained AUV component symbols")))

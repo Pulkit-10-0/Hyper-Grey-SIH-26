@@ -3,7 +3,7 @@
 The SeaNergy operator console, iOS target. Same application, same physics, same
 twelve screens as [`../mobile-android/`](../mobile-android/).
 
-**Version 2.1.0, build 4. Bundle identifier `in.seanergy.console`.**
+**Version 2.2.0, build 5. Bundle identifier `in.seanergy.console`.**
 
 ---
 
@@ -14,12 +14,35 @@ twelve screens as [`../mobile-android/`](../mobile-android/).
 | iOS source | **Complete.** Same `app/`, `src/`, `assets/`, `__tests__/` as the Android target |
 | Native Xcode project | **Generated and present** in `ios/`. Real project, not a placeholder |
 | iOS JavaScript bundle | **Built and verified** — 4.4 MB Hermes bytecode, `npx expo export --platform ios` |
-| Test gate | **Passing** — 85 physics assertions, 33 render tests, platform-independent |
+| Test gate | **Passing** — 106 physics and protocol assertions, 33 render tests, platform-independent |
 | `.ipa` package | **Not built.** Requires macOS and Xcode. There is no `.ipa` in this folder and none is claimed |
 
 There is no Android project in here wearing an iOS label. If you are looking for
 an installable iOS build, there isn't one, and the reason is in the next section
 rather than buried.
+
+### One difference from the Android target, and it is deliberate
+
+2.2.0 added the telemetry link, and part of it is native code. The module in
+[`modules/seanergy-link/`](modules/seanergy-link/) declares:
+
+```json
+{ "platforms": ["android"] }
+```
+
+so on iOS it does not autolink, and the link reports itself unavailable rather
+than pretending. What that costs and what it does not:
+
+| Transport | Android | iOS |
+|---|---|---|
+| Wi-Fi | works | **works** — a WebSocket and `fetch` are React Native built-ins, no native code needed |
+| USB-C | works | not written. iOS gives an app no equivalent of Android's `UsbManager`; it needs an MFi accessory or ExternalAccessory entitlements |
+| Bluetooth LE | works | not written. CoreBluetooth would do it; the Kotlin half has no Swift counterpart yet |
+
+**Wi-Fi is the transport the iOS build can actually use, and it is the one that
+needs nothing from Apple.** The other two are stated as absent rather than
+stubbed, because a stub that silently fails on a judge's phone is worse than a
+row in this table.
 
 ---
 
@@ -110,7 +133,7 @@ ios/
   SeaNergy.xcodeproj/           Xcode project, generated from app.json
   SeaNergy/
     AppDelegate.swift           Expo/React Native bootstrap
-    Info.plist                  display name, version 2.1.0, build 4
+    Info.plist                  display name, version 2.2.0, build 5
     SeaNergy.entitlements
     SeaNergy-Bridging-Header.h
     SplashScreen.storyboard     splash, cream #F8F5EF over the abyss ground
@@ -130,7 +153,7 @@ subsequent build installs identical pod versions.
 | Setting | Value | Where |
 |---|---|---|
 | Bundle identifier | `in.seanergy.console` | `app.json` → `ios.bundleIdentifier` |
-| Version | 2.1.0 | `app.json` → `version` |
+| Version | 2.2.0 | `app.json` → `version` |
 | Build number | 4 | `app.json` → `ios.buildNumber` |
 | Tablet support | yes | `app.json` → `ios.supportsTablet` |
 | Orientation | portrait | `app.json` → `orientation` |
@@ -149,7 +172,7 @@ The parts of the gate that do not need Xcode run anywhere:
 
 ```
 npm install
-npm run check          # typecheck, 85 physics assertions, 33 render tests
+npm run check          # typecheck, 106 assertions, 33 render tests
 npm run bundle:ios     # compiles the iOS JS bundle, proves the app builds
 ```
 

@@ -23,6 +23,27 @@ from `D:/lab/daa/AUV_Firmware` into a deterministic adaptive-sonar controller.
 - Evidence plan and numerical baselines: `measurements/`
 - Release procedure: `releases/README.md`
 
+## Two firmwares, and which one is which
+
+| | This folder | The bench sketch |
+|---|---|---|
+| Target | ESP-IDF, the flight payload | Arduino, the AUV V3 board that exists today |
+| Source | `src/` | [`../01-hardware/kicad/firmware/ESP32-S3/`](../01-hardware/kicad/firmware/ESP32-S3/) |
+| App link | binary GATT, [`docs/ble-gatt-spec.md`](docs/ble-gatt-spec.md) | NDJSON, [`../07-documentation/api/console-link.md`](../07-documentation/api/console-link.md) |
+| Runs on | the four-layer flight design | [`../01-hardware/`](../01-hardware/) Rev B, 100 x 100 mm |
+
+The bench sketch is the one driving the four OLEDs, the two ADS1115s, the I2S
+audio and the 40 kHz transmitter on the assembled hardware. It lives with the
+board rather than here because it is the board's companion source and is
+versioned against it.
+
+**One change is mandatory on the Rev B PCB**: the TDS and turbidity voltages are
+multiplied by two, because the board divides them by two before ADS1115 #1.
+That is a two-line patch,
+[`main_cpp_sensor_dividers.patch`](../01-hardware/kicad/firmware/main_cpp_sensor_dividers.patch),
+with the original source hashes beside it. Do not compensate a second time
+elsewhere in the sketch.
+
 ## Hardware baseline
 
 The inherited prototype established ESP32-S3 operation with two ADS1115 ADCs,

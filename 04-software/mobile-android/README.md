@@ -2,7 +2,7 @@
 
 The SeaNergy operator console, Android target. Working tree, not an archive.
 
-**Version 2.1.0, versionCode 4.** Built package: [`../releases/`](../releases/).
+**Version 2.2.0, versionCode 5.** Built package: [`../releases/`](../releases/).
 
 ---
 
@@ -12,13 +12,18 @@ An Android app that reads the environment, decides what acoustic pulse to
 transmit and shows why, synthesises and visualises that pulse, compresses the
 returning echo, and reports the power budget.
 
-Everything runs on the device. No server, no pairing, no network call. Fonts are
-bundled in the package rather than fetched, so it opens with the radio off.
+The physics runs on the device. **No server, ever** — the only address this app
+opens is the payload's own, and only when you tell it to. Fonts are bundled in
+the package rather than fetched, so it opens with the radio off, and simulation
+mode still works end to end in aeroplane mode.
+
+As of 2.2.0 it also receives. See [Permissions](#permissions) below: this is the
+first release that asks for anything, and the reason is the telemetry link.
 
 | Layer | What runs |
 |---|---|
-| Environment | Temperature, salinity, turbidity and depth, drifting the way real probes behave |
-| Physics | Mackenzie sound speed, Thorp absorption, an air-absorption fit, frequency-dependent scattering from suspended sediment |
+| Environment | Temperature, salinity, turbidity, depth and **pH** — simulated with realistic drift, or read from the payload's probes |
+| Physics | Mackenzie sound speed, **Francois-Garrison** absorption with its pH and pressure terms, an air-absorption fit, frequency-dependent scattering from suspended sediment |
 | Decision | 468 candidate parameter sets scored against the active sonar equation each tick; the best feasible one wins |
 | Synthesis | Pulse built sample by sample with a phase accumulator, windowed, then FFT'd for the spectrogram |
 | Compression | Real cross-correlation of the echo against the transmitted replica |
@@ -52,11 +57,57 @@ ordering was not programmed; it falls out of scoring the candidates.
 | Mode | What it does |
 |---|---|
 | **Simulation** | The full physics engine runs on the handset against a modelled environment |
-| **Telemetry** | The same screens read the payload over the link |
+| **Telemetry** | The payload's probes become the environment and the pulse it reports becomes the displayed decision |
 
 The mode is on screen at all times and every displayed value carries its
 provenance in its colour. There is no state in which a simulated number can be
 mistaken for a live one.
+
+In telemetry mode the handset stops deciding and starts reporting. Resolution
+and compression gain are recomputed from the pulse the payload says it actually
+transmitted, not from the one this phone would have picked — so if the firmware's
+solver and this one disagree, the screen shows the disagreement rather than
+hiding it.
+
+## The link
+
+One wire format, three transports. The screens never learn which one delivered a
+reading, so adding a transport is a new class and nothing else changes.
+
+| | Transport | When it is the right one |
+|---|---|---|
+| 1 | **USB-C to USB-C** | The demo. No pairing, no network, and the phone powers the payload. |
+| 2 | **Wi-Fi** | The payload is in a tank and the phone is not. Works across a room. |
+| 3 | **Bluetooth LE** | Lowest power, smallest MTU, slowest. For the flight build. |
+
+The format is **newline-delimited JSON**: one object per line, `\n` as the frame
+boundary, no length prefix and no CRC. A line that will not parse is counted on
+Diagnostics and never crashes anything.
+
+Wi-Fi tries a WebSocket first and falls back to polling an HTTP endpoint, which
+means a firmware built on the ESP32 core's own `WebServer.h` needs no WebSocket
+library at all. The operator does not choose; the status line reports which one
+it settled on.
+
+The USB and Bluetooth halves are a local Expo native module in
+[`modules/seanergy-link/`](modules/seanergy-link/) — Kotlin, autolinked, speaking
+CDC-ACM directly with a CP210x branch for boards that use a bridge.
+
+Full specification, written for whoever is holding the firmware:
+[`docs/11-link-protocol.md`](docs/11-link-protocol.md). The exact edits to run an
+ESP32-S3 over Wi-Fi alone: [`docs/12-firmware-wifi.md`](docs/12-firmware-wifi.md).
+
+## Permissions
+
+| Permission | For | Prompted |
+|---|---|---|
+| USB host (feature, `required="false"`) | the payload's native USB port | by Android, on connect |
+| `BLUETOOTH_SCAN`, `BLUETOOTH_CONNECT` | finding and opening the payload over BLE | only on choosing that transport |
+| `ACCESS_FINE_LOCATION`, maxSdk 30 | Android 11 and earlier tie BLE scanning to location | as above, old phones only |
+| `INTERNET`, `ACCESS_NETWORK_STATE` | the socket to the payload's access point | granted at install |
+
+`usb.host` is declared `required="false"` on purpose: a phone without USB host
+support still installs the app and still uses Wi-Fi and Bluetooth.
 
 ## Screens
 
@@ -72,10 +123,10 @@ Twelve, on a scrollable strip.
 | Mission | `app/(tabs)/mission.tsx` | Endurance and coverage |
 | Power | `app/(tabs)/power.tsx` | Per-ping energy, duty cycle, DDS comparison |
 | Spec | `app/(tabs)/spec.tsx` | The link budget, term by term |
-| Diagnostics | `app/(tabs)/diag.tsx` | Self test |
+| Diagnostics | `app/(tabs)/diag.tsx` | Self test, transport state, packet counters, raw decoded record |
 | Log | `app/(tabs)/log.tsx` | Ping history and CSV export |
 | Scenario | `app/scenario.tsx` | Preset environments |
-| Settings | `app/(tabs)/settings.tsx` | Mode, medium |
+| Settings | `app/(tabs)/settings.tsx` | Mode, medium, transport selection and connection |
 
 Plus `app/ping/[id].tsx`, the detail view for a single ping.
 
@@ -94,7 +145,7 @@ npm run apk
 `npm run apk` is **gated**. It runs, in order:
 
 1. `tsc --noEmit` — typecheck, strict
-2. `npm run verify` — 85 physics, DSP and engine assertions under plain node
+2. `npm run verify` — 106 physics, DSP, protocol and engine assertions under plain node
 3. `jest --ci` — 33 render tests, all twelve screens in both modes
 
 and only then invokes Gradle. If any stage fails there is no APK. That gate
@@ -186,9 +237,10 @@ src/
     explain.ts       decision -> English
     power.ts         energy and endurance model
     engine.ts        the runtime that ties it together
-    link.ts          the telemetry transport
+    link.ts          the three transports, one interface
+    protocol.ts      the wire format: NDJSON, framing, reassembly
     useEngine.ts     useSyncExternalStore binding
-    __verify__.ts    85 assertions against published values
+    __verify__.ts    106 assertions against published values
   ui/                design system: tokens, Screen, kit, Slider
   charts/            Skia plots - Plot, Ppi, Spectrogram
   data/scenarios.ts  the operating scenarios
@@ -229,6 +281,8 @@ Against published values, not against itself:
 
 - Mackenzie sound speed at a known (T, S, Z) point
 - Thorp absorption: 34 / 51 / 87 dB per km at 100 / 200 / 400 kHz
+  (kept and still asserted; the solver now runs on Francois-Garrison, which
+  adds the pH and pressure terms the two new probes measure)
 - Range resolution `c/2B` and `c·τ/2`; time-bandwidth product and compression gain
 - Barker-13 peak-to-sidelobe ratio 22.28 dB, every sidelobe magnitude exactly 1
 - Measured window sidelobes against theory: rect −13.4, Hann −31.5,

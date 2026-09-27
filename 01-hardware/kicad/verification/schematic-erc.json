@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-15T23:12:53+0530",
+    "kicad_version": "9.0.7",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/d739f8f3-0c14-5241-bb8b-aa1c63a527ee",
+            "violations": []
+        },
+        {
+            "path": "/Controllers and power interfaces/",
+            "uuid_path": "/d739f8f3-0c14-5241-bb8b-aa1c63a527ee/065f166d-f52a-52db-84c3-afa217fdbcb1",
+            "violations": []
+        },
+        {
+            "path": "/External 5 V distribution/",
+            "uuid_path": "/d739f8f3-0c14-5241-bb8b-aa1c63a527ee/5257dec3-d55d-5da2-9ced-583efa38e2fc",
+            "violations": []
+        },
+        {
+            "path": "/Four OLED buses and temperature sensor/",
+            "uuid_path": "/d739f8f3-0c14-5241-bb8b-aa1c63a527ee/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188",
+            "violations": []
+        },
+        {
+            "path": "/ADS1115 modules and sensor inputs/",
+            "uuid_path": "/d739f8f3-0c14-5241-bb8b-aa1c63a527ee/c57d1d89-6bd0-531c-a33a-41952248c0f1",
+            "violations": []
+        },
+        {
+            "path": "/40 kHz TX and I2S audio interfaces/",
+            "uuid_path": "/d739f8f3-0c14-5241-bb8b-aa1c63a527ee/eb6ced17-3833-5b12-adca-a48247d3a39b",
+            "violations": []
+        },
+        {
+            "path": "/40 kHz receive amplifier/",
+            "uuid_path": "/d739f8f3-0c14-5241-bb8b-aa1c63a527ee/8e3f574c-8d7b-5493-8cf5-137f9753abef",
+            "violations": []
+        }
+    ],
+    "source": "AUV_V3_Combined.kicad_sch"
+}

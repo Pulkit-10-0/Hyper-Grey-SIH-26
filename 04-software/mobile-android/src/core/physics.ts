@@ -87,6 +87,112 @@ export function absorptionDbPerM(medium: Medium, freqHz: number): number {
 }
 
 /* ------------------------------------------------------------------ */
+/* Francois-Garrison: the sensed-water absorption model                */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Francois and Garrison (1982) absorption, dB/km, f in kHz.
+ *
+ * Thorp's expression above is a one-variable fit: frequency in, decibels out,
+ * with temperature, salinity, depth and pH baked in at nominal values. It is
+ * still used as a cross-check, and it is what the published reference figures
+ * in the verification suite are quoted against.
+ *
+ * This form takes the sensed quantities directly, which is what makes the pH
+ * and depth channels worth carrying:
+ *
+ *   boric acid relaxation   scales with pH and salinity, relaxes near 1 kHz
+ *   magnesium sulphate      the dominant term across this payload's band,
+ *                           suppressed by pressure through P2
+ *   pure water viscosity    rises as f^2, suppressed by pressure through P3
+ *
+ * Depth enters as pressure and is the larger of the two new effects: at 220 m
+ * the magnesium sulphate term is reduced by roughly 3 per cent. pH moves the
+ * boric term, which is small above about 10 kHz. Both are reported separately
+ * by `absorptionTermsDbPerKm` so the contribution of each sensor is visible
+ * rather than asserted.
+ */
+export function francoisGarrisonDbPerKm(
+  freqKHz: number,
+  tempC: number,
+  salinityPpt: number,
+  depthM: number,
+  ph: number,
+): number {
+  const t = absorptionTermsDbPerKm(freqKHz, tempC, salinityPpt, depthM, ph);
+  return t.boric + t.magnesium + t.water;
+}
+
+export type AbsorptionTerms = {
+  /** Boric acid relaxation, dB/km. The pH-sensitive term. */
+  boric: number;
+  /** Magnesium sulphate relaxation, dB/km. Dominant in this band. */
+  magnesium: number;
+  /** Pure water viscosity, dB/km. */
+  water: number;
+};
+
+/** The three Francois-Garrison terms, kept separate. */
+export function absorptionTermsDbPerKm(
+  freqKHz: number,
+  tempC: number,
+  salinityPpt: number,
+  depthM: number,
+  ph: number,
+): AbsorptionTerms {
+  const f = Math.max(freqKHz, 0.01);
+  const f2 = f * f;
+  const T = clamp(tempC, -2, 40);
+  const S = clamp(salinityPpt, 0, 45);
+  const D = clamp(depthM, 0, 8000);
+  const pH = clamp(ph, 5, 10);
+
+  // Sound speed used inside the fit; the paper's own simplified expression.
+  const c = 1412 + 3.21 * T + 1.19 * S + 0.0167 * D;
+
+  // Boric acid: the only term that sees pH.
+  const A1 = (8.86 / c) * Math.pow(10, 0.78 * pH - 5);
+  const f1 = 2.8 * Math.sqrt(S / 35) * Math.pow(10, 4 - 1245 / (273 + T));
+  const boric = (A1 * f1 * f2) / (f1 * f1 + f2);
+
+  // Magnesium sulphate: pressure-suppressed through P2.
+  const A2 = ((21.44 * S) / c) * (1 + 0.025 * T);
+  const P2 = 1 - 1.37e-4 * D + 6.2e-9 * D * D;
+  const f2r =
+    (8.17 * Math.pow(10, 8 - 1990 / (273 + T))) / (1 + 0.0018 * (S - 35));
+  const magnesium = (A2 * P2 * f2r * f2) / (f2r * f2r + f2);
+
+  // Pure water viscosity: two temperature branches in the original paper.
+  const A3 =
+    T <= 20
+      ? 4.937e-4 - 2.59e-5 * T + 9.11e-7 * T * T - 1.5e-8 * T * T * T
+      : 3.964e-4 - 1.146e-5 * T + 1.45e-7 * T * T - 6.5e-10 * T * T * T;
+  const P3 = 1 - 3.83e-5 * D + 4.9e-10 * D * D;
+  const water = A3 * P3 * f2;
+
+  return { boric, magnesium, water };
+}
+
+/**
+ * Absorption in dB per metre from the sensed environment.
+ *
+ * Water uses Francois-Garrison with the live temperature, salinity, depth and
+ * pH. Air keeps the fitted power law, which has no equivalent sensed form here.
+ */
+export function sensedAbsorptionDbPerM(
+  medium: Medium,
+  freqHz: number,
+  tempC: number,
+  salinityPpt: number,
+  depthM: number,
+  ph: number,
+): number {
+  const kHz = freqHz / 1000;
+  if (medium === 'air') return airAbsorptionDbPerM(kHz);
+  return francoisGarrisonDbPerKm(kHz, tempC, salinityPpt, depthM, ph) / 1000;
+}
+
+/* ------------------------------------------------------------------ */
 /* Sonar equation                                                      */
 /* ------------------------------------------------------------------ */
 

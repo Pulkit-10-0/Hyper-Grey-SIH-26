@@ -1,0 +1,29 @@
+{
+  "revision": "B",
+  "pdf_file": "AUV_V3_Combined_Schematic.pdf",
+  "pdf_sha256": "df5f33139eb763621b838580552e6d4ee209f8f0ac6315657e0bc27006f1a259",
+  "page_count": 7,
+  "revision_B_on_all_pages": true,
+  "sequential_sheet_numbers": true,
+  "pages_visually_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "visual_review": "All seven rendered pages inspected. Labels, symbols, conventional RX/TX wiring, title blocks and page boundaries remain legible without clipping or overlap.",
+  "erc_violations": 0,
+  "schematic_contract": {
+    "component_count": 91,
+    "net_count": 50,
+    "pin_assignments_checked": 233,
+    "nc_assignments_checked": 3,
+    "footprints_checked": 91,
+    "matches_contract": true,
+    "errors": []
+  },
+  "pcb_validation": "Final compact PCB checks completed separately: zero ERC/DRC violations, zero unconnected items and zero schematic parity differences; see final-verification.json and pcb-drc.json."
+}

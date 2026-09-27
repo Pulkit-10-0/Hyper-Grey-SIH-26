@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "revision_A_manifest_sha256": "021248d0fb885b3ad74bc8147eb2c9f2fbd211d7086d77cdbe41a668b345e0f4",
+  "revision_B_manifest_sha256": "738cc86ffc030db0c8f5042186b0be50594c3a76ecbb301919a8cb6ae85286b1",
+  "unchanged_component_fields": [
+    "ref",
+    "value",
+    "footprint",
+    "pins",
+    "pin_names",
+    "fit"
+  ],
+  "components_compared": 91,
+  "circuit_changes": false,
+  "previous_outline_mm": [
+    200,
+    150
+  ],
+  "new_outline_mm": [
+    100,
+    100
+  ],
+  "copper_layers": 2,
+  "area_reduction_percent": 66.67
+}

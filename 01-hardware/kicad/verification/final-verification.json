@@ -1,0 +1,169 @@
+{
+  "status": "PASS",
+  "revision": "B",
+  "board_outline_mm": [
+    100,
+    100
+  ],
+  "copper_layers": 2,
+  "kicad_version": "9.0.7",
+  "footprints": 91,
+  "physical_pin_assignments_matched": 236,
+  "connected_pin_assignments": 233,
+  "explicit_no_connect_pins": 3,
+  "tracks": 483,
+  "vias": 6,
+  "ground_planes": 2,
+  "model_references_resolved": 56,
+  "erc_violations": 0,
+  "drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "source_firmware_unchanged": true,
+  "trace_widths_mm": {
+    "ADC_INPUT_ENABLE": [
+      0.3
+    ],
+    "AMP_SD": [
+      0.3
+    ],
+    "EXT5V": [
+      1.0
+    ],
+    "EXT5V_IN": [
+      1.0
+    ],
+    "GND": [
+      0.3,
+      1.0
+    ],
+    "I2C1_SCL": [
+      0.3
+    ],
+    "I2C1_SDA": [
+      0.3
+    ],
+    "I2C2_SCL": [
+      0.3
+    ],
+    "I2C2_SDA": [
+      0.3
+    ],
+    "I2C3_SCL": [
+      0.3
+    ],
+    "I2C3_SDA": [
+      0.3
+    ],
+    "I2C4_SCL": [
+      0.3
+    ],
+    "I2C4_SDA": [
+      0.3
+    ],
+    "I2S_BCLK": [
+      0.3
+    ],
+    "I2S_DIN": [
+      0.3
+    ],
+    "I2S_LRC": [
+      0.3
+    ],
+    "MAIN3V3": [
+      0.3,
+      0.6
+    ],
+    "POT_TDS": [
+      0.3
+    ],
+    "POT_TEMP": [
+      0.3
+    ],
+    "POT_TURB": [
+      0.3
+    ],
+    "RX3V3": [
+      0.6
+    ],
+    "RX_ADC": [
+      0.3
+    ],
+    "RX_FB": [
+      0.3
+    ],
+    "RX_IN": [
+      0.3
+    ],
+    "RX_OUT": [
+      0.3
+    ],
+    "RX_RAW": [
+      0.3
+    ],
+    "RX_VBIAS": [
+      0.3
+    ],
+    "RX_VREF": [
+      0.3
+    ],
+    "SPK_N": [
+      0.8
+    ],
+    "SPK_P": [
+      0.8
+    ],
+    "TDS_ADC": [
+      0.3
+    ],
+    "TDS_DIV": [
+      0.3
+    ],
+    "TDS_RAW": [
+      0.3
+    ],
+    "TDS_SWITCH": [
+      0.3
+    ],
+    "TDS_VCC": [
+      0.6
+    ],
+    "TEMP_DATA": [
+      0.3
+    ],
+    "TURB_ADC": [
+      0.3
+    ],
+    "TURB_DIV": [
+      0.3
+    ],
+    "TURB_RAW": [
+      0.3
+    ],
+    "TURB_SWITCH": [
+      0.3
+    ],
+    "TURB_VCC": [
+      0.6
+    ],
+    "TX_DRAIN": [
+      0.3
+    ],
+    "TX_DRIVER_IN": [
+      0.3
+    ],
+    "TX_DRIVER_OUT": [
+      0.3
+    ],
+    "TX_GATE": [
+      0.3
+    ],
+    "TX_LEVEL_GATE": [
+      0.3
+    ],
+    "TX_PWM": [
+      0.3
+    ]
+  },
+  "physical_testing": "Not performed; unmanufactured Rev B compact prototype"
+}

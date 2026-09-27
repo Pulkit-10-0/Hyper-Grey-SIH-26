@@ -1,13 +1,37 @@
-SEANERGY PCB FABRICATION ORDER
-STATUS: HOLD - NOT ORDERED
-REVISION: A-PRELIMINARY
-DATE: 2026-09-07
+AUV V3 COMPACT REVISION B - PCB FABRICATION ORDER
+STATUS: READY TO ORDER - NOT YET ORDERED
+REVISION: B (compact)
+DATE: 2026-09-20
 VENDOR TARGET: JLCPCB or qualified Indian equivalent
-BOARD: 100 x 80 mm, 4 layers, FR-4 Tg >=150 C, 1.6 mm, 1 oz copper
-RULE: 0.15/0.15 mm minimum trace/space, 0.30 mm drill / 0.60 mm via
-FINISH: ENIG target
-MASK / SILK: green / white
+
+BOARD:   100.00 x 100.00 mm, 2 layers, FR-4, 1.6 mm, 1 oz copper each side
+RULE:    0.25 mm design clearance, 0.30 mm nominal signal trace
+VIA:     0.80 mm copper / 0.40 mm drill
+FINISH:  lead-free HASL or ENIG
+MASK:    green, both sides
+SILK:    white, functional labels on front
+HOLES:   four 3.20 mm non-plated mounting holes at (4,4) (96,4) (96,96) (4,96) mm
+TEST:    request the fabricator's standard bare-board net test
 QUANTITY: 5
-COST: INR 3,500-5,500 landed planning range for five boards; live quote required
-HOLD REASON: footprints, placement, routing, DRC, Gerbers and drill exports are not complete
-RELEASE AUTHORITY: hardware lead plus independent Gerber review
+
+SEND:    gerbers/AUV_V3_RevB_Compact_Gerbers.zip
+         Do not send the loose files beside it; they are the same exports,
+         unzipped for inspection. Do not send anything from
+         ../rev-a-preliminary/, which is a different board.
+
+RELEASE GATE: met.
+  ERC                      0 violations
+  DRC                      0 violations
+  Unconnected items        0
+  Schematic/PCB parity     0 differences
+  DRC exclusions           none
+  Exports                  14 files, generated from the checked board
+  Hashes                   recorded in ../release-sha256.json
+
+QUOTE NOTE: the cut path is 100.00 x 100.00 mm. KiCad's job summary may report
+100.05 x 100.05 mm because its bounding box includes the 0.05 mm outline
+stroke. Confirm the fabricator quotes from the outline centreline before
+accepting a price, or a 100 x 100 service tier becomes the next one up.
+
+RELEASE AUTHORITY: hardware lead, plus an independent Gerber review in a viewer
+that is not KiCad.

@@ -1,0 +1,20 @@
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -276,7 +276,7 @@
+         ads1.readADC_SingleEnded(TDS_ADC_CHANNEL);
+ 
+     tdsVoltage =
+-        ads1.computeVolts(tdsRaw);
++        2.0f * ads1.computeVolts(tdsRaw); // Rev A PCB: undo the 10k/10k input divider.
+ 
+ 
+     // --------------------------------------------------------
+@@ -287,7 +287,7 @@
+         ads1.readADC_SingleEnded(TURBIDITY_ADC_CHANNEL);
+ 
+     turbidityVoltage =
+-        ads1.computeVolts(turbidityRaw);
++        2.0f * ads1.computeVolts(turbidityRaw); // Rev A PCB: undo the 10k/10k input divider.
+ }
+ 
+ 

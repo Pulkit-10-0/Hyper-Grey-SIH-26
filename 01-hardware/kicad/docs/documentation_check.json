@@ -1,0 +1,10 @@
+{
+  "components_documented": 91,
+  "connector_and_selector_rows": 90,
+  "component_pin_rows": 236,
+  "all_manifest_refs_documented": true,
+  "firmware_changes": 2,
+  "source_original_unchanged": true,
+  "design_revision": "B",
+  "design_manifest_sha256": "738cc86ffc030db0c8f5042186b0be50594c3a76ecbb301919a8cb6ae85286b1"
+}

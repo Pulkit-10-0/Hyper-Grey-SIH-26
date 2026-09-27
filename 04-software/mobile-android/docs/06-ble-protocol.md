@@ -1,4 +1,20 @@
-# 06 — BLE protocol
+# 06 — BLE protocol (superseded design note)
+
+> **Superseded by [11-link-protocol.md](11-link-protocol.md).** This was the
+> plan: a custom GATT service with its own UUIDs, frozen early so firmware and
+> app could be built in parallel.
+>
+> What shipped instead is one wire format, newline-delimited JSON, carried over
+> USB-C, Wi-Fi **and** BLE, with Bluetooth using the Nordic UART Service rather
+> than a bespoke profile. The reason is in 11: a bespoke GATT profile is three
+> implementations of framing instead of one, and it makes Bluetooth the only
+> transport, on the phone where Bluetooth is the slowest of the three.
+>
+> The custom binary protocol was not abandoned as an idea — it is the right
+> answer for a power-constrained flight payload, and it is specified in
+> `02-firmware/docs/ble-gatt-spec.md` in the submission repository. This
+> document is kept because the reasoning below still explains why the mission
+> mode powers the radio down, which is unchanged.
 
 Freeze this spec early. Once it exists, firmware and app can be built in parallel by
 different people and meet in the middle without a rewrite.

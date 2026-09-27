@@ -32,6 +32,12 @@ android/local.properties
 android/app/src/main/assets/index.android.bundle
 .kotlin/
 
+# The local native module is a real Gradle library, so it produces build output
+# of its own in a place the anchored rules above do not reach.
+modules/*/android/build/
+modules/*/android/.gradle/
+modules/*/ios/Pods/
+
 # ---- signing: never commit a key -------------------------------------------
 # android/app/seanergy-release.keystore is deliberately absent from this tree.
 # See ../releases/keystore-note.md for where it lives and why.

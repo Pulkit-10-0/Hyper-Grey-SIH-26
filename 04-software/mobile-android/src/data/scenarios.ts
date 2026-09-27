@@ -15,6 +15,8 @@ export type Scenario = {
   salinityPpt: number;
   turbidityNtu: number;
   depthM: number;
+  /** pH units, as a probe would report for this water */
+  ph: number;
 };
 
 export const SCENARIOS: Scenario[] = [
@@ -28,6 +30,7 @@ export const SCENARIOS: Scenario[] = [
     salinityPpt: 34.8,
     turbidityNtu: 12,
     depthM: 8,
+    ph: 8.2,
   },
   {
     id: 'coastal',
@@ -39,6 +42,7 @@ export const SCENARIOS: Scenario[] = [
     salinityPpt: 33.1,
     turbidityNtu: 180,
     depthM: 25,
+    ph: 8.05,
   },
   {
     id: 'estuary',
@@ -50,6 +54,7 @@ export const SCENARIOS: Scenario[] = [
     salinityPpt: 12.4,
     turbidityNtu: 740,
     depthM: 6,
+    ph: 7.6,
   },
   {
     id: 'deep',
@@ -61,6 +66,7 @@ export const SCENARIOS: Scenario[] = [
     salinityPpt: 34.9,
     turbidityNtu: 5,
     depthM: 220,
+    ph: 7.9,
   },
 ];
 

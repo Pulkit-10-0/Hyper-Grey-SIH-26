@@ -1,6 +1,30 @@
-SEANERGY REV A DRC REPORT
-STATUS: NOT RUN
-DATE: 2026-09-07
-REASON: KiCad CLI is unavailable and the preliminary board contains only outline and documentation text, not footprints or routing.
-CLAIM: No DRC-clean claim is made.
-REQUIRED BEFORE RELEASE: complete board, run DRC with zero unwaived violations, archive report and inspect Gerbers in an independent viewer.
+AUV V3 COMPACT REVISION B - DESIGN RULES CHECK
+STATUS: PASS
+TOOL: KiCad 9.0.7
+DATE: 2026-09-15T23:21:00+0530
+SOURCE: AUV_V3_Combined.kicad_pcb
+
+VIOLATIONS:              0   (all severities, all track errors)
+UNCONNECTED ITEMS:       0
+SCHEMATIC PARITY ISSUES: 0
+EXCLUSIONS:              none. No violation was excluded or downgraded.
+
+Board as checked:
+  Outline              100.00 x 100.00 mm
+  Copper layers        2
+  Footprints           91
+  Physical pins        236 matched against the schematic netlist
+  Connected pins       233
+  Explicit no-connect  3
+  Track segments       483
+  Vias                 6
+  Ground-plane zones   2
+  3D model references  56, all resolved to packaged local files
+
+CLAIM: The board passes DRC clean and agrees with the schematic. That is a
+statement about geometric clearance and netlist consistency. It is not a
+measurement. No board has been fabricated, assembled or tested.
+
+Machine-readable original: drc-report.json
+Fabrication package exported from this checked board: gerbers/ and drill/
+Export hashes: ../release-sha256.json

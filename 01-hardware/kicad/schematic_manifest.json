@@ -1,0 +1,746 @@
+{
+  "root": "AUV_V3_Combined.kicad_sch",
+  "sheets": [
+    {
+      "id": "controllers",
+      "file": "controllers.kicad_sch",
+      "uuid": "065f166d-f52a-52db-84c3-afa217fdbcb1",
+      "paper": "A3",
+      "components": 9,
+      "page": 2
+    },
+    {
+      "id": "power",
+      "file": "power.kicad_sch",
+      "uuid": "5257dec3-d55d-5da2-9ced-583efa38e2fc",
+      "paper": "A3",
+      "components": 6,
+      "page": 3
+    },
+    {
+      "id": "displays",
+      "file": "displays.kicad_sch",
+      "uuid": "74ec0a69-1f3c-5cee-bc79-a2dfddc7f188",
+      "paper": "A3",
+      "components": 14,
+      "page": 4
+    },
+    {
+      "id": "sensors",
+      "file": "sensors.kicad_sch",
+      "uuid": "c57d1d89-6bd0-531c-a33a-41952248c0f1",
+      "paper": "A2",
+      "components": 24,
+      "page": 5
+    },
+    {
+      "id": "transmitter",
+      "file": "transmitter.kicad_sch",
+      "uuid": "eb6ced17-3833-5b12-adca-a48247d3a39b",
+      "paper": "A3",
+      "components": 20,
+      "page": 6
+    },
+    {
+      "id": "receiver",
+      "file": "receiver.kicad_sch",
+      "uuid": "8e3f574c-8d7b-5493-8cf5-137f9753abef",
+      "paper": "A3",
+      "components": 18,
+      "page": 7
+    }
+  ],
+  "layout": [
+    {
+      "ref": "J1",
+      "unit": 1,
+      "sheet": "controllers",
+      "x": 83.82000000000001,
+      "y": 77.47
+    },
+    {
+      "ref": "J2",
+      "unit": 1,
+      "sheet": "controllers",
+      "x": 209.55,
+      "y": 77.47
+    },
+    {
+      "ref": "C3",
+      "unit": 1,
+      "sheet": "controllers",
+      "x": 335.28000000000003,
+      "y": 69.85
+    },
+    {
+      "ref": "C4",
+      "unit": 1,
+      "sheet": "controllers",
+      "x": 83.82000000000001,
+      "y": 111.76
+    },
+    {
+      "ref": "TP2",
+      "unit": 1,
+      "sheet": "controllers",
+      "x": 209.55,
+      "y": 110.49
+    },
+    {
+      "ref": "H1",
+      "unit": 1,
+      "sheet": "controllers",
+      "x": 335.28000000000003,
+      "y": 110.49
+    },
+    {
+      "ref": "H2",
+      "unit": 1,
+      "sheet": "controllers",
+      "x": 83.82000000000001,
+      "y": 137.16
+    },
+    {
+      "ref": "H3",
+      "unit": 1,
+      "sheet": "controllers",
+      "x": 209.55,
+      "y": 137.16
+    },
+    {
+      "ref": "H4",
+      "unit": 1,
+      "sheet": "controllers",
+      "x": 335.28000000000003,
+      "y": 137.16
+    },
+    {
+      "ref": "J4",
+      "unit": 1,
+      "sheet": "power",
+      "x": 83.82000000000001,
+      "y": 72.39
+    },
+    {
+      "ref": "F1",
+      "unit": 1,
+      "sheet": "power",
+      "x": 209.55,
+      "y": 69.85
+    },
+    {
+      "ref": "C1",
+      "unit": 1,
+      "sheet": "power",
+      "x": 335.28000000000003,
+      "y": 69.85
+    },
+    {
+      "ref": "C2",
+      "unit": 1,
+      "sheet": "power",
+      "x": 83.82000000000001,
+      "y": 101.6
+    },
+    {
+      "ref": "TP1",
+      "unit": 1,
+      "sheet": "power",
+      "x": 209.55,
+      "y": 100.33
+    },
+    {
+      "ref": "TP3",
+      "unit": 1,
+      "sheet": "power",
+      "x": 335.28000000000003,
+      "y": 100.33
+    },
+    {
+      "ref": "J5",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 83.82000000000001,
+      "y": 72.39
+    },
+    {
+      "ref": "R1",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 209.55,
+      "y": 69.85
+    },
+    {
+      "ref": "R2",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 335.28000000000003,
+      "y": 69.85
+    },
+    {
+      "ref": "J6",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 83.82000000000001,
+      "y": 104.14
+    },
+    {
+      "ref": "R3",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 209.55,
+      "y": 101.6
+    },
+    {
+      "ref": "R4",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 335.28000000000003,
+      "y": 101.6
+    },
+    {
+      "ref": "J7",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 83.82000000000001,
+      "y": 135.89000000000001
+    },
+    {
+      "ref": "R5",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 209.55,
+      "y": 133.35
+    },
+    {
+      "ref": "R6",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 335.28000000000003,
+      "y": 133.35
+    },
+    {
+      "ref": "J8",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 83.82000000000001,
+      "y": 167.64000000000001
+    },
+    {
+      "ref": "R7",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 209.55,
+      "y": 165.1
+    },
+    {
+      "ref": "R8",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 335.28000000000003,
+      "y": 165.1
+    },
+    {
+      "ref": "J9",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 83.82000000000001,
+      "y": 199.39000000000001
+    },
+    {
+      "ref": "R9",
+      "unit": 1,
+      "sheet": "displays",
+      "x": 209.55,
+      "y": 196.85
+    },
+    {
+      "ref": "J10",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 83.82000000000001,
+      "y": 76.2
+    },
+    {
+      "ref": "J11",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 209.55,
+      "y": 77.47
+    },
+    {
+      "ref": "C5",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 335.28000000000003,
+      "y": 69.85
+    },
+    {
+      "ref": "C6",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 83.82000000000001,
+      "y": 111.76
+    },
+    {
+      "ref": "J12",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 209.55,
+      "y": 114.3
+    },
+    {
+      "ref": "J13",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 335.28000000000003,
+      "y": 114.3
+    },
+    {
+      "ref": "J14",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 83.82000000000001,
+      "y": 146.05
+    },
+    {
+      "ref": "J15",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 209.55,
+      "y": 146.05
+    },
+    {
+      "ref": "R10",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 335.28000000000003,
+      "y": 143.51
+    },
+    {
+      "ref": "R11",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 83.82000000000001,
+      "y": 175.26
+    },
+    {
+      "ref": "C7",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 209.55,
+      "y": 175.26
+    },
+    {
+      "ref": "R12",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 335.28000000000003,
+      "y": 175.26
+    },
+    {
+      "ref": "R13",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 83.82000000000001,
+      "y": 201.93
+    },
+    {
+      "ref": "C8",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 209.55,
+      "y": 201.93
+    },
+    {
+      "ref": "U3",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 335.28000000000003,
+      "y": 208.28
+    },
+    {
+      "ref": "R28",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 83.82000000000001,
+      "y": 241.3
+    },
+    {
+      "ref": "R29",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 209.55,
+      "y": 241.3
+    },
+    {
+      "ref": "C17",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 335.28000000000003,
+      "y": 241.3
+    },
+    {
+      "ref": "U4",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 83.82000000000001,
+      "y": 270.51
+    },
+    {
+      "ref": "C18",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 209.55,
+      "y": 267.97
+    },
+    {
+      "ref": "R26",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 335.28000000000003,
+      "y": 267.97
+    },
+    {
+      "ref": "J16",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 83.82000000000001,
+      "y": 302.26
+    },
+    {
+      "ref": "J17",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 209.55,
+      "y": 302.26
+    },
+    {
+      "ref": "J18",
+      "unit": 1,
+      "sheet": "sensors",
+      "x": 335.28000000000003,
+      "y": 302.26
+    },
+    {
+      "ref": "R15",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 62.230000000000004,
+      "y": 85.09,
+      "angle": 0
+    },
+    {
+      "ref": "Q2",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 120.65,
+      "y": 85.09,
+      "angle": 0
+    },
+    {
+      "ref": "R16",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 91.44,
+      "y": 111.76,
+      "angle": 270
+    },
+    {
+      "ref": "R27",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 158.75,
+      "y": 58.42,
+      "angle": 270
+    },
+    {
+      "ref": "U2",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 203.2,
+      "y": 81.28,
+      "angle": 0
+    },
+    {
+      "ref": "R17",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 262.89,
+      "y": 82.55,
+      "angle": 0
+    },
+    {
+      "ref": "R18",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 288.29,
+      "y": 113.03,
+      "angle": 270
+    },
+    {
+      "ref": "Q1",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 328.93,
+      "y": 82.55,
+      "angle": 0
+    },
+    {
+      "ref": "J21",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 363.22,
+      "y": 60.96,
+      "angle": 0
+    },
+    {
+      "ref": "R19",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 391.16,
+      "y": 63.5,
+      "angle": 270
+    },
+    {
+      "ref": "C11",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 62.230000000000004,
+      "y": 172.72,
+      "angle": 0
+    },
+    {
+      "ref": "C12",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 133.35,
+      "y": 172.72,
+      "angle": 0
+    },
+    {
+      "ref": "TP4",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 215.9,
+      "y": 172.72,
+      "angle": 0
+    },
+    {
+      "ref": "TP5",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 292.1,
+      "y": 172.72,
+      "angle": 0
+    },
+    {
+      "ref": "TP6",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 368.3,
+      "y": 172.72,
+      "angle": 0
+    },
+    {
+      "ref": "J19",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 66.04,
+      "y": 228.6,
+      "angle": 0
+    },
+    {
+      "ref": "R14",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 165.1,
+      "y": 215.9,
+      "angle": 0
+    },
+    {
+      "ref": "J20",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 254.0,
+      "y": 215.9,
+      "angle": 0
+    },
+    {
+      "ref": "C9",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 165.1,
+      "y": 241.3,
+      "angle": 0
+    },
+    {
+      "ref": "C10",
+      "unit": 1,
+      "sheet": "transmitter",
+      "x": 254.0,
+      "y": 241.3,
+      "angle": 0
+    },
+    {
+      "ref": "U1",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 165.1,
+      "y": 204.47,
+      "angle": 0
+    },
+    {
+      "ref": "J22",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 35.56,
+      "y": 81.28,
+      "angle": 0
+    },
+    {
+      "ref": "C14",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 91.44,
+      "y": 80.01,
+      "angle": 0
+    },
+    {
+      "ref": "U1",
+      "unit": 2,
+      "sheet": "receiver",
+      "x": 203.2,
+      "y": 82.55,
+      "angle": 0
+    },
+    {
+      "ref": "R22",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 151.13,
+      "y": 107.95,
+      "angle": 270
+    },
+    {
+      "ref": "R24",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 220.98,
+      "y": 129.54,
+      "angle": 180
+    },
+    {
+      "ref": "R23",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 181.61,
+      "y": 148.59,
+      "angle": 270
+    },
+    {
+      "ref": "R25",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 304.8,
+      "y": 82.55,
+      "angle": 0
+    },
+    {
+      "ref": "J3",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 365.76,
+      "y": 80.01,
+      "angle": 0
+    },
+    {
+      "ref": "R20",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 60.96,
+      "y": 194.31,
+      "angle": 270
+    },
+    {
+      "ref": "R21",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 60.96,
+      "y": 222.25,
+      "angle": 270
+    },
+    {
+      "ref": "C13",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 105.41,
+      "y": 222.25,
+      "angle": 270
+    },
+    {
+      "ref": "U1",
+      "unit": 3,
+      "sheet": "receiver",
+      "x": 295.91,
+      "y": 149.86,
+      "angle": 0
+    },
+    {
+      "ref": "C15",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 360.68,
+      "y": 147.32,
+      "angle": 0
+    },
+    {
+      "ref": "C16",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 360.68,
+      "y": 175.26,
+      "angle": 0
+    },
+    {
+      "ref": "TP7",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 265.43,
+      "y": 215.9,
+      "angle": 0
+    },
+    {
+      "ref": "TP8",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 321.31,
+      "y": 215.9,
+      "angle": 0
+    },
+    {
+      "ref": "TP9",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 377.19,
+      "y": 215.9,
+      "angle": 0
+    },
+    {
+      "ref": "TP10",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 265.43,
+      "y": 241.3,
+      "angle": 0
+    },
+    {
+      "ref": "TP11",
+      "unit": 1,
+      "sheet": "receiver",
+      "x": 321.31,
+      "y": 241.3,
+      "angle": 0
+    }
+  ]
+}

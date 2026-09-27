@@ -1,7 +1,15 @@
 import React from 'react';
 import { Medium } from '../../src/core/physics';
 import { Source } from '../../src/core/engine';
-import { link } from '../../src/core/link';
+import {
+  BLE_NAME_PREFIX,
+  link,
+  PROTOCOL_LABEL,
+  TRANSPORTS,
+  USB_DEFAULT_BAUD,
+  WIFI_DEFAULT_PORT,
+  type TransportKind,
+} from '../../src/core/link';
 import { engine, shallowEqual, useEngine } from '../../src/core/useEngine';
 import { useLink } from '../../src/core/useLink';
 import { Action, Panel, Rows, Segmented, Slider, Tx } from '../../src/ui/kit';
@@ -17,6 +25,39 @@ export default function SettingsScreen() {
   const interval = useEngine((s) => s.pingIntervalS);
   const correction = useEngine((s) => s.noiseCorrectionDb);
   const st = useLink();
+  const transport = link.kind();
+  const stats = link.stats();
+
+  // Each transport answers a different question, so the rows differ.
+  const transportRows: [string, string, 'plain'][] =
+    transport === 'usb'
+      ? [
+          ['port', 'native USB, CDC-ACM', 'plain'],
+          ['baud', `${(USB_DEFAULT_BAUD / 1000).toFixed(0)}k`, 'plain'],
+          ['cable', 'Type-C to Type-C, data', 'plain'],
+          ['format', PROTOCOL_LABEL, 'plain'],
+        ]
+      : transport === 'wifi'
+        ? [
+            ['access point', `${BLE_NAME_PREFIX}xxxx`, 'plain'],
+            ['address', `ws://${link.host()}:${WIFI_DEFAULT_PORT}`, 'plain'],
+            ['format', PROTOCOL_LABEL, 'plain'],
+          ]
+        : [
+            ['name prefix', `${BLE_NAME_PREFIX}xxxx`, 'plain'],
+            ['profile', 'Nordic UART Service', 'plain'],
+            ['format', PROTOCOL_LABEL, 'plain'],
+          ];
+
+  const found: { id: string; label: string }[] =
+    transport === 'usb'
+      ? link.usbDevices().map((d) => ({ id: String(d.id), label: d.kind }))
+      : transport === 'ble'
+        ? link.bleDevices().map((d) => ({
+            id: d.address,
+            label: `${d.name}  ${d.rssi} dBm`,
+          }))
+        : [];
 
   return (
     <Screen title="Settings" subtitle="Configuration">
@@ -33,16 +74,48 @@ export default function SettingsScreen() {
         <Rows
           data={[
             ['current', live ? 'TELEMETRY' : 'SIMULATION', live ? 'live' : 'sim'],
-            ['transport', st.name, 'plain'],
             ['status', st.status.toUpperCase(), st.status === 'up' ? 'live' : 'fault'],
+            ['detail', st.detail, 'plain'],
           ]}
         />
-        {live ? (
-          <Action
-            label={st.status === 'scanning' ? 'scanning' : 'scan'}
-            busy={st.status === 'scanning'}
-            onPress={() => link.scan()}
-          />
+      </Panel>
+
+      <Panel label="Transport" subtitle="how the console reaches the payload">
+        <Segmented<TransportKind>
+          options={TRANSPORTS.map((t) => ({ value: t.kind, label: t.label }))}
+          value={transport}
+          onChange={(k) => link.setKind(k)}
+          tone={st.status === 'up' ? 'live' : 'sim'}
+        />
+        <Rows data={transportRows} />
+        <Action
+          label={
+            st.status === 'up'
+              ? 'disconnect'
+              : st.status === 'scanning'
+                ? 'scanning'
+                : transport === 'wifi'
+                  ? 'connect'
+                  : 'scan'
+          }
+          busy={st.status === 'scanning' || st.status === 'connecting'}
+          tone={st.status === 'up' ? 'fault' : 'live'}
+          onPress={() => (st.status === 'up' ? link.disconnect() : link.scan())}
+        />
+        {found.length > 0 && st.status !== 'up' ? (
+          <>
+            <Tx style={type.tab} color={c.dim}>
+              FOUND
+            </Tx>
+            {found.map((d) => (
+              <Action
+                key={d.id}
+                label={d.label}
+                tone="sim"
+                onPress={() => link.open(d.id)}
+              />
+            ))}
+          </>
         ) : null}
       </Panel>
 
@@ -100,9 +173,10 @@ export default function SettingsScreen() {
       <Panel label="About">
         <Rows
           data={[
-            ['build', 'SEANERGY 2.0.0', 'plain'],
+            ['build', 'SEANERGY 2.2.0', 'plain'],
             ['ps', 'SIH26058 · MoES / NIOT', 'plain'],
-            ['packet', 'FIXED LAYOUT', 'plain'],
+            ['protocol', PROTOCOL_LABEL, 'plain'],
+            ['packets seen', `${stats.packets}`, 'plain'],
             ['units', 'METRIC', 'plain'],
           ]}
         />

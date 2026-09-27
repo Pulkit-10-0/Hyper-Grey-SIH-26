@@ -1,0 +1,3123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/pulkit/.codex/visualizations/2026/09/14/01a0a0b6-686a-7831-a9b3-57166532e5bc/auv-v3-kicad-compact/AUV_V3_Combined.kicad_sch</source>
+    <date>2026-09-15T23:12:51+0530</date>
+    <tool>Eeschema 9.0.7</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>AUV V3 — design overview</title>
+        <company>AUV V3 — module carrier</company>
+        <rev>B</rev>
+        <date>2026-09-15</date>
+        <source>AUV_V3_Combined.kicad_sch</source>
+        <comment number="1" value="Functional solder pads: follow pad labels, not module header positions."/>
+        <comment number="2" value="Generated from design.json; all symbol geometry is embedded."/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Controllers and power interfaces/" tstamps="/065f166d-f52a-52db-84c3-afa217fdbcb1/">
+      <title_block>
+        <title>Controllers and power interfaces</title>
+        <company>AUV V3 — module carrier</company>
+        <rev>B</rev>
+        <date>2026-09-15</date>
+        <source>controllers.kicad_sch</source>
+        <comment number="1" value="Functional solder pads: follow pad labels, not module header positions."/>
+        <comment number="2" value="Generated from design.json; all symbol geometry is embedded."/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/External 5 V distribution/" tstamps="/5257dec3-d55d-5da2-9ced-583efa38e2fc/">
+      <title_block>
+        <title>External 5 V distribution</title>
+        <company>AUV V3 — module carrier</company>
+        <rev>B</rev>
+        <date>2026-09-15</date>
+        <source>power.kicad_sch</source>
+        <comment number="1" value="Functional solder pads: follow pad labels, not module header positions."/>
+        <comment number="2" value="Generated from design.json; all symbol geometry is embedded."/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/">
+      <title_block>
+        <title>Four OLED buses and temperature sensor</title>
+        <company>AUV V3 — module carrier</company>
+        <rev>B</rev>
+        <date>2026-09-15</date>
+        <source>displays.kicad_sch</source>
+        <comment number="1" value="Functional solder pads: follow pad labels, not module header positions."/>
+        <comment number="2" value="Generated from design.json; all symbol geometry is embedded."/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/">
+      <title_block>
+        <title>ADS1115 modules and sensor inputs</title>
+        <company>AUV V3 — module carrier</company>
+        <rev>B</rev>
+        <date>2026-09-15</date>
+        <source>sensors.kicad_sch</source>
+        <comment number="1" value="Functional solder pads: follow pad labels, not module header positions."/>
+        <comment number="2" value="Generated from design.json; all symbol geometry is embedded."/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="6" name="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/">
+      <title_block>
+        <title>40 kHz TX and I2S audio interfaces</title>
+        <company>AUV V3 — module carrier</company>
+        <rev>B</rev>
+        <date>2026-09-15</date>
+        <source>transmitter.kicad_sch</source>
+        <comment number="1" value="Functional solder pads: follow pad labels, not module header positions."/>
+        <comment number="2" value="Generated from design.json; all symbol geometry is embedded."/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="7" name="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/">
+      <title_block>
+        <title>40 kHz receive amplifier</title>
+        <company>AUV V3 — module carrier</company>
+        <rev>B</rev>
+        <date>2026-09-15</date>
+        <source>receiver.kicad_sch</source>
+        <comment number="1" value="Functional solder pads: follow pad labels, not module header positions."/>
+        <comment number="2" value="Generated from design.json; all symbol geometry is embedded."/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C3">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C3" description=""/>
+      <property name="Sheetname" value="Controllers and power interfaces"/>
+      <property name="Sheetfile" value="controllers.kicad_sch"/>
+      <sheetpath names="/Controllers and power interfaces/" tstamps="/065f166d-f52a-52db-84c3-afa217fdbcb1/"/>
+      <tstamps>5eac742d-34e1-5668-b950-6b7dc9a22056</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>10uF 10V</value>
+      <footprint>Capacitor_THT:CP_Radial_D5.0mm_P2.00mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:CP_Radial_D5.0mm_P2.00mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C4" description=""/>
+      <property name="Sheetname" value="Controllers and power interfaces"/>
+      <property name="Sheetfile" value="controllers.kicad_sch"/>
+      <sheetpath names="/Controllers and power interfaces/" tstamps="/065f166d-f52a-52db-84c3-afa217fdbcb1/"/>
+      <tstamps>b11b0a90-d57d-54ae-9b99-1d32cd000bff</tstamps>
+    </comp>
+    <comp ref="H1">
+      <value>M3 NPTH</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <fields>
+        <field name="Footprint">MountingHole:MountingHole_3.2mm_M3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="H1" description=""/>
+      <property name="Sheetname" value="Controllers and power interfaces"/>
+      <property name="Sheetfile" value="controllers.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/Controllers and power interfaces/" tstamps="/065f166d-f52a-52db-84c3-afa217fdbcb1/"/>
+      <tstamps>62a9802f-a849-524b-a13e-1920d2100cf7</tstamps>
+    </comp>
+    <comp ref="H2">
+      <value>M3 NPTH</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <fields>
+        <field name="Footprint">MountingHole:MountingHole_3.2mm_M3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="H2" description=""/>
+      <property name="Sheetname" value="Controllers and power interfaces"/>
+      <property name="Sheetfile" value="controllers.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/Controllers and power interfaces/" tstamps="/065f166d-f52a-52db-84c3-afa217fdbcb1/"/>
+      <tstamps>e651d17e-76cd-568e-8da8-63bb31993c1c</tstamps>
+    </comp>
+    <comp ref="H3">
+      <value>M3 NPTH</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <fields>
+        <field name="Footprint">MountingHole:MountingHole_3.2mm_M3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="H3" description=""/>
+      <property name="Sheetname" value="Controllers and power interfaces"/>
+      <property name="Sheetfile" value="controllers.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/Controllers and power interfaces/" tstamps="/065f166d-f52a-52db-84c3-afa217fdbcb1/"/>
+      <tstamps>21ffa775-a0cc-50ee-a9f9-aa0e76c5867f</tstamps>
+    </comp>
+    <comp ref="H4">
+      <value>M3 NPTH</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <fields>
+        <field name="Footprint">MountingHole:MountingHole_3.2mm_M3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="H4" description=""/>
+      <property name="Sheetname" value="Controllers and power interfaces"/>
+      <property name="Sheetfile" value="controllers.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/Controllers and power interfaces/" tstamps="/065f166d-f52a-52db-84c3-afa217fdbcb1/"/>
+      <tstamps>fb6d7227-3731-55a6-b444-5c91cce7004d</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>ESP32-S3 MAIN / A</value>
+      <footprint>AUV_WirePads:WirePads_1x08</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x08</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J1" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="Controllers and power interfaces"/>
+      <property name="Sheetfile" value="controllers.kicad_sch"/>
+      <sheetpath names="/Controllers and power interfaces/" tstamps="/065f166d-f52a-52db-84c3-afa217fdbcb1/"/>
+      <tstamps>20440c64-ae63-52be-bc67-62c0289800c3</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>ESP32-S3 MAIN / B</value>
+      <footprint>AUV_WirePads:WirePads_1x08</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x08</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J2" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="Controllers and power interfaces"/>
+      <property name="Sheetfile" value="controllers.kicad_sch"/>
+      <sheetpath names="/Controllers and power interfaces/" tstamps="/065f166d-f52a-52db-84c3-afa217fdbcb1/"/>
+      <tstamps>894528fe-1f57-5ddd-b467-69b3de722644</tstamps>
+    </comp>
+    <comp ref="TP2">
+      <value>MAIN3V3</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP2" description=""/>
+      <property name="Sheetname" value="Controllers and power interfaces"/>
+      <property name="Sheetfile" value="controllers.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/Controllers and power interfaces/" tstamps="/065f166d-f52a-52db-84c3-afa217fdbcb1/"/>
+      <tstamps>3fbbb41a-b74f-50df-9f81-c5c29062b301</tstamps>
+    </comp>
+    <comp ref="C1">
+      <value>470uF 10V</value>
+      <footprint>Capacitor_THT:CP_Radial_D8.0mm_P3.50mm</footprint>
+      <fields>
+        <field name="MPN">470 uF &gt;=10 V, diameter &lt;=8 mm, pitch 3.5 mm</field>
+        <field name="Footprint">Capacitor_THT:CP_Radial_D8.0mm_P3.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C1" description=""/>
+      <property name="MPN" value="470 uF &gt;=10 V, diameter &lt;=8 mm, pitch 3.5 mm"/>
+      <property name="Sheetname" value="External 5 V distribution"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/External 5 V distribution/" tstamps="/5257dec3-d55d-5da2-9ced-583efa38e2fc/"/>
+      <tstamps>f53f1a13-ec0d-548c-b2bd-979eeb366d0d</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C2" description=""/>
+      <property name="Sheetname" value="External 5 V distribution"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/External 5 V distribution/" tstamps="/5257dec3-d55d-5da2-9ced-583efa38e2fc/"/>
+      <tstamps>83d14cad-fb4b-59dc-b51e-90b93aa2afbd</tstamps>
+    </comp>
+    <comp ref="F1">
+      <value>1A FUSE</value>
+      <footprint>Fuse:Fuse_1206_3216Metric</footprint>
+      <fields>
+        <field name="MPN">Littelfuse 0466001.NR</field>
+        <field name="Footprint">Fuse:Fuse_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="F1" description=""/>
+      <property name="MPN" value="Littelfuse 0466001.NR"/>
+      <property name="Sheetname" value="External 5 V distribution"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/External 5 V distribution/" tstamps="/5257dec3-d55d-5da2-9ced-583efa38e2fc/"/>
+      <tstamps>69b0a666-e257-556b-9724-166c98d0bf85</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>REGULATED 5 V INPUT</value>
+      <footprint>AUV_WirePads:WirePads_1x02</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J4" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="External 5 V distribution"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <sheetpath names="/External 5 V distribution/" tstamps="/5257dec3-d55d-5da2-9ced-583efa38e2fc/"/>
+      <tstamps>7b67a6dd-09a1-5354-9cb3-f82b0c2ca2dc</tstamps>
+    </comp>
+    <comp ref="TP1">
+      <value>EXT5V</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP1" description=""/>
+      <property name="Sheetname" value="External 5 V distribution"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/External 5 V distribution/" tstamps="/5257dec3-d55d-5da2-9ced-583efa38e2fc/"/>
+      <tstamps>8fea6a89-3ca2-5f36-873c-3459dd3cd746</tstamps>
+    </comp>
+    <comp ref="TP3">
+      <value>GND</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP3" description=""/>
+      <property name="Sheetname" value="External 5 V distribution"/>
+      <property name="Sheetfile" value="power.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/External 5 V distribution/" tstamps="/5257dec3-d55d-5da2-9ced-583efa38e2fc/"/>
+      <tstamps>0e4ba03e-291e-55cd-844d-b658432005d7</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>OLED1 0x3C</value>
+      <footprint>AUV_WirePads:WirePads_1x04</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x04</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J5" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>04bf8ef6-57d4-5732-bf39-79591ebc46af</tstamps>
+    </comp>
+    <comp ref="J6">
+      <value>OLED2 0x3C</value>
+      <footprint>AUV_WirePads:WirePads_1x04</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x04</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J6" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>fde443b1-1c40-5ff3-8788-eeae28242912</tstamps>
+    </comp>
+    <comp ref="J7">
+      <value>OLED3 0x3C</value>
+      <footprint>AUV_WirePads:WirePads_1x04</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x04</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J7" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>b035d32a-6beb-57da-9b0c-f86e51341deb</tstamps>
+    </comp>
+    <comp ref="J8">
+      <value>OLED4 0x3C</value>
+      <footprint>AUV_WirePads:WirePads_1x04</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x04</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J8" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>880fcab0-3234-5918-a945-cdb22fea91a3</tstamps>
+    </comp>
+    <comp ref="J9">
+      <value>DS18B20</value>
+      <footprint>AUV_WirePads:WirePads_1x03</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J9" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>29b39968-a74e-526e-91eb-c4c8c00e1abf</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>4.7k DNP</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="FIT">DNP if module pull-ups fitted</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R1" description=""/>
+      <property name="FIT" value="DNP if module pull-ups fitted"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>0bb78b10-df6a-5afb-a792-0f1d3589ccb5</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>4.7k DNP</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="FIT">DNP if module pull-ups fitted</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R2" description=""/>
+      <property name="FIT" value="DNP if module pull-ups fitted"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>09c29b86-c647-5b47-8e58-c0c5a4489d92</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>4.7k DNP</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="FIT">DNP if module pull-ups fitted</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R3" description=""/>
+      <property name="FIT" value="DNP if module pull-ups fitted"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>22fce3fd-f100-584e-9764-da1093053308</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>4.7k DNP</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="FIT">DNP if module pull-ups fitted</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R4" description=""/>
+      <property name="FIT" value="DNP if module pull-ups fitted"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>1aa100a7-6812-5a01-967c-2ffd993e4354</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>4.7k DNP</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="FIT">DNP if module pull-ups fitted</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R5" description=""/>
+      <property name="FIT" value="DNP if module pull-ups fitted"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>34ea03c8-68f4-527d-b677-f931d76365ed</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>4.7k DNP</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="FIT">DNP if module pull-ups fitted</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R6" description=""/>
+      <property name="FIT" value="DNP if module pull-ups fitted"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>e5d5334e-a420-5273-82c9-598bcd962815</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>4.7k DNP</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="FIT">DNP if module pull-ups fitted</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R7" description=""/>
+      <property name="FIT" value="DNP if module pull-ups fitted"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>d82bba1b-6164-5235-936f-dc7bacbd2ec9</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>4.7k DNP</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="FIT">DNP if module pull-ups fitted</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R8" description=""/>
+      <property name="FIT" value="DNP if module pull-ups fitted"/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>c933a2e3-d1aa-5a86-84cf-07b229e58666</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>4.7k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R9" description=""/>
+      <property name="Sheetname" value="Four OLED buses and temperature sensor"/>
+      <property name="Sheetfile" value="displays.kicad_sch"/>
+      <sheetpath names="/Four OLED buses and temperature sensor/" tstamps="/74ec0a69-1f3c-5cee-bc79-a2dfddc7f188/"/>
+      <tstamps>7fbae76b-6d4b-5c99-ba02-36ed8c6d2584</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C5" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>ce3ef004-2aaf-5b59-a30d-80af69cc964f</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C6" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>2b73723c-da36-5869-84f5-523bb294f036</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C7" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>cf865881-07e7-5e07-b0e1-c421e69eac1b</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C8" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>6902d067-1ade-5c38-bbc0-b810f8a10b62</tstamps>
+    </comp>
+    <comp ref="C17">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C17" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>50766447-61e8-58d4-ab44-5a5b03b4d905</tstamps>
+    </comp>
+    <comp ref="C18">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C18" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>07623542-4226-514c-9153-2b1e25e581b7</tstamps>
+    </comp>
+    <comp ref="J10">
+      <value>ADS1115 #1 0x48</value>
+      <footprint>AUV_WirePads:WirePads_1x07</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x07</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J10" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>94959d01-91b2-5686-bc30-2b3682246828</tstamps>
+    </comp>
+    <comp ref="J11">
+      <value>ADS1115 #2 0x49</value>
+      <footprint>AUV_WirePads:WirePads_1x08</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x08</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J11" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>5b89e3e5-c9b3-52f1-899d-2d30afc963a4</tstamps>
+    </comp>
+    <comp ref="J12">
+      <value>TDS SENSOR</value>
+      <footprint>AUV_WirePads:WirePads_1x03</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J12" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>ef47003e-f9a9-5e00-95fb-f20a3891ba51</tstamps>
+    </comp>
+    <comp ref="J13">
+      <value>TURBIDITY SENSOR</value>
+      <footprint>AUV_WirePads:WirePads_1x03</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J13" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>6ce9a2f2-031e-51cb-8ecc-39be24da2612</tstamps>
+    </comp>
+    <comp ref="J14">
+      <value>TDS_VCC SELECT</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="FIT">Fit one shunt only after confirming sensor supply</field>
+        <field name="Footprint">Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J14" description=""/>
+      <property name="FIT" value="Fit one shunt only after confirming sensor supply"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>3a04884e-e2a1-579e-a003-be8f8feeaaa5</tstamps>
+    </comp>
+    <comp ref="J15">
+      <value>TURB_VCC SELECT</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="FIT">Fit one shunt only after confirming sensor supply</field>
+        <field name="Footprint">Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J15" description=""/>
+      <property name="FIT" value="Fit one shunt only after confirming sensor supply"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>5bc19e94-e454-5b67-8038-3bcd6c137297</tstamps>
+    </comp>
+    <comp ref="J16">
+      <value>TDS POT</value>
+      <footprint>AUV_WirePads:WirePads_1x03</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J16" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>e4ef90b8-4e11-53ff-b05a-ab7fd8ee2754</tstamps>
+    </comp>
+    <comp ref="J17">
+      <value>TURBIDITY POT</value>
+      <footprint>AUV_WirePads:WirePads_1x03</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J17" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>3687f840-6c5a-5b60-87e3-998523ab69e4</tstamps>
+    </comp>
+    <comp ref="J18">
+      <value>TEMPERATURE POT</value>
+      <footprint>AUV_WirePads:WirePads_1x03</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J18" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>46c66396-4f15-5045-a916-3aafba0e7999</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>10k 1%</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R10" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>6e761e4d-46ef-53ad-a9d8-7ea4f600079b</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>10k 1%</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R11" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>c021bd53-820f-5f04-a1f7-1aceb095609b</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>10k 1%</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R12" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>4efc1235-1156-536e-9d6f-8a93022f8b02</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>10k 1%</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R13" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>beae2f36-7ca2-5ce3-8182-8d9bfe270539</tstamps>
+    </comp>
+    <comp ref="R26">
+      <value>100k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R26" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>1db74768-2b13-52a5-9f99-f588b4c0843a</tstamps>
+    </comp>
+    <comp ref="R28">
+      <value>1k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R28" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>308f6464-1bb1-5eec-a66e-d9f2f69c366f</tstamps>
+    </comp>
+    <comp ref="R29">
+      <value>1k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R29" description=""/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>2d42e652-c76b-5031-ac10-2cb32f083ccb</tstamps>
+    </comp>
+    <comp ref="U3">
+      <value>TMUX1511PWR</value>
+      <footprint>Package_SO:TSSOP-14_4.4x5mm_P0.65mm</footprint>
+      <fields>
+        <field name="MPN">TMUX1511PWR</field>
+        <field name="Footprint">Package_SO:TSSOP-14_4.4x5mm_P0.65mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="U3" description=""/>
+      <property name="MPN" value="TMUX1511PWR"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>29e57915-9c70-5671-bdca-4c3372dcd306</tstamps>
+    </comp>
+    <comp ref="U4">
+      <value>MCP100-315DI/TO</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline_Wide</footprint>
+      <fields>
+        <field name="MPN">MCP100-315DI/TO</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-92_Inline_Wide</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="U4" description=""/>
+      <property name="MPN" value="MCP100-315DI/TO"/>
+      <property name="Sheetname" value="ADS1115 modules and sensor inputs"/>
+      <property name="Sheetfile" value="sensors.kicad_sch"/>
+      <sheetpath names="/ADS1115 modules and sensor inputs/" tstamps="/c57d1d89-6bd0-531c-a33a-41952248c0f1/"/>
+      <tstamps>42adfff0-b147-52a9-8743-701a085d59ec</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>100uF 10V</value>
+      <footprint>Capacitor_THT:CP_Radial_D6.3mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:CP_Radial_D6.3mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C9" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>0a3815fa-9ca5-50cf-8ee2-7523404874d9</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C10" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>12bc79df-c87a-5958-9789-371bf4f2b5e9</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C11" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>9f6f0cfa-56e2-5aef-9471-807ec9be085a</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>1uF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C12" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>0e21095d-3390-5222-aa69-838644739a53</tstamps>
+    </comp>
+    <comp ref="J19">
+      <value>MAX98357A MODULE</value>
+      <footprint>AUV_WirePads:WirePads_1x08</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x08</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J19" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>b74f9111-12f1-57b0-9db8-ef73396cd5b3</tstamps>
+    </comp>
+    <comp ref="J20">
+      <value>SPEAKER</value>
+      <footprint>AUV_WirePads:WirePads_1x02</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J20" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>a0d646f3-0b24-5fe3-bc21-0c2569a61aeb</tstamps>
+    </comp>
+    <comp ref="J21">
+      <value>GU1008C-40T TX</value>
+      <footprint>AUV_WirePads:WirePads_1x02</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J21" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>acfe084c-6202-508d-82ba-f5d77f644405</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>IRLZ44NPBF</value>
+      <footprint>Package_TO_SOT_THT:TO-220-3_Vertical</footprint>
+      <fields>
+        <field name="MPN">IRLZ44NPBF</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-220-3_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="Q1" description=""/>
+      <property name="MPN" value="IRLZ44NPBF"/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>034bc61d-9cc7-564f-bb8a-15bce8b25b6a</tstamps>
+    </comp>
+    <comp ref="Q2">
+      <value>AO3400A</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="MPN">AO3400A</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="Q2" description=""/>
+      <property name="MPN" value="AO3400A"/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>b8730185-0d22-5ce9-a53a-d7792e8c68d8</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>2.2k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R14" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>06425f25-d664-5956-9323-64c80222870c</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>100</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R15" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>5734b325-d81f-52db-8ab2-da862ce66b53</tstamps>
+    </comp>
+    <comp ref="R16">
+      <value>100k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R16" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>b00a69cc-6c0f-528c-b7a3-253d07361784</tstamps>
+    </comp>
+    <comp ref="R17">
+      <value>100</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R17" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>ee2f4be9-760b-5b4a-b4ba-c53c88adfb24</tstamps>
+    </comp>
+    <comp ref="R18">
+      <value>10k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R18" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>b8c3f81d-bebe-5de8-a805-21e120ac5250</tstamps>
+    </comp>
+    <comp ref="R19">
+      <value>1k 0.25W</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R19" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>22f7adca-89ea-5a7a-8cc9-a0a30caf31fe</tstamps>
+    </comp>
+    <comp ref="R27">
+      <value>4.7k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R27" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>e933a1fa-96cc-5cb1-8d32-a8236222207b</tstamps>
+    </comp>
+    <comp ref="TP4">
+      <value>TX_PWM</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP4" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>fbbdd2ab-002e-5b47-b175-965cf68beae4</tstamps>
+    </comp>
+    <comp ref="TP5">
+      <value>TX_GATE</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP5" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>5aedf8b3-4f32-5327-81f9-7b6e2c354cfb</tstamps>
+    </comp>
+    <comp ref="TP6">
+      <value>TX_DRAIN</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP6" description=""/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>a97f6fdc-51cb-5e05-b4bf-d30e0c4dd6cc</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>TC4426AEPA</value>
+      <footprint>Package_DIP:DIP-8_W7.62mm_Socket_LongPads</footprint>
+      <fields>
+        <field name="MPN">TC4426AEPA</field>
+        <field name="Footprint">Package_DIP:DIP-8_W7.62mm_Socket_LongPads</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="U2" description=""/>
+      <property name="MPN" value="TC4426AEPA"/>
+      <property name="Sheetname" value="40 kHz TX and I2S audio interfaces"/>
+      <property name="Sheetfile" value="transmitter.kicad_sch"/>
+      <sheetpath names="/40 kHz TX and I2S audio interfaces/" tstamps="/eb6ced17-3833-5b12-adca-a48247d3a39b/"/>
+      <tstamps>4b94f8f9-eb62-5e46-9d90-5dc1c717e13d</tstamps>
+    </comp>
+    <comp ref="C13">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C13" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>a5469ee9-0c40-5de3-bc47-6c3bbd970c28</tstamps>
+    </comp>
+    <comp ref="C14">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C14" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>b52a93f4-9478-5ceb-b45f-ef77f0a10bcf</tstamps>
+    </comp>
+    <comp ref="C15">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C15" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>7243d1b3-9e14-5549-b623-70a206d7089a</tstamps>
+    </comp>
+    <comp ref="C16">
+      <value>10uF 10V</value>
+      <footprint>Capacitor_THT:CP_Radial_D5.0mm_P2.00mm</footprint>
+      <fields>
+        <field name="Footprint">Capacitor_THT:CP_Radial_D5.0mm_P2.00mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="C16" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>29e63677-fe8d-541d-b908-0c4d59b66e29</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>ESP32 DEVKIT RX</value>
+      <footprint>AUV_WirePads:WirePads_1x03</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J3" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>06f88470-1a88-538c-8056-35b766c477d0</tstamps>
+    </comp>
+    <comp ref="J22">
+      <value>BARE RX ELEMENT</value>
+      <footprint>AUV_WirePads:WirePads_1x02</footprint>
+      <fields>
+        <field name="MPN">Bare plated through-hole wiring pads</field>
+        <field name="FIT">PCB pads; no module socket</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="J22" description=""/>
+      <property name="MPN" value="Bare plated through-hole wiring pads"/>
+      <property name="FIT" value="PCB pads; no module socket"/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>7821ace8-d62e-5e89-b624-9d49093b9b18</tstamps>
+    </comp>
+    <comp ref="R20">
+      <value>10k 1%</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R20" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>ad6a6223-eacd-507b-be5c-44baa3955399</tstamps>
+    </comp>
+    <comp ref="R21">
+      <value>10k 1%</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R21" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>cc0e32c3-4e64-5392-b118-53436ca64857</tstamps>
+    </comp>
+    <comp ref="R22">
+      <value>10k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R22" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>51e60b37-8b5c-57b2-a0ca-91c44bff6f31</tstamps>
+    </comp>
+    <comp ref="R23">
+      <value>1k 1%</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R23" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>fb25fbe4-4c20-5981-9d8e-1c3d542d527f</tstamps>
+    </comp>
+    <comp ref="R24">
+      <value>22k 1%</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R24" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>2e973c97-74e1-56d1-8642-653aedc38080</tstamps>
+    </comp>
+    <comp ref="R25">
+      <value>100</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="R25" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>138e5ad5-1f09-5193-a2f6-609a6007da19</tstamps>
+    </comp>
+    <comp ref="TP7">
+      <value>RX_VREF</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP7" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>e63a265e-4519-5a81-a008-cfd9d91f010e</tstamps>
+    </comp>
+    <comp ref="TP8">
+      <value>RX_VBIAS</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP8" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>1c7c2b53-7826-5cc8-9b0e-b47da0603d1e</tstamps>
+    </comp>
+    <comp ref="TP9">
+      <value>RX_OUT</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP9" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>d3f6a148-9621-51ba-adcf-a322a5fc48da</tstamps>
+    </comp>
+    <comp ref="TP10">
+      <value>RX3V3</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP10" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>a6d572f1-13a3-50bf-ad5f-a327c395837a</tstamps>
+    </comp>
+    <comp ref="TP11">
+      <value>GND</value>
+      <footprint>TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="TP11" description=""/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>56481665-2140-546e-90f5-ee64a9543658</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>MCP6002-I/P</value>
+      <footprint>Package_DIP:DIP-8_W7.62mm_Socket_LongPads</footprint>
+      <fields>
+        <field name="MPN">MCP6002-I/P</field>
+        <field name="Footprint">Package_DIP:DIP-8_W7.62mm_Socket_LongPads</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="AUV" part="U1" description=""/>
+      <property name="MPN" value="MCP6002-I/P"/>
+      <property name="Sheetname" value="40 kHz receive amplifier"/>
+      <property name="Sheetfile" value="receiver.kicad_sch"/>
+      <sheetpath names="/40 kHz receive amplifier/" tstamps="/8e3f574c-8d7b-5493-8cf5-137f9753abef/"/>
+      <tstamps>8462a404-9f5e-5567-b3ee-e099462c0fc0 fed1d76b-d6f3-51f0-980f-4d3009060a18 6bd477ad-1542-5a87-b2bd-81b3734ab693</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="AUV" part="C1">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">470uF 10V</field>
+        <field name="Footprint">Capacitor_THT:CP_Radial_D8.0mm_P3.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C10">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C11">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C12">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C13">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C14">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C15">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C16">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">10uF 10V</field>
+        <field name="Footprint">Capacitor_THT:CP_Radial_D5.0mm_P2.00mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C17">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C18">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C2">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C3">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C4">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">10uF 10V</field>
+        <field name="Footprint">Capacitor_THT:CP_Radial_D5.0mm_P2.00mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C5">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C6">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C7">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C8">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="C9">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100uF 10V</field>
+        <field name="Footprint">Capacitor_THT:CP_Radial_D6.3mm_P2.50mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="F1">
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">1A FUSE</field>
+        <field name="Footprint">Fuse:Fuse_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="H1">
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">M3 NPTH</field>
+        <field name="Footprint">MountingHole:MountingHole_3.2mm_M3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+    </libpart>
+    <libpart lib="AUV" part="H2">
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">M3 NPTH</field>
+        <field name="Footprint">MountingHole:MountingHole_3.2mm_M3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+    </libpart>
+    <libpart lib="AUV" part="H3">
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">M3 NPTH</field>
+        <field name="Footprint">MountingHole:MountingHole_3.2mm_M3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+    </libpart>
+    <libpart lib="AUV" part="H4">
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">M3 NPTH</field>
+        <field name="Footprint">MountingHole:MountingHole_3.2mm_M3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+    </libpart>
+    <libpart lib="AUV" part="J1">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">ESP32-S3 MAIN / A</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x08</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3_OUT" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="GPIO4" type="passive"/>
+        <pin num="4" name="GPIO5" type="passive"/>
+        <pin num="5" name="GPIO6" type="passive"/>
+        <pin num="6" name="GPIO7" type="passive"/>
+        <pin num="7" name="GPIO8" type="passive"/>
+        <pin num="8" name="GPIO9" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J10">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">ADS1115 #1 0x48</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x07</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD/AVDD" type="passive"/>
+        <pin num="2" name="GND/AGND" type="passive"/>
+        <pin num="3" name="SDA" type="passive"/>
+        <pin num="4" name="SCL" type="passive"/>
+        <pin num="5" name="A0_TDS" type="passive"/>
+        <pin num="6" name="A1_TURB" type="passive"/>
+        <pin num="7" name="ADDR_GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J11">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">ADS1115 #2 0x49</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x08</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD/AVDD" type="passive"/>
+        <pin num="2" name="GND/AGND" type="passive"/>
+        <pin num="3" name="SDA" type="passive"/>
+        <pin num="4" name="SCL" type="passive"/>
+        <pin num="5" name="A0_TDS_POT" type="passive"/>
+        <pin num="6" name="A1_TURB_POT" type="passive"/>
+        <pin num="7" name="A2_TEMP_POT" type="passive"/>
+        <pin num="8" name="ADDR_3V3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J12">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TDS SENSOR</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC_SELECT" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="OUT_0-5V" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J13">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TURBIDITY SENSOR</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC_SELECT" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="OUT_0-5V" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J14">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TDS_VCC SELECT</field>
+        <field name="Footprint">Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="SENSOR_VCC" type="passive"/>
+        <pin num="3" name="5V" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J15">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TURB_VCC SELECT</field>
+        <field name="Footprint">Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="SENSOR_VCC" type="passive"/>
+        <pin num="3" name="5V" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J16">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TDS POT</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="WIPER/OUT" type="passive"/>
+        <pin num="3" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J17">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TURBIDITY POT</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="WIPER/OUT" type="passive"/>
+        <pin num="3" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J18">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TEMPERATURE POT</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="WIPER/OUT" type="passive"/>
+        <pin num="3" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J19">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">MAX98357A MODULE</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x08</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN_5V" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="BCLK" type="passive"/>
+        <pin num="4" name="LRC/WS" type="passive"/>
+        <pin num="5" name="DIN" type="passive"/>
+        <pin num="6" name="SD/MODE" type="passive"/>
+        <pin num="7" name="SPK+" type="passive"/>
+        <pin num="8" name="SPK-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J2">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">ESP32-S3 MAIN / B</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x08</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GPIO10" type="passive"/>
+        <pin num="2" name="GPIO11" type="passive"/>
+        <pin num="3" name="GPIO12" type="passive"/>
+        <pin num="4" name="GPIO13" type="passive"/>
+        <pin num="5" name="GPIO14" type="passive"/>
+        <pin num="6" name="GPIO15" type="passive"/>
+        <pin num="7" name="GPIO16" type="passive"/>
+        <pin num="8" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J20">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">SPEAKER</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="SPK+" type="passive"/>
+        <pin num="2" name="SPK-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J21">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">GU1008C-40T TX</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="TX_+5V" type="passive"/>
+        <pin num="2" name="TX_DRAIN" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J22">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">BARE RX ELEMENT</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="RX_SIGNAL" type="passive"/>
+        <pin num="2" name="RX_GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J3">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">ESP32 DEVKIT RX</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3_OUT" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="GPIO34" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J4">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">REGULATED 5 V INPUT</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="5V_IN" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J5">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">OLED1 0x3C</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x04</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="SCL" type="passive"/>
+        <pin num="4" name="SDA" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J6">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">OLED2 0x3C</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x04</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="SCL" type="passive"/>
+        <pin num="4" name="SDA" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J7">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">OLED3 0x3C</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x04</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="SCL" type="passive"/>
+        <pin num="4" name="SDA" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J8">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">OLED4 0x3C</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x04</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="SCL" type="passive"/>
+        <pin num="4" name="SDA" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="J9">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">DS18B20</field>
+        <field name="Footprint">AUV_WirePads:WirePads_1x03</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="DATA" type="passive"/>
+        <pin num="3" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="Q1">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">IRLZ44NPBF</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-220-3_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="D" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="Q2">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">AO3400A</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R1">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">4.7k DNP</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R10">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k 1%</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R11">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k 1%</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R12">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k 1%</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R13">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k 1%</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R14">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">2.2k</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R15">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">100</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R16">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">100k</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R17">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">100</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R18">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R19">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">1k 0.25W</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R2">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">4.7k DNP</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R20">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k 1%</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R21">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k 1%</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R22">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R23">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">1k 1%</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R24">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">22k 1%</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R25">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">100</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R26">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">100k</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R27">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">4.7k</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R28">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">1k</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R29">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">1k</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R3">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">4.7k DNP</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R4">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">4.7k DNP</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R5">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">4.7k DNP</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R6">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">4.7k DNP</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R7">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">4.7k DNP</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R8">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">4.7k DNP</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="R9">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">4.7k</field>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP1">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">EXT5V</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP10">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">RX3V3</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP11">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">GND</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP2">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">MAIN3V3</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP3">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">GND</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP4">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">TX_PWM</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP5">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">TX_GATE</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP6">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">TX_DRAIN</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP7">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">RX_VREF</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP8">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">RX_VBIAS</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="TP9">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">RX_OUT</field>
+        <field name="Footprint">TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="U1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP6002-I/P</field>
+        <field name="Footprint">Package_DIP:DIP-8_W7.62mm_Socket_LongPads</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="output"/>
+        <pin num="2" name="−" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="VSS" type="power_in"/>
+        <pin num="5" name="+" type="input"/>
+        <pin num="6" name="−" type="input"/>
+        <pin num="7" name="" type="output"/>
+        <pin num="8" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="U2">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TC4426AEPA</field>
+        <field name="Footprint">Package_DIP:DIP-8_W7.62mm_Socket_LongPads</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="no_connect"/>
+        <pin num="2" name="INA_INVERT" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="INB_INVERT" type="input"/>
+        <pin num="5" name="OUTB" type="output"/>
+        <pin num="6" name="VDD" type="power_in"/>
+        <pin num="7" name="OUTA" type="output"/>
+        <pin num="8" name="NC" type="no_connect"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="U3">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TMUX1511PWR</field>
+        <field name="Footprint">Package_SO:TSSOP-14_4.4x5mm_P0.65mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="SEL1" type="input"/>
+        <pin num="2" name="S1" type="passive"/>
+        <pin num="3" name="D1" type="passive"/>
+        <pin num="4" name="SEL2" type="input"/>
+        <pin num="5" name="S2" type="passive"/>
+        <pin num="6" name="D2" type="passive"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="D3" type="passive"/>
+        <pin num="9" name="S3" type="passive"/>
+        <pin num="10" name="SEL3" type="input"/>
+        <pin num="11" name="D4" type="passive"/>
+        <pin num="12" name="S4" type="passive"/>
+        <pin num="13" name="SEL4" type="input"/>
+        <pin num="14" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUV" part="U4">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP100-315DI/TO</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-92_Inline_Wide</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="nRESET" type="output"/>
+        <pin num="2" name="VDD" type="power_in"/>
+        <pin num="3" name="VSS" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="AUV">
+      <uri>/Users/pulkit/.codex/visualizations/2026/09/14/01a0a0b6-686a-7831-a9b3-57166532e5bc/auv-v3-kicad-compact/AUV.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="ADC_INPUT_ENABLE" class="Default">
+      <node ref="R26" pin="1" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="SEL1" pintype="input"/>
+      <node ref="U3" pin="4" pinfunction="SEL2" pintype="input"/>
+      <node ref="U4" pin="1" pinfunction="nRESET" pintype="output"/>
+    </net>
+    <net code="2" name="AMP_SD" class="Default">
+      <node ref="J19" pin="6" pinfunction="SD/MODE" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+    </net>
+    <net code="3" name="EXT5V" class="Default">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="F1" pin="2" pintype="passive"/>
+      <node ref="J14" pin="3" pinfunction="5V" pintype="passive"/>
+      <node ref="J15" pin="3" pinfunction="5V" pintype="passive"/>
+      <node ref="J19" pin="1" pinfunction="VIN_5V" pintype="passive"/>
+      <node ref="J21" pin="1" pinfunction="TX_+5V" pintype="passive"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="R27" pin="1" pintype="passive"/>
+      <node ref="TP1" pin="1" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="VDD" pintype="power_in"/>
+    </net>
+    <net code="4" name="EXT5V_IN" class="Default">
+      <node ref="F1" pin="1" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="5V_IN" pintype="passive"/>
+    </net>
+    <net code="5" name="GND" class="Default">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J10" pin="2" pinfunction="GND/AGND" pintype="passive"/>
+      <node ref="J10" pin="7" pinfunction="ADDR_GND" pintype="passive"/>
+      <node ref="J11" pin="2" pinfunction="GND/AGND" pintype="passive"/>
+      <node ref="J12" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J13" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J16" pin="3" pinfunction="GND" pintype="passive"/>
+      <node ref="J17" pin="3" pinfunction="GND" pintype="passive"/>
+      <node ref="J18" pin="3" pinfunction="GND" pintype="passive"/>
+      <node ref="J19" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J2" pin="8" pinfunction="GND" pintype="passive"/>
+      <node ref="J22" pin="2" pinfunction="RX_GND" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J4" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J5" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J6" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J7" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J8" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J9" pin="3" pinfunction="GND" pintype="passive"/>
+      <node ref="Q1" pin="3" pinfunction="S" pintype="passive"/>
+      <node ref="Q2" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="R26" pin="2" pintype="passive"/>
+      <node ref="TP11" pin="1" pintype="passive"/>
+      <node ref="TP3" pin="1" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U2" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="4" pinfunction="INB_INVERT" pintype="input"/>
+      <node ref="U3" pin="10" pinfunction="SEL3" pintype="input"/>
+      <node ref="U3" pin="11" pinfunction="D4" pintype="passive"/>
+      <node ref="U3" pin="12" pinfunction="S4" pintype="passive"/>
+      <node ref="U3" pin="13" pinfunction="SEL4" pintype="input"/>
+      <node ref="U3" pin="7" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="8" pinfunction="D3" pintype="passive"/>
+      <node ref="U3" pin="9" pinfunction="S3" pintype="passive"/>
+      <node ref="U4" pin="3" pinfunction="VSS" pintype="power_in"/>
+    </net>
+    <net code="6" name="I2C1_SCL" class="Default">
+      <node ref="J1" pin="8" pinfunction="GPIO9" pintype="passive"/>
+      <node ref="J10" pin="4" pinfunction="SCL" pintype="passive"/>
+      <node ref="J11" pin="4" pinfunction="SCL" pintype="passive"/>
+      <node ref="J5" pin="3" pinfunction="SCL" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+    </net>
+    <net code="7" name="I2C1_SDA" class="Default">
+      <node ref="J1" pin="7" pinfunction="GPIO8" pintype="passive"/>
+      <node ref="J10" pin="3" pinfunction="SDA" pintype="passive"/>
+      <node ref="J11" pin="3" pinfunction="SDA" pintype="passive"/>
+      <node ref="J5" pin="4" pinfunction="SDA" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="8" name="I2C2_SCL" class="Default">
+      <node ref="J2" pin="2" pinfunction="GPIO11" pintype="passive"/>
+      <node ref="J6" pin="3" pinfunction="SCL" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+    </net>
+    <net code="9" name="I2C2_SDA" class="Default">
+      <node ref="J2" pin="1" pinfunction="GPIO10" pintype="passive"/>
+      <node ref="J6" pin="4" pinfunction="SDA" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+    </net>
+    <net code="10" name="I2C3_SCL" class="Default">
+      <node ref="J2" pin="4" pinfunction="GPIO13" pintype="passive"/>
+      <node ref="J7" pin="3" pinfunction="SCL" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+    </net>
+    <net code="11" name="I2C3_SDA" class="Default">
+      <node ref="J2" pin="3" pinfunction="GPIO12" pintype="passive"/>
+      <node ref="J7" pin="4" pinfunction="SDA" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+    </net>
+    <net code="12" name="I2C4_SCL" class="Default">
+      <node ref="J2" pin="6" pinfunction="GPIO15" pintype="passive"/>
+      <node ref="J8" pin="3" pinfunction="SCL" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+    </net>
+    <net code="13" name="I2C4_SDA" class="Default">
+      <node ref="J2" pin="5" pinfunction="GPIO14" pintype="passive"/>
+      <node ref="J8" pin="4" pinfunction="SDA" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+    </net>
+    <net code="14" name="I2S_BCLK" class="Default">
+      <node ref="J1" pin="4" pinfunction="GPIO5" pintype="passive"/>
+      <node ref="J19" pin="3" pinfunction="BCLK" pintype="passive"/>
+    </net>
+    <net code="15" name="I2S_DIN" class="Default">
+      <node ref="J1" pin="6" pinfunction="GPIO7" pintype="passive"/>
+      <node ref="J19" pin="5" pinfunction="DIN" pintype="passive"/>
+    </net>
+    <net code="16" name="I2S_LRC" class="Default">
+      <node ref="J1" pin="5" pinfunction="GPIO6" pintype="passive"/>
+      <node ref="J19" pin="4" pinfunction="LRC/WS" pintype="passive"/>
+    </net>
+    <net code="17" name="MAIN3V3" class="Default">
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="3V3_OUT" pintype="passive"/>
+      <node ref="J10" pin="1" pinfunction="VDD/AVDD" pintype="passive"/>
+      <node ref="J11" pin="1" pinfunction="VDD/AVDD" pintype="passive"/>
+      <node ref="J11" pin="8" pinfunction="ADDR_3V3" pintype="passive"/>
+      <node ref="J14" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="J15" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="J16" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="J17" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="J18" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="J6" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="J8" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="J9" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="TP2" pin="1" pintype="passive"/>
+      <node ref="U3" pin="14" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U4" pin="2" pinfunction="VDD" pintype="power_in"/>
+    </net>
+    <net code="18" name="POT_TDS" class="Default">
+      <node ref="J11" pin="5" pinfunction="A0_TDS_POT" pintype="passive"/>
+      <node ref="J16" pin="2" pinfunction="WIPER/OUT" pintype="passive"/>
+    </net>
+    <net code="19" name="POT_TEMP" class="Default">
+      <node ref="J11" pin="7" pinfunction="A2_TEMP_POT" pintype="passive"/>
+      <node ref="J18" pin="2" pinfunction="WIPER/OUT" pintype="passive"/>
+    </net>
+    <net code="20" name="POT_TURB" class="Default">
+      <node ref="J11" pin="6" pinfunction="A1_TURB_POT" pintype="passive"/>
+      <node ref="J17" pin="2" pinfunction="WIPER/OUT" pintype="passive"/>
+    </net>
+    <net code="21" name="RX3V3" class="Default">
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="3V3_OUT" pintype="passive"/>
+      <node ref="R20" pin="1" pintype="passive"/>
+      <node ref="TP10" pin="1" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="VDD" pintype="power_in"/>
+    </net>
+    <net code="22" name="RX_ADC" class="Default">
+      <node ref="J3" pin="3" pinfunction="GPIO34" pintype="passive"/>
+      <node ref="R25" pin="2" pintype="passive"/>
+    </net>
+    <net code="23" name="RX_FB" class="Default">
+      <node ref="R23" pin="1" pintype="passive"/>
+      <node ref="R24" pin="2" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="−" pintype="input"/>
+    </net>
+    <net code="24" name="RX_IN" class="Default">
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="R22" pin="1" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="25" name="RX_OUT" class="Default">
+      <node ref="R24" pin="1" pintype="passive"/>
+      <node ref="R25" pin="1" pintype="passive"/>
+      <node ref="TP9" pin="1" pintype="passive"/>
+      <node ref="U1" pin="7" pintype="output"/>
+    </net>
+    <net code="26" name="RX_RAW" class="Default">
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="J22" pin="1" pinfunction="RX_SIGNAL" pintype="passive"/>
+    </net>
+    <net code="27" name="RX_VBIAS" class="Default">
+      <node ref="R22" pin="2" pintype="passive"/>
+      <node ref="R23" pin="2" pintype="passive"/>
+      <node ref="TP8" pin="1" pintype="passive"/>
+      <node ref="U1" pin="1" pintype="output"/>
+      <node ref="U1" pin="2" pinfunction="−" pintype="input"/>
+    </net>
+    <net code="28" name="RX_VREF" class="Default">
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="R21" pin="1" pintype="passive"/>
+      <node ref="TP7" pin="1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="29" name="SPK_N" class="Default">
+      <node ref="J19" pin="8" pinfunction="SPK-" pintype="passive"/>
+      <node ref="J20" pin="2" pinfunction="SPK-" pintype="passive"/>
+    </net>
+    <net code="30" name="SPK_P" class="Default">
+      <node ref="J19" pin="7" pinfunction="SPK+" pintype="passive"/>
+      <node ref="J20" pin="1" pinfunction="SPK+" pintype="passive"/>
+    </net>
+    <net code="31" name="TDS_ADC" class="Default">
+      <node ref="J10" pin="5" pinfunction="A0_TDS" pintype="passive"/>
+      <node ref="R28" pin="2" pintype="passive"/>
+    </net>
+    <net code="32" name="TDS_DIV" class="Default">
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="U3" pin="2" pinfunction="S1" pintype="passive"/>
+    </net>
+    <net code="33" name="TDS_RAW" class="Default">
+      <node ref="J12" pin="3" pinfunction="OUT_0-5V" pintype="passive"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+    </net>
+    <net code="34" name="TDS_SWITCH" class="Default">
+      <node ref="R28" pin="1" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="D1" pintype="passive"/>
+    </net>
+    <net code="35" name="TDS_VCC" class="Default">
+      <node ref="J12" pin="1" pinfunction="VCC_SELECT" pintype="passive"/>
+      <node ref="J14" pin="2" pinfunction="SENSOR_VCC" pintype="passive"/>
+    </net>
+    <net code="36" name="TEMP_DATA" class="Default">
+      <node ref="J1" pin="3" pinfunction="GPIO4" pintype="passive"/>
+      <node ref="J9" pin="2" pinfunction="DATA" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+    </net>
+    <net code="37" name="TURB_ADC" class="Default">
+      <node ref="J10" pin="6" pinfunction="A1_TURB" pintype="passive"/>
+      <node ref="R29" pin="2" pintype="passive"/>
+    </net>
+    <net code="38" name="TURB_DIV" class="Default">
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="S2" pintype="passive"/>
+    </net>
+    <net code="39" name="TURB_RAW" class="Default">
+      <node ref="J13" pin="3" pinfunction="OUT_0-5V" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+    </net>
+    <net code="40" name="TURB_SWITCH" class="Default">
+      <node ref="R29" pin="1" pintype="passive"/>
+      <node ref="U3" pin="6" pinfunction="D2" pintype="passive"/>
+    </net>
+    <net code="41" name="TURB_VCC" class="Default">
+      <node ref="J13" pin="1" pinfunction="VCC_SELECT" pintype="passive"/>
+      <node ref="J15" pin="2" pinfunction="SENSOR_VCC" pintype="passive"/>
+    </net>
+    <net code="42" name="TX_DRAIN" class="Default">
+      <node ref="J21" pin="2" pinfunction="TX_DRAIN" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="D" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="TP6" pin="1" pintype="passive"/>
+    </net>
+    <net code="43" name="TX_DRIVER_IN" class="Default">
+      <node ref="Q2" pin="3" pinfunction="D" pintype="passive"/>
+      <node ref="R27" pin="2" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="INA_INVERT" pintype="input"/>
+    </net>
+    <net code="44" name="TX_DRIVER_OUT" class="Default">
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="U2" pin="7" pinfunction="OUTA" pintype="output"/>
+    </net>
+    <net code="45" name="TX_GATE" class="Default">
+      <node ref="Q1" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R17" pin="2" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+      <node ref="TP5" pin="1" pintype="passive"/>
+    </net>
+    <net code="46" name="TX_LEVEL_GATE" class="Default">
+      <node ref="Q2" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+      <node ref="R16" pin="1" pintype="passive"/>
+    </net>
+    <net code="47" name="TX_PWM" class="Default">
+      <node ref="J2" pin="7" pinfunction="GPIO16" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="TP4" pin="1" pintype="passive"/>
+    </net>
+    <net code="48" name="unconnected-(U2-NC-Pad1)" class="Default">
+      <node ref="U2" pin="1" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(U2-NC-Pad8)" class="Default">
+      <node ref="U2" pin="8" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(U2-OUTB-Pad5)" class="Default">
+      <node ref="U2" pin="5" pinfunction="OUTB" pintype="output+no_connect"/>
+    </net>
+  </nets>
+</export>

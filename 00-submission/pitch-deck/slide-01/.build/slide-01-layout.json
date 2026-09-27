@@ -1,0 +1,1777 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/b55n6p",
+    "id": "b55n6p",
+    "slide": 1,
+    "layoutId": "a3f3f0d2-e8f1-4cd7-aca0-b12d197909f3",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "7fd7a1d1-9a78-495c-807f-8616a2329e36",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Arial"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "a3f3f0d2-e8f1-4cd7-aca0-b12d197909f3",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "7fd7a1d1-9a78-495c-807f-8616a2329e36",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "7fd7a1d1-9a78-495c-807f-8616a2329e36",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/fq5srqlw",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1920,
+        310
+      ],
+      "alt": "Conceptual AUV sonar illustration",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "1e8f24cd-d2b4-42f1-929f-2895186e60b1",
+        "contentType": "image/png",
+        "byteLength": 1736134
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t0r65gju",
+      "id": "2",
+      "bbox": [
+        88,
+        63,
+        1100,
+        105
+      ],
+      "geometry": "rect",
+      "text": "SeaNergy",
+      "textPreview": "SeaNergy",
+      "resolvedFontSize": 76,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 76,
+        "typeface": "Arial",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "SeaNergy"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "SeaNergy",
+          "resolvedTextStyle": {
+            "fontSize": 76,
+            "typeface": "Arial",
+            "color": "#FFFFFF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "SeaNergy",
+              "fontSize": 76,
+              "typeface": "Arial",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8zipcbi9",
+      "id": "3",
+      "bbox": [
+        93,
+        164,
+        1300,
+        65
+      ],
+      "geometry": "rect",
+      "text": "Every Ping, Purpose-Built.",
+      "textPreview": "Every Ping, Purpose-Built.",
+      "resolvedFontSize": 35,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 35,
+        "typeface": "Arial",
+        "color": "#D6F5F6",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Every Ping, Purpose-Built."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Every Ping, Purpose-Built.",
+          "resolvedTextStyle": {
+            "fontSize": 35,
+            "typeface": "Arial",
+            "color": "#D6F5F6"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Every Ping, Purpose-Built.",
+              "fontSize": 35,
+              "typeface": "Arial",
+              "color": "#D6F5F6"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f29o7q1k",
+      "id": "4",
+      "bbox": [
+        95,
+        256,
+        970,
+        31
+      ],
+      "geometry": "rect",
+      "text": "SIH 2026   |   PS 26058   |   TEAM HYPER GREY",
+      "textPreview": "SIH 2026   |   PS 26058   |   TEAM HYPER GREY",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 21,
+        "typeface": "Arial",
+        "color": "#89D7DB",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "SIH 2026   |   PS 26058   |   TEAM HYPER GREY"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "SIH 2026   |   PS 26058   |   TEAM HYPER GREY",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Arial",
+            "color": "#89D7DB",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "SIH 2026   |   PS 26058   |   TEAM HYPER GREY",
+              "fontSize": 21,
+              "typeface": "Arial",
+              "color": "#89D7DB",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u107el0f",
+      "id": "5",
+      "bbox": [
+        90,
+        341,
+        700,
+        40
+      ],
+      "geometry": "rect",
+      "text": "PROPOSED SOLUTION",
+      "textPreview": "PROPOSED SOLUTION",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "#087C8C",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PROPOSED SOLUTION"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PROPOSED SOLUTION",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Arial",
+            "color": "#087C8C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PROPOSED SOLUTION",
+              "fontSize": 24,
+              "typeface": "Arial",
+              "color": "#087C8C",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hob690jq",
+      "id": "6",
+      "bbox": [
+        90,
+        385,
+        1740,
+        137
+      ],
+      "geometry": "rect",
+      "text": "SeaNergy is a proposed software-defined sonar payload for AUVs. Live water data will guide a bounded controller as it selects frequency, bandwidth, duration and waveform for each ping. Onboard synthesis and timed transfer will feed a DAC, filter, power stage and transducer, while a separate receiver and local console will show the returned signal and decision trace. The finished system aims to balance range, detail and battery use as conditions change.",
+      "textPreview": "SeaNergy is a proposed software-defined sonar payload for AUVs. Live water data will guide a bounded controller as it selects frequency, ...",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 30,
+        "typeface": "Arial",
+        "color": "#173447",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "SeaNergy is a proposed software-defined sonar payload for AUVs. Live water data will guide a bounded controller as it selects"
+          },
+          {
+            "index": 2,
+            "text": "frequency, bandwidth, duration and waveform for each ping. Onboard synthesis and timed transfer will feed a DAC, filter, power"
+          },
+          {
+            "index": 3,
+            "text": "stage and transducer, while a separate receiver and local console will show the returned signal and decision trace. The finished"
+          },
+          {
+            "index": 4,
+            "text": "system aims to balance range, detail and battery use as conditions change."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "SeaNergy is a proposed software-defined sonar payload for AUVs. Live water data will guide a bounded controller as it selects frequency, bandwidth, duration and waveform for each ping. Onboard synthesis and timed transfer will feed a DAC, filter, power stage and transducer, while a separate receiver and local console will show the returned signal and decision trace. The finished system aims to balance range, detail and battery use as conditions change.",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "typeface": "Arial",
+            "color": "#173447"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "SeaNergy is a proposed software-defined sonar payload for AUVs. Live water data will guide a bounded controller as it selects frequency, bandwidth, duration and waveform for each ping. Onboard synthesis and timed transfer will feed a DAC, filter, power stage and transducer, while a separate receiver and local console will show the returned signal and decision trace. The finished system aims to balance range, detail and battery use as conditions change.",
+              "fontSize": 30,
+              "typeface": "Arial",
+              "color": "#173447"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gnipgvi5",
+      "id": "7",
+      "bbox": [
+        90,
+        548,
+        820,
+        43
+      ],
+      "geometry": "rect",
+      "text": "FOUR PRODUCT STRENGTHS",
+      "textPreview": "FOUR PRODUCT STRENGTHS",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 27,
+        "typeface": "Arial",
+        "color": "#087C8C",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "FOUR PRODUCT STRENGTHS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "FOUR PRODUCT STRENGTHS",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "typeface": "Arial",
+            "color": "#087C8C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "FOUR PRODUCT STRENGTHS",
+              "fontSize": 27,
+              "typeface": "Arial",
+              "color": "#087C8C",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3qt8bq1w",
+      "id": "8",
+      "bbox": [
+        90,
+        610,
+        840,
+        36
+      ],
+      "geometry": "rect",
+      "text": "Adaptive waveform library",
+      "textPreview": "Adaptive waveform library",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 26,
+        "typeface": "Arial",
+        "color": "#173447",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Adaptive waveform library"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Adaptive waveform library",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Arial",
+            "color": "#173447",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Adaptive waveform library",
+              "fontSize": 26,
+              "typeface": "Arial",
+              "color": "#173447",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2pk7i50b",
+      "id": "9",
+      "bbox": [
+        90,
+        647,
+        840,
+        62
+      ],
+      "geometry": "rect",
+      "text": "Temperature, salinity, turbidity, pH and depth inform LFM, geometric and phase-coded pulse choices for changing missions.",
+      "textPreview": "Temperature, salinity, turbidity, pH and depth inform LFM, geometric and phase-coded pulse choices for changing missions.",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Arial",
+        "color": "#4D6573",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Temperature, salinity, turbidity, pH and depth inform LFM, geometric and phase-coded"
+          },
+          {
+            "index": 2,
+            "text": "pulse choices for changing missions."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Temperature, salinity, turbidity, pH and depth inform LFM, geometric and phase-coded pulse choices for changing missions.",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#4D6573"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Temperature, salinity, turbidity, pH and depth inform LFM, geometric and phase-coded pulse choices for changing missions.",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#4D6573"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gvqhsr69",
+      "id": "10",
+      "bbox": [
+        90,
+        710,
+        840,
+        36
+      ],
+      "geometry": "rect",
+      "text": "Bounded decision engine",
+      "textPreview": "Bounded decision engine",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 26,
+        "typeface": "Arial",
+        "color": "#173447",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Bounded decision engine"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Bounded decision engine",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Arial",
+            "color": "#173447",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Bounded decision engine",
+              "fontSize": 26,
+              "typeface": "Arial",
+              "color": "#173447",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1wzy1w7u",
+      "id": "11",
+      "bbox": [
+        90,
+        747,
+        840,
+        62
+      ],
+      "geometry": "rect",
+      "text": "Acoustic physics, electrical limits and a per-ping energy budget keep each selected waveform feasible and explainable.",
+      "textPreview": "Acoustic physics, electrical limits and a per-ping energy budget keep each selected waveform feasible and explainable.",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Arial",
+        "color": "#4D6573",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Acoustic physics, electrical limits and a per-ping energy budget keep each selected"
+          },
+          {
+            "index": 2,
+            "text": "waveform feasible and explainable."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Acoustic physics, electrical limits and a per-ping energy budget keep each selected waveform feasible and explainable.",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#4D6573"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Acoustic physics, electrical limits and a per-ping energy budget keep each selected waveform feasible and explainable.",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#4D6573"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e98zqhoj",
+      "id": "12",
+      "bbox": [
+        90,
+        810,
+        840,
+        36
+      ],
+      "geometry": "rect",
+      "text": "Autonomous transmitter hardware",
+      "textPreview": "Autonomous transmitter hardware",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 26,
+        "typeface": "Arial",
+        "color": "#173447",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Autonomous transmitter hardware"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Autonomous transmitter hardware",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Arial",
+            "color": "#173447",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Autonomous transmitter hardware",
+              "fontSize": 26,
+              "typeface": "Arial",
+              "color": "#173447",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fuhgzmpo",
+      "id": "13",
+      "bbox": [
+        90,
+        847,
+        840,
+        62
+      ],
+      "geometry": "rect",
+      "text": "Onboard synthesis, timed DMA transfer, DAC, filtering and driver form the proposed signal path inside the AUV.",
+      "textPreview": "Onboard synthesis, timed DMA transfer, DAC, filtering and driver form the proposed signal path inside the AUV.",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Arial",
+        "color": "#4D6573",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Onboard synthesis, timed DMA transfer, DAC, filtering and driver form the proposed"
+          },
+          {
+            "index": 2,
+            "text": "signal path inside the AUV."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Onboard synthesis, timed DMA transfer, DAC, filtering and driver form the proposed signal path inside the AUV.",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#4D6573"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Onboard synthesis, timed DMA transfer, DAC, filtering and driver form the proposed signal path inside the AUV.",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#4D6573"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ozqhwr6l",
+      "id": "14",
+      "bbox": [
+        90,
+        910,
+        840,
+        36
+      ],
+      "geometry": "rect",
+      "text": "Inspectable TX and RX",
+      "textPreview": "Inspectable TX and RX",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 26,
+        "typeface": "Arial",
+        "color": "#173447",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Inspectable TX and RX"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Inspectable TX and RX",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Arial",
+            "color": "#173447",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Inspectable TX and RX",
+              "fontSize": 26,
+              "typeface": "Arial",
+              "color": "#173447",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p0jypw76",
+      "id": "15",
+      "bbox": [
+        90,
+        947,
+        840,
+        62
+      ],
+      "geometry": "rect",
+      "text": "A local console reveals pulse choices and power data; the receiver displays waveforms and spectra for validation.",
+      "textPreview": "A local console reveals pulse choices and power data; the receiver displays waveforms and spectra for validation.",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Arial",
+        "color": "#4D6573",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A local console reveals pulse choices and power data; the receiver displays"
+          },
+          {
+            "index": 2,
+            "text": "waveforms and spectra for validation."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A local console reveals pulse choices and power data; the receiver displays waveforms and spectra for validation.",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#4D6573"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A local console reveals pulse choices and power data; the receiver displays waveforms and spectra for validation.",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#4D6573"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2x8zuhof",
+      "id": "16",
+      "bbox": [
+        1000,
+        548,
+        840,
+        43
+      ],
+      "geometry": "rect",
+      "text": "WHY THE NEED?",
+      "textPreview": "WHY THE NEED?",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 27,
+        "typeface": "Arial",
+        "color": "#087C8C",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "WHY THE NEED?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "WHY THE NEED?",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "typeface": "Arial",
+            "color": "#087C8C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "WHY THE NEED?",
+              "fontSize": 27,
+              "typeface": "Arial",
+              "color": "#087C8C",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3yhg3mp0",
+      "id": "17",
+      "bbox": [
+        1000,
+        592,
+        840,
+        145
+      ],
+      "geometry": "rect",
+      "text": "PS 26058 calls for physical, low-power sonar hardware that adapts in real time. Changing water alters sound speed and signal loss, so one fixed ping cannot balance range, detail and energy everywhere. AUV battery and CPU limits make each transmit decision consequential.",
+      "textPreview": "PS 26058 calls for physical, low-power sonar hardware that adapts in real time. Changing water alters sound speed and signal loss, so one...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Arial",
+        "color": "#173447",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PS 26058 calls for physical, low-power sonar hardware that adapts in real time."
+          },
+          {
+            "index": 2,
+            "text": " Changing water alters sound speed and signal loss, so one fixed ping cannot"
+          },
+          {
+            "index": 3,
+            "text": "balance range, detail and energy everywhere. AUV battery and CPU limits"
+          },
+          {
+            "index": 4,
+            "text": "make each transmit decision consequential."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PS 26058 calls for physical, low-power sonar hardware that adapts in real time. Changing water alters sound speed and signal loss, so one fixed ping cannot balance range, detail and energy everywhere. AUV battery and CPU limits make each transmit decision consequential.",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Arial",
+            "color": "#173447"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PS 26058 calls for physical, low-power sonar hardware that adapts in real time. Changing water alters sound speed and signal loss, so one fixed ping cannot balance range, detail and energy everywhere. AUV battery and CPU limits make each transmit decision consequential.",
+              "fontSize": 24,
+              "typeface": "Arial",
+              "color": "#173447"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c3ah0b6h",
+      "id": "18",
+      "bbox": [
+        1000,
+        733,
+        840,
+        40
+      ],
+      "geometry": "rect",
+      "text": "FIXED SOUND SPEED CREATES RANGE ERROR",
+      "textPreview": "FIXED SOUND SPEED CREATES RANGE ERROR",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 26,
+        "typeface": "Arial",
+        "color": "#087C8C",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "FIXED SOUND SPEED CREATES RANGE ERROR"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "FIXED SOUND SPEED CREATES RANGE ERROR",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Arial",
+            "color": "#087C8C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "FIXED SOUND SPEED CREATES RANGE ERROR",
+              "fontSize": 26,
+              "typeface": "Arial",
+              "color": "#087C8C",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/m5ojalwr",
+      "id": "19",
+      "bbox": [
+        1000,
+        775,
+        840,
+        226
+      ],
+      "text": "WATER CHANGE | SPEED SHIFT | ERROR AT 100 m*\n+1 °C temperature | +4.5 m/s | 30 cm\n+1 ppt salinity | +1.3 m/s | 9 cm\n+100 m depth | +1.7 m/s | 11 cm",
+      "textPreview": "WATER CHANGE | SPEED SHIFT | ERROR AT 100 m* | +1 °C temperature | +4.5 m/s | 30 cm | +1 ppt salinity | +1.3 m/s | 9 cm | +100 m depth | ...",
+      "rows": 4,
+      "cols": 3,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            1000,
+            775,
+            330,
+            56.5
+          ],
+          "text": "WATER CHANGE",
+          "textPreview": "WATER CHANGE",
+          "fillColor": "#17485A",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "WATER CHANGE",
+              "resolvedTextStyle": {
+                "fontSize": 18,
+                "typeface": "Arial",
+                "color": "#FFFFFF",
+                "bold": true,
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "WATER CHANGE",
+                  "fontSize": 18,
+                  "typeface": "Arial",
+                  "color": "#FFFFFF",
+                  "bold": true,
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            1330,
+            775,
+            240,
+            56.5
+          ],
+          "text": "SPEED SHIFT",
+          "textPreview": "SPEED SHIFT",
+          "fillColor": "#17485A",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "SPEED SHIFT",
+              "resolvedTextStyle": {
+                "fontSize": 18,
+                "typeface": "Arial",
+                "color": "#FFFFFF",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "SPEED SHIFT",
+                  "fontSize": 18,
+                  "typeface": "Arial",
+                  "color": "#FFFFFF",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            1570,
+            775,
+            270,
+            56.5
+          ],
+          "text": "ERROR AT 100 m*",
+          "textPreview": "ERROR AT 100 m*",
+          "fillColor": "#17485A",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "ERROR AT 100 m*",
+              "resolvedTextStyle": {
+                "fontSize": 18,
+                "typeface": "Arial",
+                "color": "#FFFFFF",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "ERROR AT 100 m*",
+                  "fontSize": 18,
+                  "typeface": "Arial",
+                  "color": "#FFFFFF",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            1000,
+            831.5,
+            330,
+            56.5
+          ],
+          "text": "+1 °C temperature",
+          "textPreview": "+1 °C temperature",
+          "fillColor": "#F1F8F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "+1 °C temperature",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Arial",
+                "color": "#173447",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "+1 °C temperature",
+                  "fontSize": 20,
+                  "typeface": "Arial",
+                  "color": "#173447",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            1330,
+            831.5,
+            240,
+            56.5
+          ],
+          "text": "+4.5 m/s",
+          "textPreview": "+4.5 m/s",
+          "fillColor": "#F1F8F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "+4.5 m/s",
+              "resolvedTextStyle": {
+                "fontSize": 25,
+                "typeface": "Arial",
+                "color": "#173447",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "+4.5 m/s",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#173447",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            1570,
+            831.5,
+            270,
+            56.5
+          ],
+          "text": "30 cm",
+          "textPreview": "30 cm",
+          "fillColor": "#F1F8F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "30 cm",
+              "resolvedTextStyle": {
+                "fontSize": 25,
+                "typeface": "Arial",
+                "color": "#173447",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "30 cm",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#173447",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            1000,
+            888,
+            330,
+            56.5
+          ],
+          "text": "+1 ppt salinity",
+          "textPreview": "+1 ppt salinity",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "+1 ppt salinity",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Arial",
+                "color": "#173447",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "+1 ppt salinity",
+                  "fontSize": 20,
+                  "typeface": "Arial",
+                  "color": "#173447",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            1330,
+            888,
+            240,
+            56.5
+          ],
+          "text": "+1.3 m/s",
+          "textPreview": "+1.3 m/s",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "+1.3 m/s",
+              "resolvedTextStyle": {
+                "fontSize": 25,
+                "typeface": "Arial",
+                "color": "#173447",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "+1.3 m/s",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#173447",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            1570,
+            888,
+            270,
+            56.5
+          ],
+          "text": "9 cm",
+          "textPreview": "9 cm",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "9 cm",
+              "resolvedTextStyle": {
+                "fontSize": 25,
+                "typeface": "Arial",
+                "color": "#173447",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "9 cm",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#173447",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            1000,
+            944.5,
+            330,
+            56.5
+          ],
+          "text": "+100 m depth",
+          "textPreview": "+100 m depth",
+          "fillColor": "#F1F8F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "+100 m depth",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Arial",
+                "color": "#173447",
+                "alignment": "left"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "+100 m depth",
+                  "fontSize": 20,
+                  "typeface": "Arial",
+                  "color": "#173447",
+                  "alignment": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            1330,
+            944.5,
+            240,
+            56.5
+          ],
+          "text": "+1.7 m/s",
+          "textPreview": "+1.7 m/s",
+          "fillColor": "#F1F8F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "+1.7 m/s",
+              "resolvedTextStyle": {
+                "fontSize": 25,
+                "typeface": "Arial",
+                "color": "#173447",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "+1.7 m/s",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#173447",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            1570,
+            944.5,
+            270,
+            56.5
+          ],
+          "text": "11 cm",
+          "textPreview": "11 cm",
+          "fillColor": "#F1F8F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "11 cm",
+              "resolvedTextStyle": {
+                "fontSize": 25,
+                "typeface": "Arial",
+                "color": "#173447",
+                "bold": true,
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "11 cm",
+                  "fontSize": 25,
+                  "typeface": "Arial",
+                  "color": "#173447",
+                  "bold": true,
+                  "alignment": "center"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l8vqxcvu",
+      "id": "20",
+      "bbox": [
+        90,
+        1035,
+        1750,
+        30
+      ],
+      "geometry": "rect",
+      "text": "*Illustrative 100 m range error with a fixed 1,500 m/s assumption, using NOAA sensitivities. SeaNergy architecture shown as proposed.",
+      "textPreview": "*Illustrative 100 m range error with a fixed 1,500 m/s assumption, using NOAA sensitivities. SeaNergy architecture shown as proposed.",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 18,
+        "typeface": "Arial",
+        "color": "#647883",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "*Illustrative 100 m range error with a fixed 1,500 m/s assumption, using NOAA sensitivities. SeaNergy architecture shown as proposed."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "*Illustrative 100 m range error with a fixed 1,500 m/s assumption, using NOAA sensitivities. SeaNergy architecture shown as proposed.",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Arial",
+            "color": "#647883"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "*Illustrative 100 m range error with a fixed 1,500 m/s assumption, using NOAA sensitivities. SeaNergy architecture shown as proposed.",
+              "fontSize": 18,
+              "typeface": "Arial",
+              "color": "#647883"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

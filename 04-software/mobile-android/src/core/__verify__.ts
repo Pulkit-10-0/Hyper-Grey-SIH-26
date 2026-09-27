@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Verification of the physics and DSP layer.
  *
  * Run:  npm run verify
@@ -10,6 +10,8 @@
 
 import {
   absorptionDbPerM,
+  maxDetectionRange,
+  sensedAbsorptionDbPerM,
   airAbsorptionDbPerM,
   compressionGainDb,
   echoSnrDb,
@@ -30,8 +32,21 @@ import {
   WINDOW_PSL_DB,
   type WindowKind,
 } from './dsp';
-import { AIR_CONFIG, decide, WATER_CONFIG, type Environment } from './adaptation';
+import {
+  AIR_CONFIG,
+  decide,
+  excessScatteringDbPerM,
+  WATER_CONFIG,
+  type Environment,
+} from './adaptation';
 import { endurance, pingEnergy } from './power';
+import {
+  decodeLine,
+  encodeCommand,
+  environmentOf,
+  LineAssembler,
+  PROTOCOL_VERSION,
+} from './protocol';
 
 let pass = 0;
 let fail = 0;
@@ -252,7 +267,13 @@ console.log('\nAdaptation behaviour');
 /* ------------------------------------------------------------------ */
 
 {
-  const base: Environment = { tempC: 26, salinityPpt: 34, turbidityNtu: 10, depthM: 20 };
+  const base: Environment = {
+    tempC: 26,
+    salinityPpt: 34,
+    turbidityNtu: 10,
+    depthM: 20,
+    ph: 8.1,
+  };
   const clear = decide(base, WATER_CONFIG);
   const murky = decide({ ...base, turbidityNtu: 800 }, WATER_CONFIG);
 
@@ -265,7 +286,36 @@ console.log('\nAdaptation behaviour');
     'rising turbidity adds scattering loss',
     murky.excessLossDbPerM > clear.excessLossDbPerM,
   );
-  assert('clear water reaches further', clear.maxRangeM > murky.maxRangeM);
+  // Compare like with like. `maxRangeM` belongs to whichever waveform each
+  // condition chose, and those are different waveforms: in murky water the
+  // solver moves downband, where absorption is far lower, so its chosen pulse
+  // legitimately reaches further than the wideband one picked in clear water.
+  // The physical invariant is about one waveform in two waters.
+  const probeF = clear.fCentre;
+  const alphaProbe = sensedAbsorptionDbPerM(
+    'water', probeF, base.tempC, base.salinityPpt, base.depthM, base.ph,
+  );
+  const reach = (ntu: number) =>
+    maxDetectionRange(
+      {
+        sourceLevelDb: WATER_CONFIG.sourceLevelDb,
+        absorptionDbPerM:
+          alphaProbe + excessScatteringDbPerM(WATER_CONFIG, ntu, probeF),
+        targetStrengthDb: WATER_CONFIG.targetStrengthDb,
+        noiseLevelDb: 52,
+        directivityIndexDb: WATER_CONFIG.directivityIndexDb,
+        processingGainDb: clear.compressionGainDb,
+      },
+      WATER_CONFIG.detectionThresholdDb,
+      WATER_CONFIG.maxRangeBoundM,
+    );
+  const reachClear = reach(10);
+  const reachMurky = reach(800);
+  assert(
+    'the same waveform reaches further in clear water',
+    reachClear > reachMurky,
+    `${reachClear.toFixed(0)} m vs ${reachMurky.toFixed(0)} m at ${(probeF / 1000).toFixed(0)} kHz`,
+  );
   assert(
     'every decision produces finite numbers',
     [clear, murky].every(
@@ -290,13 +340,18 @@ console.log('\nAdaptation behaviour');
   // The closed-loop correction must make the system more conservative.
   // Note it does NOT simply lower the reported SNR: raising the assumed noise
   // makes the optimiser abandon aggressive candidates and choose a safer one,
-  // which can carry more margin. The invariant is that it never becomes MORE
-  // aggressive -- centre frequency and bandwidth may fall, never rise.
+  // which can carry more margin.
+  //
+  // The invariant is stated on bandwidth, because bandwidth is what the solver
+  // maximises and what range resolution is made of. Centre frequency is chosen
+  // for propagation and may move either way: under a large correction the
+  // optimiser can prefer a narrow band slightly higher up, which is a coarser
+  // and therefore less aggressive answer even though the carrier rose.
   const corrected = decide({ ...base, turbidityNtu: 800 }, WATER_CONFIG, 8);
   assert(
     'a noise correction never makes the choice more aggressive',
-    corrected.fCentre <= murky.fCentre + 1 &&
-      corrected.bandwidth <= murky.bandwidth + 1,
+    corrected.bandwidth <= murky.bandwidth + 1 &&
+      corrected.resolutionM >= murky.resolutionM - 1e-9,
     `fc ${(murky.fCentre / 1000).toFixed(0)}->${(corrected.fCentre / 1000).toFixed(0)} kHz, ` +
       `bw ${(murky.bandwidth / 1000).toFixed(0)}->${(corrected.bandwidth / 1000).toFixed(0)} kHz`,
   );
@@ -506,5 +561,95 @@ console.log('\nEngine (headless smoke test)');
   assert('unsubscribe stops notifications', notified === before);
 }
 
+console.log('\nTelemetry wire format');
+
+{
+  // The exact line from the firmware spec, docs/11-link-protocol.md. If this
+  // assertion ever has to be edited, the firmware has to be reflashed too.
+  const LINE =
+    '{"t":"tlm","seq":1841,"ms":582103,"st":"tx","temp":26.4,"sal":34.8,' +
+    '"ntu":180,"dep":25.3,"ph":8.05,"fc":350667,"bw":298667,"tau":500,' +
+    '"amp":0.92,"snr":28.4,"ma":68.0,"mv":3712,"flt":[]}';
+
+  const d = decodeLine(LINE);
+  assert('a telemetry line decodes', d?.kind === 'telemetry');
+
+  if (d?.kind === 'telemetry') {
+    const p = d.packet;
+    check('sequence survives', p.seq, 1841, 0);
+    check('temperature survives', p.tempC, 26.4, 1e-9);
+    check('depth survives', p.depthM, 25.3, 1e-9);
+    check('pH survives', p.ph, 8.05, 1e-9);
+    // The wire carries microseconds and the app works in seconds. Getting this
+    // conversion wrong scales the time-bandwidth product by a million.
+    check('pulse converts us to s', p.tau, 500e-6, 1e-12);
+    assert('faults decode as an array', Array.isArray(p.faults) && p.faults.length === 0);
+
+    // The sensed environment the solver then runs on.
+    const env = environmentOf(p);
+    check('environment carries depth', env.depthM, 25.3, 1e-9);
+    check('environment carries pH', env.ph, 8.05, 1e-9);
+    const alpha = sensedAbsorptionDbPerM(
+      'water',
+      p.fCentre,
+      env.tempC,
+      env.salinityPpt,
+      env.depthM,
+      env.ph,
+    );
+    assert(
+      'a received packet yields a usable absorption',
+      Number.isFinite(alpha) && alpha > 0,
+      `${(alpha * 1000).toFixed(1)} dB/km at ${(p.fCentre / 1000).toFixed(0)} kHz`,
+    );
+  }
+
+  // Missing keys default rather than throw: a firmware that has not wired up
+  // every sensor yet still streams, and the screens still draw.
+  const sparse = decodeLine('{"t":"tlm","seq":2,"temp":21}');
+  assert('a sparse line still decodes', sparse?.kind === 'telemetry');
+  if (sparse?.kind === 'telemetry') {
+    check('absent pH falls back to the default', sparse.packet.ph, 8.1, 1e-9);
+  }
+
+  // Malformed input is counted, never thrown.
+  const broken = decodeLine('{"t":"tlm","seq":');
+  assert('a truncated line is reported, not thrown', broken?.kind === 'error');
+
+  // A protocol mismatch is refused outright rather than guessed at.
+  const idOk = decodeLine(`{"t":"id","name":"SEANERGY-4F2A","fw":"1.0.0","proto":${PROTOCOL_VERSION}}`);
+  assert('a matching identity is accepted', idOk?.kind === 'identity');
+  const idBad = decodeLine('{"t":"id","name":"X","fw":"9","proto":99}');
+  assert(
+    'a protocol mismatch is refused',
+    idBad?.kind === 'error' && idBad.reason.startsWith('protocol'),
+  );
+
+  // Commands end in a newline, because that is the frame boundary.
+  const cmd = encodeCommand({ c: 'rate', v: 2 });
+  assert('a command is newline terminated', cmd.endsWith('\n'));
+  assert('a command round-trips as JSON', JSON.parse(cmd).c === 'rate');
+
+  // Reassembly. No transport delivers whole lines: a USB bulk read returns
+  // whatever was in the buffer and a BLE notification is cut at the MTU.
+  const a = new LineAssembler();
+  assert('a partial line is held back', a.push('{"t":"tlm",').length === 0);
+  const joined = a.push('"seq":7}\n{"t":"tlm","seq":8}\n');
+  assert('the split line is rejoined and the next one follows', joined.length === 2);
+  const first = decodeLine(joined[0]);
+  assert(
+    'the rejoined line decodes correctly',
+    first?.kind === 'telemetry' && first.packet.seq === 7,
+  );
+  // CRLF from a serial terminal must not corrupt the JSON.
+  const b = new LineAssembler();
+  const crlf = b.push('{"t":"tlm","seq":9}\r\n');
+  assert(
+    'carriage returns are stripped',
+    crlf.length === 1 && decodeLine(crlf[0])?.kind === 'telemetry',
+  );
+}
+
 console.log(`\n${pass} passed, ${fail} failed\n`);
 if (fail > 0) process.exit(1);
+

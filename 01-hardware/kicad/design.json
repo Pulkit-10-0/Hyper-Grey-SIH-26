@@ -1,0 +1,1969 @@
+{
+  "name": "AUV_V3_Combined",
+  "revision": "B",
+  "board": {
+    "width": 100,
+    "height": 100,
+    "thickness": 1.6,
+    "copper_layers": 2,
+    "clearance": 0.25,
+    "track_width": 0.3,
+    "via_diameter": 0.8,
+    "via_drill": 0.4
+  },
+  "sheets": [
+    {
+      "id": "controllers",
+      "title": "Controllers and power interfaces",
+      "description": "ESP32-S3 main/TX and classic ESP32 RX use separate 3.3 V regulator outputs; both share GND. USB powers controllers; no VIN/VBUS tie."
+    },
+    {
+      "id": "power",
+      "title": "External 5 V distribution",
+      "description": "Regulated external 5 V for transmitter, audio and optional sensor supplies. Fuse limit 1 A; test external rail before use."
+    },
+    {
+      "id": "displays",
+      "title": "Four OLED buses and temperature sensor",
+      "description": "Four SSD1306 displays at 0x3C on separate I2C buses; optional pull-ups fitted only if modules do not supply suitable pull-ups."
+    },
+    {
+      "id": "sensors",
+      "title": "ADS1115 modules and sensor inputs",
+      "description": "ADS1=0x48; ADS2=0x49. TDS/TURB 0-5 V inputs are divided by two and isolated when main ADC supply is invalid. Existing firmware sensor voltages need x2 scaling."
+    },
+    {
+      "id": "transmitter",
+      "title": "40 kHz TX and I2S audio interfaces",
+      "description": "AO3400A level translator and TC4426A inverting driver give noninverted 5 V gate drive. IRLZ44N low-side switch; 1k piezo reset. MAX98357A external module; GAIN left floating."
+    },
+    {
+      "id": "receiver",
+      "title": "40 kHz receive amplifier",
+      "description": "MCP6002 follower and nominal gain23 amplifier on RX3V3. No slow 100nF filter at GPIO34; verify 40kHz gain and ADC waveform."
+    }
+  ],
+  "components": [
+    {
+      "ref": "J1",
+      "value": "ESP32-S3 MAIN / A",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND",
+        "3": "TEMP_DATA",
+        "4": "I2S_BCLK",
+        "5": "I2S_LRC",
+        "6": "I2S_DIN",
+        "7": "I2C1_SDA",
+        "8": "I2C1_SCL"
+      },
+      "sheet": "controllers",
+      "x": 27,
+      "y": 34,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x08",
+      "pin_names": {
+        "1": "3V3 OUT",
+        "2": "GND",
+        "3": "GPIO4",
+        "4": "GPIO5",
+        "5": "GPIO6",
+        "6": "GPIO7",
+        "7": "GPIO8",
+        "8": "GPIO9"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J1 S3-A",
+      "silk_pin_names": {
+        "1": "3V3",
+        "2": "GND",
+        "3": "IO4",
+        "4": "IO5",
+        "5": "IO6",
+        "6": "IO7",
+        "7": "IO8",
+        "8": "IO9"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "J2",
+      "value": "ESP32-S3 MAIN / B",
+      "kind": "connector",
+      "pins": {
+        "1": "I2C2_SDA",
+        "2": "I2C2_SCL",
+        "3": "I2C3_SDA",
+        "4": "I2C3_SCL",
+        "5": "I2C4_SDA",
+        "6": "I2C4_SCL",
+        "7": "TX_PWM",
+        "8": "GND"
+      },
+      "sheet": "controllers",
+      "x": 43,
+      "y": 34,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x08",
+      "pin_names": {
+        "1": "GPIO10",
+        "2": "GPIO11",
+        "3": "GPIO12",
+        "4": "GPIO13",
+        "5": "GPIO14",
+        "6": "GPIO15",
+        "7": "GPIO16",
+        "8": "GND"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J2 S3-B",
+      "silk_pin_names": {
+        "1": "IO10",
+        "2": "IO11",
+        "3": "IO12",
+        "4": "IO13",
+        "5": "IO14",
+        "6": "IO15",
+        "7": "IO16",
+        "8": "GND"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "J3",
+      "value": "ESP32 DEVKIT RX",
+      "kind": "connector",
+      "pins": {
+        "1": "RX3V3",
+        "2": "GND",
+        "3": "RX_ADC"
+      },
+      "sheet": "receiver",
+      "x": 96,
+      "y": 67,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x03",
+      "pin_names": {
+        "1": "3V3 OUT",
+        "2": "GND",
+        "3": "GPIO34"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J3 RX ESP32",
+      "silk_pin_names": {
+        "1": "3V3",
+        "2": "GND",
+        "3": "IO34"
+      },
+      "label_side": "left",
+      "title_xy": [
+        97,
+        61.5
+      ]
+    },
+    {
+      "ref": "J4",
+      "value": "REGULATED 5 V INPUT",
+      "kind": "connector",
+      "pins": {
+        "1": "EXT5V_IN",
+        "2": "GND"
+      },
+      "sheet": "power",
+      "x": 94,
+      "y": 10,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x02",
+      "pin_names": {
+        "1": "5V IN",
+        "2": "GND"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J4 5V IN",
+      "silk_pin_names": {
+        "1": "5V",
+        "2": "GND"
+      },
+      "label_side": "left"
+    },
+    {
+      "ref": "F1",
+      "value": "1A FUSE",
+      "kind": "R",
+      "pins": {
+        "1": "EXT5V_IN",
+        "2": "EXT5V"
+      },
+      "sheet": "power",
+      "x": 85,
+      "y": 15,
+      "rotation": 0,
+      "footprint": "Fuse:Fuse_1206_3216Metric",
+      "mpn": "Littelfuse 0466001.NR",
+      "rating": "1 A; 32 V",
+      "label_side": "right"
+    },
+    {
+      "ref": "C1",
+      "value": "470uF 10V",
+      "kind": "CP",
+      "pins": {
+        "1": "EXT5V",
+        "2": "GND"
+      },
+      "sheet": "power",
+      "x": 88,
+      "y": 24,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm",
+      "mpn": "470 uF >=10 V, diameter <=8 mm, pitch 3.5 mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "C2",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "EXT5V",
+        "2": "GND"
+      },
+      "sheet": "power",
+      "x": 94,
+      "y": 16,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "C3",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND"
+      },
+      "sheet": "controllers",
+      "x": 34,
+      "y": 57,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "C4",
+      "value": "10uF 10V",
+      "kind": "CP",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND"
+      },
+      "sheet": "controllers",
+      "x": 51,
+      "y": 61,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "TP1",
+      "value": "EXT5V",
+      "kind": "testpoint",
+      "pins": {
+        "1": "EXT5V"
+      },
+      "sheet": "power",
+      "x": 97,
+      "y": 25,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "TP2",
+      "value": "MAIN3V3",
+      "kind": "testpoint",
+      "pins": {
+        "1": "MAIN3V3"
+      },
+      "sheet": "controllers",
+      "x": 58,
+      "y": 62,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "TP3",
+      "value": "GND",
+      "kind": "testpoint",
+      "pins": {
+        "1": "GND"
+      },
+      "sheet": "power",
+      "x": 97,
+      "y": 20,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "J5",
+      "value": "OLED1 0x3C",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND",
+        "3": "I2C1_SCL",
+        "4": "I2C1_SDA"
+      },
+      "sheet": "displays",
+      "x": 8,
+      "y": 8,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x04",
+      "pin_names": {
+        "1": "3V3",
+        "2": "GND",
+        "3": "SCL",
+        "4": "SDA"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J5 OLED1",
+      "label_side": "right"
+    },
+    {
+      "ref": "R1",
+      "value": "4.7k DNP",
+      "kind": "R",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "I2C1_SDA"
+      },
+      "sheet": "displays",
+      "x": 8,
+      "y": 20,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "fit": "DNP if module pull-ups fitted",
+      "label_side": "right"
+    },
+    {
+      "ref": "R2",
+      "value": "4.7k DNP",
+      "kind": "R",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "I2C1_SCL"
+      },
+      "sheet": "displays",
+      "x": 8,
+      "y": 25,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "fit": "DNP if module pull-ups fitted",
+      "label_side": "right"
+    },
+    {
+      "ref": "J6",
+      "value": "OLED2 0x3C",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND",
+        "3": "I2C2_SCL",
+        "4": "I2C2_SDA"
+      },
+      "sheet": "displays",
+      "x": 27,
+      "y": 8,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x04",
+      "pin_names": {
+        "1": "3V3",
+        "2": "GND",
+        "3": "SCL",
+        "4": "SDA"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J6 OLED2",
+      "label_side": "right"
+    },
+    {
+      "ref": "R3",
+      "value": "4.7k DNP",
+      "kind": "R",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "I2C2_SDA"
+      },
+      "sheet": "displays",
+      "x": 27,
+      "y": 20,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "fit": "DNP if module pull-ups fitted",
+      "label_side": "right"
+    },
+    {
+      "ref": "R4",
+      "value": "4.7k DNP",
+      "kind": "R",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "I2C2_SCL"
+      },
+      "sheet": "displays",
+      "x": 27,
+      "y": 25,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "fit": "DNP if module pull-ups fitted",
+      "label_side": "right"
+    },
+    {
+      "ref": "J7",
+      "value": "OLED3 0x3C",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND",
+        "3": "I2C3_SCL",
+        "4": "I2C3_SDA"
+      },
+      "sheet": "displays",
+      "x": 46,
+      "y": 8,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x04",
+      "pin_names": {
+        "1": "3V3",
+        "2": "GND",
+        "3": "SCL",
+        "4": "SDA"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J7 OLED3",
+      "label_side": "right"
+    },
+    {
+      "ref": "R5",
+      "value": "4.7k DNP",
+      "kind": "R",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "I2C3_SDA"
+      },
+      "sheet": "displays",
+      "x": 46,
+      "y": 20,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "fit": "DNP if module pull-ups fitted",
+      "label_side": "right"
+    },
+    {
+      "ref": "R6",
+      "value": "4.7k DNP",
+      "kind": "R",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "I2C3_SCL"
+      },
+      "sheet": "displays",
+      "x": 46,
+      "y": 25,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "fit": "DNP if module pull-ups fitted",
+      "label_side": "right"
+    },
+    {
+      "ref": "J8",
+      "value": "OLED4 0x3C",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND",
+        "3": "I2C4_SCL",
+        "4": "I2C4_SDA"
+      },
+      "sheet": "displays",
+      "x": 65,
+      "y": 8,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x04",
+      "pin_names": {
+        "1": "3V3",
+        "2": "GND",
+        "3": "SCL",
+        "4": "SDA"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J8 OLED4",
+      "label_side": "right"
+    },
+    {
+      "ref": "R7",
+      "value": "4.7k DNP",
+      "kind": "R",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "I2C4_SDA"
+      },
+      "sheet": "displays",
+      "x": 65,
+      "y": 20,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "fit": "DNP if module pull-ups fitted",
+      "label_side": "right"
+    },
+    {
+      "ref": "R8",
+      "value": "4.7k DNP",
+      "kind": "R",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "I2C4_SCL"
+      },
+      "sheet": "displays",
+      "x": 65,
+      "y": 25,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "fit": "DNP if module pull-ups fitted",
+      "label_side": "right"
+    },
+    {
+      "ref": "J9",
+      "value": "DS18B20",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "TEMP_DATA",
+        "3": "GND"
+      },
+      "sheet": "displays",
+      "x": 5,
+      "y": 32,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x03",
+      "pin_names": {
+        "1": "3V3",
+        "2": "DATA",
+        "3": "GND"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J9 DS18B20",
+      "label_side": "right"
+    },
+    {
+      "ref": "R9",
+      "value": "4.7k",
+      "kind": "R",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "TEMP_DATA"
+      },
+      "sheet": "displays",
+      "x": 8,
+      "y": 41,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right",
+      "ref_xy": [
+        11.81,
+        43.3
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "J10",
+      "value": "ADS1115 #1 0x48",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND",
+        "3": "I2C1_SDA",
+        "4": "I2C1_SCL",
+        "5": "TDS_ADC",
+        "6": "TURB_ADC",
+        "7": "GND"
+      },
+      "sheet": "sensors",
+      "x": 5,
+      "y": 48,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x07",
+      "pin_names": {
+        "1": "VDD/AVDD",
+        "2": "GND/AGND",
+        "3": "SDA",
+        "4": "SCL",
+        "5": "A0 TDS",
+        "6": "A1 TURB",
+        "7": "ADDR GND"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J10 ADS1",
+      "silk_pin_names": {
+        "1": "VDD",
+        "2": "GND",
+        "3": "SDA",
+        "4": "SCL",
+        "5": "A0 TDS",
+        "6": "A1 TURB",
+        "7": "ADDR GND"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "J11",
+      "value": "ADS1115 #2 0x49",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND",
+        "3": "I2C1_SDA",
+        "4": "I2C1_SCL",
+        "5": "POT_TDS",
+        "6": "POT_TURB",
+        "7": "POT_TEMP",
+        "8": "MAIN3V3"
+      },
+      "sheet": "sensors",
+      "x": 5,
+      "y": 71,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x08",
+      "pin_names": {
+        "1": "VDD/AVDD",
+        "2": "GND/AGND",
+        "3": "SDA",
+        "4": "SCL",
+        "5": "A0 TDS POT",
+        "6": "A1 TURB POT",
+        "7": "A2 TEMP POT",
+        "8": "ADDR 3V3"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J11 ADS2 POTS",
+      "silk_pin_names": {
+        "1": "VDD",
+        "2": "GND",
+        "3": "SDA",
+        "4": "SCL",
+        "5": "A0 TDS",
+        "6": "A1 TURB",
+        "7": "A2 TEMP",
+        "8": "ADDR 3V3"
+      },
+      "label_side": "right",
+      "title_xy": [
+        4,
+        69.2
+      ]
+    },
+    {
+      "ref": "C5",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND"
+      },
+      "sheet": "sensors",
+      "x": 12,
+      "y": 67,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "C6",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND"
+      },
+      "sheet": "sensors",
+      "x": 12,
+      "y": 92,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "J12",
+      "value": "TDS SENSOR",
+      "kind": "connector",
+      "pins": {
+        "1": "TDS_VCC",
+        "2": "GND",
+        "3": "TDS_RAW"
+      },
+      "sheet": "sensors",
+      "x": 22,
+      "y": 65,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x03",
+      "pin_names": {
+        "1": "VCC SELECT",
+        "2": "GND",
+        "3": "OUT 0-5V"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J12 TDS",
+      "silk_pin_names": {
+        "1": "VCC",
+        "2": "GND",
+        "3": "OUT"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "J13",
+      "value": "TURBIDITY SENSOR",
+      "kind": "connector",
+      "pins": {
+        "1": "TURB_VCC",
+        "2": "GND",
+        "3": "TURB_RAW"
+      },
+      "sheet": "sensors",
+      "x": 43,
+      "y": 65,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x03",
+      "pin_names": {
+        "1": "VCC SELECT",
+        "2": "GND",
+        "3": "OUT 0-5V"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J13 TURB",
+      "silk_pin_names": {
+        "1": "VCC",
+        "2": "GND",
+        "3": "OUT"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "J14",
+      "value": "TDS_VCC SELECT",
+      "kind": "jumper",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "TDS_VCC",
+        "3": "EXT5V"
+      },
+      "sheet": "sensors",
+      "x": 22,
+      "y": 76,
+      "rotation": 0,
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      "pin_names": {
+        "1": "3V3",
+        "2": "SENSOR VCC",
+        "3": "5V"
+      },
+      "fit": "Fit one shunt only after confirming sensor supply",
+      "short_title": "J14 PWR",
+      "silk_pin_names": {
+        "1": "3V3",
+        "2": "VCC",
+        "3": "5V"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "J15",
+      "value": "TURB_VCC SELECT",
+      "kind": "jumper",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "TURB_VCC",
+        "3": "EXT5V"
+      },
+      "sheet": "sensors",
+      "x": 43,
+      "y": 76,
+      "rotation": 0,
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      "pin_names": {
+        "1": "3V3",
+        "2": "SENSOR VCC",
+        "3": "5V"
+      },
+      "fit": "Fit one shunt only after confirming sensor supply",
+      "short_title": "J15 PWR",
+      "silk_pin_names": {
+        "1": "3V3",
+        "2": "VCC",
+        "3": "5V"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "R10",
+      "value": "10k 1%",
+      "kind": "R",
+      "pins": {
+        "1": "TDS_RAW",
+        "2": "TDS_DIV"
+      },
+      "sheet": "sensors",
+      "x": 16,
+      "y": 54,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "R11",
+      "value": "10k 1%",
+      "kind": "R",
+      "pins": {
+        "1": "TDS_DIV",
+        "2": "GND"
+      },
+      "sheet": "sensors",
+      "x": 17,
+      "y": 59,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "C7",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "TDS_DIV",
+        "2": "GND"
+      },
+      "sheet": "sensors",
+      "x": 29,
+      "y": 54.5,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right",
+      "ref_xy": [
+        30.25,
+        57
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "R12",
+      "value": "10k 1%",
+      "kind": "R",
+      "pins": {
+        "1": "TURB_RAW",
+        "2": "TURB_DIV"
+      },
+      "sheet": "sensors",
+      "x": 30,
+      "y": 74,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "R13",
+      "value": "10k 1%",
+      "kind": "R",
+      "pins": {
+        "1": "TURB_DIV",
+        "2": "GND"
+      },
+      "sheet": "sensors",
+      "x": 30,
+      "y": 80,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "C8",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "TURB_DIV",
+        "2": "GND"
+      },
+      "sheet": "sensors",
+      "x": 34,
+      "y": 83,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right",
+      "ref_xy": [
+        39.5,
+        83.2
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "U3",
+      "value": "TMUX1511PWR",
+      "kind": "tmux1511",
+      "pins": {
+        "1": "ADC_INPUT_ENABLE",
+        "2": "TDS_DIV",
+        "3": "TDS_SWITCH",
+        "4": "ADC_INPUT_ENABLE",
+        "5": "TURB_DIV",
+        "6": "TURB_SWITCH",
+        "7": "GND",
+        "8": "GND",
+        "9": "GND",
+        "10": "GND",
+        "11": "GND",
+        "12": "GND",
+        "13": "GND",
+        "14": "MAIN3V3"
+      },
+      "sheet": "sensors",
+      "x": 36,
+      "y": 61,
+      "rotation": 0,
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pin_names": {
+        "1": "SEL1",
+        "2": "S1",
+        "3": "D1",
+        "4": "SEL2",
+        "5": "S2",
+        "6": "D2",
+        "7": "GND",
+        "8": "D3",
+        "9": "S3",
+        "10": "SEL3",
+        "11": "D4",
+        "12": "S4",
+        "13": "SEL4",
+        "14": "VDD"
+      },
+      "mpn": "TMUX1511PWR",
+      "pin_types": {
+        "1": "input",
+        "2": "passive",
+        "3": "passive",
+        "4": "input",
+        "5": "passive",
+        "6": "passive",
+        "7": "power_in",
+        "8": "passive",
+        "9": "passive",
+        "10": "input",
+        "11": "passive",
+        "12": "passive",
+        "13": "input",
+        "14": "power_in"
+      },
+      "label_side": "right",
+      "ref_xy": [
+        37.5,
+        65.4
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "R28",
+      "value": "1k",
+      "kind": "R",
+      "pins": {
+        "1": "TDS_SWITCH",
+        "2": "TDS_ADC"
+      },
+      "sheet": "sensors",
+      "x": 17,
+      "y": 74,
+      "rotation": -90,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "R29",
+      "value": "1k",
+      "kind": "R",
+      "pins": {
+        "1": "TURB_SWITCH",
+        "2": "TURB_ADC"
+      },
+      "sheet": "sensors",
+      "x": 59,
+      "y": 71,
+      "rotation": -90,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "C17",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND"
+      },
+      "sheet": "sensors",
+      "x": 41,
+      "y": 59,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "U4",
+      "value": "MCP100-315DI/TO",
+      "kind": "supervisor",
+      "pins": {
+        "1": "ADC_INPUT_ENABLE",
+        "2": "MAIN3V3",
+        "3": "GND"
+      },
+      "sheet": "sensors",
+      "x": 50,
+      "y": 69,
+      "rotation": 0,
+      "footprint": "Package_TO_SOT_THT:TO-92_Inline_Wide",
+      "pin_names": {
+        "1": "nRESET",
+        "2": "VDD",
+        "3": "VSS"
+      },
+      "mpn": "MCP100-315DI/TO",
+      "pin_types": {
+        "1": "output",
+        "2": "power_in",
+        "3": "power_in"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "C18",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "GND"
+      },
+      "sheet": "sensors",
+      "x": 52,
+      "y": 75,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "R26",
+      "value": "100k",
+      "kind": "R",
+      "pins": {
+        "1": "ADC_INPUT_ENABLE",
+        "2": "GND"
+      },
+      "sheet": "sensors",
+      "x": 52,
+      "y": 82,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "J16",
+      "value": "TDS POT",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "POT_TDS",
+        "3": "GND"
+      },
+      "sheet": "sensors",
+      "x": 18,
+      "y": 89,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x03",
+      "pin_names": {
+        "1": "3V3",
+        "2": "WIPER/OUT",
+        "3": "GND"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J16 TDS POT",
+      "silk_pin_names": {
+        "1": "3V3",
+        "2": "WIPER",
+        "3": "GND"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "J17",
+      "value": "TURBIDITY POT",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "POT_TURB",
+        "3": "GND"
+      },
+      "sheet": "sensors",
+      "x": 33,
+      "y": 89,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x03",
+      "pin_names": {
+        "1": "3V3",
+        "2": "WIPER/OUT",
+        "3": "GND"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J17 TURB POT",
+      "silk_pin_names": {
+        "1": "3V3",
+        "2": "WIPER",
+        "3": "GND"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "J18",
+      "value": "TEMPERATURE POT",
+      "kind": "connector",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "POT_TEMP",
+        "3": "GND"
+      },
+      "sheet": "sensors",
+      "x": 48,
+      "y": 89,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x03",
+      "pin_names": {
+        "1": "3V3",
+        "2": "WIPER/OUT",
+        "3": "GND"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J18 TEMP POT",
+      "silk_pin_names": {
+        "1": "3V3",
+        "2": "WIPER",
+        "3": "GND"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "J19",
+      "value": "MAX98357A MODULE",
+      "kind": "connector",
+      "pins": {
+        "1": "EXT5V",
+        "2": "GND",
+        "3": "I2S_BCLK",
+        "4": "I2S_LRC",
+        "5": "I2S_DIN",
+        "6": "AMP_SD",
+        "7": "SPK_P",
+        "8": "SPK_N"
+      },
+      "sheet": "transmitter",
+      "x": 56,
+      "y": 34,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x08",
+      "pin_names": {
+        "1": "VIN 5V",
+        "2": "GND",
+        "3": "BCLK",
+        "4": "LRC/WS",
+        "5": "DIN",
+        "6": "SD/MODE",
+        "7": "SPK+",
+        "8": "SPK-"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J19 AMP",
+      "silk_pin_names": {
+        "1": "5V",
+        "2": "GND",
+        "3": "BCLK",
+        "4": "LRC",
+        "5": "DIN",
+        "6": "SD",
+        "7": "SPK+",
+        "8": "SPK-"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "R14",
+      "value": "2.2k",
+      "kind": "R",
+      "pins": {
+        "1": "MAIN3V3",
+        "2": "AMP_SD"
+      },
+      "sheet": "transmitter",
+      "x": 44,
+      "y": 55,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right",
+      "ref_xy": [
+        47.81,
+        57.5
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "J20",
+      "value": "SPEAKER",
+      "kind": "connector",
+      "pins": {
+        "1": "SPK_P",
+        "2": "SPK_N"
+      },
+      "sheet": "transmitter",
+      "x": 64,
+      "y": 57,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x02",
+      "pin_names": {
+        "1": "SPK+",
+        "2": "SPK-"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J20 SPKR",
+      "silk_pin_names": {
+        "1": "SPK+",
+        "2": "SPK-"
+      },
+      "label_side": "right",
+      "title_xy": [
+        64,
+        61.8
+      ]
+    },
+    {
+      "ref": "C9",
+      "value": "100uF 10V",
+      "kind": "CP",
+      "pins": {
+        "1": "EXT5V",
+        "2": "GND"
+      },
+      "sheet": "transmitter",
+      "x": 58,
+      "y": 26,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "C10",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "EXT5V",
+        "2": "GND"
+      },
+      "sheet": "transmitter",
+      "x": 58,
+      "y": 19,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "J21",
+      "value": "GU1008C-40T TX",
+      "kind": "connector",
+      "pins": {
+        "1": "EXT5V",
+        "2": "TX_DRAIN"
+      },
+      "sheet": "transmitter",
+      "x": 96,
+      "y": 50,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x02",
+      "pin_names": {
+        "1": "TX +5V",
+        "2": "TX DRAIN"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J21 TX",
+      "silk_pin_names": {
+        "1": "+5V",
+        "2": "D"
+      },
+      "label_side": "left",
+      "title_xy": [
+        97,
+        55.5
+      ]
+    },
+    {
+      "ref": "U2",
+      "value": "TC4426AEPA",
+      "kind": "tc4426",
+      "pins": {
+        "1": null,
+        "2": "TX_DRIVER_IN",
+        "3": "GND",
+        "4": "GND",
+        "5": null,
+        "6": "EXT5V",
+        "7": "TX_DRIVER_OUT",
+        "8": null
+      },
+      "sheet": "transmitter",
+      "x": 74,
+      "y": 35,
+      "rotation": 0,
+      "footprint": "Package_DIP:DIP-8_W7.62mm_Socket_LongPads",
+      "pin_names": {
+        "1": "NC",
+        "2": "INA INVERT",
+        "3": "GND",
+        "4": "INB INVERT",
+        "5": "OUTB",
+        "6": "VDD",
+        "7": "OUTA",
+        "8": "NC"
+      },
+      "mpn": "TC4426AEPA",
+      "pin_types": {
+        "1": "no_connect",
+        "2": "input",
+        "3": "power_in",
+        "4": "input",
+        "5": "output",
+        "6": "power_in",
+        "7": "output",
+        "8": "no_connect"
+      },
+      "label_side": "right"
+    },
+    {
+      "ref": "Q2",
+      "value": "AO3400A",
+      "kind": "mosfet",
+      "pins": {
+        "1": "TX_LEVEL_GATE",
+        "2": "GND",
+        "3": "TX_DRIVER_IN"
+      },
+      "sheet": "transmitter",
+      "x": 68,
+      "y": 47,
+      "rotation": 0,
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pin_names": {
+        "1": "G",
+        "2": "S",
+        "3": "D"
+      },
+      "mpn": "AO3400A",
+      "label_side": "right"
+    },
+    {
+      "ref": "R15",
+      "value": "100",
+      "kind": "R",
+      "pins": {
+        "1": "TX_PWM",
+        "2": "TX_LEVEL_GATE"
+      },
+      "sheet": "transmitter",
+      "x": 65,
+      "y": 29,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right",
+      "ref_xy": [
+        69,
+        31.5
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "R16",
+      "value": "100k",
+      "kind": "R",
+      "pins": {
+        "1": "TX_LEVEL_GATE",
+        "2": "GND"
+      },
+      "sheet": "transmitter",
+      "x": 65,
+      "y": 54,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "R27",
+      "value": "4.7k",
+      "kind": "R",
+      "pins": {
+        "1": "EXT5V",
+        "2": "TX_DRIVER_IN"
+      },
+      "sheet": "transmitter",
+      "x": 76,
+      "y": 27,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "R17",
+      "value": "100",
+      "kind": "R",
+      "pins": {
+        "1": "TX_DRIVER_OUT",
+        "2": "TX_GATE"
+      },
+      "sheet": "transmitter",
+      "x": 86,
+      "y": 32,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "R18",
+      "value": "10k",
+      "kind": "R",
+      "pins": {
+        "1": "TX_GATE",
+        "2": "GND"
+      },
+      "sheet": "transmitter",
+      "x": 86,
+      "y": 47,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "R19",
+      "value": "1k 0.25W",
+      "kind": "R",
+      "pins": {
+        "1": "EXT5V",
+        "2": "TX_DRAIN"
+      },
+      "sheet": "transmitter",
+      "x": 84,
+      "y": 55,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "Q1",
+      "value": "IRLZ44NPBF",
+      "kind": "mosfet",
+      "pins": {
+        "1": "TX_GATE",
+        "2": "TX_DRAIN",
+        "3": "GND"
+      },
+      "sheet": "transmitter",
+      "x": 88,
+      "y": 41,
+      "rotation": 0,
+      "footprint": "Package_TO_SOT_THT:TO-220-3_Vertical",
+      "pin_names": {
+        "1": "G",
+        "2": "D",
+        "3": "S"
+      },
+      "mpn": "IRLZ44NPBF",
+      "label_side": "right"
+    },
+    {
+      "ref": "C11",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "EXT5V",
+        "2": "GND"
+      },
+      "sheet": "transmitter",
+      "x": 80,
+      "y": 47,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right",
+      "ref_xy": [
+        81.25,
+        49.5
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "C12",
+      "value": "1uF",
+      "kind": "C",
+      "pins": {
+        "1": "EXT5V",
+        "2": "GND"
+      },
+      "sheet": "transmitter",
+      "x": 73.5,
+      "y": 49,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "TP4",
+      "value": "TX_PWM",
+      "kind": "testpoint",
+      "pins": {
+        "1": "TX_PWM"
+      },
+      "sheet": "transmitter",
+      "x": 61.8,
+      "y": 34,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right",
+      "ref_xy": [
+        61.8,
+        31.8
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "TP5",
+      "value": "TX_GATE",
+      "kind": "testpoint",
+      "pins": {
+        "1": "TX_GATE"
+      },
+      "sheet": "transmitter",
+      "x": 97,
+      "y": 32,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "TP6",
+      "value": "TX_DRAIN",
+      "kind": "testpoint",
+      "pins": {
+        "1": "TX_DRAIN"
+      },
+      "sheet": "transmitter",
+      "x": 97,
+      "y": 59.5,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "J22",
+      "value": "BARE RX ELEMENT",
+      "kind": "connector",
+      "pins": {
+        "1": "RX_RAW",
+        "2": "GND"
+      },
+      "sheet": "receiver",
+      "x": 96,
+      "y": 82,
+      "rotation": 0,
+      "footprint": "AUV_WirePads:WirePads_1x02",
+      "pin_names": {
+        "1": "RX SIGNAL",
+        "2": "RX GND"
+      },
+      "mpn": "Bare plated through-hole wiring pads",
+      "fit": "PCB pads; no module socket",
+      "short_title": "J22 RX",
+      "silk_pin_names": {
+        "1": "SIG",
+        "2": "GND"
+      },
+      "label_side": "left",
+      "title_xy": [
+        97,
+        78
+      ]
+    },
+    {
+      "ref": "U1",
+      "value": "MCP6002-I/P",
+      "kind": "mcp6002",
+      "pins": {
+        "1": "RX_VBIAS",
+        "2": "RX_VBIAS",
+        "3": "RX_VREF",
+        "4": "GND",
+        "5": "RX_IN",
+        "6": "RX_FB",
+        "7": "RX_OUT",
+        "8": "RX3V3"
+      },
+      "sheet": "receiver",
+      "x": 76,
+      "y": 76,
+      "rotation": 0,
+      "footprint": "Package_DIP:DIP-8_W7.62mm_Socket_LongPads",
+      "pin_names": {
+        "1": "OUT A",
+        "2": "IN A-",
+        "3": "IN A+",
+        "4": "VSS",
+        "5": "IN B+",
+        "6": "IN B-",
+        "7": "OUT B",
+        "8": "VDD"
+      },
+      "mpn": "MCP6002-I/P",
+      "label_side": "right"
+    },
+    {
+      "ref": "R20",
+      "value": "10k 1%",
+      "kind": "R",
+      "pins": {
+        "1": "RX3V3",
+        "2": "RX_VREF"
+      },
+      "sheet": "receiver",
+      "x": 64,
+      "y": 76,
+      "rotation": 0,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "R21",
+      "value": "10k 1%",
+      "kind": "R",
+      "pins": {
+        "1": "RX_VREF",
+        "2": "GND"
+      },
+      "sheet": "receiver",
+      "x": 71.62,
+      "y": 82,
+      "rotation": 180,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "C13",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "RX_VREF",
+        "2": "GND"
+      },
+      "sheet": "receiver",
+      "x": 70,
+      "y": 87,
+      "rotation": 180,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "C14",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "RX_RAW",
+        "2": "RX_IN"
+      },
+      "sheet": "receiver",
+      "x": 92,
+      "y": 88,
+      "rotation": 180,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right",
+      "ref_xy": [
+        90.75,
+        86.0
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "R22",
+      "value": "10k",
+      "kind": "R",
+      "pins": {
+        "1": "RX_IN",
+        "2": "RX_VBIAS"
+      },
+      "sheet": "receiver",
+      "x": 83,
+      "y": 90,
+      "rotation": 180,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "R23",
+      "value": "1k 1%",
+      "kind": "R",
+      "pins": {
+        "1": "RX_FB",
+        "2": "RX_VBIAS"
+      },
+      "sheet": "receiver",
+      "x": 83,
+      "y": 95,
+      "rotation": 180,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right"
+    },
+    {
+      "ref": "R24",
+      "value": "22k 1%",
+      "kind": "R",
+      "pins": {
+        "1": "RX_OUT",
+        "2": "RX_FB"
+      },
+      "sheet": "receiver",
+      "x": 88.5,
+      "y": 76,
+      "rotation": -90,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right",
+      "ref_xy": [
+        86.1,
+        79.8
+      ],
+      "ref_angle": 90
+    },
+    {
+      "ref": "C15",
+      "value": "100nF",
+      "kind": "C",
+      "pins": {
+        "1": "RX3V3",
+        "2": "GND"
+      },
+      "sheet": "receiver",
+      "x": 81.5,
+      "y": 72,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm",
+      "label_side": "right",
+      "ref_xy": [
+        81.8,
+        69.5
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "C16",
+      "value": "10uF 10V",
+      "kind": "CP",
+      "pins": {
+        "1": "RX3V3",
+        "2": "GND"
+      },
+      "sheet": "receiver",
+      "x": 73,
+      "y": 67,
+      "rotation": 0,
+      "footprint": "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "R25",
+      "value": "100",
+      "kind": "R",
+      "pins": {
+        "1": "RX_OUT",
+        "2": "RX_ADC"
+      },
+      "sheet": "receiver",
+      "x": 87,
+      "y": 72,
+      "rotation": 90,
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal",
+      "label_side": "right",
+      "ref_xy": [
+        84.5,
+        67.8
+      ],
+      "ref_angle": 90
+    },
+    {
+      "ref": "TP7",
+      "value": "RX_VREF",
+      "kind": "testpoint",
+      "pins": {
+        "1": "RX_VREF"
+      },
+      "sheet": "receiver",
+      "x": 63,
+      "y": 88,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "TP8",
+      "value": "RX_VBIAS",
+      "kind": "testpoint",
+      "pins": {
+        "1": "RX_VBIAS"
+      },
+      "sheet": "receiver",
+      "x": 70,
+      "y": 94,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "TP9",
+      "value": "RX_OUT",
+      "kind": "testpoint",
+      "pins": {
+        "1": "RX_OUT"
+      },
+      "sheet": "receiver",
+      "x": 91,
+      "y": 92,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right",
+      "ref_xy": [
+        94,
+        92
+      ],
+      "ref_angle": 0
+    },
+    {
+      "ref": "TP10",
+      "value": "RX3V3",
+      "kind": "testpoint",
+      "pins": {
+        "1": "RX3V3"
+      },
+      "sheet": "receiver",
+      "x": 64,
+      "y": 66,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "TP11",
+      "value": "GND",
+      "kind": "testpoint",
+      "pins": {
+        "1": "GND"
+      },
+      "sheet": "receiver",
+      "x": 64,
+      "y": 71,
+      "rotation": 0,
+      "footprint": "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm",
+      "label_side": "right"
+    },
+    {
+      "ref": "H1",
+      "value": "M3 NPTH",
+      "kind": "mount",
+      "pins": {},
+      "sheet": "controllers",
+      "x": 4,
+      "y": 4,
+      "rotation": 0,
+      "footprint": "MountingHole:MountingHole_3.2mm_M3",
+      "label_side": "right"
+    },
+    {
+      "ref": "H2",
+      "value": "M3 NPTH",
+      "kind": "mount",
+      "pins": {},
+      "sheet": "controllers",
+      "x": 96,
+      "y": 4,
+      "rotation": 0,
+      "footprint": "MountingHole:MountingHole_3.2mm_M3",
+      "label_side": "right"
+    },
+    {
+      "ref": "H3",
+      "value": "M3 NPTH",
+      "kind": "mount",
+      "pins": {},
+      "sheet": "controllers",
+      "x": 96,
+      "y": 96,
+      "rotation": 0,
+      "footprint": "MountingHole:MountingHole_3.2mm_M3",
+      "label_side": "right",
+      "ref_xy": [
+        96,
+        99
+      ]
+    },
+    {
+      "ref": "H4",
+      "value": "M3 NPTH",
+      "kind": "mount",
+      "pins": {},
+      "sheet": "controllers",
+      "x": 4,
+      "y": 96,
+      "rotation": 0,
+      "footprint": "MountingHole:MountingHole_3.2mm_M3",
+      "label_side": "right"
+    }
+  ],
+  "net_sources": [
+    "MAIN3V3",
+    "RX3V3",
+    "EXT5V_IN",
+    "EXT5V",
+    "GND"
+  ],
+  "interface_limits": {
+    "external_supply": "Regulated 5.0 V; total external rail <=1 A continuous; maintain >=4.5 V at gate driver.",
+    "sensor_inputs": "TDS and turbidity outputs 0 to 5.0 V nominal; 20 kohm input load; never apply a negative voltage.",
+    "controller_power": "Power each ESP32 via its own USB. Only GND and separate3V3outputs pluslistedGPIOs connect toPCB. Do not connect3V3outputs together.",
+    "module_mounting": "All modules connect by wires to labelled plated holes; no guessed module/socket footprint.",
+    "sensor_power": "J14/J15: pins1-2=MAIN3V3, pins2-3=EXT5V. Select only after verifying sensor supply; ship with no shunt."
+  },
+  "status": "REV B compact prototype: 100 x 100 mm, two copper layers, ERC/DRC/parity passed; not physically tested"
+}

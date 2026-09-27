@@ -10,6 +10,7 @@
 
 import {
   absorptionDbPerM,
+  sensedAbsorptionDbPerM,
   clamp,
   compressionGainDb,
   echoSnrDb,
@@ -26,8 +27,14 @@ export type Environment = {
   /** parts per thousand */
   salinityPpt: number;
   turbidityNtu: number;
+  /** metres, from the pressure sensor */
   depthM: number;
+  /** pH units, from the pH probe. Feeds the boric acid relaxation term. */
+  ph: number;
 };
+
+/** Sensible default for a sea-water pH probe that has not reported yet. */
+export const DEFAULT_PH = 8.1;
 
 export type MediumConfig = {
   medium: Medium;
@@ -241,7 +248,14 @@ export function decide(
   for (let ci = 0; ci < centreSteps; ci++) {
     const fCentre =
       cfg.bandLow + bandSpan * (0.12 + 0.76 * (ci / (centreSteps - 1)));
-    const alpha = absorptionDbPerM(cfg.medium, fCentre);
+    const alpha = sensedAbsorptionDbPerM(
+      cfg.medium,
+      fCentre,
+      env.tempC,
+      env.salinityPpt,
+      env.depthM,
+      env.ph,
+    );
     const excess = excessScatteringDbPerM(cfg, env.turbidityNtu, fCentre);
 
     for (const frac of bwFractions) {

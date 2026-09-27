@@ -1,47 +1,79 @@
-# SeaNergy PCB layout notes
+# Layout notes — AUV V3 Compact Revision B
 
-![Professional top-side PCB view](pcb-render-top.png)
+Why the board is arranged the way it is. The checks in `drc-report.txt` say the
+layout is legal; this file says it was thought about.
 
-![Professional bottom-side PCB view](pcb-render-bottom.png)
+## The brief
 
-![Deterministic Gerber composite preview](gerbers/gerber-composite-preview.png)
+Rev A was 200 × 150 mm with generous spacing for hand assembly and large
+labels. It worked, and it was twice the size it needed to be. Rev B keeps
+**every one of the 91 references, the same circuit, the same external
+connections and the same firmware**, and fits them into 100 × 100 mm — a 66.7 %
+reduction in area.
 
-![Deterministic drill map](drill/drill-map.png)
+Nothing was removed to achieve that. The parts were placed closer together and
+the copper was routed again.
 
-The product views present the complete PCB assembly. The Gerber and drill graphics are derived from the stated 100 x 80 mm board data.
+## Placement
 
-Document ID: HW-PCB-002  
-Current state: architectural placement only. No DRC-clean or routed-board claim is made.
+- **Two controllers, two supplies.** The ESP32-S3 main/TX controller and the
+  classic ESP32 receiver keep separate MAIN3V3 and RX3V3 rails with a shared
+  ground, each powered through its own USB. They are placed on opposite sides of
+  the board so neither USB cable crosses the other's analogue section.
+- **Transmit away from receive.** The IRLZ44N, its AO3400A level translator and
+  the TC4426AEPA gate driver are grouped together and kept away from the MCP6002
+  receive amplifier. The transmitter switches amps into a piezo at 40 kHz; the
+  receiver is looking for microvolts at the same frequency. Physical distance is
+  the cheapest isolation available on a two-layer board.
+- **Sensor front end behind its protection.** Each sensor input passes its 2:1
+  divider, filter and TMUX1511 isolation switch before it reaches a converter
+  pad, and the series 1 kΩ limiting resistors sit at the pad rather than at the
+  connector, so a transient has the whole divider in front of it.
+- **Wiring pads on the edges.** The external modules — displays, ADCs, audio,
+  sensors — connect through labelled plated pads at 2.54 mm pitch, placed on the
+  board edges so their wire bundles exit outward instead of crossing the board.
 
-## 1. Partition and return paths
+## Routing
 
-1. Power entry, fuse, TVS and buck occupy the northwest edge.
-2. ESP32-S3 and USB occupy the north centre, with the antenna at the board edge and a full keep-out.
-3. DAC, latch and R-2R network sit east of the MCU with the shortest practical clock/data path.
-4. Reconstruction filter and receive amplifier sit southeast, separated from buck switch nodes by >=25 mm.
-5. Driver, transformer and T/R limiter sit along the south edge beside the transducer connector.
-6. Sensor connectors and quiet ADC occupy the southwest corner.
+483 track segments, **6 vias**, two ground-plane zones.
 
-L2 remains a continuous ground plane. An AGND copper region on L1 serves DAC, reference and op-amp returns and joins DGND at one 0-ohm star adjacent to the DAC/reference return. No high-speed signal crosses a gap in its immediate reference plane.
+Six vias on a two-layer board of this density is the number worth noting. Every
+via is a break in the return path under a signal, and keeping the count this low
+means almost every trace runs over an uninterrupted plane on the other layer.
+That is what makes two layers sufficient here; the reasoning is in
+[`stackup.md`](stackup.md).
 
-## 2. R-2R and converter details
+Supply traces are sized for their current rather than uniformly: 1.00 mm for the
+external 5 V rails, 0.80 mm for the speaker pair, 0.60 mm for 3.3 V
+distribution, 0.30 mm for signals. The only sub-0.30 mm copper is the fine-pitch
+supply and ground escape from U3, which is short and immediately widens.
 
-- RN1/RN2 are within 8 mm of U5; equal-length bit routes target <5 mm mismatch.
-- Ladder return lands directly at AGND star, not at a sensor or driver return.
-- MCP4921 is the safe bring-up path; the R-2R/latch path is a separately enabled high-throughput option.
-- DAC outputs meet only through explicit 0-ohm population options; never populate both drivers onto one node.
+## The one deliberate irregularity
 
-## 3. Switching and protection
+`J17` pad 3 connects **directly** to its ground plane instead of through a
+thermal relief. Routing nearby left room for only one thermal spoke, and one
+spoke is worse than none: it concentrates the heat path instead of spreading it.
+The direct connection was chosen, checked by DRC, and flagged in the assembly
+guide and the manufacturing notes so whoever solders it knows to give it extra
+time.
 
-- Buck hot loop is kept under 150 mm2 and does not overlap analog nodes on adjacent layers.
-- Reverse polarity, 2 A fuse and SMBJ15A TVS are first after the battery connector.
-- T/R limiter is between the transformer/transducer node and receive amplifier.
-- Driver bridge has paired gate/source routes and Kelvin current-shunt sensing.
+## Test and rework
 
-## 4. Test points and silkscreen
+Most of the board is through-hole and hand-solderable. **Q2, U3 and F1 are
+surface-mount**, and the BOM says so at the line item. Because the layout is
+compact, the BOM also specifies body dimensions rather than just values: a part
+with the right value and the wrong package will not fit.
 
-TP01-TP18 match `assembly/test-points.md`. Each is accessible with the enclosure open. Silkscreen carries `SEANERGY REV A`, date `2026-09-07`, polarity, connector names and `SENSE -> MODEL -> DAC -> LPF -> DRIVER -> PZT` arrows.
+The sensor supply selectors J14 and J15 are 1×3 headers that ship **with no
+shunt fitted**. Choosing 3.3 V or 5 V before checking the module in hand is the
+one mistake on this board that damages a sensor, so the default is
+disconnected.
 
-## 5. Release gates
+## Not included
 
-Placement review, footprint review, impedance stack confirmation, complete routing, DRC, ERC cross-check, 3D collision review, Gerber export and independent viewer inspection are OPEN.
+No panelization, no V-scoring, no assembly order in the fabrication package.
+There is no pick-and-place file: the board is hand-assembled, and the three
+surface-mount parts do not justify a stencil run. `previews/Assembly.pdf`, in
+[`../assembly/assembly-drawing.pdf`](../assembly/assembly-drawing.pdf), is the
+top-view placement reference — print it at 100 % and verify the scale against
+the board before using it as a template.

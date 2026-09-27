@@ -1,5 +1,5 @@
 import React from 'react';
-import { PACKET_BYTES, PACKET_FIELDS } from '../../src/core/link';
+import { link, PACKET_FIELDS, PROTOCOL_LABEL } from '../../src/core/link';
 import { shallowEqual, useEngine } from '../../src/core/useEngine';
 import { useLink } from '../../src/core/useLink';
 import { Panel, Rows, Tx } from '../../src/ui/kit';
@@ -16,6 +16,7 @@ export default function DiagScreen() {
   const v = (s: string) => (live ? DASH : s);
 
   const st = useLink();
+  const stats = link.stats();
   const feasible = useEngine((s) => s.decision.feasible);
   const correction = useEngine((s) => s.noiseCorrectionDb);
   const pings = useEngine((s) => s.pings.length);
@@ -53,13 +54,16 @@ export default function DiagScreen() {
           data={[
             ['status', st.status.toUpperCase(), st.status === 'up' ? 'live' : 'fault'],
             ['detail', st.detail, 'plain'],
-            ['packet size', `${PACKET_BYTES} B`, 'plain'],
-            ['drops', live ? '0' : DASH, 'plain'],
+            ['transport', link.kind().toUpperCase(), 'plain'],
+            ['format', PROTOCOL_LABEL, 'plain'],
+            ['packets', `${stats.packets}`, 'plain'],
+            ['malformed', `${stats.bad}`, stats.bad > 0 ? 'warn' : 'plain'],
+            ['rate', stats.rate > 0 ? `${stats.rate.toFixed(1)} /s` : DASH, 'plain'],
           ]}
         />
       </Panel>
 
-      <Panel label="Packet layout" subtitle="fixed, one record per ping">
+      <Panel label="Telemetry record" subtitle="newline-delimited JSON, one object per line">
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 4 }}>
           {PACKET_FIELDS.map((f) => (
             <View
@@ -74,7 +78,7 @@ export default function DiagScreen() {
               }}
             >
               <Tx style={type.tab} color={f.measured ? c.cy : c.sim}>
-                {f.name} · {f.bytes}
+                {f.key} · {f.unit}
               </Tx>
             </View>
           ))}

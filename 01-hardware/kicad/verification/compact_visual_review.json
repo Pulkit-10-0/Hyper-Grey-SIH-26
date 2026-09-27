@@ -1,0 +1,14 @@
+{
+  "revision": "B",
+  "board_sha256": "a96adf08fb27b19282805c80bf532cbfa020ef1e0cacbea128a3b8d740a93bc9",
+  "assembly_pdf_sha256": "266fdae795486457052151de1b8884a614d916d3874cf19906b8ed1ba5d02f2e",
+  "board_3d_png_sha256": "6a08881cf4d1a5832d293473db135a8c440cd7264d4b46ec26664d4c7d24c852",
+  "reviewed": [
+    "Final 100 x 100 mm 3D preview",
+    "Centered A4 landscape 1:1 assembly PDF",
+    "Connector label and component-body clearance review",
+    "Mounting-hole access"
+  ],
+  "result": "PASS: no clipped board boundaries or merged connector/part labels found. H3 label placed below its hole to separate it from TP9. Four M3 mounting locations remain accessible with mounting hardware no larger than 7 mm outside diameter.",
+  "physical_testing": "Not performed; preview uses generic package models."
+}

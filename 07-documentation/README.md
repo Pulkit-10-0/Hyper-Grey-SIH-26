@@ -10,7 +10,7 @@ the failure analysis, the operator guide, and the literature the design rests on
 | Folder | Deliverable | State |
 |---|---|---|
 | [`technical-report/`](technical-report/) | `technical-report.pdf`, **26 pages**, plus a 5-page appendix | Built, 0 errors |
-| [`api/`](api/) | Link protocol, CSV schema, core module surface, worked examples | 6 documents |
+| [`api/`](api/) | Both link protocols, CSV schema, core module surface, worked examples | 8 documents |
 | [`safety/`](safety/) | FMEA, electrical safety, acoustic exposure, demonstration safety | 4 documents |
 | [`user-guide/`](user-guide/) | Operator guide, quick start, troubleshooting | 3 documents |
 | [`references/`](references/) | 145 bibliography entries, reference list, reading notes | 3 documents |

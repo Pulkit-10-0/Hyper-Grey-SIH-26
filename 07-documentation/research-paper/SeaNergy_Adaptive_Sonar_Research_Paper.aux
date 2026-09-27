@@ -1,0 +1,197 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\citation{haalboom2022}
+\citation{fonseca2025}
+\citation{reddy2026}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction and problem statement}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-A}}Research position and recent work}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-B}}What the problem statement asks for}{1}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-C}}Finished-configuration projections}{1}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-D}}Basis of the numerical results}{1}{subsection.1.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Problem statement clauses mapped to report sections. The compliance matrix in \texttt  {00-submission/} carries the same mapping with evidence references.}}{2}{table.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-E}}Team-reported bench intervals and provenance}{2}{subsection.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Background: why a fixed ping is wrong}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}The frequency trade}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Why bandwidth is the quantity worth protecting}{2}{subsection.2.2}\protected@file@percent }
+\newlabel{eq:rescw}{{1}{2}{Why bandwidth is the quantity worth protecting}{equation.1}{}}
+\newlabel{eq:reschirp}{{2}{2}{Why bandwidth is the quantity worth protecting}{equation.2}{}}
+\newlabel{eq:gain}{{3}{2}{Why bandwidth is the quantity worth protecting}{equation.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}The consequence for a fixed payload}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}System architecture}{2}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Partitioning}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Data flow}{2}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Revision-B PCB layout and connector arrangement from the project KiCad files. This view establishes geometry; electrical and acoustic performance require their own evidence.}}{3}{figure.1}\protected@file@percent }
+\newlabel{fig:pcbpaper}{{1}{3}{Revision-B PCB layout and connector arrangement from the project KiCad files. This view establishes geometry; electrical and acoustic performance require their own evidence}{figure.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Runtime partition. The idle hook drives GPIO 2, which is what makes processor occupancy during transmit externally observable rather than inferred.}}{3}{table.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Two domains, one codebase}{3}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Firmware implementation}{3}{section.4}\protected@file@percent }
+\newlabel{sec:firmware}{{IV}{3}{Firmware implementation}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}The transmit state machine}{3}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Propagation loss against frequency. Absorption follows Thorp's expression; the dashed trace is the scattering contribution at \SI {740}{\NTU }; the upper trace is their sum. The vertical markers are \SI {100}{}, \SI {200}{} and \SI {400}{\kilo \hertz }. Computed by \texttt  {thorpDbPerKm()} in \texttt  {src/core/physics.ts}.}}{4}{figure.2}\protected@file@percent }
+\newlabel{fig:absorption}{{2}{4}{Propagation loss against frequency. Absorption follows Thorp's expression; the dashed trace is the scattering contribution at \SI {740}{\NTU }; the upper trace is their sum. The vertical markers are \SI {100}{}, \SI {200}{} and \SI {400}{\kilo \hertz }. Computed by \texttt {thorpDbPerKm()} in \texttt {src/core/physics.ts}}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Firmware runtime partition. Core 0 has one application owner, the transmit task; sensing, the solver, the radio link and telemetry run on Core 1.}}{4}{figure.3}\protected@file@percent }
+\newlabel{fig:architecture}{{3}{4}{Firmware runtime partition. Core 0 has one application owner, the transmit task; sensing, the solver, the radio link and telemetry run on Core 1}{figure.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces The two acoustic configurations. Bench figures carry test identifiers; payload figures are the design constants in \texttt  {src/core/adaptation.ts}.}}{5}{table.3}\protected@file@percent }
+\newlabel{tab:domains}{{III}{5}{The two acoustic configurations. Bench figures carry test identifiers; payload figures are the design constants in \texttt {src/core/adaptation.ts}}{table.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Transmit state machine. \texttt  {MISSION} is the autonomous branch, entered only behind a guarded command; \texttt  {FAULT} is entered from any state on a DMA timeout or driver error and disables the transmit enable line immediately.}}{5}{figure.4}\protected@file@percent }
+\newlabel{fig:statemachine}{{4}{5}{Transmit state machine. \texttt {MISSION} is the autonomous branch, entered only behind a guarded command; \texttt {FAULT} is entered from any state on a DMA timeout or driver error and disables the transmit enable line immediately}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Timing budget}{5}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}1}Making the timing observable}{5}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Memory and buffering}{5}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Fixed-point arithmetic}{5}{subsection.4.4}\protected@file@percent }
+\citation{mackenzie1981}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Transmit states, their entry conditions and the hardware action each commands. The nominal cycle is \texttt  {BOOT} $\rightarrow $ \texttt  {READY} $\rightarrow $ \texttt  {ARMED} $\rightarrow $ \texttt  {TRANSMITTING} $\rightarrow $ \texttt  {READY}.}}{6}{table.4}\protected@file@percent }
+\newlabel{tab:states}{{IV}{6}{Transmit states, their entry conditions and the hardware action each commands. The nominal cycle is \texttt {BOOT} $\rightarrow $ \texttt {READY} $\rightarrow $ \texttt {ARMED} $\rightarrow $ \texttt {TRANSMITTING} $\rightarrow $ \texttt {READY}}{table.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Per-ping transmit timeline for a range ping. Four DMA blocks of \SI {512}{\micro \second } run back to back from the enable settle at \SI {50}{\micro \second }; the trailing block is the current read and packet encode that closes the cycle. Stage-by-stage figures are in Table \ref {tab:timing}.}}{6}{figure.5}\protected@file@percent }
+\newlabel{fig:timing}{{5}{6}{Per-ping transmit timeline for a range ping. Four DMA blocks of \SI {512}{\micro \second } run back to back from the enable settle at \SI {50}{\micro \second }; the trailing block is the current read and packet encode that closes the cycle. Stage-by-stage figures are in Table \ref {tab:timing}}{figure.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Per-ping timing budget for a range ping. Every stage sits inside its limit; the tightest ratio is the DMA block at \SI {512}{\micro \second } against \SI {520}{\micro \second }, and the loosest is the solver, which has two orders of magnitude of headroom.}}{6}{table.5}\protected@file@percent }
+\newlabel{tab:timing}{{V}{6}{Per-ping timing budget for a range ping. Every stage sits inside its limit; the tightest ratio is the DMA block at \SI {512}{\micro \second } against \SI {520}{\micro \second }, and the loosest is the solver, which has two orders of magnitude of headroom}{table.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Ocean acoustic models used}{6}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Sound speed}{6}{subsection.5.1}\protected@file@percent }
+\newlabel{eq:mackenzie}{{4}{6}{Sound speed}{equation.4}{}}
+\citation{thorp1967}
+\citation{francois1982}
+\citation{ainslie1998}
+\citation{npl}
+\citation{urick1983}
+\citation{harris1978}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Transmit modes. The block size is fixed, so mode selection changes the block count rather than the timing structure.}}{7}{table.6}\protected@file@percent }
+\newlabel{tab:txmodes}{{VI}{7}{Transmit modes. The block size is fixed, so mode selection changes the block count rather than the timing structure}{table.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Absorption}{7}{subsection.5.2}\protected@file@percent }
+\newlabel{eq:thorp}{{5}{7}{Absorption}{equation.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Excess loss from suspended sediment}{7}{subsection.5.3}\protected@file@percent }
+\newlabel{eq:scatter}{{6}{7}{Excess loss from suspended sediment}{equation.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}The active sonar equation}{7}{subsection.5.4}\protected@file@percent }
+\newlabel{eq:sonar}{{7}{7}{The active sonar equation}{equation.7}{}}
+\newlabel{eq:tl}{{8}{7}{The active sonar equation}{equation.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Waveform synthesis and windowing}{7}{section.6}\protected@file@percent }
+\newlabel{sec:synthesis}{{VI}{7}{Waveform synthesis and windowing}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}Phase accumulation rather than live trigonometry}{7}{subsection.6.1}\protected@file@percent }
+\newlabel{eq:dds}{{9}{7}{Phase accumulation rather than live trigonometry}{equation.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}Waveform families}{7}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}The transmit envelope}{7}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Pulse compression and the matched filter}{7}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}Principle}{7}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-B}}The resolution table}{7}{subsection.7.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Absorption against published values. These are assertions in the implementation, not annotations: the build fails if they stop holding.}}{8}{table.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The four transmit modes at identical duration and window. Fixed tone, linear frequency modulated sweep, geometric sweep and Barker-13 phase coding.}}{8}{figure.6}\protected@file@percent }
+\newlabel{fig:waveforms}{{6}{8}{The four transmit modes at identical duration and window. Fixed tone, linear frequency modulated sweep, geometric sweep and Barker-13 phase coding}{figure.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Waveform families and the conditions under which the solver selects each.}}{8}{table.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-C}}Realised performance}{8}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}The adaptation solver and the closed loop}{8}{section.8}\protected@file@percent }
+\newlabel{sec:solver}{{VIII}{8}{The adaptation solver and the closed loop}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-A}}The candidate search}{8}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-B}}The design margin}{8}{subsection.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-C}}Measured adaptation behaviour}{8}{subsection.8.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Envelope windows and their sidelobe floors. Selection is by predicted margin: Hann below \SI {3}{\decibel }, Blackman above \SI {400}{\NTU }, Hamming otherwise.}}{9}{figure.7}\protected@file@percent }
+\newlabel{fig:windows}{{7}{9}{Envelope windows and their sidelobe floors. Selection is by predicted margin: Hann below \SI {3}{\decibel }, Blackman above \SI {400}{\NTU }, Hamming otherwise}{figure.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Peak sidelobe level by window \cite  {harris1978}. Maximum deviation from theory across the set is \SI {0.51}{\decibel }, attributable to Q15 coefficient quantisation.}}{9}{table.9}\protected@file@percent }
+\newlabel{tab:windows}{{IX}{9}{Peak sidelobe level by window \cite {harris1978}. Maximum deviation from theory across the set is \SI {0.51}{\decibel }, attributable to Q15 coefficient quantisation}{table.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {X}{\ignorespaces Resolution and compression gain against pulse duration at \SI {299}{\kilo \hertz } of sweep, $c = \SI {1537.3}{\metre \per \second }$. Unmodulated resolution scales with duration; compressed resolution does not.}}{9}{table.10}\protected@file@percent }
+\newlabel{tab:resolution}{{X}{9}{Resolution and compression gain against pulse duration at \SI {299}{\kilo \hertz } of sweep, $c = \SI {1537.3}{\metre \per \second }$. Unmodulated resolution scales with duration; compressed resolution does not}{table.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-D}}The closed loop}{9}{subsection.8.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IX}Hardware design and domain partitioning}{9}{section.9}\protected@file@percent }
+\newlabel{sec:hardware}{{IX}{9}{Hardware design and domain partitioning}{section.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IX-A}}Selection against measured limits}{9}{subsection.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IX-B}}The transducer as a load}{9}{subsection.9.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Measured sidelobe structure for the four windows {\relax \fontsize  {9}{10pt}\selectfont  \textbf  {T-04}}. The ordering and the floors follow theory; the residual deviation is coefficient quantisation, not a defect in the envelope generator.}}{10}{figure.8}\protected@file@percent }
+\newlabel{fig:t04}{{8}{10}{Measured sidelobe structure for the four windows \tid {T-04}. The ordering and the floors follow theory; the residual deviation is coefficient quantisation, not a defect in the envelope generator}{figure.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XI}{\ignorespaces Pulse compression results. The \SI {0.8}{\decibel } shortfall between theoretical and correlation gain is consistent with the envelope taper, which trades coherent gain for the sidelobe floor of Table \ref {tab:windows}.}}{10}{table.11}\protected@file@percent }
+\newlabel{tab:compression}{{XI}{10}{Pulse compression results. The \SI {0.8}{\decibel } shortfall between theoretical and correlation gain is consistent with the envelope taper, which trades coherent gain for the sidelobe floor of Table \ref {tab:windows}}{table.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IX-C}}Signal integrity of the transmit chain}{10}{subsection.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IX-D}}Cost}{10}{subsection.9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {X}Power architecture and budget}{10}{section.10}\protected@file@percent }
+\newlabel{sec:power}{{X}{10}{Power architecture and budget}{section.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-A}}Duty cycling}{10}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-B}}Keeping the processor out of the transmit path}{10}{subsection.10.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Matched filtering. Upper: the received trace, in which the echo is not visible. Lower: the correlator output, with the peak at the true delay marked.}}{11}{figure.9}\protected@file@percent }
+\newlabel{fig:compression}{{9}{11}{Matched filtering. Upper: the received trace, in which the echo is not visible. Lower: the correlator output, with the peak at the true delay marked}{figure.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XII}{\ignorespaces The solver at two scales. The firmware grid is trimmed to the transducer's resonance neighbourhood, where the impedance minimum makes the drive efficient; the wider grid explores the full design space.}}{11}{table.12}\protected@file@percent }
+\newlabel{tab:solver}{{XII}{11}{The solver at two scales. The firmware grid is trimmed to the transducer's resonance neighbourhood, where the impedance minimum makes the drive efficient; the wider grid explores the full design space}{table.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XIII}{\ignorespaces Adaptation sweep, water configuration, \SI {220}{\metre } required range. Each row is the winner of a fresh search.}}{11}{table.13}\protected@file@percent }
+\newlabel{tab:sweep}{{XIII}{11}{Adaptation sweep, water configuration, \SI {220}{\metre } required range. Each row is the winner of a fresh search}{table.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {X-C}}Endurance}{11}{subsection.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {XI}The learned surrogate and its safety bound}{11}{section.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XI-A}}Two models, two outcomes}{11}{subsection.11.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Compression gain against time-bandwidth product {\relax \fontsize  {9}{10pt}\selectfont  \textbf  {T-06}}. The realised curve tracks $10\log _{10}(\tau B)$ with the offset attributable to the envelope taper.}}{12}{figure.10}\protected@file@percent }
+\newlabel{fig:t06}{{10}{12}{Compression gain against time-bandwidth product \tid {T-06}. The realised curve tracks $10\log _{10}(\tau B)$ with the offset attributable to the envelope taper}{figure.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Decision latency across thirty consecutive adaptations {\relax \fontsize  {9}{10pt}\selectfont  \textbf  {T-13}}. Mean \SI {34.1}{\milli \second }, 95th percentile \SI {38.6}{\milli \second }, maximum \SI {39.2}{\milli \second }. The distribution is tight, which is what allows the ping period to be set without a large allowance for a slow decision.}}{12}{figure.11}\protected@file@percent }
+\newlabel{fig:latency}{{11}{12}{Decision latency across thirty consecutive adaptations \tid {T-13}. Mean \SI {34.1}{\milli \second }, 95th percentile \SI {38.6}{\milli \second }, maximum \SI {39.2}{\milli \second }. The distribution is tight, which is what allows the ping period to be set without a large allowance for a slow decision}{figure.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XI-B}}The model that is deployed}{12}{subsection.11.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XI-C}}The deployment rule}{12}{subsection.11.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Predicted signal-to-noise ratio across the candidate grid in clear and in turbid water. The contour marks the detection threshold plus margin. In sediment the feasible region contracts and its optimum migrates downband without anything being hard-coded to make it do so.}}{13}{figure.12}\protected@file@percent }
+\newlabel{fig:feasible}{{12}{13}{Predicted signal-to-noise ratio across the candidate grid in clear and in turbid water. The contour marks the detection threshold plus margin. In sediment the feasible region contracts and its optimum migrates downband without anything being hard-coded to make it do so}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Selected centre frequency and the resulting range resolution against sediment load, over 20{,}000 decisions. The band is the 10th to 90th percentile. Resolution degrades gracefully rather than the return being lost.}}{13}{figure.13}\protected@file@percent }
+\newlabel{fig:downband}{{13}{13}{Selected centre frequency and the resulting range resolution against sediment load, over 20{,}000 decisions. The band is the 10th to 90th percentile. Resolution degrades gracefully rather than the return being lost}{figure.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {XII}The operator application}{13}{section.12}\protected@file@percent }
+\newlabel{sec:app}{{XII}{13}{The operator application}{section.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XII-A}}Two modes}{13}{subsection.12.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XII-B}}What runs on the handset}{13}{subsection.12.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XII-C}}Screens}{13}{subsection.12.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {XIV}{\ignorespaces Component selection and the limit that decided each case.}}{14}{table.14}\protected@file@percent }
+\newlabel{tab:parts}{{XIV}{14}{Component selection and the limit that decided each case}{table.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Transducer impedance sweep {\relax \fontsize  {9}{10pt}\selectfont  \textbf  {T-01}}. Resonance \SI {40.2}{\kilo \hertz }, minimum impedance \SI {412}{\ohm }, bandwidth \SI {5.6}{\kilo \hertz }, $Q = 7.18$.}}{14}{figure.14}\protected@file@percent }
+\newlabel{fig:impedance}{{14}{14}{Transducer impedance sweep \tid {T-01}. Resonance \SI {40.2}{\kilo \hertz }, minimum impedance \SI {412}{\ohm }, bandwidth \SI {5.6}{\kilo \hertz }, $Q = 7.18$}{figure.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XV}{\ignorespaces Transmit chain performance. Third-harmonic content is controlled by symmetric drive and the reconstruction filter.}}{14}{table.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XII-D}}Verification}{14}{subsection.12.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {XIII}Projected validation results}{14}{section.13}\protected@file@percent }
+\newlabel{sec:validation}{{XIII}{14}{Projected validation results}{section.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIII-A}}Test programme}{14}{subsection.13.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIII-B}}Uncertainty}{14}{subsection.13.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {XVI}{\ignorespaces Quantity cost model. Component discount factor, printed circuit board, enclosure and assembly are modelled separately; the full basis is in \texttt  {01-hardware/bom/cost-model.md}.}}{15}{table.16}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {XVII}{\ignorespaces Power states in both configurations. Bench figures carry test identifiers; payload figures are the model in \texttt  {src/core/power.ts} at \SI {3.3}{\volt }.}}{15}{table.17}\protected@file@percent }
+\newlabel{tab:power}{{XVII}{15}{Power states in both configurations. Bench figures carry test identifiers; payload figures are the model in \texttt {src/core/power.ts} at \SI {3.3}{\volt }}{table.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Sustained transfer and processor occupancy {\relax \fontsize  {9}{10pt}\selectfont  \textbf  {T-10}}. Four complete 1{,}024-byte blocks sustain \SI {2.003}{\mega \Sps }; Core 0 is idle for \SI {97.6}{\percent } of the transmit envelope, observed at GPIO 2.}}{15}{figure.15}\protected@file@percent }
+\newlabel{fig:dma}{{15}{15}{Sustained transfer and processor occupancy \tid {T-10}. Four complete 1{,}024-byte blocks sustain \SI {2.003}{\mega \Sps }; Core 0 is idle for \SI {97.6}{\percent } of the transmit envelope, observed at GPIO 2}{figure.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIII-C}}Deviation control}{15}{subsection.13.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XIII-D}}Software verification}{15}{subsection.13.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {XIV}Operating envelope}{15}{section.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Synthesis cost {\relax \fontsize  {9}{10pt}\selectfont  \textbf  {T-12}}. Fixed-point direct digital synthesis fills 1{,}024 samples in \SI {8.4}{\micro \second } against \SI {74.0}{\micro \second } for live trigonometry, an \SI {8.8}{\times } reduction that carries a \SI {13.9}{\percent } reduction in ping energy.}}{16}{figure.16}\protected@file@percent }
+\newlabel{fig:dds}{{16}{16}{Synthesis cost \tid {T-12}. Fixed-point direct digital synthesis fills 1{,}024 samples in \SI {8.4}{\micro \second } against \SI {74.0}{\micro \second } for live trigonometry, an \SI {8.8}{\times } reduction that carries a \SI {13.9}{\percent } reduction in ping energy}{figure.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Power state distribution and per-ping energy {\relax \fontsize  {9}{10pt}\selectfont  \textbf  {T-11}}. The range-ping distribution centres on \SI {0.93}{\milli \joule }.}}{16}{figure.17}\protected@file@percent }
+\newlabel{fig:power}{{17}{16}{Power state distribution and per-ping energy \tid {T-11}. The range-ping distribution centres on \SI {0.93}{\milli \joule }}{figure.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {XV}Path to deployment}{16}{section.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XV-A}}Integration}{16}{subsection.15.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XV-B}}Scaling}{16}{subsection.15.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XV-C}}Extension}{16}{subsection.15.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {XVIII}{\ignorespaces Residual model accuracy. The learned form sits \SI {0.011}{\decibel } above the noise floor, using 3{,}965 tree nodes.}}{17}{table.18}\protected@file@percent }
+\newlabel{tab:residual}{{XVIII}{17}{Residual model accuracy. The learned form sits \SI {0.011}{\decibel } above the noise floor, using 3{,}965 tree nodes}{table.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Left: the prediction shortfall against turbidity, coloured by required range; the spread resolves into structure once the second variable is conditioned on. Centre: accuracy against two baselines and the noise floor. Right: the range resolution recovered by spending margin where the error actually is.}}{17}{figure.18}\protected@file@percent }
+\newlabel{fig:residual}{{18}{17}{Left: the prediction shortfall against turbidity, coloured by required range; the spread resolves into structure once the second variable is conditioned on. Centre: accuracy against two baselines and the noise floor. Right: the range resolution recovered by spending margin where the error actually is}{figure.18}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XIX}{\ignorespaces The two operating modes. The active mode is displayed at all times and every value carries its provenance in its colour, so a simulated reading and a live one are never presented alike.}}{17}{table.19}\protected@file@percent }
+\newlabel{tab:modes}{{XIX}{17}{The two operating modes. The active mode is displayed at all times and every value carries its provenance in its colour, so a simulated reading and a live one are never presented alike}{table.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {XV-D}}Standards position}{17}{subsection.15.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {XVI}Conclusion}{17}{section.16}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {XX}{\ignorespaces The twelve screens. Every control is a slider, chip, segment or toggle: there is no text input anywhere in the application, which removes an entire class of input-handling defect and allows operation with wet hands.}}{18}{table.20}\protected@file@percent }
+\newlabel{tab:screens}{{XX}{18}{The twelve screens. Every control is a slider, chip, segment or toggle: there is no text input anywhere in the application, which removes an entire class of input-handling defect and allows operation with wet hands}{table.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XXI}{\ignorespaces The sixteen-test final-configuration projection. Source result files are in \texttt  {06-validation/}, filed under the same identifier. T-02 remains below the \SI {55}{\dBc } design threshold.}}{18}{table.21}\protected@file@percent }
+\newlabel{tab:tests}{{XXI}{18}{The sixteen-test final-configuration projection. Source result files are in \texttt {06-validation/}, filed under the same identifier. T-02 remains below the \SI {55}{\dBc } design threshold}{table.21}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XXII}{\ignorespaces Uncertainty budget, root-sum-square propagation. The full table is in \texttt  {06-validation/instruments/uncertainty.md}. Range uncertainty combines the temperature-derived sound-speed term with the round-trip timing term as independent contributions.}}{18}{table.22}\protected@file@percent }
+\newlabel{tab:uncertainty}{{XXII}{18}{Uncertainty budget, root-sum-square propagation. The full table is in \texttt {06-validation/instruments/uncertainty.md}. Range uncertainty combines the temperature-derived sound-speed term with the round-trip timing term as independent contributions}{table.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Sediment adaptation across the tank sweep {\relax \fontsize  {9}{10pt}\selectfont  \textbf  {T-14}}. Selected centre frequency falls from \SI {80}{\kilo \hertz } at \SI {8.4}{\NTU } to \SI {32}{\kilo \hertz } at \SI {145}{\NTU }, with predicted margin held at or above \SI {6.6}{\decibel } throughout. This figure is the compliance matrix evidence item C-05.}}{19}{figure.19}\protected@file@percent }
+\newlabel{fig:c05}{{19}{19}{Sediment adaptation across the tank sweep \tid {T-14}. Selected centre frequency falls from \SI {80}{\kilo \hertz } at \SI {8.4}{\NTU } to \SI {32}{\kilo \hertz } at \SI {145}{\NTU }, with predicted margin held at or above \SI {6.6}{\decibel } throughout. This figure is the compliance matrix evidence item C-05}{figure.19}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XXIII}{\ignorespaces Engineering deviations and the control applied to each.}}{19}{table.23}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {XXIV}{\ignorespaces The build gate. No package is produced unless all three stages pass; the sequence runs on every release build.}}{19}{table.24}\protected@file@percent }
+\newlabel{tab:gate}{{XXIV}{19}{The build gate. No package is produced unless all three stages pass; the sequence runs on every release build}{table.24}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XXV}{\ignorespaces Reproduction commands. The published dataset regenerates byte for byte from its seed, verified by SHA-256 against the committed copy.}}{20}{table.25}\protected@file@percent }
+\newlabel{tab:repro}{{XXV}{20}{Reproduction commands. The published dataset regenerates byte for byte from its seed, verified by SHA-256 against the committed copy}{table.25}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {XXVI}{\ignorespaces Operating envelope and the system's behaviour at each boundary.}}{20}{table.26}\protected@file@percent }
+\newlabel{tab:envelope}{{XXVI}{20}{Operating envelope and the system's behaviour at each boundary}{table.26}{}}
+\bibcite{mackenzie1981}{1}
+\bibcite{thorp1967}{2}
+\bibcite{francois1982}{3}
+\bibcite{ainslie1998}{4}
+\bibcite{urick1983}{5}
+\bibcite{harris1978}{6}
+\bibcite{barker1953}{7}
+\bibcite{npl}{8}
+\bibcite{doe2021}{9}
+\bibcite{cognitive2023}{10}
+\bibcite{wideband2023}{11}
+\bibcite{haalboom2022}{12}
+\bibcite{fonseca2025}{13}
+\bibcite{reddy2026}{14}
+\@writefile{toc}{\contentsline {section}{References}{21}{section*.1}\protected@file@percent }
+\gdef \@abspage@last{21}
