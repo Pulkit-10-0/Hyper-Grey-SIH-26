@@ -1,0 +1,238 @@
+SEANERGY / HYPER GREY
+PPT PROJECT CONTEXT AND SLIDE-AUTHORING BRIEF
+SIH 2026 | PROBLEM STATEMENT 26058
+
+PURPOSE
+This file is the source handoff for a presenter, designer or slide-making tool.
+Use it to build a coherent presentation from the repository. It is an information
+dump, not a claim that every illustration or number is a hardware measurement.
+Keep a source path and configuration attached to each quantitative statement.
+
+ONE-LINE PROJECT STORY
+SeaNergy investigates how an AUV can choose and generate a sonar transmit ping
+for the water condition it encounters, rather than using one fixed waveform.
+
+SHORT PROJECT LINE
+Every Ping, Purpose-Built.
+
+PROJECT IDENTITY
+Official team name: Hyper Grey
+Institute: Maharaja Surajmal Institute of Technology
+Problem: Low-Power, Real-Time Adaptive Software-Defined Sonar Transmitter
+Payload for Autonomous Underwater Vehicles
+PS ID: 26058
+Organization: Ministry of Earth Sciences
+Department: National Institute of Ocean Technology
+Category: Hardware
+Theme: Robotics and Drones
+Team lead: Pulkit
+Presenter: Aarushi
+Members attending: 6
+
+TEAM OWNERS
+Acoustics and physics: Pulkit, Harshada
+Embedded firmware: Pulkit; backup Harshada
+Analog and power: Harshada; backup Pulkit
+PCB and integration: Pulkit; backup Harshada
+Mechanical and water safety: Ananya; hardware backup Harshada
+Mobile application: Prakhar and Jaspreet
+Dataset and ML: Jaspreet; software backup Prakhar
+Documentation, business and IP: Aarushi; backup Ananya
+Demo operations and QA: Pulkit and Jaspreet; backup Ananya
+Source: 10-project/team/team.md and 10-project/team/ownership.md
+
+THE PROBLEM, IN PLAIN LANGUAGE
+A conventional fixed ping cannot be ideal for every water condition or mission.
+Propagation, scattering, source efficiency, resolution and energy use change
+with frequency, waveform bandwidth, pulse length and drive level. PS 26058
+therefore calls for physical embedded hardware that reads sensors or analog
+controls, selects sonar waveform parameters in real time, and produces an analog
+output through a DAC and amplifier while conserving AUV energy. A phone UI,
+synthetic FFT or waveform plot by itself does not satisfy that physical demand.
+
+THE CORE SYSTEM IDEA
+Environmental acquisition -> bounded decision logic -> waveform generation
+-> timed transfer -> DAC -> reconstruction/filtering -> output stage ->
+transducer. A local operator console presents settings and trace data, while
+a test dossier ties every acceptance claim to a specific recording.
+
+A team constraint is that a fully functional deployed hardware build is not
+part of this submission exercise. The presentation can still show the MVP,
+source, board design, interface plan, verification method and product pathway.
+Do not convert that constraint into a claim that an unbuilt unit passed tests.
+
+THREE CONFIGURATIONS. NEVER COMBINE THEIR NUMBERS.
+1. Bench/RevB configuration:
+   ESP32-S3 external development board, DS18B20, ADS1115 sensor modules,
+   potentiometers, 40 kHz LEDC PWM transmitter path, TC4426 gate driver,
+   IRLZ44N MOSFET, GU1008C-40T nominal 40 kHz TX element, a separate classic
+   ESP32 receive section and separate I2S/MAX98357A 1 kHz audio output. The
+   KiCad RevB PCB is a 100 x 100 mm, two-layer, 91-reference design. Its
+   Gerbers and assembly information live in 01-hardware. It has no parallel
+   sonar DAC. The older serial session in 02-firmware/measurements/captures
+   shows sensor and pot values changing, not adaptive physical sonar output.
+2. ESP-IDF payload source:
+   ESP32-S3 / FreeRTOS, external ADS1115 sensor reads, rule-based solver,
+   fixed-point sine-LUT DDS, windowing, DMA-capable I80 transfer through two
+   1024-byte buffers, INA226 power-monitor source and BLE telemetry. Candidate
+   tones are 24, 32, 40, 48, 60 and 80 kHz. Nominal software sample-rate
+   constant is 2 MSps; the I80 pixel clock is configured at 20 MHz. A matching
+   DAC/analog path and an instrument trace are needed to establish actual
+   effective sample cadence and analog output.
+3. Product/model study:
+   A generated 20,000-row, 27-column dataset and 468-candidate laptop-side
+   selection method study an assumed 100-500 kHz transducer band. Winning
+   center frequencies in the published synthetic data are 148-351 kHz.
+   These are not measured operating frequencies of the RevB 40 kHz circuit.
+
+TECHNICAL DIFFERENTIATION
+- Decision logic is bounded by acoustic feasibility, electrical limits and
+  an energy budget rather than choosing the visually prettiest waveform.
+- The intended waveforms are LFM chirps, geometric/exponential sweeps and
+  phase-coded pulses. A constant-frequency sine with a tapered envelope is a
+  useful DDS primitive but not any of these modulations.
+- Windowed pulse edges reduce switching abruptness and can reduce spectral
+  leakage; Hann, Tukey and Blackman are present in the inspected ESP-IDF source.
+- A DMA-capable peripheral is used for block transfer. Continuous,
+  timer-paced, gap-free sample streaming must be established with a trace.
+- The phone is an operator layer; acoustic transmission must remain an
+  embedded hardware responsibility.
+- The India case includes a narrow side-scan-sonar TAM and bottom-up SAM/SOM
+  analysis in 09-business, rather than treating all marine spending as demand.
+
+ACOUSTIC REASONING FOR SPEAKERS
+Higher usable bandwidth improves compressed-pulse range resolution, roughly
+c/(2B) in the ideal case. Higher frequency also generally increases seawater
+absorption, while acoustic loss from suspended sediment depends on concentration,
+particle-size distribution and frequency. Temperature, salinity and depth
+affect propagation. Turbidity in NTU is an optical proxy, not an absolute
+acoustic attenuation measurement. A slide can explain the tradeoff, but it
+must not claim a universal numerical NTU-to-dB rule without calibration.
+Source pointers: 03-research, 07-documentation/references, and the external
+acoustics links in PS26058-technical-audit.md.
+
+SLIDE PLAN (15 SLIDES MAXIMUM)
+01. Title. SeaNergy, team, PS 26058, line: Every Ping, Purpose-Built.
+02. Problem. Fixed transmit settings meet changing water; show the physical
+    mechanism and the AUV energy constraint, not a generic ocean photo.
+03. Why adaptation matters. Contrast detail/range/energy as a three-way
+    engineering tradeoff. Use one simple annotated waveform or frequency-band
+    chart.
+04. Proposed solution. Follow eye order: input conditions at upper left,
+    bounded decision in center, actual output chain at right, proof strip at
+    bottom. Do not put the mobile app at the head of the physical signal chain.
+05. Sensor interface. DS18B20, ADS1115 channels and analog control inputs.
+    Show the pin/data path and calibration requirements.
+06. Waveform mathematics. One panel each for CW primitive, LFM, geometric
+    sweep and phase code; clearly distinguish generated models from transmitter
+    firmware capabilities.
+07. Embedded execution. Core/task split, buffer ownership, transfer path and
+    timing markers. Explain why DMA reduces sample-by-sample CPU work, while
+    avoiding a measured idle claim without an instrument capture.
+08. Electronics. Show the actual RevB TX/RX schematic path separately from
+    the proposed DAC/filter/amplifier flight path. A PCB layout visualization is
+    not a photograph of a populated board.
+09. Operator app. Local control and telemetry, offline behavior, Android
+    release artifacts and iOS source. Do not imply app DSP is sonar TX hardware.
+10. Model and dataset. 20,000 generated cases; physics-constrained selection,
+    surrogate rejection and residual-model study. Explain generated ground
+    truth and its limits.
+11. Verification framework. T-01 to T-16 plan, what each instrument captures,
+    raw-file conventions and acceptance gates. Put physically recorded runs in
+    their own category; show projections as design estimates.
+12. India opportunity. Use INR, source dates, target customers, qualification
+    path, BOM and unit-cost assumptions from 09-business/market and
+    09-business/cost-analysis. Never convert a programme budget directly into
+    obtainable sales.
+13. IP position. Prior art is established; the proposed protection focus is
+    the bounded embedded combination and its deterministic safety guard.
+    Cite 09-business/ip/prior-art.md. A filing target is not a filing receipt.
+14. Roadmap and risks. Integration, tank characterization, power/output
+    calibration, sealing, vehicle interface and production gates. Use
+    09-business/roadmap and 10-project/risk-register.
+15. Team and close. Six owners, two-person backups, one specific pilot or
+    evaluation ask. End on the physical transmitter objective.
+
+SLIDE 04 TEXT STARTER
+Headline: The next ping is designed for the water ahead.
+Problem addressed: Fixed sonar pings trade away range, detail or energy when
+the water and mission change.
+Proposed solution: SeaNergy connects environmental sensing, bounded acoustic
+selection and embedded waveform generation in an AUV-sized transmitter
+architecture.
+Innovation: A deterministic physics guard, explicit energy/timing limits and
+local operator traceability make each waveform decision explainable.
+Supporting table: compare candidate frequency, pulse duration, waveform type
+and estimated energy for one clear-water and one sediment-heavy scenario.
+Only use rows that resolve to a named source file, with units and configuration.
+
+DATA AND FIGURE RULES
+- Provide a title, unit, source filename and configuration for every chart.
+- Do not place 24-80 kHz, 100-500 kHz and 40 kHz data in one series unless the
+  legend identifies them as separate designs.
+- The T-series bench/tank tables in 06-validation/README.md are engineering
+  projections. Their PASS labels are not oscilloscope or tank certification.
+- The first source of connected physical sensor evidence is
+  02-firmware/measurements/captures/legacy-sensor-session.txt.
+- The team's recalled 1.25-1.49 ms sensor-reading-to-waveform-start latency,
+  50.0-50.9 dBc SFDR and energy above a recalled budget lack raw run metadata.
+  They are useful follow-up prompts, not traceable plotted results.
+- The proposed finished-product SFDR criterion in
+  01-hardware/bench-setup/instrument-settings.md is 55 dBc. Resolve the
+  different 45 dBc T-02 acceptance line before a performance slide.
+- Treat the 20,000-row dataset and its model scores as generated-data
+  research, not seawater measurements.
+
+VISUAL ASSET GUIDE
+Use architecture diagrams from 08-media/diagrams, board layout views from
+01-hardware/pcb and the numbered slide illustrations already in 08-media.
+Keep the actual circuit path legible. Show a build photograph or scope screen
+only when the source image is an actual photograph or instrument export with
+run metadata. The step-01.jpg assembly graphic is an instruction illustration,
+not a populated-board photo. Use clean backgrounds, high contrast and
+large text. One strong diagram beats four tiny pictures.
+
+INDIA AND BUSINESS SOURCE PATHS
+09-business/market/market-sizing.pdf
+09-business/market/sources.md
+09-business/cost-analysis/SeaNergy_India_Cost_Market_Analysis.pdf
+09-business/ip/prior-art.md
+09-business/ip/disclosure.md
+09-business/roadmap/technical-roadmap.md
+The business documents use INR; recheck any exchange rate, price, budget or
+filing fee against its primary source and date before publication.
+
+PRIMARY REPOSITORY PATHS FOR SPEAKER NOTES
+00-submission/compliance-matrix/evidence/EVIDENCE_INDEX.md
+01-hardware/README.md
+01-hardware/kicad/verification/schematic.net.xml
+02-firmware/src/main/main.cpp
+02-firmware/src/components/solver/solver.cpp
+02-firmware/src/components/dds/dds.cpp
+02-firmware/src/components/sonar_dma/sonar_dma.cpp
+05-models/README.md
+06-validation/README.md
+07-documentation/technical-report/technical-report.pdf
+10-project/team/ownership.md
+PS26058-technical-audit.md
+
+PRESENTER Q&A ANCHORS
+Q: Is a mobile waveform plot a sonar transmitter?
+A: No. The physical output path is the MCU through DAC, conditioning and
+driver; the app is an operator and analysis layer.
+Q: Is a potentiometer acceptable as an environment input?
+A: Yes under PS 26058, provided its ADC-to-waveform path is demonstrated.
+Q: Are the 40 kHz demonstrator and the 100-500 kHz study one device?
+A: No. They are different configurations with different transducers.
+Q: Does DMA alone prove low power?
+A: No. Energy needs a time-aligned voltage/current integral per ping.
+Q: Can the repo itself prove underwater readiness?
+A: No. It can provide source, manufacturing files, procedures and raw records;
+waterproofing, acoustic source level and vehicle operation need physical
+qualification.
+
+FINAL PITCH DISCIPLINE
+Use strong wording for the engineering problem and the route to a product,
+but never let a polished image or unqualified number imply a physical test
+that was not captured. The strongest credible story is a real MVP and a
+technically specific, inspectable route to the finished AUV payload.
