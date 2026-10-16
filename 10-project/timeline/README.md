@@ -6,6 +6,6 @@
 | [Decision record](decisions.md) | Reasoning behind earlier architecture choices |
 | [Timeline](timeline.md) | Scheduled project milestones |
 
-The records include earlier parallel R-2R/DAC and learned-surrogate proposals. The active [TX/RX firmware](../../02-firmware/README.md) now uses separate PlatformIO projects with I2S PCM and PWM outputs; the [model evaluation](../../05-models/evaluation/README.md) retains a deterministic decision reference. Planned filing, rehearsal and integration dates are not completion evidence. Use actual commits and verification artifacts alongside these planning records.
+The history follows the project from earlier parallel R-2R/DAC and learned-surrogate studies to the active [TX/RX firmware](../../02-firmware/README.md), separate PlatformIO projects, and I2S PCM/PWM outputs. The [model evaluation](../../05-models/evaluation/README.md) records the deterministic decision reference. Dated commits and verification artifacts complement the timeline and planning entries.
 
 Return to [project coordination](../README.md).

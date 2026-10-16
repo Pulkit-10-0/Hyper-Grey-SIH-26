@@ -2,7 +2,7 @@
 
 [Project overview](../../README.md) · [Parent folder](../README.md)
 
-Original September 2026 photographs of the bench prototype, controller, instrumentation, sensors, and development setup. The photographs document the visible hardware and activity, not a complete calibration or acoustic performance record.
+Original September 2026 photographs of the bench prototype, controller, instrumentation, sensors, and development setup. The collection shows the assembled hardware, instrumentation, manual tuning, and laboratory activity.
 
 ## Selected views
 
@@ -15,7 +15,7 @@ Original September 2026 photographs of the bench prototype, controller, instrume
 
 ![Two-DSO bench setup](IMG_20260921_093807880.jpg)
 
-See [README media provenance](../readme/README.md) for selected scope captures and their evidence boundaries.
+See [README media provenance](../readme/README.md) for selected scope captures, captions, and source records.
 
 ## Files
 

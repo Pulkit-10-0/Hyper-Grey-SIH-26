@@ -2,7 +2,7 @@
 
 [Project overview](../../../README.md) · [Parent folder](../README.md)
 
-Original operator-console screenshots. The showcase captures display simulation mode: waveforms, spectra, PPI, environmental calculations, and diagnostics are app outputs, not recorded acoustic returns from current TX/RX firmware.
+Original operator-console screenshots. The showcase captures display the app’s simulation mode, including waveforms, spectra, PPI, environmental calculations, and diagnostics.
 
 Current implementation: [Android app](../../../04-software/mobile-android/README.md). Selected [environment](../../readme/SeaNergy-app-environment-simulation.jpeg), [waveform](../../readme/SeaNergy-app-wave-simulation.jpeg), and [spectrum](../../readme/SeaNergy-app-spectrum-simulation.jpeg) views have stable showcase filenames.
 

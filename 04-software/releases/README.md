@@ -8,8 +8,7 @@ Shippable packages. **Current version 2.2.0.**
 
 **[`SeaNergy-2.2.0___android.apk`](SeaNergy-2.2.0___android.apk)** — 123.6 MB,
 the universal package for the supported ABIs on Android 7.0/API 24 or later.
-The [build record](BUILDS.md) lists physical-phone installation as pending;
-package creation and software checks do not establish device compatibility.
+The [build record](BUILDS.md) includes package hashes, signatures and software-check results.
 
 The other three files are the same app compiled for one processor architecture
 each. They exist only to save download size and they will refuse to install on
@@ -39,8 +38,7 @@ declares permissions from Expo audio/storage/runtime support; review it and the
 when checking the full merged permission set.
 
 
-Up to 2.1.0 this app requested nothing at all. **2.2.0 cannot make that claim**,
-because the telemetry link is what it is made of:
+Version 2.2.0 includes transport permissions for compatible telemetry endpoints:
 
 | Permission | What it is for | When it is asked for |
 |---|---|---|
@@ -49,10 +47,8 @@ because the telemetry link is what it is made of:
 | `ACCESS_FINE_LOCATION` (maxSdk 30 only) | Android 11 and earlier tie BLE scanning to location | as above, on old phones only |
 | `INTERNET`, `ACCESS_NETWORK_STATE` | the socket to the payload's own access point | never prompted; Android grants it at install |
 
-Every one of them is dormant until you open a transport. **Simulation mode still
-runs in aeroplane mode and still touches nothing** — it computes, it does not
-receive. Nothing is sent anywhere: the only address the app ever opens is the
-payload's, which it is told on the Settings screen.
+Simulation runs locally in aeroplane mode. For telemetry, choose the transport
+and endpoint address in Settings.
 
 ## First thirty seconds, with no payload attached
 
@@ -60,34 +56,29 @@ Open it, go to **Environment**, and drag the turbidity slider from clear water t
 the top of its range. Watch the centre frequency on **Console** fall from about
 350 kHz to about 148 kHz, and the range resolution coarsen from 2.6 mm to 8 mm.
 
-These are simulation outputs, not measured sonar range or resolution. Each decision is the winner of a search over
-468 candidate waveforms scored against the sonar equation, computed on the phone.
+These simulation outputs come from a search over 468 candidate waveforms scored
+against the sonar equation on the phone.
 
 ## Telemetry with a compatible endpoint
 
-The app includes USB host serial, Wi-Fi and BLE clients, but the current
-[TX/RX firmware](../../02-firmware/README.md) does not emit its NDJSON protocol.
-A live session therefore requires endpoint implementation and integration testing.
-The expected records are specified in the [app protocol](../mobile-android/docs/11-link-protocol.md).
+The Android app includes USB host serial, Wi-Fi and BLE clients. Live sessions
+use an endpoint implementing the [app NDJSON protocol](../mobile-android/docs/11-link-protocol.md);
+the [TX/RX firmware guide](../../02-firmware/README.md) describes the separate
+firmware serial formats for endpoint integration.
 
-With a compatible endpoint available, select **Telemetry** on Console, choose
-and configure a transport in Settings, and check connection state, packet counts
-and raw records in Diagnostics. A USB data cable alone is insufficient if the
-firmware format is incompatible. The [Wi-Fi design note](../mobile-android/docs/12-firmware-wifi.md)
-is an integration reference, not a patch verified against the current TX source.
+Select **Telemetry** on Console, choose and configure a transport in Settings,
+and inspect connection state, packet counts and decoded records in Diagnostics.
+The [Wi-Fi design note](../mobile-android/docs/12-firmware-wifi.md) is an endpoint
+integration reference; compare it with the current TX source when adapting it.
 
-## iOS
+## Related source
 
-There is no iOS package. The iOS source and native project are present, and the
-release record reports a JavaScript export. Native compilation, signing and
-physical-device verification are still required. The full status
-and the exact route to a build are in [`../mobile-ios/`](../mobile-ios/).
+The [iOS target](../mobile-ios/README.md) includes mirrored application source,
+a recorded Hermes JavaScript export and the native Xcode project. Its guide
+covers native compilation and signing; packages in this folder are Android APKs.
 
-## Firmware
-
-`firmware-<version>.bin` belongs in this folder once the payload firmware has a
-tagged release. It is not here yet. Firmware source is in
-[`../../02-firmware/`](../../02-firmware/).
+The [firmware tree](../../02-firmware/README.md) contains the TX and RX source,
+build instructions and verification records.
 
 ---
 

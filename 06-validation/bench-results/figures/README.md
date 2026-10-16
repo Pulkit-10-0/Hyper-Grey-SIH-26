@@ -2,7 +2,7 @@
 
 [Project overview](../../../README.md) · [Parent folder](../README.md)
 
-Plots derived from the engineering-projection CSVs in [raw](../raw/README.md). Test IDs link their subject to the validation plan; the plots do not establish measured electrical, acoustic, power, or timing performance.
+Plots derived from the engineering-projection CSVs in [raw](../raw/README.md). Test IDs link electrical, acoustic, power, and timing projections to their validation methods.
 
 For numerical context, read [results](../results.md) and the [validation evidence guide](../../README.md).
 

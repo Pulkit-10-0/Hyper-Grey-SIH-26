@@ -10,4 +10,4 @@ idf.py set-target esp32s3
 idf.py build
 ```
 
-These commands build the archived architecture, not the current [TX/RX projects](../../../README.md). Flashing requires the actual matching hardware and a deliberate device/port selection; use the [archived build notes](../docs/build-and-flash.md) for context. The optional naive-trigonometry build belongs to the archived DDS comparison.
+These commands build the archived architecture. The active [TX/RX projects](../../../README.md) each provide their own PlatformIO workflow. Flashing requires the actual matching hardware and a deliberate device/port selection; use the [archived build notes](../docs/build-and-flash.md) for context. The optional naive-trigonometry build belongs to the archived DDS comparison.

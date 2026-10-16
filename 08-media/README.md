@@ -10,4 +10,4 @@ Photographs, software screenshots, scope captures, and selected showcase assets 
 | [Screenshots](screenshots/README.md) | Original mobile-app and website captures |
 | [README media](readme/README.md) | Stable showcase filenames and detailed provenance |
 
-The [project overview](../README.md) presents selected galleries. Scope pictures document historical electrical traces; they do not establish acoustic range, integrated TX/RX timing, or current-firmware performance.
+The [project overview](../README.md) presents selected galleries. Scope pictures document electrical carrier, burst, and analog traces from the September prototype sessions.

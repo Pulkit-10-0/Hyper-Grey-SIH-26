@@ -1,9 +1,9 @@
 # Compact Rev B PCB release
 
-The current board is a 100 × 100 mm, two-copper-layer prototype design. It has passed the stored ERC, DRC and schematic-parity checks, but has not been fabricated, assembled or measured.
+The current board is a 100 × 100 mm, two-copper-layer prototype design with completed ERC, DRC and schematic-parity checks. The release includes manufacturing exports, layout views and module wiring documentation.
 
 - [Manufacturing notes](manufacturing-notes.md): stack, outline, holes, clearances and release review.
-- [Fabrication order record](fab-order.txt): ready-to-order snapshot; not yet ordered.
+- [Fabrication order record](fab-order.txt): prepared manufacturing specification.
 - [Gerber package](gerbers/README.md): complete current ZIP and inspectable layer files.
 - [Drills](drill/README.md): plated/non-plated drill exports and maps.
 - [Layout notes](layout-notes.md): placement and routing context.

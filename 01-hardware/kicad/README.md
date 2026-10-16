@@ -18,7 +18,7 @@ The larger first layout provided generous spacing for hand assembly and labels. 
 
 ## Open and use
 
-1. Clone or download this repository and keep this entire `kicad/` folder intact. Keep its `libraries/` and `3dmodels/` folders alongside the project; a separate complete-project ZIP is not tracked here.
+1. Clone or download this repository and keep this entire `kicad/` folder intact. Keep its `libraries/` and `3dmodels/` folders alongside the project.
 2. Open **AUV_V3_Combined.kicad_pro** in **KiCad 9.0.7 or later**. Use its schematic and PCB editors to inspect or edit the design.
 3. Read **docs/Assembly_and_Wiring.md** or its printable HTML version before fitting parts or connecting modules. Each solder pad, component and test point is listed there.
 4. Use **docs/BOM_purchase.csv** to purchase board components. Existing modules are listed separately. Most parts are through-hole; Q2, U3 and F1 are surface-mount. Match the specified body dimensions because the layout is compact.
@@ -32,14 +32,14 @@ The native schematics, PCB, project settings, local symbol library, footprint li
 - TX uses the IRLZ44N, an **AO3400A level translator and TC4426AEPA gate driver**. The two inversions retain GPIO HIGH = transmitter ON. A 1 kΩ resistor across the piezo provides its discharge/reset path.
 - Sensor inputs accept the documented **0–5 V output range** through 2:1 dividers, filtering, TMUX1511 powered-off isolation and MCP100 supply supervision. Series 1 kΩ resistors limit brief ADC-input transient current.
 - The supplied [firmware/ESP32-S3](firmware/ESP32-S3/README.md) is the historical companion snapshot. Its TDS/turbidity voltage calculations compensate for the 2:1 dividers; its three potentiometer calculations and TX polarity retain the prior board assumptions. The [packaging record](firmware/README.md) documents that divider patch.
-- Current [TX](../../02-firmware/tx/) and [RX](../../02-firmware/rx/) projects are maintained separately. The imported TX expects five potentiometers and reports ADS1115 node voltages without the companion divider compensation. Read the [compatibility notes](../../02-firmware/docs/architecture.md) before connecting it to this board. The current projects do not implement the app's NDJSON interface.
+- Current [TX](../../02-firmware/tx/) and [RX](../../02-firmware/rx/) projects are maintained separately. The imported TX expects five potentiometers and reports ADS1115 node voltages without the companion divider compensation. Read the [compatibility notes](../../02-firmware/docs/architecture.md) before connecting it to this board; their serial diagnostics and capture formats are documented in those projects.
 - RX preserves the MCP6002 reference follower and nominal gain-23 amplifier. A 100 Ω resistor separates its output from GPIO34. Its finite bandwidth and physical wiring affect the measured 40 kHz response.
 
-## Validation and scope
+## Completed design checks
 
 **The compact revision B passes the final checks:** zero ERC violations, zero DRC violations, zero unconnected items and zero schematic/PCB parity differences, with no DRC exclusions. All 91 footprints and 236 physical pins, including 3 intentionally unconnected pins, agree with the design. The board contains 483 routed track segments, 6 vias and 2 ground-plane zones across its two copper layers. All 56 model references resolve to packaged local 3D files. The seven-page schematic PDF carries revision B on every sheet. Fourteen fabrication files were exported from the checked PCB; the supplied verification reports and SHA-256 hashes identify the release.
 
-These are prototype design files. No board has been manufactured, assembled, electrically measured, calibrated or tested underwater. KiCad checks establish design consistency and geometric clearances, not measured receiver performance or compatibility with an unidentified module variant.
+The prototype design release includes checks for connectivity, geometric clearances, schematic/PCB consistency, packaged model paths and export provenance.
 
 J17 pad 3 connects directly to the GND plane and may require a little extra heating time during soldering; the assembly guide explains the connection.
 

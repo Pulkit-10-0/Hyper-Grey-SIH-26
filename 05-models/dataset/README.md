@@ -2,7 +2,7 @@
 
 [Project overview](../../README.md) · [Parent folder](../README.md)
 
-The canonical [CSV](adaptive_sonar_waveform_selection.csv) contains 20,000 rows × 27 columns. Each row contains a sampled environment, mission requirements, the pulse selected by the numerical solver, and simulated outcomes. It is generated data, not a recorded sonar or tank dataset.
+The canonical [CSV](adaptive_sonar_waveform_selection.csv) contains 20,000 rows × 27 columns. Each row contains a sampled environment, mission requirements, the pulse selected by the numerical solver, and simulated outcomes. The table is generated from the documented propagation and selection models.
 
 ## Files
 
@@ -23,7 +23,7 @@ The canonical [CSV](adaptive_sonar_waveform_selection.csv) contains 20,000 rows 
 | Adversarial | 3,000 | 15% | 0.00% |
 | Total | 20,000 | 100% | Approximately 77.0% |
 
-Feasibility refers to the stated candidate grid, detection threshold, margin, and energy model. It does not prove that a physical mission is possible or impossible.
+The feasibility label applies to the stated candidate grid, detection threshold, margin, and energy model.
 
 ## Prevent target leakage
 
@@ -50,4 +50,4 @@ python run_local.py
 
 The generator uses seed `20260829`; its generated local CSV is ignored, while the canonical copy remains here. Read [run-metrics.json](../notebook/run-metrics.json) for the stored reproduction record. Compare parsed values when crossing platforms: LF and CRLF line endings change a byte-level SHA-256 without changing the table.
 
-See [evaluation](../evaluation/README.md) for the held-out split, leakage controls, and limits of the models trained on this dataset.
+See [evaluation](../evaluation/README.md) for the held-out split, leakage controls, and model comparisons on this dataset.

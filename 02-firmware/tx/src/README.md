@@ -8,4 +8,4 @@
 | [transmitter.cpp](transmitter.cpp) | I2S DMA preload/playback, PWM gating, scheduling and fault handling |
 | [displays.cpp](displays.cpp) | Four OLED views and paced display updates |
 
-The corresponding interfaces are in [include](../include/README.md), with portable checks in [tests](../tests/README.md). Use the [TX project build](../README.md) rather than compiling these Arduino-dependent modules individually. Calibrated sensor-to-physics adaptation and app protocol integration remain separate work.
+The corresponding interfaces are in [include](../include/README.md), with portable checks in [tests](../tests/README.md). Use the [TX project build](../README.md) rather than compiling these Arduino-dependent modules individually. The implementation combines bounded potentiometer control with sensor telemetry and runtime diagnostics.

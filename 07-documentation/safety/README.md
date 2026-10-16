@@ -6,7 +6,7 @@ Demonstration procedures, electrical and acoustic risk discussion, and failure-m
 
 [Demo safety](demo-safety.md) · [Electrical safety](electrical-safety.md) · [Acoustic exposure](acoustic-exposure.md) · [FMEA](fmea.md)
 
-These documents are engineering guidance, not a safety certification or a completed qualification record. Use the [current hardware guide](../../01-hardware/README.md) and [TX/RX guide](../../02-firmware/README.md) alongside them.
+This engineering guidance complements the [current hardware guide](../../01-hardware/README.md) and [TX/RX guide](../../02-firmware/README.md).
 
 ## Files
 

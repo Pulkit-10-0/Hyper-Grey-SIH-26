@@ -9,6 +9,6 @@ This is the previous ESP-IDF implementation and its design/evidence package. It 
 | [Measurement material](measurements/README.md) | Original comparisons, projections and a sensor-session log |
 | [Release procedure](releases/README.md) | Historical binary packaging instructions |
 
-The source contains fixed-point DDS, envelopes, sensor/solver, BLE, power and DMA modules. Their presence does not qualify a production payload or establish measured rates, acoustic performance, timing or power savings. Read each saved document's assumptions before citing it.
+The source contains fixed-point DDS, envelopes, sensor/solver, BLE, power and DMA modules. Its documentation preserves the design assumptions, analytical comparisons, and evidence records for this architecture.
 
-The [board companion sketch](../../../01-hardware/kicad/firmware/README.md) belongs to the earlier PCB snapshot. The current five-control TX wiring and output profiles are documented in [current architecture and compatibility](../../docs/architecture.md); neither current project implements the app NDJSON or archived BLE contract.
+The [board companion sketch](../../../01-hardware/kicad/firmware/README.md) belongs to the earlier PCB snapshot. The current five-control TX wiring and output profiles are documented in [current architecture and compatibility](../../docs/architecture.md).

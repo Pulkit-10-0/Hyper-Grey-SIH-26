@@ -2,7 +2,7 @@
 
 [Project overview](../../README.md) · [Parent folder](../README.md)
 
-The project manuscript brings together the physical rationale, generated studies, architecture, and explicitly separated team-reported intervals and final-configuration projections. It is a project research manuscript; no publication or peer-review status is asserted.
+The project manuscript brings together the physical rationale, generated studies, architecture, and explicitly separated team-reported intervals and final-configuration projections. The folder includes the project manuscript PDF, editable sources, and figure set.
 
 ## Read and rebuild
 
@@ -11,7 +11,7 @@ The project manuscript brings together the physical rationale, generated studies
 - [Figure guide](figures/README.md)
 - [Source generator](build_paper.py)
 
-`build_paper.py` derives the manuscript source from the technical report and writes the `.tex` and preamble; it does not itself compile the PDF. Inspect it before regenerating because it overwrites those sources. The preamble uses `fontspec` and Times New Roman, requiring a Unicode-capable TeX engine and that font.
+`build_paper.py` derives the manuscript source from the technical report and writes the `.tex` and preamble. PDF compilation is a separate step; preserve any source edits before regenerating. The preamble uses `fontspec` and Times New Roman, requiring a Unicode-capable TeX engine and that font.
 
 Firmware diagrams and some implementation descriptions reflect the earlier ESP-IDF design. For current behavior use the [TX/RX documentation](../../02-firmware/README.md). Keep generated results, reported bench intervals, and projection records distinct when citing the manuscript.
 

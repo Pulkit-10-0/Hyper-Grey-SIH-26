@@ -15,4 +15,4 @@ The [java source tree](java/README.md) documents the Kotlin package namespace an
 | [res/values](res/values/) | Colours, strings and theme definitions |
 | [res/values-night](res/values-night/) | Dark-mode colour overrides |
 
-Android resource folders accept specific file formats and naming conventions. They deliberately contain no README Markdown; their purpose and variants are documented here. Change the [Expo artwork/configuration](../../../../assets/README.md) and native generation settings together, then inspect the resulting splash and icons on a device.
+This resource map documents the native artwork and XML variants while keeping Android resource folders in their required formats. Change the [Expo artwork/configuration](../../../../assets/README.md) and native generation settings together, then inspect the resulting splash and icons on a device.

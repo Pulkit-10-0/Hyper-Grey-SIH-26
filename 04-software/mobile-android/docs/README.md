@@ -1,6 +1,6 @@
 # Application documentation
 
-Start with the [current app README](../README.md) and [package.json](../package.json). This collection includes both implementation notes and the original design plan, so old screen counts, transport sketches and build-machine assumptions are not current requirements.
+Start with the [current app README](../README.md) and [package.json](../package.json). This collection preserves implementation notes and the original design plan. The app README and package manifest describe the current screens, transports and build commands.
 
 | Material | How to use it |
 |---|---|
@@ -12,6 +12,6 @@ Start with the [current app README](../README.md) and [package.json](../package.
 | [08 — Build/APK](08-build-and-apk.md) and [09 — Work packages](09-work-packages.md) | Original build investigation and work plan; use the app README for current commands |
 | [10 — QA](10-qa-checklist.md) | Manual device checks, separate from automated tests |
 | [11 — Link protocol](11-link-protocol.md) | App-side NDJSON integration contract |
-| [12 — Firmware Wi-Fi](12-firmware-wifi.md) | Historical endpoint integration sketch; rework against the current firmware before applying |
+| [12 — Firmware Wi-Fi](12-firmware-wifi.md) | Endpoint integration reference; compare with current firmware when adapting |
 
-The [current TX/RX firmware](../../../02-firmware/README.md) does not implement the console's NDJSON transport contract. The native USB/BLE module is Android-only; iOS currently has shared Wi-Fi client source. Numerical echo, range and energy figures in these notes are not proof of physical underwater or power performance.
+The app-side [NDJSON contract](11-link-protocol.md) defines compatible endpoint records. Android uses the native USB/BLE module and shared Wi-Fi client; iOS uses Wi-Fi. See the [current firmware guide](../../../02-firmware/README.md) for TX/RX interfaces. Echo, range and energy examples describe the numerical model.

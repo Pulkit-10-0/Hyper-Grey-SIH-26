@@ -2,9 +2,9 @@
 
 [Project overview](../../README.md) · [Parent folder](../README.md)
 
-Equipment lists, uncertainty treatment, and settings protocols for the validation plan. Some documents describe the earlier Rev-A/2 MSps configuration. Match those assumptions to the actual test assembly before using the procedures with current firmware.
+Equipment lists, uncertainty treatment, and settings protocols for the validation plan’s Rev-A/2 MSps configuration. The procedures identify the assembly, sample clock, measurement setup, and uncertainty inputs for a traceable run.
 
-[Equipment](equipment-list.md) · [Limitations](limitations.md) · [Uncertainty](uncertainty.md) · [Settings](settings/README.md)
+[Equipment](equipment-list.md) · [Instrument constraints](limitations.md) · [Uncertainty](uncertainty.md) · [Settings](settings/README.md)
 
 ## Files
 

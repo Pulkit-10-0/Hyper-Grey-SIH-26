@@ -1,5 +1,5 @@
 # ESP32 receiver source
 
-[main.cpp](main.cpp) contains the classic ESP32 GPIO34/ADC1 capture setup, legacy I2S DMA reads and ASCII serial frame output. Build it through [platformio.ini](../platformio.ini), starting from the [RX guide](../README.md); this directory is not a separate project.
+[main.cpp](main.cpp) contains the classic ESP32 GPIO34/ADC1 capture setup, legacy I2S DMA reads and ASCII serial frame output. Build through [platformio.ini](../platformio.ini), starting from the [RX guide](../README.md).
 
-The source requests 200 ksample/s and collects 4,096 samples. Requested rate, ADC word decoding and the elapsed-read rate estimate need physical verification. The program has no shared TX trigger, matched-filter ranging or mobile-app transport. The host [waveform/FFT viewer](../seanergy_rx_live.py) consumes its serial frames.
+The source requests 200 ksample/s and collects 4,096 samples per frame. The host [waveform/FFT viewer](../seanergy_rx_live.py) consumes those serial frames for standalone receive analysis. The RX guide documents ADC word decoding and elapsed-read timing alongside the configured sample rate.

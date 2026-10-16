@@ -1,6 +1,6 @@
 # mobile-android
 
-The SeaNergy operator console, Android target. Working tree, not an archive.
+The SeaNergy operator console, Android target, with application source, native project and release packages.
 
 **Version 2.2.0, versionCode 5.** Built package: [`../releases/`](../releases/).
 
@@ -12,16 +12,14 @@ An Android operator console with an on-device acoustic simulation, waveform and
 echo visualisation, a modelled power budget, and clients for compatible telemetry
 endpoints. Its [source guide](src/README.md) maps the implementation.
 
-The physics runs on the device. The numerical model runs locally. Telemetry opens the endpoint selected
-by the operator; simulation does not need that connection. Fonts are bundled in
-the package rather than fetched, so it opens with the radio off, and simulation
-mode still works end to end in aeroplane mode.
+The numerical model runs locally, and bundled fonts keep simulation usable in
+aeroplane mode. Telemetry opens the endpoint selected by the operator.
 
-Version 2.2.0 includes an NDJSON telemetry client. **The current repository TX/RX
-firmware does not yet emit this protocol.** Live operation requires a compatible
-endpoint and integration testing; see [the current firmware guide](../../02-firmware/README.md).
-The physics, echo processing and feedback described below operate within the app
-simulation unless a compatible endpoint supplies the corresponding data.
+Version 2.2.0 includes an NDJSON telemetry client. Live sessions require an
+endpoint implementing [the app protocol](docs/11-link-protocol.md); the current
+[TX/RX firmware guide](../../02-firmware/README.md) documents its separate serial
+formats for endpoint integration. The physics, echo processing and feedback below
+run in the app simulation or consume data supplied by a compatible endpoint.
 
 | Layer | What runs |
 |---|---|
@@ -32,14 +30,14 @@ simulation unless a compatible endpoint supplies the corresponding data.
 | Compression | Numerical cross-correlation of the modelled or supplied echo against the replica |
 | Closed loop | Simulated echo SNR compared against prediction; the residual feeds back within the handset model |
 
-Nothing about the adaptation is a lookup table. Raise the turbidity and the
-centre frequency drops because the optimiser recomputed the link budget and
-found the high-frequency candidates no longer clear their margin.
+The optimiser recomputes the link budget as conditions change. Raising turbidity
+can lower the selected centre frequency as high-frequency candidates lose their
+required margin.
 
 ### Example simulation behaviour
 
 Model outputs for the water configuration, 220 m requested range, sweeping
-turbidity. These are numerical predictions, not tank measurements:
+turbidity. These are numerical model predictions:
 
 | Turbidity | Centre | Bandwidth | Pulse | Resolution | Usable range |
 |---:|---:|---:|---:|---:|---:|
@@ -64,8 +62,8 @@ ordering was not programmed; it falls out of scoring the candidates.
 | **Telemetry** | Compatible NDJSON endpoint records supply the environment and reported pulse decision |
 
 The interface displays the selected mode and uses colour to distinguish value
-provenance. Review the link state and packet record in Diagnostics when verifying
-a live session; selecting Telemetry alone does not establish that data arrived.
+provenance. Diagnostics shows the connection state, packet counters and decoded
+records during a live session.
 
 In telemetry mode the handset stops deciding and starts reporting. Resolution
 and compression gain are recomputed from the pulse the payload says it actually
@@ -160,9 +158,8 @@ npm run apk
 2. `npm run verify` — 106 physics, DSP, protocol and engine assertions under plain node
 3. `jest --ci` — 33 render tests, all twelve screens in both modes
 
-and only then invokes Gradle. If any stage fails there is no APK. That gate
-exists because version 2.0.0 shipped and crashed on launch; the render harness
-was written afterwards and proved by reintroducing the bug and watching it fail.
+Gradle runs after all three stages pass, keeping release packaging tied to the
+numerical, protocol and screen checks.
 
 ### Output
 
@@ -179,10 +176,10 @@ instead of the 124 MB fat binary.
 
 ### Signing
 
-The release keystore is **not in this tree**. See
-[`../releases/keystore-note.md`](../releases/keystore-note.md) for where it lives
-and what happens if it is lost. Drop it at `android/app/seanergy-release.keystore`
-before running `npm run apk`, or Gradle will fail at the signing step.
+Provision the private release keystore at
+`android/app/seanergy-release.keystore` before running `npm run apk`.
+The [key-management note](../releases/keystore-note.md) documents signing and
+recovery requirements; keep the key outside version control.
 
 ### Regenerating the native project
 
@@ -198,8 +195,8 @@ npm run prebuild     # expo prebuild --clean, then re-applies the Android config
 per-ABI splits and the splash colours with it.
 `scripts/apply-android-config.mjs` puts them back and is chained into both
 `npm run prebuild` and `npm run apk`, so it is hard to forget. It also re-stamps
-the version from `app.json`, because Gradle otherwise keeps whatever was stamped
-at prebuild time — that is how a build once shipped with a stale versionCode.
+the version from `app.json`, keeping Gradle's release metadata aligned with the
+application configuration.
 
 ### Other commands
 
@@ -310,8 +307,7 @@ assertions and 33 render tests; rerun the gate after changes. Examples include:
 - Adaptation direction: rising turbidity must lower the centre frequency
 - Closed loop settles rather than drifting, and does not pin at its clamp
 
-These are checks on software-generated data. They do not establish acoustic
-output, real-target detection, electrical power or firmware timing on the bench.
+The checks exercise software-generated reference data and modelled echo signals.
 
 ---
 
@@ -333,6 +329,6 @@ output, real-target detection, electrical power or firmware timing on the bench.
 
 ## iOS
 
-The shared source and native project are also provided for iOS; native packaging
-and device verification remain separate steps. The native iOS project and its status are in
-[`../mobile-ios/`](../mobile-ios/).
+The [iOS target](../mobile-ios/README.md) includes the shared application source,
+a recorded JavaScript export and the native Xcode project, with commands for
+native compilation and signing.

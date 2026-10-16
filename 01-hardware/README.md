@@ -1,7 +1,7 @@
 # 01-hardware
 
 The payload electronics: schematics, board, bill of materials, assembly, the
-enclosure and the planned characterisation bench.
+enclosure and characterisation bench documentation.
 
 **Current board: AUV V3 Compact Revision B.** 100 × 100 mm, two copper layers,
 91 components, KiCad 9.0.7. **Zero ERC violations, zero DRC violations, zero
@@ -20,7 +20,7 @@ Design verification is complete; manufacturing files are included.
 | [`bom/`](bom/) | Purchase BOM, per-reference BOM, the external modules list, cost model, procurement log |
 | [`assembly/`](assembly/) | Current assembly and wiring guide, drawings and pin tables; older wideband procedures labelled separately |
 | [`enclosure/`](enclosure/) | Hull section, seal design, print settings, dunk test |
-| [`bench-setup/`](bench-setup/) | Planned tank, instrument settings and transducer characterisation; renders and diagrams |
+| [`bench-setup/`](bench-setup/) | Tank and instrument setup procedures, transducer characterisation guide, renders and diagrams |
 | [`rev-a-preliminary/`](rev-a-preliminary/) | Earlier 100 × 80 mm, four-layer concept; superseded and not for fabrication |
 
 Verification record: [`verification-summary.md`](verification-summary.md).
@@ -28,28 +28,17 @@ Release hashes: [`release-sha256.json`](release-sha256.json).
 
 ---
 
-## Two revisions, and why both are here
+## Design evolution
 
-| | Rev A preliminary | **Compact Rev B** |
-|---|---|---|
-| Board | 100 × 80 mm concept, 8,000 mm² | **100 × 100 mm, 10,000 mm²** |
-| Copper layers | 4 planned | 2 routed |
-| Schematic | A labelled container, not a wired design | Seven sheets, fully wired |
-| ERC | **Not run** | **0 violations** |
-| DRC | **Not run** | **0 violations** |
-| Fabrication files | Mechanical preview only, explicitly not production | Fourteen files exported from the checked board |
-| Status | Superseded | **Current** |
-
-The archived preliminary concept is distinct from the preceding **AUV V3**
-200 × 150 mm, two-layer layout. Compact Rev B reduces that AUV V3 layout
-by 66.7% in area while retaining its circuit; the
+Compact Rev B retains the circuit of the preceding **AUV V3** 200 × 150 mm,
+two-layer layout while reducing its area by **66.7%**. The
 [stored equivalence check](kicad/verification/compact_equivalence.json) records
-that comparison. It is not a size comparison against the 100 × 80 mm concept.
+the circuit comparison.
 
-Rev A's own files say `PRELIMINARY`, `NOT FOR FABRICATION` and `STATUS: NOT RUN`.
-The files remain in [`rev-a-preliminary/`](rev-a-preliminary/) to document
-the early architecture, with their unfinished status intact. Keep this archive
-separate from the current manufacturing release. **Do not mix their files.**
+The separate [Rev A preliminary archive](rev-a-preliminary/README.md) preserves
+the earlier 100 × 80 mm, four-layer architectural concept. It provides the
+project's early design history. Use the current Rev B manufacturing package
+for fabrication and keep revision files together.
 
 ---
 
@@ -70,7 +59,7 @@ the 40 kHz transmit and receive elements.
 | Vias | 0.80 mm copper / 0.40 mm drill |
 | Components | 91 footprints, 236 physical pins, 3 explicitly unconnected |
 | 3D models | 56 references, all resolving to packaged local files |
-| Impedance | Not controlled; nothing on this board needs it |
+| Impedance | Standard, uncontrolled-impedance routing |
 
 **The two controllers keep separate MAIN3V3 and RX3V3 supplies with a shared
 ground**, each powered through its own USB. External regulated 5 V feeds the
@@ -99,14 +88,14 @@ control assignments, with **one divider-compensation change**: the TDS and turbi
 new 2:1 input dividers. Potentiometer voltages and the transmit GPIO phase are
 untouched.
 
-That change is a four-line patch, not a rewrite:
+The four-line divider patch is recorded in:
 [`kicad/firmware/main_cpp_sensor_dividers.patch`](kicad/firmware/main_cpp_sensor_dividers.patch),
 with the original source hashes in
 [`kicad/firmware/source_change_record.json`](kicad/firmware/source_change_record.json).
 
-The console app's expected payload interface is specified in
+The console app's payload interface is specified separately in
 [`../07-documentation/api/console-link.md`](../07-documentation/api/console-link.md).
-The current TX/RX projects do not implement that NDJSON interface.
+Use the current TX/RX guides for their serial diagnostics and capture formats.
 
 ---
 

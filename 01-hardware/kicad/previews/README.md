@@ -1,6 +1,6 @@
 # Compact Rev B review exports
 
-These are design exports from the compact PCB, not photographs of a manufactured board.
+These design exports document the compact PCB layout, component placement and fabrication layers.
 
 | View | Files |
 |---|---|

@@ -8,9 +8,9 @@ The compact Rev B purchase and reference tables describe the current PCB, includ
 | [bom-by-reference.csv](bom-by-reference.csv) | Reference-by-reference component detail |
 | [existing-modules.csv](existing-modules.csv) | External controller, sensor, ADC, display and audio modules |
 | [evidence/](evidence/README.md) | Original component/source-list images |
-| [procurement-log.md](procurement-log.md) | Captured supplier evidence and planning status |
+| [procurement-log.md](procurement-log.md) | Captured supplier evidence and procurement record |
 | [cost-model.md](cost-model.md) | Earlier finished-product cost assumptions |
 
-The procurement log and cost model retain estimates for the preliminary finished-product architecture. They are not a priced quotation or proof that all Rev B parts were purchased. Check package dimensions against the [KiCad design](../kicad/README.md) and use the [assembly guide](../assembly/README.md) when identifying functional module terminals.
+The procurement log and cost model preserve the preliminary finished-product cost estimates and source references. Use the current purchase and reference tables for Rev B components, check package dimensions against the [KiCad design](../kicad/README.md), and follow the [assembly guide](../assembly/README.md) when identifying functional module terminals.
 
 [Hardware overview](../README.md)

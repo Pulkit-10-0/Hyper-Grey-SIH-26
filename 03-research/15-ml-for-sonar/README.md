@@ -8,11 +8,11 @@ The learned-surrogate experiment and the need for explicit physical constraints.
 
 ## Where it is used in our work
 
-The [notebook](../../05-models/notebook/README.md) and [evaluation](../../05-models/evaluation/README.md) study generated data. The 2.35% figure is a constraint-check result under that experiment's configuration; it is not a physical safety certification. Residual correction remains a synthetic study.
+The [notebook](../../05-models/notebook/README.md) and [evaluation](../../05-models/evaluation/README.md) compare generated-data surrogate predictions and synthetic residual correction. The evaluation records a 2.35% constraint-check rate under its stated numerical configuration.
 
 ## Note
 
-Establishes both what machine learning does well in underwater acoustics and why a learned model alone is not sufficient for a transmit decision.
+Covers machine learning in underwater acoustics and the use of explicit physical constraints alongside learned models.
 
 ## Papers held (10)
 

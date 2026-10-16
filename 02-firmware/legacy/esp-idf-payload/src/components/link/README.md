@@ -4,4 +4,4 @@ Implements the archived NimBLE service, packet serialization, command queue and 
 
 Implementation: [link.cpp](link.cpp). Public declarations are in [include](include/README.md); [CMakeLists.txt](CMakeLists.txt) registers the component with ESP-IDF.
 
-This is historical source for the [archived payload project](../../README.md), not the active Arduino TX/RX firmware. Build it only through the archived project and its matching hardware assumptions. For the active implementation, use the [firmware overview](../../../../../README.md).
+This component builds through the [archived ESP-IDF payload project](../../README.md) with its matching board configuration. The [firmware overview](../../../../../README.md) links to the active PlatformIO TX/RX projects.

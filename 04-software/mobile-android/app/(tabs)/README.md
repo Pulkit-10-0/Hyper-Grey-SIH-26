@@ -16,4 +16,4 @@
 | [log.tsx](log.tsx) | Ping history and CSV export |
 | [settings.tsx](settings.tsx) | Mode, medium and telemetry configuration |
 
-The separate [Scenario screen](../scenario.tsx) makes twelve primary screens; [ping detail](../ping/README.md) is an additional record view. Screen plots in simulation mode are computed model outputs, not measurements from the current TX/RX bench firmware.
+The separate [Scenario screen](../scenario.tsx) makes twelve primary screens; [ping detail](../ping/README.md) is an additional record view. Simulation plots display outputs computed by the handset model; telemetry screens display records supplied by a compatible endpoint.

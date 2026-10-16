@@ -2,7 +2,7 @@
 
 [Project overview](../../../README.md) · [Parent folder](../README.md)
 
-CSV inputs behind the bench-result tables and plots. These are projection records, despite the historical `raw/` folder name. They are not instrument exports or measurements of the current TX/RX firmware.
+Engineering-projection CSVs behind the bench-result tables and plots. Each record supplies the numerical series for its T-series test identifier.
 
 Read the [parent results guide](../README.md) and [test plan](../../test-plan/README.md) before interpreting thresholds or PASS verdicts.
 

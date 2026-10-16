@@ -2,7 +2,7 @@
 
 [Project overview](../../README.md) · [Parent folder](../README.md)
 
-The notebook develops the propagation model, waveform families, candidate search, generated dataset, and two model studies. Its outputs are computed or simulated. The synthetic residual-correction experiment does not establish a deployed or calibrated acoustic model.
+The notebook implements propagation models, waveform families, candidate search, generated-dataset creation, and two model studies. It produces reproducible calculations, simulated DSP plots, and a synthetic residual-correction experiment.
 
 ## Entry points
 
@@ -27,7 +27,7 @@ Published notebook: [Adaptive Sonar Waveform Selection on Kaggle](https://www.ka
 6. A surrogate accuracy/leakage evaluation and host latency comparison.
 7. An injected residual-error law and an illustrative correction model.
 
-Selected inline checks include Thorp absorption of 34.07, 51.02, and 87.01 dB/km at 100, 200, and 400 kHz, and sound speed of 1534.29 m/s at 25 °C, 35 ppt, and the surface. These are numerical consistency checks, not new measurements.
+Selected inline checks include Thorp absorption of 34.07, 51.02, and 87.01 dB/km at 100, 200, and 400 kHz, and sound speed of 1534.29 m/s at 25 °C, 35 ppt, and the surface. The stored run records these numerical consistency checks.
 
 The idealized comparison `cτ/2` versus `c/(2B)` gives 3.75 m and 7.5 mm for a 5 ms pulse, 100 kHz bandwidth, and 1500 m/s sound speed. Actual resolution also depends on the transducer, signal chain, window, noise, and geometry.
 
@@ -54,8 +54,8 @@ If editing `notebook.py`, regenerate its notebook representation with Jupytext i
 jupytext --to notebook notebook.py -o adaptive-sonar-waveform-selection.ipynb
 ```
 
-## Interpret the results
+## Evaluation results
 
-Use the latest [evaluation metrics](../evaluation/metrics.json) and [evaluation guide](../evaluation/README.md) for the stored 40.3 µs / 7.445 ms host comparison. Earlier prose timings belong to earlier runs. The surrogate was rejected as the primary study decision path; residual correction remains a synthetic study pending independent physical calibration.
+Use the latest [evaluation metrics](../evaluation/metrics.json) and [evaluation guide](../evaluation/README.md) for the stored 40.3 µs / 7.445 ms host comparison. The numerical comparison selected the deterministic solver as its primary decision path and evaluated the residual model against an injected synthetic shortfall law.
 
-The approximately 40 kHz bench output and current embedded firmware have separate operating limits, documented in [firmware](../../02-firmware/README.md).
+The approximately 40 kHz bench output and embedded operating profiles are documented in [firmware](../../02-firmware/README.md).

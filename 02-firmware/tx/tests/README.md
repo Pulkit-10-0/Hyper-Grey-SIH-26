@@ -11,4 +11,4 @@ c++ -std=c++17 -O1 -Wall -Wextra -Werror -pedantic \
 /tmp/seanergy-waveform-test
 ```
 
-The documented run passes 409,765 checks. It verifies software sample generation, not peripheral timing, physical ADC/DAC behaviour, acoustic range or battery savings. See [TX verification](../README.md#verification) and the [bench procedure](../HARDWARE.md).
+The documented host run passes **409,765 checks**, covering software sample generation and input validation. See [TX verification](../README.md#verification) for build results and the [bench procedure](../HARDWARE.md) for instrument setup.

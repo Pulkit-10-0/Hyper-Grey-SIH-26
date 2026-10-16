@@ -8,7 +8,7 @@ The duty-cycled power budget, and offloading the transmit path from the CPU.
 
 ## Where it is used in our work
 
-The [app power model](../../04-software/mobile-android/src/core/power.ts), [current TX DMA implementation](../../02-firmware/tx/README.md), and [legacy design measurements/projections](../../02-firmware/legacy/esp-idf-payload/measurements/README.md). The validation dossier's CPU-idle figure is a final-configuration projection, not a new measurement of the current TX.
+The [app power model](../../04-software/mobile-android/src/core/power.ts), [current TX DMA implementation](../../02-firmware/tx/README.md), and [legacy design measurements/projections](../../02-firmware/legacy/esp-idf-payload/measurements/README.md). The validation dossier also provides a final-configuration CPU-idle projection.
 
 ## Note
 

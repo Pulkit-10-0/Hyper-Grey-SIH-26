@@ -6,7 +6,7 @@ Supporting appendices for DOC-TR-001, kept separately from the main report page 
 
 [Appendices PDF](appendices.pdf) · [LaTeX source](appendices.tex)
 
-Build from this directory using the same `pdflatex` toolchain as the [main report](../README.md). Historical firmware and projection-based numerical limits apply to the appendices as well.
+Build from this directory using the same `pdflatex` toolchain as the [main report](../README.md). The appendices retain the report’s historical firmware context and projection-based numerical results.
 
 ## Files
 

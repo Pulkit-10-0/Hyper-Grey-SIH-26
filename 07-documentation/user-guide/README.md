@@ -6,7 +6,7 @@ Quick start, detailed operation, and troubleshooting documents retained for the 
 
 [Quick start](quick-start.md) · [Operator guide](user-guide.md) · [Troubleshooting](troubleshooting.md)
 
-For the current bench setup, start with [TX](../../02-firmware/tx/README.md), [RX](../../02-firmware/rx/README.md), and the [app guide](../../04-software/mobile-android/README.md). Current TX/RX do not yet speak the app NDJSON or historical binary BLE contract; simulation-mode app outputs remain computed. Review the [safety guidance](../safety/README.md) against the actual assembly before operating it.
+For the current bench setup, start with [TX](../../02-firmware/tx/README.md), [RX](../../02-firmware/rx/README.md), and the [app guide](../../04-software/mobile-android/README.md). Those guides document the embedded serial formats and the app’s simulation and telemetry workflows. Review the [safety guidance](../safety/README.md) against the actual assembly before operating it.
 
 ## Files
 

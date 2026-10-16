@@ -1,5 +1,5 @@
 # Binary BLE interface: declarations
 
-[link.h](link.h) declares the interface used by the [archived link component](../README.md). Include it through that component's ESP-IDF build; this directory is not independently buildable.
+[link.h](link.h) declares the interface used by the [archived link component](../README.md). Include it through that component's ESP-IDF build.
 
 These contracts belong to the previous payload architecture. The current [TX/RX projects](../../../../../../README.md) use separate source trees and interfaces.

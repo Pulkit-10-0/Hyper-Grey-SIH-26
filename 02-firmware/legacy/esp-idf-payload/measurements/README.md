@@ -6,4 +6,4 @@ This folder preserves the earlier ESP-IDF design's timing, power and DDS evaluat
 - [Energy per ping](energy-per-ping.md), [power states](power-states.csv), and [sensor session notes](legacy-sensor-session.md).
 - [Capture descriptions](captures/README.md) and the preserved serial log.
 
-Design projections, analytical comparisons and a sensor log are different evidence types. They do not establish current TX/RX timing, acoustic output or measured power. The [active measurement guide](../../../measurements/README.md) lists the work still required. Return to the [archive overview](../README.md).
+The collection includes labelled design projections, analytical comparisons, and the original sensor log. The [active measurement guide](../../../measurements/README.md) covers setup and capture procedures for current TX/RX firmware. Return to the [archive overview](../README.md).

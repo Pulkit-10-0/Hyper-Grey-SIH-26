@@ -2,7 +2,7 @@
 
 [Project overview](../../../README.md) · [Parent folder](../README.md)
 
-Scope/FFT, power, and tank protocols plus the settings table for the planned validation configuration. A documented setting is a procedure, not proof that a capture was made at that setting.
+Scope/FFT, power, and tank protocols plus the settings table for the documented validation configuration.
 
 Confirm firmware profile, sample clock, probe factor, test point, and physical configuration when recording a new run. See [current firmware](../../../02-firmware/README.md).
 

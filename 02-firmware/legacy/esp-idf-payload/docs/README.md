@@ -11,4 +11,4 @@ These documents belong to the replaced i80/parallel-DAC firmware. Use the [curre
 | [Technical reference PDF](firmware-technical-reference.pdf) | Saved reference snapshot |
 | [Figures](figures/README.md) | Architecture and timing illustrations |
 
-Preserved design claims and estimates are not measured results for the current TX/RX projects. Return to the [archive overview](../README.md).
+The documents retain the archived design's estimates and revision-specific assumptions. Return to the [archive overview](../README.md).

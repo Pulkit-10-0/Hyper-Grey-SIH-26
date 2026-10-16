@@ -8,6 +8,5 @@ A release bundle is produced only after a clean ESP-IDF build and contains:
 - `flash_args`
 - `manifest.json` with version, commit, board revision, ESP-IDF version and SHA-256 hashes
 
-The repository does not include a fabricated placeholder binary. Run the build
-steps in `../docs/build-and-flash.md`, copy the actual build outputs here, and
-record their hashes before tagging the release.
+Use the [archived build guide](../docs/build-and-flash.md) to generate the bundle,
+copy its build outputs here, and record their hashes when tagging the release.

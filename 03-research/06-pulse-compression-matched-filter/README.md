@@ -12,7 +12,7 @@ Matched filtering, compression gain, and range resolution decoupled from pulse e
 
 ## Note
 
-The central technique of the whole project: a 5 ms pulse resolving 3.75 m unmodulated resolves 7.5 mm compressed, at identical transmitted energy.
+The notebook illustrates the idealized resolution comparison: a 5 ms pulse at 1500 m/s gives 3.75 m unmodulated resolution, while 100 kHz bandwidth gives 7.5 mm compressed resolution at the same pulse energy.
 
 ## Papers held (8)
 

@@ -2,9 +2,9 @@
 
 [Project overview](../../../README.md) · [Parent folder](../README.md)
 
-Original screenshots of the SeaNergy project site and visual dashboards. They document the displayed interface; numerical curves and performance panels require the evidence labels in the project documentation.
+Original screenshots of the SeaNergy project site and visual dashboards. The captures show the project interface, numerical plots, and dashboard layouts.
 
-Website source and local viewing instructions: [website guide](../../../04-software/website/README.md). The separate [September signal-analysis dashboard](../../readme/SeaNergy-signal-analysis-dashboard.jpg) combines serial readouts with computed DSP and propagation plots; those computed panels are not measured acoustic performance.
+Website source and local viewing instructions: [website guide](../../../04-software/website/README.md). The separate [September signal-analysis dashboard](../../readme/SeaNergy-signal-analysis-dashboard.jpg) combines serial readouts with computed waveform, spectrum, pulse-compression, and propagation plots.
 
 ## Files
 

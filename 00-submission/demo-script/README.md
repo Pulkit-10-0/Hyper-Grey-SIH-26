@@ -1,12 +1,14 @@
 # Demonstration runbook
 
+The runbook provides a six-minute presentation sequence, operator checks, equipment list, and recovery actions.
+
 | Document | Use |
 |---|---|
-| [Demo script](demo-script.md) | Planned six-minute sequence and rehearsal record |
+| [Demo script](demo-script.md) | Six-minute sequence and rehearsal record template |
 | [Checklist](demo-checklist.md) | Preparation and operator checks |
 | [Equipment list](equipment-list.md) | Instruments, cables and fallback kit |
 | [Recovery plan](recovery-plan.md) | Failure response and evidence substitution |
 
-The scripts preserve an earlier demonstration plan. References to replay, older verification counts and integrated telemetry must be checked against the current [app](../../04-software/README.md) and [TX/RX guide](../../02-firmware/README.md). The current app has Simulation and Telemetry modes; current firmware does not implement the app contract. Demonstrate the physical TX/RX and software simulation as their respective paths, and identify calculated plots when presenting them.
+Use the physical TX/RX tools for the electrical demonstration and the app's Simulation mode for computed waveform, echo, and propagation views. The [software guide](../../04-software/README.md) and [TX/RX guide](../../02-firmware/README.md) provide current modes, interfaces, and verification records alongside this saved runbook.
 
-Blank rehearsal entries are planned checks, not completed runs. Return to [submission material](../README.md).
+Return to [submission material](../README.md).

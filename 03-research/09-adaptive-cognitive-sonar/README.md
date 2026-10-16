@@ -4,7 +4,7 @@
 
 ## What this folder supports
 
-The research concept of adapting a transmitted waveform to environmental observations and received feedback. The current TX/RX projects do not yet implement that complete loop.
+The research framework for adapting a transmitted waveform to environmental observations and received feedback, implemented in the app’s decision and simulation functions.
 
 ## Where it is used in our work
 

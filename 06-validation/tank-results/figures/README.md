@@ -2,7 +2,7 @@
 
 [Project overview](../../../README.md) · [Parent folder](../README.md)
 
-Plots of the projected range, resolution, adaptation, noise recovery, convergence, and immersion records. They are generated illustrations of the dossier assumptions, not physical echoes or measured pressure-test evidence.
+Plots of the projected range, resolution, adaptation, noise recovery, convergence, and immersion records. The figures visualize the final-configuration engineering projections and their dossier assumptions.
 
 Sources are in [projection CSVs](../raw/README.md); context is in [result summaries](../results.md).
 

@@ -7,6 +7,6 @@ HyperGrey, Team 138620, Maharaja Surajmal Institute of Technology.
 - [QA readiness](qa-readiness.md): answer ownership and rehearsal gates.
 - [Questions](questions.md): preparation prompts.
 
-These are ownership and preparation records. Older answer cards describe the proposed full controller; check the [current TX/RX implementation](../../02-firmware/README.md), [model evaluation](../../05-models/evaluation/README.md), and [software guide](../../04-software/README.md) before presenting physics, learning or integration as deployed. Blank or proposed readiness gates require actual signoff.
+The ownership records connect each subsystem to its delivery and demonstration responsibilities. Use the [TX/RX implementation](../../02-firmware/README.md), [model evaluation](../../05-models/evaluation/README.md), and [software guide](../../04-software/README.md) for current technical details when preparing answers.
 
 Return to [project coordination](../README.md).

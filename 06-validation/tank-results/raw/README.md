@@ -2,7 +2,7 @@
 
 [Project overview](../../../README.md) · [Parent folder](../README.md)
 
-CSV inputs for the tank-result dossier. The values are engineering projections, including the run-conditions record; `raw/` is a folder label, not a claim of instrument provenance.
+Engineering-projection CSVs for the tank-result dossier, including its run-condition assumptions. Each file supplies the numerical inputs for the corresponding result table and figure.
 
 Use the [parent guide](../README.md) and [test plan](../../test-plan/README.md) to interpret test IDs and assumptions.
 

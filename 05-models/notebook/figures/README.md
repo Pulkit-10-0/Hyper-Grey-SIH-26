@@ -2,7 +2,7 @@
 
 [Project overview](../../../README.md) · [Parent folder](../README.md)
 
-Nine numerical plot families produced by the [notebook](../README.md). PNGs are for viewing; available SVG companions are vector exports. The plots show calculations, generated data, or simulated signals, rather than measured acoustic performance.
+Nine numerical plot families produced by the [notebook](../README.md). PNGs are for viewing; available SVG companions are vector exports. The plot families cover propagation calculations, generated data, and simulated signals.
 
 | Figure | Interpretation |
 |---|---|

@@ -1,6 +1,6 @@
 # Through-hole transistor package 3D models
 
-Selected STEP/VRML package models used by the compact PCB preview. These files were copied from the KiCad library collection; their original author and license headers are retained. Generic package shapes do not establish an exact purchased part's mechanical fit.
+Selected STEP/VRML package models used by the compact PCB preview. These files were copied from the KiCad library collection; their original author and license headers are retained. The package geometry supports component placement and PCB previews.
 
 - [TO-220-3_Vertical.step](TO-220-3_Vertical.step)
 - [TO-220-3_Vertical.wrl](TO-220-3_Vertical.wrl)

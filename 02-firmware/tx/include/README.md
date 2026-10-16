@@ -8,4 +8,4 @@
 | [transmitter.h](transmitter.h) | Playback commands, runtime status, timers and DMA ownership |
 | [displays.h](displays.h) | OLED display state and update interface |
 
-Implementations are in [src](../src/README.md). Read the [hardware profiles](../HARDWARE.md) before changing pins or sample rates. The default I2S audio profile and GPIO16 ultrasonic PWM path are different outputs; an interface declaration does not establish calibrated acoustic performance. Build from the [TX project](../README.md).
+Implementations are in [src](../src/README.md). Read the [hardware profiles](../HARDWARE.md) before changing pins or sample rates. The default I2S audio profile and GPIO16 ultrasonic PWM path have separate output settings. Build from the [TX project](../README.md).

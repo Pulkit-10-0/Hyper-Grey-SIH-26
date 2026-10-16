@@ -22,23 +22,23 @@ The TX default uses the existing MAX98357A audio hardware and the separate nomin
 
 ## How they are used together
 
-TX generates bursts; RX independently samples its analog receive input. RX's desktop viewer draws ADC samples and calculates an FFT for completed frames. There is no shared trigger, TX-to-RX data cable protocol, waveform decoder, matched filter, or time-of-flight/range calculation in these supplied projects.
+TX generates bursts; RX independently samples its analog receive input. RX's desktop viewer draws ADC samples and calculates an FFT for completed frames. The two projects provide standalone transmit generation and serial receive analysis workflows.
 
 - **TX GPIO16:** 38–42 kHz rectangular PWM bursts. This is the output near the RX viewer's 30–50 kHz carrier-search band.
 - **TX default I2S:** 1–8 kHz PCM at 48 ksample/s. LFM, geometric sweeps, Barker-13 phase coding, and window functions apply to this PCM path, not to GPIO16.
 - **TX optional I2S:** 38–42 kHz PCM at 384 ksample/s with a PCM5102A and suitable analog hardware. This is a separate hardware profile.
-- **RX:** requests 200 ksample/s, captures 4,096 samples and sends decimal ADC values over serial at 115200 baud. The read-time sample-rate estimate and raw ADC word decoding need hardware verification; see [RX limitations](rx/README.md).
+- **RX:** requests 200 ksample/s, captures 4,096 samples and sends decimal ADC values over serial at 115200 baud. The [RX acquisition reference](rx/README.md) documents ADC word decoding, requested sampling rate, and elapsed-read timing for interpreting the plots.
 
-Neither firmware implements the mobile console's NDJSON protocol, Wi-Fi or BLE. The app and its link specifications remain separate integration work. The Python RX viewer understands RX's ASCII capture frames only.
+The Python RX viewer consumes the receiver's ASCII capture frames over USB serial. The [operator console](../04-software/README.md) provides a separate simulation engine and documented telemetry interface.
 
 ## Startup and wiring
 
-TX starts disarmed. Automatic mode needs five healthy potentiometer inputs (four on ADS1115 `0x49`, depth on GPIO1). Manual control can be selected using `AUTO OFF`, `SET`, and `ARM`; [TX instructions](tx/README.md) include an example. Real sensor voltages are telemetry, not calibrated environmental values driving the current policy.
+TX starts disarmed. Automatic mode needs five healthy potentiometer inputs (four on ADS1115 `0x49`, depth on GPIO1). Manual control can be selected using `AUTO OFF`, `SET`, and `ARM`; [TX instructions](tx/README.md) include an example. The control policy uses potentiometer inputs; real sensor voltages and temperature are reported separately as telemetry.
 
 The repository's Rev B PCB is an earlier wiring snapshot. It documents three potentiometers and TDS/turbidity dividers; the imported TX expects five potentiometer inputs and reports the measured ADS1115 voltages without that snapshot's two-times TDS/turbidity compensation. Review [architecture and compatibility](docs/architecture.md) before using that PCB with the current source.
 
 ## Previous implementation
 
-The replaced ESP-IDF project, its binary BLE specification, figures, release templates, and measurement material are retained under [legacy/esp-idf-payload/](legacy/esp-idf-payload/). They describe the earlier i80 / parallel-DAC design and do not describe the current TX/RX projects. The source next to the KiCad files remains a [historical board companion](../01-hardware/kicad/firmware/README.md).
+The replaced ESP-IDF project, its binary BLE specification, figures, release templates, and measurement material are retained under [legacy/esp-idf-payload/](legacy/esp-idf-payload/). They document the earlier i80 / parallel-DAC architecture and its interfaces. The source next to the KiCad files remains a [historical board companion](../01-hardware/kicad/firmware/README.md).
 
-Imported application source is preserved from the two supplied packages. [Import record](IMPORT.md) identifies the inputs and records verification. [Measurements](measurements/README.md) separates bench work still needed from software checks.
+Imported application source is preserved from the two supplied packages. [Import record](IMPORT.md) identifies the inputs and records verification. [Measurement procedures](measurements/README.md) cover capture setup, calibration, and result records.

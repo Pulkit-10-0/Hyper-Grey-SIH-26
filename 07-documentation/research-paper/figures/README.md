@@ -2,7 +2,7 @@
 
 [Project overview](../../../README.md) · [Parent folder](../README.md)
 
-Figures used or retained for the project manuscript: architecture, numerical propagation/DSP studies, projection-based validation plots, and a PCB design image. A figure filename alone does not establish an evidence class.
+Figures used or retained for the project manuscript: architecture, numerical propagation/DSP studies, projection-based validation plots, and a PCB design image. Captions identify each figure’s source and numerical basis.
 
 Read the [manuscript guide](../README.md) and each caption before reuse. Architecture/state/timing images include the earlier firmware design; the PCB image is a design view; T-series plots inherit the projection basis of [validation](../../../06-validation/README.md).
 

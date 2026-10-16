@@ -5,6 +5,6 @@ This PlatformIO source snapshot accompanies the PCB release. It is retained for 
 - [platformio.ini](platformio.ini): original board target and dependency configuration.
 - [src/main.cpp](src/main.cpp): companion sketch with TDS/turbidity divider compensation, three analog controls, continuous 40 kHz output and a 1 kHz audio test tone.
 
-Read the [companion firmware notes](../README.md) before using this snapshot. The current TX has different analog-control and sensor-voltage assumptions; see [compatibility notes](../../../../02-firmware/docs/architecture.md). This retained copy has no claimed hardware test or successful toolchain build as part of the PCB packaging operation.
+Read the [companion firmware notes](../README.md) before using this snapshot. The current TX has different analog-control and sensor-voltage assumptions; see [compatibility notes](../../../../02-firmware/docs/architecture.md).
 
 [Hardware overview](../../../README.md)

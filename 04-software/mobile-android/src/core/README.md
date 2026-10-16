@@ -14,6 +14,6 @@ The acoustic and DSP modules are implemented in TypeScript. This folder also con
 | [exportCsv.ts](exportCsv.ts) and [sonify.ts](sonify.ts) | Expo file sharing and audible waveform demonstration |
 | [__verify__.ts](__verify__.ts) | Numerical, protocol and engine assertions run by `npm run verify` |
 
-Internal calculations use Hz, metres, seconds, degrees Celsius, salinity in ppt and absorption in dB/metre; convert at the display boundary. Simulation feedback uses a generated echo, and power values use a model. Neither is a measured bench result.
+Internal calculations use Hz, metres, seconds, degrees Celsius, salinity in ppt and absorption in dB/metre; convert at the display boundary. Simulation feedback uses generated echoes, while the power model estimates energy and endurance.
 
-The app's [NDJSON protocol](../../docs/11-link-protocol.md) is not implemented by the repository's current TX/RX firmware. Android USB/BLE clients also depend on the local native module; iOS has shared Wi-Fi client source only. Run `npm run check` at the app root after changing these modules.
+Telemetry endpoints use the app-side [NDJSON protocol](../../docs/11-link-protocol.md). Android USB/BLE clients use the local native module; the shared Wi-Fi client serves both platforms. The app README explains endpoint setup and links to the TX/RX interfaces. Run `npm run check` at the app root after changing these modules.
