@@ -93,29 +93,11 @@ The intended applications include AUV inspection, survey, and obstacle sensing. 
 
 ## Architecture
 
-The repository brings together three engineering workstreams. The diagram maps the research, operator console, and independently buildable embedded projects.
+The system design brings together environmental sensing, acoustic transmit/receive electronics, embedded processing, and the SeaNergy operator app.
 
-```mermaid
-flowchart TB
-    subgraph MODEL["Physics and decision research"]
-        direction LR
-        ENV["Environment and mission"] --> PHYS["Propagation model and solver"]
-        PHYS --> STUDY["Dataset and evaluation"]
-    end
-    subgraph APP["Offline operator console"]
-        direction LR
-        SIM["Simulation or telemetry inputs"] --> DSP["On-device physics and DSP"]
-        DSP --> UI["Operator screens and CSV"]
-    end
-    subgraph BENCH["Current embedded bench projects"]
-        direction LR
-        POTS["Controls and sensors"] --> TX["ESP32-S3 TX"]
-        TX --> OUT["I2S PCM and separate PWM bursts"]
-        RX["Independent ESP32 RX"] --> VIEW["Serial waveform and FFT viewer"]
-    end
-    MODEL ~~~ APP
-    APP ~~~ BENCH
-```
+[![SeaNergy system design showing environmental sensors, transducers, analog frontend, converters, ESP32-S3 processing, mobile app, website, and CSV storage](08-media/readme/SeaNergy-system-design.png)](08-media/readme/SeaNergy-system-design.png)
+
+*System design overview showing environmental sensing, acoustic signal paths, embedded processing, mobile connectivity, and session export. Component choices and bench wiring are detailed in the [hardware](01-hardware/README.md) and [TX/RX firmware](02-firmware/README.md) guides. Click the diagram to view it at full resolution.*
 
 | Workstream | Implementation | Delivered artifacts |
 |---|---|---|

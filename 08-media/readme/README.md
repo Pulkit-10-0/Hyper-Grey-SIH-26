@@ -6,6 +6,7 @@ This directory holds stable, descriptive filenames for selected project media. T
 
 | Asset | Source | Caption |
 |---|---|---|
+| [System design architecture](SeaNergy-system-design.png) | Supplied `Hyper-Grey-26058.png` on 16 October 2026; original 3100 × 2450 PNG copied unchanged | Overall system design connecting environmental sensors, transducers, analog/converter stages, ESP32-S3 processing, operator software, and CSV export. |
 | [App console](SeaNergy-app-console-simulation.jpeg) | `WhatsApp Image 2026-09-28 at 12.39.27 AM (2).jpeg` in the supplied October 16 app ZIP; identical repository original retained | Simulation-mode payload status and waveform settings. |
 | [App sonar](SeaNergy-app-sonar-simulation.jpeg) | `WhatsApp Image 2026-09-28 at 12.39.26 AM (2).jpeg` in the supplied October 16 app ZIP; identical repository original retained | Simulation-mode PPI sector and range/bearing controls. |
 | [App diagnostics](SeaNergy-app-diagnostics-simulation.jpeg) | `WhatsApp Image 2026-09-28 at 12.39.25 AM (3).jpeg` in the supplied October 16 app ZIP; identical repository original retained | Simulation-mode timing budget and telemetry-link status. |
