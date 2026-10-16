@@ -26,7 +26,6 @@
   <a href="https://www.youtube.com/playlist?list=PLfZXQHCNRlPQ">Demo playlist</a> ·
   <a href="04-software/releases/SeaNergy-2.2.0___android.apk">Android APK</a> ·
   <a href="07-documentation/research-paper/SeaNergy_Adaptive_Sonar_Research_Paper.pdf">Research paper</a> ·
-  <a href="00-submission/pitch-deck/Hyper-Grey-SIH-2026-Overview.pdf">SIH presentation</a> ·
   <a href="https://www.kaggle.com/code/prakhar1803/adaptive-sonar-waveform-selection">Kaggle notebook</a>
 </p>
 
@@ -74,7 +73,7 @@ A closer look at the physical build, hands-on tuning, and instrumented bench wor
 | **Try the interface** | [Android v2.2.0 APK](04-software/releases/SeaNergy-2.2.0___android.apk), [app demo](https://www.youtube.com/watch?v=PedR7m0j_bs), and [software guide](04-software/README.md) |
 | **Inspect the engineering** | [Hardware design](01-hardware/README.md), [board verification](01-hardware/verification-summary.md), and [current TX/RX firmware](02-firmware/README.md) |
 | **Check the reasoning** | [21-page project research paper](07-documentation/research-paper/SeaNergy_Adaptive_Sonar_Research_Paper.pdf), [literature library](03-research/README.md), and [reproducible modelling package](05-models/) |
-| **Review the submission** | [Six-page SIH overview](00-submission/pitch-deck/Hyper-Grey-SIH-2026-Overview.pdf), [compliance material](00-submission/compliance-matrix/), and [demo procedure](00-submission/demo-script/demo-script.md) |
+| **Review the submission** | [Compliance material](00-submission/compliance-matrix/) and [demo procedure](00-submission/demo-script/demo-script.md) |
 
 **Contents:** [Photo gallery](#prototype-gallery) · [App screens](#app-screens) · [Graphs dashboard](#graphs-dashboard) · [Problem and approach](#problem-and-approach) · [Architecture](#architecture) · [Prototype and hardware](#prototype-and-hardware) · [Firmware](#firmware) · [Research and results](#research-and-results) · [Operator software](#operator-software) · [Verification](#verification-and-readiness) · [Reproduce](#reproduce-the-work) · [Roadmap](#next-engineering-milestones) · [Team](#team-and-ownership)
 
@@ -384,7 +383,7 @@ The work spans a literature library, a deterministic data generator, numerical D
 
 | Folder | Contents |
 |---|---|
-| [00-submission](00-submission/) | SIH presentation, compliance matrix, demo script, equipment and recovery checklists |
+| [00-submission](00-submission/) | Compliance matrix, demo script, equipment and recovery checklists |
 | [01-hardware](01-hardware/) | Schematic, KiCad board, BOM, Gerbers, analog design, enclosure CAD and manufacturing notes |
 | [02-firmware](02-firmware/) | Current TX/RX projects, wiring and build guidance, measurements, and archived ESP-IDF work |
 | [03-research](03-research/README.md) | 15 topic indexes and 132 reference PDFs |

@@ -26,7 +26,7 @@ The prominent prototype gallery uses existing photographs `IMG_20260915_12165196
 
 The root README also uses existing [bench photographs](../photos/), the [Rev B KiCad render](../../01-hardware/kicad/previews/Board_3D.png), the [app logo](../../04-software/mobile-android/logo.png), and a [generated research figure](../../05-models/evaluation/figures/eval-2-downband-walk.png). The board image is a design render; the research plot is a numerical study.
 
-The supplied six-page `Hyper-Grey-software (1).pdf` was copied unchanged to [the submission overview](../../00-submission/pitch-deck/Hyper-Grey-SIH-2026-Overview.pdf). The supplied research-paper PDF was identical to the [existing repository manuscript](../../07-documentation/research-paper/SeaNergy_Adaptive_Sonar_Research_Paper.pdf), so that file is reused.
+The supplied research-paper PDF was identical to the [existing repository manuscript](../../07-documentation/research-paper/SeaNergy_Adaptive_Sonar_Research_Paper.pdf), so that file is reused.
 
 Earlier assets remain in this directory for historical references:
 
