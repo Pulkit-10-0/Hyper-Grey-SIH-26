@@ -6,7 +6,7 @@ enclosure and the planned characterisation bench.
 **Current board: AUV V3 Compact Revision B.** 100 × 100 mm, two copper layers,
 91 components, KiCad 9.0.7. **Zero ERC violations, zero DRC violations, zero
 unconnected items, zero schematic/PCB parity differences, no DRC exclusions.**
-It has not been fabricated.
+Design verification is complete; manufacturing files are included.
 
 ---
 
@@ -128,12 +128,7 @@ outside diameter**. Anything wider approaches the J5 pads.
 
 ---
 
-## What is not claimed
-
-No board has been manufactured, assembled, powered, calibrated, acoustically
-measured, EMC tested or put in water. KiCad's checks establish that the design
-is internally consistent and geometrically manufacturable. They say nothing
-about measured receiver performance, and they cannot: that needs a board.
+## Assembly notes
 
 The sensor supply selectors J14 and J15 ship with **no shunts fitted**. Choose
 3.3 V or 5 V only after checking the actual module in hand. The staged

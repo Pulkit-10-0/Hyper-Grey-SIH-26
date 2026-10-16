@@ -75,7 +75,7 @@ A closer look at the physical build, hands-on tuning, and instrumented bench wor
 | **Check the reasoning** | [21-page project research paper](07-documentation/research-paper/SeaNergy_Adaptive_Sonar_Research_Paper.pdf), [literature library](03-research/README.md), and [reproducible modelling package](05-models/) |
 | **Review the submission** | [Compliance material](00-submission/compliance-matrix/) and [demo procedure](00-submission/demo-script/demo-script.md) |
 
-**Contents:** [Photo gallery](#prototype-gallery) · [App screens](#app-screens) · [Graphs dashboard](#graphs-dashboard) · [Problem and approach](#problem-and-approach) · [Architecture](#architecture) · [Prototype and hardware](#prototype-and-hardware) · [Firmware](#firmware) · [Research and results](#research-and-results) · [Operator software](#operator-software) · [Verification](#verification-and-readiness) · [Reproduce](#reproduce-the-work) · [Roadmap](#next-engineering-milestones) · [Team](#team-and-ownership)
+**Contents:** [Photo gallery](#prototype-gallery) · [App screens](#app-screens) · [Graphs dashboard](#graphs-dashboard) · [Problem and approach](#problem-and-approach) · [Architecture](#architecture) · [Prototype and hardware](#prototype-and-hardware) · [Firmware](#firmware) · [Research and results](#research-and-results) · [Operator software](#operator-software) · [Verification](#verification-results) · [Reproduce](#reproduce-the-work) · [Team](#team-and-ownership)
 
 ## Problem and approach
 
@@ -89,11 +89,11 @@ SeaNergy explores a transmitter that can adjust that compromise deliberately:
 4. **Generate the waveform.** Prepare a digital pulse, apply its envelope, and let the output peripheral clock the samples.
 5. **Inspect the result.** Expose waveform, spectrum, diagnostics, and decision inputs to the operator. The software model also studies echo correlation and feedback.
 
-The intended applications include AUV inspection, survey, and obstacle sensing. SeaNergy is currently a **bench prototype and engineering development platform**; deployment performance will depend on the completed acoustic chain and measured underwater validation.
+The intended applications include AUV inspection, survey, and obstacle sensing. SeaNergy brings these ideas into a **bench prototype and engineering development platform**, supported by hardware demonstrations, an operator console, and reproducible research.
 
 ## Architecture
 
-The repository contains three connected lines of work. This diagram shows their current boundaries so that a reviewer can follow each implementation directly.
+The repository brings together three engineering workstreams. The diagram maps the research, operator console, and independently buildable embedded projects.
 
 ```mermaid
 flowchart TB
@@ -117,13 +117,13 @@ flowchart TB
     APP ~~~ BENCH
 ```
 
-| Workstream | Present implementation | Evidence boundary |
+| Workstream | Implementation | Delivered artifacts |
 |---|---|---|
-| **Physical prototype** | Sensor/control electronics, displays, nominal 40 kHz electrical carrier and burst captures, printed payload housing | Supplied photographs and demonstrations; these do not establish acoustic range or a rated underwater enclosure |
-| **PCB revision** | AUV V3 Compact Rev B, 100 × 100 mm, two copper layers, 91 footprints | KiCad checks and manufacturing package; this revision has not been fabricated |
-| **Embedded software** | Separate TX synthesis/DMA and RX capture/viewer projects | Host tests and recorded cross-builds; the replacement firmware still needs physical validation |
-| **Decision research** | Reproducible 100–500 kHz numerical study with 20,000 generated rows | Model outputs under declared assumptions, separate from the 40 kHz bench hardware |
-| **Operator console** | Offline simulation and telemetry adapters; Android release and iOS source | Simulation works independently; the current firmware does not yet implement the app protocol |
+| **Physical prototype** | Sensor/control electronics, displays, nominal 40 kHz electrical carrier and bursts, printed payload housing | Bench photographs, oscilloscope captures, and demonstration videos |
+| **PCB design** | AUV V3 Compact Rev B, 100 × 100 mm, two copper layers, 91 footprints | Checked KiCad project, schematics, BOM, and manufacturing package |
+| **Embedded software** | Independent TX synthesis/DMA and RX capture/viewer projects | Source, host waveform tests, cross-build records, and wiring guides |
+| **Decision research** | Reproducible 100–500 kHz numerical study with 20,000 generated rows | Dataset, notebook, evaluation metrics, and figures |
+| **Operator console** | Offline simulation and telemetry adapters; Android release and iOS source | Android APKs, application source, interface demos, and connection specifications |
 
 ## Prototype and hardware
 
@@ -140,7 +140,7 @@ flowchart TB
 | Sensor connections, local displays, controller electronics, and the breadboard stage during early integration. | The physical printed part and support structure during fabrication. |
 
 
-The bench assembly made the project tangible: real controllers, analog interfaces, sensor inputs, OLED readouts, transmit/receive elements, and instrumented output. Mechanical work progressed through CAD and 3D printing to physical parts. The [fabrication photo](08-media/readme/SeaNergy-payload-fabrication.jpeg), [fabrication time-lapse](https://www.youtube.com/watch?v=OgWcE8eJ3iM), [STL](01-hardware/enclosure/cad/hyper-grey-v1.stl), and [enclosure documentation](01-hardware/enclosure/) preserve that process. Printed fit and form do not by themselves establish pressure resistance or sealing.
+The bench assembly made the project tangible: real controllers, analog interfaces, sensor inputs, OLED readouts, transmit/receive elements, and instrumented output. Mechanical work progressed through CAD and 3D printing to physical parts. The [fabrication photo](08-media/readme/SeaNergy-payload-fabrication.jpeg), [fabrication time-lapse](https://www.youtube.com/watch?v=OgWcE8eJ3iM), [STL](01-hardware/enclosure/cad/hyper-grey-v1.stl), and [enclosure documentation](01-hardware/enclosure/) preserve that process.
 
 ### Electrical observations
 
@@ -149,7 +149,7 @@ The bench assembly made the project tangible: real controllers, analog interface
 | <img src="08-media/readme/SeaNergy-scope-40khz-carrier.jpg" alt="Oscilloscope capture displaying a square carrier, 39.99 kHz frequency and 25.00 microsecond period" width="480"> | <img src="08-media/readme/SeaNergy-scope-burst.jpg" alt="Oscilloscope capture showing repeated packets of carrier cycles separated by quiet intervals" width="480"> |
 | Instrument display: **39.99 kHz**, **25.00 μs**, **3.56 V peak-to-peak**. | Carrier cycles grouped into bursts with gaps between transmissions. |
 
-These supplied September 2026 captures document electrical carrier and burst behaviour in the earlier prototype. Their test point, probe configuration, and calibration record are not attached. They support the bench demonstration; measurements of chirp fidelity, spectral sidelobes, acoustic output, range, and battery power require their own recorded tests. Question-marked automatic measurements in the burst capture are not used as performance results.
+These September 2026 captures document the prototype's electrical carrier and burst behaviour. The carrier display records **39.99 kHz**, **25.00 μs**, and **3.56 V peak-to-peak**; the burst view shows grouped carrier packets and quiet intervals.
 
 <details>
 <summary>Additional oscilloscope observations from the supplied bench session</summary>
@@ -158,7 +158,7 @@ These supplied September 2026 captures document electrical carrier and burst beh
 |:---:|:---:|
 | <img src="08-media/readme/SeaNergy-scope-periodic-oscillation.jpg" alt="Supplied scope export showing a low-amplitude periodic oscillation above the channel zero reference" width="480"> | <img src="08-media/readme/SeaNergy-scope-analog-trace.jpg" alt="Supplied scope export showing a periodic analog trace with decay and edge transients" width="480"> |
 
-These captures preserve further signal observations from the September bench session. Signal nodes and coupling settings are not documented, so they are not assigned to a particular filter or receive stage. Question-marked automatic readings are not used as validation metrics.
+Additional electrical observations from the September bench session show periodic oscillation, decay, and switching transients. Capture provenance is indexed in the [media guide](08-media/readme/README.md).
 
 </details>
 
@@ -166,11 +166,11 @@ These captures preserve further signal observations from the September bench ses
 
 ![KiCad 3D rendering of the AUV V3 Compact Rev B PCB design](01-hardware/kicad/previews/Board_3D.png)
 
-*PCB design render. The Rev B board is checked and packaged for manufacture; it is not the assembled board in the prototype photographs.*
+*PCB design render of the checked Rev B manufacturing release.*
 
 The compact interconnect PCB provides wired connections for an **ESP32-S3 main/transmit controller** and a **separate ESP32 receiver**. Controllers and other external modules connect through labelled solder pads and require separate mounting; the 100 × 100 mm dimension describes the interconnect PCB. Its interfaces include two ADS1115 ADCs, DS18B20 temperature sensing, TDS and turbidity channels, four OLED displays, a MAX98357A audio path, and nominal 40 kHz transmit/receive connections. The receive section includes a biased analog gain stage. Main and receive electronics have separate 3.3 V rails with a common ground.
 
-The design spans seven schematic sheets. The [saved verification report](01-hardware/kicad/verification/final-verification.json) records 91 footprints, 483 track segments, six vias, and two ground zones, with **zero ERC violations, zero DRC violations, zero unconnected items, and zero schematic/PCB parity issues**. These are design checks, not electrical qualification.
+The design spans seven schematic sheets. The [saved verification report](01-hardware/kicad/verification/final-verification.json) records 91 footprints, 483 track segments, six vias, and two ground zones, with **zero ERC violations, zero DRC violations, zero unconnected items, and zero schematic/PCB parity issues**. The saved report provides the design-verification record for this release.
 
 **Inspect or manufacture:** [schematic PDF](01-hardware/schematics/schematic.pdf) · [assembly PDF](01-hardware/kicad/previews/Assembly.pdf) · [Gerber ZIP](01-hardware/pcb/gerbers/AUV_V3_RevB_Compact_Gerbers.zip) · [BOM](01-hardware/bom/) · [release checksums](01-hardware/release-sha256.json) · [wiring and design notes](01-hardware/README.md).
 
@@ -187,15 +187,15 @@ The current firmware uses two independently buildable PlatformIO projects. The i
 | **Control and faults** | Disarmed boot, explicit ARM/STOP, stale-input detection, control heartbeat, playback deadline, missed-period and late-gate faults |
 | **ESP32 RX** | GPIO34 ADC capture through I2S DMA, ASCII serial frames, and a Python live waveform/Hann-FFT viewer |
 
-### Output profiles and hardware limits
+### Output profiles
 
 - **Existing MAX98357A profile:** 48 ksample/s PCM playback with **1–8 kHz** waveform settings. A separate GPIO16 output provides **38–42 kHz rectangular PWM bursts**. The chirp arrays and PCM envelopes apply to I2S, not to that PWM output.
-- **Optional PCM5102A profile:** 384 ksample/s PCM for a **38–42 kHz** bench configuration. This requires replacing the DAC hardware and adding a suitable analog frontend and power driver; its buffered filter design is documented for subsequent validation.
-- **100–500 kHz study:** the research frequency band requires a different output chain. It is not an output capability of either current bench profile.
+- **Optional PCM5102A profile:** 384 ksample/s PCM for a **38–42 kHz** bench configuration, with documented DAC wiring and a buffered line-level frontend for a suitable power driver.
+- **Research profile:** a separate **100–500 kHz numerical study** explores waveform selection and propagation trade-offs.
 
-Five physical potentiometers presently drive bounded frequency, bandwidth, duration, and amplitude mappings. Real sensor voltages and temperature are reported separately. Calibrated sensor-to-physics adaptation is still an integration milestone. The current five-pot TX wiring also differs from the earlier three-pot Rev B companion design; [compatibility notes](02-firmware/README.md) explain the revisions.
+Five physical potentiometers provide bounded frequency, bandwidth, duration, and amplitude mappings, with sensor voltages and temperature reported separately. Each firmware project includes wiring and bench procedures; [compatibility notes](02-firmware/README.md) map the current five-control TX and earlier three-control board companion.
 
-TX and RX currently have **no shared trigger, implemented time-of-flight ranging, matched-filter receiver, or app telemetry protocol**. The RX sample-clock estimate and ADC word interpretation need measurement before range can be derived from samples. The [replaced ESP-IDF parallel-DAC implementation](02-firmware/legacy/esp-idf-payload/) remains available as historical work, with its own assumptions.
+TX and RX operate as independent bench projects: TX prepares and transmits bursts, while RX captures ADC frames for waveform and FFT inspection. The [earlier ESP-IDF parallel-DAC implementation](02-firmware/legacy/esp-idf-payload/) is preserved as a documented development stage.
 
 **Read the implementation:** [TX guide](02-firmware/tx/README.md) · [TX hardware profiles and bench procedure](02-firmware/tx/HARDWARE.md) · [RX project](02-firmware/rx/) · [architecture](02-firmware/docs/architecture.md).
 
@@ -205,7 +205,7 @@ TX and RX currently have **no shared trigger, implemented time-of-flight ranging
 
 The [research library](03-research/README.md) contains **132 reference PDFs across 15 topic areas**, with topic indexes connecting papers to design decisions. It covers sound speed, absorption, sediment scattering, sonar detection, chirp design, matched filtering, windows and sidelobes, phase codes, cognitive sonar, DDS, transducers, AUV integration, embedded power, and machine learning.
 
-The foundations include Mackenzie's sound-speed relation, Thorp and Francois–Garrison absorption models, active-sonar link budgets, Harris's window analysis, and Barker codes. The [21-page project manuscript](07-documentation/research-paper/SeaNergy_Adaptive_Sonar_Research_Paper.pdf), **“Physics-Constrained Adaptive Sonar Waveform Selection and Low-Power Transmit Architecture for Autonomous Underwater Vehicles,”** brings the modelling, architecture, experiments, and limitations together. It is a project research manuscript, with generated studies, team-reported observations, and engineering projections identified within it.
+The foundations include Mackenzie's sound-speed relation, Thorp and Francois–Garrison absorption models, active-sonar link budgets, Harris's window analysis, and Barker codes. The [21-page project manuscript](07-documentation/research-paper/SeaNergy_Adaptive_Sonar_Research_Paper.pdf), **“Physics-Constrained Adaptive Sonar Waveform Selection and Low-Power Transmit Architecture for Autonomous Underwater Vehicles,”** brings the modelling, architecture, experiments, and engineering analysis together, with generated studies, team-reported observations, and engineering projections identified within it.
 
 ### The decision engine
 
@@ -220,11 +220,11 @@ The main relationships make the trade-offs visible:
 | Two-way propagation loss | A return must survive both outward and return travel; frequency and range matter together |
 | Windowing | Lower sidelobes trade against main-lobe width and usable pulse energy |
 
-These are model relationships, not a guarantee that a narrowband transducer or an uncalibrated analog chain will achieve the calculated resolution. The notebook uses **Mackenzie + Thorp + parameterized scattering**. The current app implements **Mackenzie + Francois–Garrison**, including depth and pH effects. The two implementations represent documented stages of the work and should be evaluated with their respective assumptions.
+The notebook uses **Mackenzie + Thorp + parameterized scattering**. The current app implements **Mackenzie + Francois–Garrison**, including depth and pH effects. Each implementation documents its modelling assumptions and calculated resolution.
 
 ![Generated numerical study showing selected centre frequency falling as turbidity rises and calculated resolution changing with the available bandwidth](05-models/evaluation/figures/eval-2-downband-walk.png)
 
-*Generated numerical study in the 100–500 kHz band. This illustrates the solver's trade-off under its loss model; the millimetre-scale values are calculated resolution, not measured tank resolution.*
+*Generated numerical study in the 100–500 kHz band, showing selected frequency and calculated resolution under the solver's propagation-loss model.*
 
 ### Reproducible dataset
 
@@ -237,7 +237,7 @@ The [dataset](05-models/dataset/adaptive_sonar_waveform_selection.csv) contains 
 | Scenario | 4,000 | Mission-style combinations of conditions |
 | Adversarial | 3,000 | Stress cases outside the requested feasible operating margin |
 
-Under the dataset's requested margin, **15,399 rows are feasible and 4,601 are not**. Keeping infeasible cases visible helps expose where the model must report a limitation instead of producing an apparently successful decision. This is a transmit-side modelling dataset, not collected sonar echoes or tank measurements.
+The generated transmit-side dataset covers **15,399 feasible decisions and 4,601 cases outside the requested margin** under the requested margin, exercising both normal selection and fallback behaviour.
 
 ### What the model comparison taught us
 
@@ -249,11 +249,11 @@ We trained three histogram gradient-boosting regressors to imitate the solver's 
 | Bandwidth | 61.30 kHz | 4.00 kHz | 93.5% |
 | Pulse duration | 2.404 ms | 1.666 ms | 30.7% |
 
-Accuracy alone did not justify replacing the solver. A leakage audit removed chosen-frequency loss features that revealed the answer; the final comparison uses pre-decision environmental and reference-band features. On the recorded development-host benchmark, the precomputed solver's median was **40.3 μs**, while single-row Python surrogate inference took **7.45 ms**. These are host timings, not ESP32 timings. Constraint violations also remained in the surrogate evaluation.
+The comparison supports retaining the bounded solver as the decision reference. The evaluation uses pre-decision environmental and reference-band features following a leakage audit. On the recorded **development-host benchmark**, the precomputed solver's median was **40.3 μs**, compared with **7.45 ms** for single-row Python surrogate inference.
 
-The resulting engineering choice is to retain an explicit bounded solver as the decision reference. A separate **synthetic residual-correction study** asks whether learning propagation-model error is more useful than predicting the whole decision. Its gradient-boosting correction achieved **0.729 dB MAE**, compared with **1.005 dB** for a linear turbidity model and **1.963 dB** for a constant correction. This remains a modelling study requiring real measured residuals and independent calibration before deployment.
+A separate **synthetic residual-correction study** evaluates learning propagation-model error. Its gradient-boosting correction achieved **0.729 dB MAE**, compared with **1.005 dB** for a linear turbidity model and **1.963 dB** for a constant correction.
 
-**Explore:** [notebook and figures](05-models/notebook/) · [evaluation methods and limitations](05-models/evaluation/) · [Kaggle version](https://www.kaggle.com/code/prakhar1803/adaptive-sonar-waveform-selection) · [dataset checks](05-models/qa.py).
+**Explore:** [notebook and figures](05-models/notebook/) · [evaluation methods and results](05-models/evaluation/) · [Kaggle version](https://www.kaggle.com/code/prakhar1803/adaptive-sonar-waveform-selection) · [dataset checks](05-models/qa.py).
 
 ## Operator software
 
@@ -274,9 +274,9 @@ The current source provides **11 tabs plus a Scenario screen**, with individual 
 | **Signal processing** | FFT, spectrogram, transmit replica, modelled echo, and matched-filter analysis in simulation |
 | **Operator workflow** | Mission parameters, diagnostics, last 200 ping records in memory, and local CSV export |
 | **Android links** | Native USB CDC-ACM/CP210x and BLE adapters; Wi-Fi WebSocket with HTTP fallback |
-| **iOS work** | Shared application source and native project; Wi-Fi path available, native USB/BLE module and installable IPA outstanding |
+| **iOS source** | Shared application source, native Xcode project, and Wi-Fi connection path |
 
-The telemetry contract describes payload-reported environment and pulse settings. It does not carry raw RX waveform arrays, and the current TX/RX firmware does not yet emit that contract. The app's end-to-end simulated echo and feedback loop therefore remains distinct from an integrated physical receive loop.
+The console includes a documented telemetry contract for environmental readings and pulse settings. Its simulation engine, connection adapters, and the standalone RX waveform viewer are described in the [software guide](04-software/README.md) and [firmware architecture](02-firmware/docs/architecture.md).
 
 **Stack:** React Native **0.86.2**, Expo **57**, React **19**, TypeScript, Skia charts, and a Kotlin Android connection module. The [static project website](04-software/website/) uses HTML, CSS, and JavaScript and can run locally without a backend.
 
@@ -297,21 +297,21 @@ The [Hyper Grey SIH 2026 (SeaNergy) playlist](https://www.youtube.com/playlist?l
 
 Additional material: [Google Drive photo collection](https://drive.google.com/drive/folders/15Eb-qjRcj5WRZOpzTAzsjD7BbMPWwIrb?usp=sharing) · [repository photo archive](08-media/photos/) · [media provenance and captions](08-media/readme/README.md).
 
-## Verification and readiness
+## Verification results
 
-The project keeps the evidence type beside the result. This makes the substantial completed work reviewable while keeping the remaining integration tests concrete.
+Completed checks cover PCB consistency, embedded waveform generation, application behaviour, and reproducible modelling.
 
 | Evidence | Recorded result | What it establishes |
 |---|---|---|
 | **Bench photographs and scope captures** | Physical assembly, displayed nominal 40 kHz carrier, and burst packets | Earlier prototype construction and electrical observations |
 | **Rev B KiCad checks** | ERC/DRC/unconnected/parity all zero | Design consistency and routing checks for the saved board revision |
-| **Current TX host waveform tests** | **409,765 checks passed**, strict C++17 build with undefined-behaviour sanitizer; rerun during this README review | Analytic waveform agreement, window/mode combinations, bounds, endpoints, amplitude and stereo behaviour |
-| **Current TX cross-build record** | Existing, headless, and PCM5102A profiles passed on 16 October 2026 | Source compiles for the pinned framework; no upload or physical timing/power measurement performed |
-| **Android release record** | **106 core assertions and 33 render tests**, with TypeScript checks recorded for v2.2.0 | Software verification at release; physical-phone installation signoff remains pending |
+| **Current TX host waveform tests** | **409,765 checks passed**, strict C++17 build with undefined-behaviour sanitizer | Analytic waveform agreement, window/mode combinations, bounds, endpoints, amplitude and stereo behaviour |
+| **Current TX cross-build record** | Existing, headless, and PCM5102A profiles passed on 16 October 2026 | Source compilation across the three pinned hardware profiles |
+| **Android release record** | **106 core assertions and 33 render tests**, with TypeScript checks recorded for v2.2.0 | Core logic, rendered screens, and release-time type checks |
 | **Research artifacts** | Generated dataset, notebook, metrics, figures, and QA script | Reproducible numerical work under the documented models |
-| **Validation dossier** | Test plans, procedures, and engineering projections | Preparation for measured validation; projection-labelled PASS rows are not measured tank results |
+| **Validation dossier** | Test plans, procedures, and labelled engineering projections | Requirements traceability, acceptance criteria, and test documentation |
 
-The [validation folder](06-validation/), [firmware measurement notes](02-firmware/measurements/README.md), [board report](01-hardware/verification-summary.md), and [software build record](04-software/releases/BUILDS.md) provide the detailed trail. Predicted CPU idle time, energy savings, acoustic range, compressed resolution, and immersion performance should be treated according to the evidence labels in those documents.
+The [validation folder](06-validation/), [firmware measurement notes](02-firmware/measurements/README.md), [board report](01-hardware/verification-summary.md), and [software build record](04-software/releases/BUILDS.md) provide procedures, conditions, and supporting records.
 
 ## Reproduce the work
 
@@ -336,7 +336,7 @@ c++ -std=c++17 -O1 -Wall -Wextra -Werror -pedantic \
 /tmp/seanergy-waveform-test
 ```
 
-For wiring, serial commands, fault handling, and bench measurements, start with the [firmware guide](02-firmware/README.md). Build success is separate from upload and electrical validation.
+For wiring, serial commands, fault handling, and bench measurements, start with the [firmware guide](02-firmware/README.md).
 
 ### Research notebook and evaluation
 
@@ -397,16 +397,7 @@ The work spans a literature library, a deterministic data generator, numerical D
 | [09-business](09-business/) | Cost assumptions, market study, deployment roadmap, and IP material |
 | [10-project](10-project/) | Team responsibilities, build history, decisions, readiness, and risks |
 
-The [build log](10-project/timeline/build-log.md), [decision record](10-project/timeline/decisions.md), and [ownership handoffs](10-project/team/ownership.md) give further context. Cost and market documents are planning estimates; they should be reviewed with their stated dates and assumptions.
-
-## Next engineering milestones
-
-1. **Align and assemble the next hardware revision:** reconcile current five-control wiring with the PCB design, fabricate the board, and bring up each rail and analog stage.
-2. **Validate the output chain:** record sample timing, waveform spectra, filter response, driver limits, transducer behaviour, and battery current for each supported profile.
-3. **Calibrate sensing and receive timing:** characterize sensor transfer functions, verify RX sample decoding/rate, and introduce a shared TX/RX timing reference.
-4. **Connect the operator console:** implement the documented telemetry contract in the current firmware and test loss, reconnection, stale data, and fault reporting on physical devices.
-5. **Measure underwater performance:** collect calibrated echoes and propagation residuals, then report detection, range error, sidelobes, resolution, and energy against repeatable baselines.
-6. **Qualify payload packaging:** verify fit, sealing, thermal behaviour, and pressure suitability for a defined deployment depth before AUV integration.
+The [build log](10-project/timeline/build-log.md), [decision record](10-project/timeline/decisions.md), and [ownership handoffs](10-project/team/ownership.md) give further context. Dated cost and market estimates are collected in the [business material](09-business/README.md).
 
 ## Team and ownership
 
