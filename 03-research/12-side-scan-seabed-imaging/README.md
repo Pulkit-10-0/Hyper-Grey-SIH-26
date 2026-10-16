@@ -1,5 +1,7 @@
 # 12-side-scan-seabed-imaging
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 The application: what a side-scan payload is ultimately for, and what image quality depends on.
@@ -27,20 +29,19 @@ Establishes the survey context, why range resolution matters for imaging, and ho
 | 9 | 2023 | A Comparison of PCA and LBF Based Multireceiver SAS Imaging Algorithms | IEEE Access | [link](https://doi.org/10.1109/access.2023.3323593) |
 | 10 | 2026 | Intelligent underwater mine detection using multi-backbone feature fusion with temporal attention-gated unit o | Scientific Reports | [link](https://doi.org/10.1038/s41598-026-52316-x) |
 
-## Filenames
+## Local PDFs
 
-```
-2010-high-resolution-sonars-what-resolution-do-we-need-for-target-recogni.pdf
-2017-review-marine-seismic-and-side-scan-sonar-investigations-for-seabed.pdf
-2017-seabed-detection-using-application-of-image-side-scan-sonar-instrume.pdf
-2019-identification-of-coral-reef-conditions-using-hydro-acoustic-technol.pdf
-2019-strategy-for-detection-and-high-resolution-characterization-of-authi.pdf
-2022-a-method-for-the-interpretation-of-sonar-data-recorded-during-autono.pdf
-2022-iterative-deep-synthetic-aperture-sonar-image-segmentation.pdf
-2022-synthetic-aperture-imagery-for-high-resolution-imaging-sonar.pdf
-2023-a-comparison-of-pca-and-lbf-based-multireceiver-sas-imaging-algorith.pdf
-2026-intelligent-underwater-mine-detection-using-multi-backbone-feature-f.pdf
-```
+- [2010-high-resolution-sonars-what-resolution-do-we-need-for-target-recogni.pdf](2010-high-resolution-sonars-what-resolution-do-we-need-for-target-recogni.pdf)
+- [2017-review-marine-seismic-and-side-scan-sonar-investigations-for-seabed.pdf](2017-review-marine-seismic-and-side-scan-sonar-investigations-for-seabed.pdf)
+- [2017-seabed-detection-using-application-of-image-side-scan-sonar-instrume.pdf](2017-seabed-detection-using-application-of-image-side-scan-sonar-instrume.pdf)
+- [2019-identification-of-coral-reef-conditions-using-hydro-acoustic-technol.pdf](2019-identification-of-coral-reef-conditions-using-hydro-acoustic-technol.pdf)
+- [2019-strategy-for-detection-and-high-resolution-characterization-of-authi.pdf](2019-strategy-for-detection-and-high-resolution-characterization-of-authi.pdf)
+- [2022-a-method-for-the-interpretation-of-sonar-data-recorded-during-autono.pdf](2022-a-method-for-the-interpretation-of-sonar-data-recorded-during-autono.pdf)
+- [2022-iterative-deep-synthetic-aperture-sonar-image-segmentation.pdf](2022-iterative-deep-synthetic-aperture-sonar-image-segmentation.pdf)
+- [2022-synthetic-aperture-imagery-for-high-resolution-imaging-sonar.pdf](2022-synthetic-aperture-imagery-for-high-resolution-imaging-sonar.pdf)
+- [2023-a-comparison-of-pca-and-lbf-based-multireceiver-sas-imaging-algorith.pdf](2023-a-comparison-of-pca-and-lbf-based-multireceiver-sas-imaging-algorith.pdf)
+- [2026-intelligent-underwater-mine-detection-using-multi-backbone-feature-f.pdf](2026-intelligent-underwater-mine-detection-using-multi-backbone-feature-f.pdf)
+
 
 ## Cite, obtain via institution
 

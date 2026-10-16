@@ -1,5 +1,7 @@
 # 06-pulse-compression-matched-filter
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 Matched filtering, compression gain, and range resolution decoupled from pulse energy.
@@ -25,18 +27,17 @@ The central technique of the whole project: a 5 ms pulse resolving 3.75 m unmodu
 | 7 | 2024 | Pseudo noise pulse compression thermography a powerful tool for time | arXiv | - |
 | 8 | 2026 | Detecting radar targets swarms in range profiles with a partially co | arXiv | - |
 
-## Filenames
+## Local PDFs
 
-```
-2012-a-pseudo-matched-filter-for-chaos.pdf
-2016-focus-fourier-based-coded-ultrasound.pdf
-2018-the-generalized-sinusoidal-frequency-modulated-waveform-for-active-s.pdf
-2022-improving-pulse-compression-weather-radar-via-the-joint-design-of-su.pdf
-2023-a-statistical-framework-and-analysis-for-perfect-radar-pulse-compres.pdf
-2024-continuous-emission-ultrasound-a-new-paradigm-to-ultrafast-ultrasoun.pdf
-2024-pseudo-noise-pulse-compression-thermography-a-powerful-tool-for-time.pdf
-2026-detecting-radar-targets-swarms-in-range-profiles-with-a-partially-co.pdf
-```
+- [2012-a-pseudo-matched-filter-for-chaos.pdf](2012-a-pseudo-matched-filter-for-chaos.pdf)
+- [2016-focus-fourier-based-coded-ultrasound.pdf](2016-focus-fourier-based-coded-ultrasound.pdf)
+- [2018-the-generalized-sinusoidal-frequency-modulated-waveform-for-active-s.pdf](2018-the-generalized-sinusoidal-frequency-modulated-waveform-for-active-s.pdf)
+- [2022-improving-pulse-compression-weather-radar-via-the-joint-design-of-su.pdf](2022-improving-pulse-compression-weather-radar-via-the-joint-design-of-su.pdf)
+- [2023-a-statistical-framework-and-analysis-for-perfect-radar-pulse-compres.pdf](2023-a-statistical-framework-and-analysis-for-perfect-radar-pulse-compres.pdf)
+- [2024-continuous-emission-ultrasound-a-new-paradigm-to-ultrafast-ultrasoun.pdf](2024-continuous-emission-ultrasound-a-new-paradigm-to-ultrafast-ultrasoun.pdf)
+- [2024-pseudo-noise-pulse-compression-thermography-a-powerful-tool-for-time.pdf](2024-pseudo-noise-pulse-compression-thermography-a-powerful-tool-for-time.pdf)
+- [2026-detecting-radar-targets-swarms-in-range-profiles-with-a-partially-co.pdf](2026-detecting-radar-targets-swarms-in-range-profiles-with-a-partially-co.pdf)
+
 
 ## Cite, obtain via institution
 

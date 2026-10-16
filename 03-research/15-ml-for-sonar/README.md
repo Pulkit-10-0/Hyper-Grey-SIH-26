@@ -1,12 +1,14 @@
 # 15-ml-for-sonar
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
-The learned surrogate, and why the physics stays resident as a guard.
+The learned-surrogate experiment and the need for explicit physical constraints.
 
 ## Where it is used in our work
 
-The Kaggle notebook Section 8 and 9; the AI Layer in the architecture; the 2.35 percent safety-violation rate.
+The [notebook](../../05-models/notebook/README.md) and [evaluation](../../05-models/evaluation/README.md) study generated data. The 2.35% figure is a constraint-check result under that experiment's configuration; it is not a physical safety certification. Residual correction remains a synthetic study.
 
 ## Note
 
@@ -27,20 +29,19 @@ Establishes both what machine learning does well in underwater acoustics and why
 | 9 | 2024 | QiandaoEar22: a high-quality noise dataset for identifying specific ship from multiple underwater acoustic tar | EURASIP Journal on Advances in Sig | [link](https://doi.org/10.1186/s13634-024-01181-9) |
 | 10 | 2024 | Underwater acoustic signal classification based on a spatial–temporal fusion neural network | Frontiers in Marine Science | [link](https://doi.org/10.3389/fmars.2024.1331717) |
 
-## Filenames
+## Local PDFs
 
-```
-2019-feature-identification-using-acoustic-signature-of-ocean-researcher.pdf
-2020-blind-detection-of-underwater-acoustic-communication-signals-based-o.pdf
-2021-deep-convolution-stack-for-waveform-in-underwater-acoustic-target-re.pdf
-2021-underwater-acoustic-signal-classification-based-on-sparse-timefreque.pdf
-2022-present-status-and-challenges-of-underwater-acoustic-target-recognit.pdf
-2023-few-shot-learning-for-joint-model-in-underwater-acoustic-target-reco.pdf
-2023-submarine-rock-vs-mine-prediction.pdf
-2023-using-svm-classifier-and-micro-doppler-signature-for-automatic-recog.pdf
-2024-qiandaoear22-a-high-quality-noise-dataset-for-identifying-specific-s.pdf
-2024-underwater-acoustic-signal-classification-based-on-a-spatialtemporal.pdf
-```
+- [2019-feature-identification-using-acoustic-signature-of-ocean-researcher.pdf](2019-feature-identification-using-acoustic-signature-of-ocean-researcher.pdf)
+- [2020-blind-detection-of-underwater-acoustic-communication-signals-based-o.pdf](2020-blind-detection-of-underwater-acoustic-communication-signals-based-o.pdf)
+- [2021-deep-convolution-stack-for-waveform-in-underwater-acoustic-target-re.pdf](2021-deep-convolution-stack-for-waveform-in-underwater-acoustic-target-re.pdf)
+- [2021-underwater-acoustic-signal-classification-based-on-sparse-timefreque.pdf](2021-underwater-acoustic-signal-classification-based-on-sparse-timefreque.pdf)
+- [2022-present-status-and-challenges-of-underwater-acoustic-target-recognit.pdf](2022-present-status-and-challenges-of-underwater-acoustic-target-recognit.pdf)
+- [2023-few-shot-learning-for-joint-model-in-underwater-acoustic-target-reco.pdf](2023-few-shot-learning-for-joint-model-in-underwater-acoustic-target-reco.pdf)
+- [2023-submarine-rock-vs-mine-prediction.pdf](2023-submarine-rock-vs-mine-prediction.pdf)
+- [2023-using-svm-classifier-and-micro-doppler-signature-for-automatic-recog.pdf](2023-using-svm-classifier-and-micro-doppler-signature-for-automatic-recog.pdf)
+- [2024-qiandaoear22-a-high-quality-noise-dataset-for-identifying-specific-s.pdf](2024-qiandaoear22-a-high-quality-noise-dataset-for-identifying-specific-s.pdf)
+- [2024-underwater-acoustic-signal-classification-based-on-a-spatialtemporal.pdf](2024-underwater-acoustic-signal-classification-based-on-a-spatialtemporal.pdf)
+
 
 ## Cite, obtain via institution
 

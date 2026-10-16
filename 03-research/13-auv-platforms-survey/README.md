@@ -1,5 +1,7 @@
 # 13-auv-platforms-survey
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 The host platform, its mission profile, and the constraints a payload inherits from it.
@@ -27,20 +29,19 @@ Establishes that the vehicle's energy budget and mission duration are the bindin
 | 9 | 2025 | Underwater communication technologies: a review | Telecommunication Systems | [link](https://doi.org/10.1007/s11235-025-01279-x) |
 | 10 | 2026 | AUV pose correction via underwater object recognition using synthetic data | Intelligent Service Robotics | [link](https://doi.org/10.1007/s11370-026-00719-0) |
 
-## Filenames
+## Local PDFs
 
-```
-2018-detection-and-pose-estimation-for-short-range-vision-based-underwate.pdf
-2020-3d-sequential-image-mosaicing-for-underwater-navigation-and-mapping.pdf
-2020-a-hierarchical-information-acquisition-system-for-auv-assisted-inter.pdf
-2022-a-persistent-sea-going-platform-for-robotic-fish-telemetry-using-a-w.pdf
-2023-synthetic-scan-formation-for-underwater-mapping-with-low-cost-mechan.pdf
-2024-oceanic-challenges-to-technological-solutions-a-review-of-autonomous.pdf
-2024-self-contained-auv-localization-with-terrain-based-navigation-applie.pdf
-2025-real-time-qgqg-phase-unwrappingandsarinsas-demfusion-for-autonomousu.pdf
-2025-underwater-communication-technologies-a-review.pdf
-2026-auv-pose-correction-via-underwater-object-recognition-using-syntheti.pdf
-```
+- [2018-detection-and-pose-estimation-for-short-range-vision-based-underwate.pdf](2018-detection-and-pose-estimation-for-short-range-vision-based-underwate.pdf)
+- [2020-3d-sequential-image-mosaicing-for-underwater-navigation-and-mapping.pdf](2020-3d-sequential-image-mosaicing-for-underwater-navigation-and-mapping.pdf)
+- [2020-a-hierarchical-information-acquisition-system-for-auv-assisted-inter.pdf](2020-a-hierarchical-information-acquisition-system-for-auv-assisted-inter.pdf)
+- [2022-a-persistent-sea-going-platform-for-robotic-fish-telemetry-using-a-w.pdf](2022-a-persistent-sea-going-platform-for-robotic-fish-telemetry-using-a-w.pdf)
+- [2023-synthetic-scan-formation-for-underwater-mapping-with-low-cost-mechan.pdf](2023-synthetic-scan-formation-for-underwater-mapping-with-low-cost-mechan.pdf)
+- [2024-oceanic-challenges-to-technological-solutions-a-review-of-autonomous.pdf](2024-oceanic-challenges-to-technological-solutions-a-review-of-autonomous.pdf)
+- [2024-self-contained-auv-localization-with-terrain-based-navigation-applie.pdf](2024-self-contained-auv-localization-with-terrain-based-navigation-applie.pdf)
+- [2025-real-time-qgqg-phase-unwrappingandsarinsas-demfusion-for-autonomousu.pdf](2025-real-time-qgqg-phase-unwrappingandsarinsas-demfusion-for-autonomousu.pdf)
+- [2025-underwater-communication-technologies-a-review.pdf](2025-underwater-communication-technologies-a-review.pdf)
+- [2026-auv-pose-correction-via-underwater-object-recognition-using-syntheti.pdf](2026-auv-pose-correction-via-underwater-object-recognition-using-syntheti.pdf)
+
 
 ## Cite, obtain via institution
 

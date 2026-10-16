@@ -21,11 +21,14 @@ python -m http.server 8000
 
 ## Files
 
+See the [asset guide](assets/README.md) for chart rendering, styling and data provenance.
+
+
 ```
 index.html            the page
 assets/style.css      the app's own instrument palette
 assets/app.js         SVG chart renderer, no library
-assets/data.js        generated - every number on the page
+assets/data.js        generated numerical series and model constants
 verify.js             renders the page and asserts it works
 content-map.md        section list and what each one proves
 deploy.md             host, domain, redeploy
@@ -33,7 +36,7 @@ deploy.md             host, domain, redeploy
 
 ## Where the numbers come from
 
-`assets/data.js` is **generated, never edited by hand**. It is produced by
+`assets/data.js` is a generated snapshot; update it through the generator. It is produced by
 `scripts/site-data.mjs` in the app project, which imports the compiled physics
 core and runs it:
 
@@ -43,10 +46,12 @@ npm run verify                       # compiles src/core into .verify-out
 node scripts/site-data.mjs > ../website/assets/data.js
 ```
 
-That means the absorption curve, the sound-speed curve, the turbidity sweep,
+The generator computes the absorption curve, the sound-speed curve, the turbidity sweep,
 the resolution table, the window sidelobe figures and the energy split are all
 computed by the same code that runs on the handset. If the physics changes, the
-site changes with it. Nothing on the page is a number somebody typed in.
+site can be regenerated with it. The generated chart series are model outputs,
+not bench measurements. Static prose, hardware choices and model constants also
+appear on the page and need their own review.
 
 The one thing that is hand-written is prose, plus the hardware table in section
 05, which records part selections and the reasons for them.
@@ -64,10 +69,13 @@ The one thing that is hand-written is prose, plus the hardware table in section
 ## Accuracy rules
 
 - Every claim about hardware limits names the part and the limit.
-- Every figure marked measured is measured. Section 09, the reality ledger,
-  states the status of every claim on the page in one table.
-- Nothing on the page may contradict `00-submission/compliance-matrix`.
-  If they disagree, the compliance matrix is right and this page is wrong.
+- Numerical curves and energy estimates are software model outputs. They do
+  not establish current TX/RX timing, acoustic range, PCB assembly or measured power.
+- Historical hardware descriptions must be reconciled with the current
+  [firmware guide](../../02-firmware/README.md) and
+  [hardware status](../../01-hardware/README.md). The website and compliance
+  material contain design-era descriptions; neither overrides current source or
+  the explicit evidence classification of a result.
 
 ## Verify it
 
@@ -87,13 +95,15 @@ That last check is the one that matters most. It is what stops the page quietly
 acquiring a network dependency and failing at the judging table.
 
 `verify.js` borrows jsdom from `../mobile-android/node_modules`, so run
-`npm install` there first, or point it somewhere else:
+`npm ci` there first, or point it somewhere else:
 
 ```
 node verify.js path/to/node_modules
 ```
 
-Current result: **22 checks, all passing.**
+The [release build record](../releases/BUILDS.md) preserves historical app checks.
+Run this verifier to establish the current website result; a passing renderer
+check does not validate the hardware claims in its prose.
 
 ## Checks before shipping
 

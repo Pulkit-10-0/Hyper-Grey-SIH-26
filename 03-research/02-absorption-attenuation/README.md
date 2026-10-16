@@ -1,5 +1,7 @@
 # 02-absorption-attenuation
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 Frequency-dependent absorption in sea water: the term that makes high frequency expensive over range.
@@ -25,18 +27,17 @@ We implement Thorp's expression. These papers establish the mechanism, the measu
 | 7 | 2025 | Instrumental temperature-dependence of backscatter measurements by a multibeam echosounder: findings and impli | Frontiers in Remote Sensing | [link](https://doi.org/10.3389/frsen.2025.1572545) |
 | 8 | 2026 | Environment-Independent SNR Measurement Method for Underwater Acoustic Communication Systems | WSEAS Transactions on Signal Proce | [link](https://doi.org/10.37394/232014.2026.22.15) |
 
-## Filenames
+## Local PDFs
 
-```
-2010-modeling-of-acoustic-wave-absorption-in-ocean.pdf
-2015-characteristics-and-propagation-of-airgun-pulses-in-shallow-water-wi.pdf
-2016-modelling-acoustic-scattering-sound-speed-and-attenuation-in-gassy-sof.pdf
-2017-anomalous-properties-of-water-and-their-influence-on-hydroacoustic-t.pdf
-2018-study-of-absorption-loss-effects-on-acoustic-wave-propagation-in-sha.pdf
-2022-characteristics-of-long-range-sound-propagation-in-western-pacific.pdf
-2025-instrumental-temperature-dependence-of-backscatter-measurements-by-a.pdf
-2026-environment-independent-snr-measurement-method-for-underwater-acoust.pdf
-```
+- [2010-modeling-of-acoustic-wave-absorption-in-ocean.pdf](2010-modeling-of-acoustic-wave-absorption-in-ocean.pdf)
+- [2015-characteristics-and-propagation-of-airgun-pulses-in-shallow-water-wi.pdf](2015-characteristics-and-propagation-of-airgun-pulses-in-shallow-water-wi.pdf)
+- [2016-modelling-acoustic-scattering-sound-speed-and-attenuation-in-gassy-sof.pdf](2016-modelling-acoustic-scattering-sound-speed-and-attenuation-in-gassy-sof.pdf)
+- [2017-anomalous-properties-of-water-and-their-influence-on-hydroacoustic-t.pdf](2017-anomalous-properties-of-water-and-their-influence-on-hydroacoustic-t.pdf)
+- [2018-study-of-absorption-loss-effects-on-acoustic-wave-propagation-in-sha.pdf](2018-study-of-absorption-loss-effects-on-acoustic-wave-propagation-in-sha.pdf)
+- [2022-characteristics-of-long-range-sound-propagation-in-western-pacific.pdf](2022-characteristics-of-long-range-sound-propagation-in-western-pacific.pdf)
+- [2025-instrumental-temperature-dependence-of-backscatter-measurements-by-a.pdf](2025-instrumental-temperature-dependence-of-backscatter-measurements-by-a.pdf)
+- [2026-environment-independent-snr-measurement-method-for-underwater-acoust.pdf](2026-environment-independent-snr-measurement-method-for-underwater-acoust.pdf)
+
 
 ## Cite, obtain via institution
 

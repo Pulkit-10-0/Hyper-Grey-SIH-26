@@ -1,7 +1,7 @@
 # 01-hardware
 
 The payload electronics: schematics, board, bill of materials, assembly, the
-enclosure and the bench it is characterised on.
+enclosure and the planned characterisation bench.
 
 **Current board: AUV V3 Compact Revision B.** 100 × 100 mm, two copper layers,
 91 components, KiCad 9.0.7. **Zero ERC violations, zero DRC violations, zero
@@ -18,10 +18,10 @@ It has not been fabricated.
 | [`schematics/`](schematics/) | The seven-sheet PDF, the exported netlist, the ERC result |
 | [`pcb/`](pcb/) | Gerbers, drills, manufacturing notes, copper and silkscreen views, 3D render, the DRC result |
 | [`bom/`](bom/) | Purchase BOM, per-reference BOM, the external modules list, cost model, procurement log |
-| [`assembly/`](assembly/) | Assembly and wiring guide, assembly drawing, every connector and every component pin |
+| [`assembly/`](assembly/) | Current assembly and wiring guide, drawings and pin tables; older wideband procedures labelled separately |
 | [`enclosure/`](enclosure/) | Hull section, seal design, print settings, dunk test |
-| [`bench-setup/`](bench-setup/) | Water tank, instrument settings, transducer characterisation |
-| [`rev-a-preliminary/`](rev-a-preliminary/) | The earlier 200 × 150 mm study. Kept, and kept separate — see below |
+| [`bench-setup/`](bench-setup/) | Planned tank, instrument settings and transducer characterisation; renders and diagrams |
+| [`rev-a-preliminary/`](rev-a-preliminary/) | Earlier 100 × 80 mm, four-layer concept; superseded and not for fabrication |
 
 Verification record: [`verification-summary.md`](verification-summary.md).
 Release hashes: [`release-sha256.json`](release-sha256.json).
@@ -32,19 +32,24 @@ Release hashes: [`release-sha256.json`](release-sha256.json).
 
 | | Rev A preliminary | **Compact Rev B** |
 |---|---|---|
-| Board | 200 × 150 mm, 30,000 mm² | **100 × 100 mm, 10,000 mm² — 66.7 % smaller** |
-| Copper layers | 2 | 2 |
+| Board | 100 × 80 mm concept, 8,000 mm² | **100 × 100 mm, 10,000 mm²** |
+| Copper layers | 4 planned | 2 routed |
 | Schematic | A labelled container, not a wired design | Seven sheets, fully wired |
 | ERC | **Not run** | **0 violations** |
 | DRC | **Not run** | **0 violations** |
 | Fabrication files | Mechanical preview only, explicitly not production | Fourteen files exported from the checked board |
 | Status | Superseded | **Current** |
 
+The archived preliminary concept is distinct from the preceding **AUV V3**
+200 × 150 mm, two-layer layout. Compact Rev B reduces that AUV V3 layout
+by 66.7% in area while retaining its circuit; the
+[stored equivalence check](kicad/verification/compact_equivalence.json) records
+that comparison. It is not a size comparison against the 100 × 80 mm concept.
+
 Rev A's own files say `PRELIMINARY`, `NOT FOR FABRICATION` and `STATUS: NOT RUN`.
-That was honest when it was written, and it is why the material has been moved
-into [`rev-a-preliminary/`](rev-a-preliminary/) rather than deleted: it records
-the layout study that produced the compact board, and separating it is how
-nobody fabricates the wrong copper. **Do not mix Rev A and Rev B files.**
+The files remain in [`rev-a-preliminary/`](rev-a-preliminary/) to document
+the early architecture, with their unfinished status intact. Keep this archive
+separate from the current manufacturing release. **Do not mix their files.**
 
 ---
 
@@ -73,7 +78,7 @@ transmitter, the audio module and optionally the sensor modules.
 
 The transmit chain is an IRLZ44N driven through an AO3400A level translator and
 a TC4426AEPA gate driver. The two inversions cancel, so GPIO HIGH still means
-transmitter ON — which is what keeps the firmware unchanged. A 1 kΩ resistor
+transmitter ON, retaining the historical companion sketch's output polarity. A 1 kΩ resistor
 across the piezo gives it a discharge path.
 
 Sensor inputs take the documented 0–5 V module range through 2:1 dividers, with
@@ -89,8 +94,8 @@ amplifier, with a 100 Ω resistor separating the output from GPIO34.
 
 The notes below describe the historical board companion sketch. Current firmware lives in [TX](../02-firmware/tx/) and [RX](../02-firmware/rx/). The imported TX expects five potentiometer inputs and reports the ADS1115 node voltages without the old TDS/turbidity divider compensation. See [current compatibility notes](../02-firmware/docs/architecture.md) before using it with this PCB.
 
-The circuit is unchanged from Rev A, so the firmware is too, with **one
-exception**: the TDS and turbidity ADC voltages are multiplied by two to undo the
+The historical companion sketch retains the preceding AUV V3 circuit's
+control assignments, with **one divider-compensation change**: the TDS and turbidity ADC voltages are multiplied by two to undo the
 new 2:1 input dividers. Potentiometer voltages and the transmit GPIO phase are
 untouched.
 

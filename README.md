@@ -379,6 +379,8 @@ Open [http://localhost:8000](http://localhost:8000). The static [index.html](04-
 
 ## Engineering effort and repository map
 
+Each project and component folder includes a local README with purpose, entry points, and status. Android resource directories and iOS asset catalogs are mapped in their native parent guides so their format-specific contents remain valid.
+
 The work spans a literature library, a deterministic data generator, numerical DSP, model comparisons, two embedded controllers, analog and PCB design, enclosure fabrication, native mobile connections, an operator interface, and submission evidence. The repository preserves both results and decisions so a reviewer can trace how an idea became a part, a waveform, a screen, or a test.
 
 | Folder | Contents |

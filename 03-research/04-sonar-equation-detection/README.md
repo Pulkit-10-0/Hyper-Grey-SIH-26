@@ -1,5 +1,7 @@
 # 04-sonar-equation-detection
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 The active sonar equation, detection threshold, and reverberation as the competing term.
@@ -25,18 +27,17 @@ These papers cover active sonar detection performance, reverberation suppression
 | 7 | 2025 | Angle distance decomposition based on deep learning for active sonar d | arXiv | - |
 | 8 | 2025 | Passive sonar sensor placement for undersea surveillance | arXiv | - |
 
-## Filenames
+## Local PDFs
 
-```
-2010-active-sonar-detection-in-reverberation-via-signal-subspace-extracti.pdf
-2017-a-comparative-study-of-lfm-reverberation-suppression-schemes.pdf
-2018-unsupervised-classification-of-hydrophone-signals-with-an-improved-m.pdf
-2019-reverberation-suppression-using-non-negative-matrix-factorization-to.pdf
-2023-doa-estimation-of-underwater-acoustic-co-frequency-sources-for-the-c.pdf
-2023-unsupervised-active-sonar-contact-classification-through-anomaly-det.pdf
-2025-angle-distance-decomposition-based-on-deep-learning-for-active-sonar-d.pdf
-2025-passive-sonar-sensor-placement-for-undersea-surveillance.pdf
-```
+- [2010-active-sonar-detection-in-reverberation-via-signal-subspace-extracti.pdf](2010-active-sonar-detection-in-reverberation-via-signal-subspace-extracti.pdf)
+- [2017-a-comparative-study-of-lfm-reverberation-suppression-schemes.pdf](2017-a-comparative-study-of-lfm-reverberation-suppression-schemes.pdf)
+- [2018-unsupervised-classification-of-hydrophone-signals-with-an-improved-m.pdf](2018-unsupervised-classification-of-hydrophone-signals-with-an-improved-m.pdf)
+- [2019-reverberation-suppression-using-non-negative-matrix-factorization-to.pdf](2019-reverberation-suppression-using-non-negative-matrix-factorization-to.pdf)
+- [2023-doa-estimation-of-underwater-acoustic-co-frequency-sources-for-the-c.pdf](2023-doa-estimation-of-underwater-acoustic-co-frequency-sources-for-the-c.pdf)
+- [2023-unsupervised-active-sonar-contact-classification-through-anomaly-det.pdf](2023-unsupervised-active-sonar-contact-classification-through-anomaly-det.pdf)
+- [2025-angle-distance-decomposition-based-on-deep-learning-for-active-sonar-d.pdf](2025-angle-distance-decomposition-based-on-deep-learning-for-active-sonar-d.pdf)
+- [2025-passive-sonar-sensor-placement-for-undersea-surveillance.pdf](2025-passive-sonar-sensor-placement-for-undersea-surveillance.pdf)
+
 
 ## Cite, obtain via institution
 

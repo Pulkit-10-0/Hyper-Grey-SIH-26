@@ -1,5 +1,7 @@
 # README media and provenance
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 This directory holds stable, descriptive filenames for selected project media. The October 2026 README refresh copied supplied originals without changing their pixels or content. The main README uses HTML display widths where needed; the original files remain available at full resolution.
 
 | Asset | Source | Caption and evidence boundary |

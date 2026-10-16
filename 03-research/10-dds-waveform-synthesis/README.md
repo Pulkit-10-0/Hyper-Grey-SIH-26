@@ -1,12 +1,14 @@
 # 10-dds-waveform-synthesis
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 Generating the pulse in firmware with a phase accumulator and a lookup table rather than live trigonometry.
 
 ## Where it is used in our work
 
-The DDS engine in firmware; the phase-accumulator comment in `synthesise()`; the power comparison against naive sin() evaluation.
+The [current TX waveform engine](../../02-firmware/tx/README.md) uses a phase accumulator and lookup table. The [notebook synthesis study](../../05-models/notebook/README.md) and projected power comparisons are separate evidence.
 
 ## Note
 
@@ -24,17 +26,16 @@ Covers direct digital synthesis and FPGA or microcontroller waveform generation.
 | 6 | 2025 | SPARTAN–field programmable gate array implementation for analog waveforms generation by direct digital synthes | International Journal of Reconfigu | [link](https://doi.org/10.11591/ijres.v14.i3.pp597-604) |
 | 7 | 2026 | RFSoC-Based Integrated Navigation and Sensing Using NavIC | arXiv | [link](http://arxiv.org/abs/2602.08596v1) |
 
-## Filenames
+## Local PDFs
 
-```
-2007-agile-low-phase-noise-radio-frequency-sine-wave-generator-applied-to.pdf
-2019-microwave-photonic-exciter-unit-for-radar-system.pdf
-2021-design-and-implementation-of-a-re-configurable-versatile-direct-digi.pdf
-2023-design-and-memory-optimization-of-hybrid-gate-diffusion-input-numeri.pdf
-2023-fpga-based-serial-port-controlled-frequency-adjustable-waveform-gene.pdf
-2025-spartanfield-programmable-gate-array-implementation-for-analog-wavef.pdf
-2026-rfsoc-based-integrated-navigation-and-sensing-using-navic.pdf
-```
+- [2007-agile-low-phase-noise-radio-frequency-sine-wave-generator-applied-to.pdf](2007-agile-low-phase-noise-radio-frequency-sine-wave-generator-applied-to.pdf)
+- [2019-microwave-photonic-exciter-unit-for-radar-system.pdf](2019-microwave-photonic-exciter-unit-for-radar-system.pdf)
+- [2021-design-and-implementation-of-a-re-configurable-versatile-direct-digi.pdf](2021-design-and-implementation-of-a-re-configurable-versatile-direct-digi.pdf)
+- [2023-design-and-memory-optimization-of-hybrid-gate-diffusion-input-numeri.pdf](2023-design-and-memory-optimization-of-hybrid-gate-diffusion-input-numeri.pdf)
+- [2023-fpga-based-serial-port-controlled-frequency-adjustable-waveform-gene.pdf](2023-fpga-based-serial-port-controlled-frequency-adjustable-waveform-gene.pdf)
+- [2025-spartanfield-programmable-gate-array-implementation-for-analog-wavef.pdf](2025-spartanfield-programmable-gate-array-implementation-for-analog-wavef.pdf)
+- [2026-rfsoc-based-integrated-navigation-and-sensing-using-navic.pdf](2026-rfsoc-based-integrated-navigation-and-sensing-using-navic.pdf)
+
 
 ## Cite, obtain via institution
 

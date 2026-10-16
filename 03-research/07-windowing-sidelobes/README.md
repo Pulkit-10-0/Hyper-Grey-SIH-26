@@ -1,5 +1,7 @@
 # 07-windowing-sidelobes
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 The transmit envelope window, its sidelobe floor, and why the pulse edges are tapered.
@@ -25,18 +27,17 @@ Establishes the sidelobe levels we quote (rectangular -13.3 dB through Blackman 
 | 7 | 2025 | Adaptive dual windowing strategies for multi target detection in ofdm | arXiv | - |
 | 8 | 2025 | Near field tapering with slepian window balancing the range angle side | arXiv | - |
 
-## Filenames
+## Local PDFs
 
-```
-2012-coordinating-complementary-waveforms-for-sidelobe-suppression.pdf
-2020-range-doppler-sidelobe-suppression-for-pulsed-radar-based-on-golay-c.pdf
-2021-complementary-waveforms-for-range-doppler-sidelobe-suppression-based.pdf
-2022-adaptive-pulse-compression-for-sidelobes-reduction-in-stretch-proces.pdf
-2023-a-new-type-of-window-functions-constructed-with-exponential-function.pdf
-2023-low-range-sidelobe-waveform-design-for-mimo-ofdm-isac-systems.pdf
-2025-adaptive-dual-windowing-strategies-for-multi-target-detection-in-ofdm.pdf
-2025-near-field-tapering-with-slepian-window-balancing-the-range-angle-side.pdf
-```
+- [2012-coordinating-complementary-waveforms-for-sidelobe-suppression.pdf](2012-coordinating-complementary-waveforms-for-sidelobe-suppression.pdf)
+- [2020-range-doppler-sidelobe-suppression-for-pulsed-radar-based-on-golay-c.pdf](2020-range-doppler-sidelobe-suppression-for-pulsed-radar-based-on-golay-c.pdf)
+- [2021-complementary-waveforms-for-range-doppler-sidelobe-suppression-based.pdf](2021-complementary-waveforms-for-range-doppler-sidelobe-suppression-based.pdf)
+- [2022-adaptive-pulse-compression-for-sidelobes-reduction-in-stretch-proces.pdf](2022-adaptive-pulse-compression-for-sidelobes-reduction-in-stretch-proces.pdf)
+- [2023-a-new-type-of-window-functions-constructed-with-exponential-function.pdf](2023-a-new-type-of-window-functions-constructed-with-exponential-function.pdf)
+- [2023-low-range-sidelobe-waveform-design-for-mimo-ofdm-isac-systems.pdf](2023-low-range-sidelobe-waveform-design-for-mimo-ofdm-isac-systems.pdf)
+- [2025-adaptive-dual-windowing-strategies-for-multi-target-detection-in-ofdm.pdf](2025-adaptive-dual-windowing-strategies-for-multi-target-detection-in-ofdm.pdf)
+- [2025-near-field-tapering-with-slepian-window-balancing-the-range-angle-side.pdf](2025-near-field-tapering-with-slepian-window-balancing-the-range-angle-side.pdf)
+
 
 ## Cite, obtain via institution
 

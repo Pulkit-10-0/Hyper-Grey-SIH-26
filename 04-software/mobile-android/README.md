@@ -8,17 +8,20 @@ The SeaNergy operator console, Android target. Working tree, not an archive.
 
 ## What it is
 
-An Android app that reads the environment, decides what acoustic pulse to
-transmit and shows why, synthesises and visualises that pulse, compresses the
-returning echo, and reports the power budget.
+An Android operator console with an on-device acoustic simulation, waveform and
+echo visualisation, a modelled power budget, and clients for compatible telemetry
+endpoints. Its [source guide](src/README.md) maps the implementation.
 
-The physics runs on the device. **No server, ever** — the only address this app
-opens is the payload's own, and only when you tell it to. Fonts are bundled in
+The physics runs on the device. The numerical model runs locally. Telemetry opens the endpoint selected
+by the operator; simulation does not need that connection. Fonts are bundled in
 the package rather than fetched, so it opens with the radio off, and simulation
 mode still works end to end in aeroplane mode.
 
-As of 2.2.0 it also receives. See [Permissions](#permissions) below: this is the
-first release that asks for anything, and the reason is the telemetry link.
+Version 2.2.0 includes an NDJSON telemetry client. **The current repository TX/RX
+firmware does not yet emit this protocol.** Live operation requires a compatible
+endpoint and integration testing; see [the current firmware guide](../../02-firmware/README.md).
+The physics, echo processing and feedback described below operate within the app
+simulation unless a compatible endpoint supplies the corresponding data.
 
 | Layer | What runs |
 |---|---|
@@ -26,16 +29,17 @@ first release that asks for anything, and the reason is the telemetry link.
 | Physics | Mackenzie sound speed, **Francois-Garrison** absorption with its pH and pressure terms, an air-absorption fit, frequency-dependent scattering from suspended sediment |
 | Decision | 468 candidate parameter sets scored against the active sonar equation each tick; the best feasible one wins |
 | Synthesis | Pulse built sample by sample with a phase accumulator, windowed, then FFT'd for the spectrogram |
-| Compression | Real cross-correlation of the echo against the transmitted replica |
-| Closed loop | Measured SNR compared against prediction; the residual feeds back and changes the next decision |
+| Compression | Numerical cross-correlation of the modelled or supplied echo against the replica |
+| Closed loop | Simulated echo SNR compared against prediction; the residual feeds back within the handset model |
 
 Nothing about the adaptation is a lookup table. Raise the turbidity and the
 centre frequency drops because the optimiser recomputed the link budget and
 found the high-frequency candidates no longer clear their margin.
 
-### The behaviour, measured
+### Example simulation behaviour
 
-Water configuration, 220 m required range, sweeping turbidity:
+Model outputs for the water configuration, 220 m requested range, sweeping
+turbidity. These are numerical predictions, not tank measurements:
 
 | Turbidity | Centre | Bandwidth | Pulse | Resolution | Usable range |
 |---:|---:|---:|---:|---:|---:|
@@ -57,11 +61,11 @@ ordering was not programmed; it falls out of scoring the candidates.
 | Mode | What it does |
 |---|---|
 | **Simulation** | The full physics engine runs on the handset against a modelled environment |
-| **Telemetry** | The payload's probes become the environment and the pulse it reports becomes the displayed decision |
+| **Telemetry** | Compatible NDJSON endpoint records supply the environment and reported pulse decision |
 
-The mode is on screen at all times and every displayed value carries its
-provenance in its colour. There is no state in which a simulated number can be
-mistaken for a live one.
+The interface displays the selected mode and uses colour to distinguish value
+provenance. Review the link state and packet record in Diagnostics when verifying
+a live session; selecting Telemetry alone does not establish that data arrived.
 
 In telemetry mode the handset stops deciding and starts reporting. Resolution
 and compression gain are recomputed from the pulse the payload says it actually
@@ -76,28 +80,34 @@ reading, so adding a transport is a new class and nothing else changes.
 
 | | Transport | When it is the right one |
 |---|---|---|
-| 1 | **USB-C to USB-C** | The demo. No pairing, no network, and the phone powers the payload. |
-| 2 | **Wi-Fi** | The payload is in a tank and the phone is not. Works across a room. |
-| 3 | **Bluetooth LE** | Lowest power, smallest MTU, slowest. For the flight build. |
+| 1 | **USB host serial** | A compatible CDC-ACM/CP210x endpoint, USB host support and a data cable are required. |
+| 2 | **Wi-Fi** | A compatible NDJSON WebSocket or HTTP endpoint on the selected network. |
+| 3 | **Bluetooth LE** | Android client for the configured Nordic UART Service endpoint. |
 
 The format is **newline-delimited JSON**: one object per line, `\n` as the frame
 boundary, no length prefix and no CRC. A line that will not parse is counted on
-Diagnostics and never crashes anything.
+Diagnostics and rejected by the parser.
 
 Wi-Fi tries a WebSocket first and falls back to polling an HTTP endpoint, which
 means a firmware built on the ESP32 core's own `WebServer.h` needs no WebSocket
 library at all. The operator does not choose; the status line reports which one
 it settled on.
 
-The USB and Bluetooth halves are a local Expo native module in
+The Android USB and Bluetooth client implementations are a local Expo native module in
 [`modules/seanergy-link/`](modules/seanergy-link/) — Kotlin, autolinked, speaking
 CDC-ACM directly with a CP210x branch for boards that use a bridge.
 
-Full specification, written for whoever is holding the firmware:
-[`docs/11-link-protocol.md`](docs/11-link-protocol.md). The exact edits to run an
-ESP32-S3 over Wi-Fi alone: [`docs/12-firmware-wifi.md`](docs/12-firmware-wifi.md).
+App-side specification for firmware integration:
+[`docs/11-link-protocol.md`](docs/11-link-protocol.md). A historical Wi-Fi integration sketch (review against the current TX source before use): [`docs/12-firmware-wifi.md`](docs/12-firmware-wifi.md).
 
 ## Permissions
+
+The table describes transport-related permissions. The generated app manifest
+also declares Expo audio/storage/runtime permissions; inspect
+[`AndroidManifest.xml`](android/app/src/main/AndroidManifest.xml) and the
+[link-module manifest](modules/seanergy-link/android/src/main/AndroidManifest.xml)
+for the actual declarations merged during a native build.
+
 
 | Permission | For | Prompted |
 |---|---|---|
@@ -107,22 +117,22 @@ ESP32-S3 over Wi-Fi alone: [`docs/12-firmware-wifi.md`](docs/12-firmware-wifi.md
 | `INTERNET`, `ACCESS_NETWORK_STATE` | the socket to the payload's access point | granted at install |
 
 `usb.host` is declared `required="false"` on purpose: a phone without USB host
-support still installs the app and still uses Wi-Fi and Bluetooth.
+support can use the other supported transports, subject to device capabilities.
 
 ## Screens
 
-Twelve, on a scrollable strip.
+Eleven destinations on a scrollable tab strip, plus the separate Scenario screen.
 
 | Screen | Route | Carries |
 |---|---|---|
 | Console | `app/(tabs)/index.tsx` | Solve card, chosen parameters, fire |
 | Sonar | `app/(tabs)/sonar.tsx` | PPI display, contact list |
 | Waveform | `app/(tabs)/wave.tsx` | Envelope, spectrogram, window selector, sonification |
-| Echo | `app/(tabs)/echo.tsx` | A-scan, matched-filter output, predicted against measured |
+| Echo | `app/(tabs)/echo.tsx` | A-scan, matched-filter output and SNR comparison |
 | Environment | `app/(tabs)/env.tsx` | Sensor values and the derived physics |
 | Mission | `app/(tabs)/mission.tsx` | Endurance and coverage |
 | Power | `app/(tabs)/power.tsx` | Per-ping energy, duty cycle, DDS comparison |
-| Spec | `app/(tabs)/spec.tsx` | The link budget, term by term |
+| Spec | `app/(tabs)/spec.tsx` | Spectrum, frequency track and spectrogram |
 | Diagnostics | `app/(tabs)/diag.tsx` | Self test, transport state, packet counters, raw decoded record |
 | Log | `app/(tabs)/log.tsx` | Ping history and CSV export |
 | Scenario | `app/scenario.tsx` | Preset environments |
@@ -134,11 +144,13 @@ Plus `app/ping/[id].tsx`, the detail view for a single ping.
 
 ## Build it
 
-Everything needed is inside this folder. Nothing is installed on the C: drive.
+This folder contains the application and native Android project. Node, JDK 17,
+the Android SDK/NDK and dependencies must also be available. The optional Windows
+helper expects separately provisioned tools; the downloads are not in Git.
 
 ```powershell
-. .\.toolchain\env.ps1      # Node 22, JDK 17, Android SDK - all local
-npm install
+. .\.toolchain\env.ps1      # if its expected local tool directories are provisioned
+npm ci
 npm run apk
 ```
 
@@ -173,6 +185,10 @@ and what happens if it is lost. Drop it at `android/app/seanergy-release.keystor
 before running `npm run apk`, or Gradle will fail at the signing step.
 
 ### Regenerating the native project
+
+Review and preserve native changes before using the clean prebuild command; it
+recreates the native tree, including any folder documentation added there.
+
 
 ```powershell
 npm run prebuild     # expo prebuild --clean, then re-applies the Android config
@@ -230,7 +246,7 @@ Two consequences:
 ```
 app/                 expo-router routes - thin, screens only
 src/
-  core/              PURE TypeScript. No React, no React Native.
+  core/              numerical modules, runtime, link and platform adapters
     physics.ts       sound speed, absorption, sonar equation, resolution
     dsp.ts           windows, synthesis, FFT, spectrogram, matched filter
     adaptation.ts    the candidate search and the decision
@@ -251,8 +267,9 @@ docs/                the build plan and the v2 rationale
 .toolchain/          env.ps1 is source; the downloaded Node, JDK and SDK are not
 ```
 
-`src/core` never imports React. It runs under plain node, which is what makes
-`npm run verify` possible and the physics trustworthy.
+The numerical modules in `src/core` run under Node for verification. That folder
+also contains React subscription hooks and Expo-backed export/audio adapters;
+see [its README](src/core/README.md) for the separation.
 
 ---
 
@@ -277,7 +294,9 @@ does not shift the row.
 
 ## What `npm run verify` actually checks
 
-Against published values, not against itself:
+The verifier covers numerical reference values, analytic DSP properties and
+engine/protocol behaviour. The [release record](../releases/BUILDS.md) records 106
+assertions and 33 render tests; rerun the gate after changes. Examples include:
 
 - Mackenzie sound speed at a known (T, S, Z) point
 - Thorp absorption: 34 / 51 / 87 dB per km at 100 / 200 / 400 kHz
@@ -291,8 +310,8 @@ Against published values, not against itself:
 - Adaptation direction: rising turbidity must lower the centre frequency
 - Closed loop settles rather than drifting, and does not pin at its clamp
 
-Those numbers are quotable in the report because they are measured from the same
-code the app runs.
+These are checks on software-generated data. They do not establish acoustic
+output, real-target detection, electrical power or firmware timing on the bench.
 
 ---
 
@@ -300,8 +319,8 @@ code the app runs.
 
 | Component | Version |
 |---|---|
-| Node | 22 (bundled under `.toolchain/node`) |
-| JDK | 17 (bundled under `.toolchain/jdk`) |
+| Node | 22 used by the recorded build; local download is not tracked |
+| JDK | 17 used by the recorded build; install or provision it locally |
 | Android SDK build-tools | 36.0.0 |
 | compileSdk / targetSdk | 36 |
 | minSdk | 24 |
@@ -314,5 +333,6 @@ code the app runs.
 
 ## iOS
 
-The same source builds for iOS. The native iOS project and its status are in
+The shared source and native project are also provided for iOS; native packaging
+and device verification remain separate steps. The native iOS project and its status are in
 [`../mobile-ios/`](../mobile-ios/).

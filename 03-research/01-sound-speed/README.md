@@ -1,5 +1,7 @@
 # 01-sound-speed
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 Sound speed in water, and why a range estimate is only as good as the sound speed used to compute it.
@@ -25,18 +27,17 @@ Mackenzie's nine-term equation is the one we implement. These papers establish t
 | 7 | 2025 | Inversion of arctic dual channel sound speed profile based on random | arXiv | - |
 | 8 | 2025 | Precise GNSS-acoustic seafloor positioning with sound speed from global ocean analysis | Satellite Navigation | [link](https://doi.org/10.1186/s43020-025-00170-z) |
 
-## Filenames
+## Local PDFs
 
-```
-2002-ray-stability-in-weakly-range-dependent-sound-channels.pdf
-2019-correcting-multibeam-echosounder-bathymetric-measurements-for-errors.pdf
-2020-applications-of-the-gulf-of-maine-operational-forecast-system-to-enh.pdf
-2020-estimation-of-temporal-and-spatial-variation-of-sound-speed-in-ocean.pdf
-2020-garpos-analysis-software-for-the-gnssa-seafloor-positioning-with-sim.pdf
-2022-estimation-of-sound-speed-profiles-based-on-remote-sensing-parameter.pdf
-2025-inversion-of-arctic-dual-channel-sound-speed-profile-based-on-random.pdf
-2025-precise-gnss-acoustic-seafloor-positioning-with-sound-speed-from-glo.pdf
-```
+- [2002-ray-stability-in-weakly-range-dependent-sound-channels.pdf](2002-ray-stability-in-weakly-range-dependent-sound-channels.pdf)
+- [2019-correcting-multibeam-echosounder-bathymetric-measurements-for-errors.pdf](2019-correcting-multibeam-echosounder-bathymetric-measurements-for-errors.pdf)
+- [2020-applications-of-the-gulf-of-maine-operational-forecast-system-to-enh.pdf](2020-applications-of-the-gulf-of-maine-operational-forecast-system-to-enh.pdf)
+- [2020-estimation-of-temporal-and-spatial-variation-of-sound-speed-in-ocean.pdf](2020-estimation-of-temporal-and-spatial-variation-of-sound-speed-in-ocean.pdf)
+- [2020-garpos-analysis-software-for-the-gnssa-seafloor-positioning-with-sim.pdf](2020-garpos-analysis-software-for-the-gnssa-seafloor-positioning-with-sim.pdf)
+- [2022-estimation-of-sound-speed-profiles-based-on-remote-sensing-parameter.pdf](2022-estimation-of-sound-speed-profiles-based-on-remote-sensing-parameter.pdf)
+- [2025-inversion-of-arctic-dual-channel-sound-speed-profile-based-on-random.pdf](2025-inversion-of-arctic-dual-channel-sound-speed-profile-based-on-random.pdf)
+- [2025-precise-gnss-acoustic-seafloor-positioning-with-sound-speed-from-glo.pdf](2025-precise-gnss-acoustic-seafloor-positioning-with-sound-speed-from-glo.pdf)
+
 
 ## Cite, obtain via institution
 

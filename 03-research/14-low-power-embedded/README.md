@@ -1,12 +1,14 @@
 # 14-low-power-embedded
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 The duty-cycled power budget, and offloading the transmit path from the CPU.
 
 ## Where it is used in our work
 
-`src/core/power.ts`; the DMA argument; the CPU-idle-during-transmit measurement in `02-firmware/measurements`.
+The [app power model](../../04-software/mobile-android/src/core/power.ts), [current TX DMA implementation](../../02-firmware/tx/README.md), and [legacy design measurements/projections](../../02-firmware/legacy/esp-idf-payload/measurements/README.md). The validation dossier's CPU-idle figure is a final-configuration projection, not a new measurement of the current TX.
 
 ## Note
 
@@ -27,20 +29,19 @@ Supports the PS clause requiring DMA and hardware timers so the processor does n
 | 9 | 2026 | Energy-Aware Solar-Powered Wireless Sensor Network with ANN-Based Wildfire Risk Classification: A Simulation-D | Arid-zone Journal of Basic & Appli | [link](https://doi.org/10.55639/607.02010085) |
 | 10 | 2026 | ENERGY-EFFICIENT TINYML ARCHITECTURES FOR REMOTE CLIMATE MONITORING | International Research Journal of  | [link](https://doi.org/10.56726/irjmets89314) |
 
-## Filenames
+## Local PDFs
 
-```
-2015-fuzzy-based-clustering-and-energy-efficient-routing-for-underwater-w.pdf
-2019-a-collision-free-graph-coloring-mac-protocol-for-underwater-sensor-n.pdf
-2019-in-band-controllable-radio-interference-generation-for-wireless-sens.pdf
-2020-acoa-afsa-fusion-dynamic-coded-cooperation-routing-for-different-sca.pdf
-2020-ffrp-dynamic-firefly-mating-optimization-inspired-energy-efficient-r.pdf
-2020-routing-void-prediction-and-repairing-in-auv-assisted-underwater-aco.pdf
-2022-ceer-cooperative-energy-efficient-routing-mechanism-for-underwater-w.pdf
-2026-an-innovative-thermal-management-control-strategy-for-electric-scoot.pdf
-2026-energy-aware-solar-powered-wireless-sensor-network-with-ann-based-wi.pdf
-2026-energy-efficient-tinyml-architectures-for-remote-climate-monitoring.pdf
-```
+- [2015-fuzzy-based-clustering-and-energy-efficient-routing-for-underwater-w.pdf](2015-fuzzy-based-clustering-and-energy-efficient-routing-for-underwater-w.pdf)
+- [2019-a-collision-free-graph-coloring-mac-protocol-for-underwater-sensor-n.pdf](2019-a-collision-free-graph-coloring-mac-protocol-for-underwater-sensor-n.pdf)
+- [2019-in-band-controllable-radio-interference-generation-for-wireless-sens.pdf](2019-in-band-controllable-radio-interference-generation-for-wireless-sens.pdf)
+- [2020-acoa-afsa-fusion-dynamic-coded-cooperation-routing-for-different-sca.pdf](2020-acoa-afsa-fusion-dynamic-coded-cooperation-routing-for-different-sca.pdf)
+- [2020-ffrp-dynamic-firefly-mating-optimization-inspired-energy-efficient-r.pdf](2020-ffrp-dynamic-firefly-mating-optimization-inspired-energy-efficient-r.pdf)
+- [2020-routing-void-prediction-and-repairing-in-auv-assisted-underwater-aco.pdf](2020-routing-void-prediction-and-repairing-in-auv-assisted-underwater-aco.pdf)
+- [2022-ceer-cooperative-energy-efficient-routing-mechanism-for-underwater-w.pdf](2022-ceer-cooperative-energy-efficient-routing-mechanism-for-underwater-w.pdf)
+- [2026-an-innovative-thermal-management-control-strategy-for-electric-scoot.pdf](2026-an-innovative-thermal-management-control-strategy-for-electric-scoot.pdf)
+- [2026-energy-aware-solar-powered-wireless-sensor-network-with-ann-based-wi.pdf](2026-energy-aware-solar-powered-wireless-sensor-network-with-ann-based-wi.pdf)
+- [2026-energy-efficient-tinyml-architectures-for-remote-climate-monitoring.pdf](2026-energy-efficient-tinyml-architectures-for-remote-climate-monitoring.pdf)
+
 
 ## Cite, obtain via institution
 

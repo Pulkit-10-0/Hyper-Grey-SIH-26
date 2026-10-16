@@ -1,5 +1,7 @@
 # 05-lfm-chirp-design
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 Why a linear frequency modulated sweep, and how the sweep is parameterised.
@@ -25,18 +27,17 @@ Radar-dominant literature. The mathematics of LFM waveform design transfers dire
 | 7 | 2025 | Performance analysis of communication signals for localization in un | arXiv | - |
 | 8 | 2026 | Waveform design for partial time superimposed isac systems | arXiv | - |
 
-## Filenames
+## Local PDFs
 
-```
-2013-a-novel-carrier-waveform-inter-displacement-modulation-method-in-und.pdf
-2014-identification-of-linear-time-varying-systems-through-waveform-diver.pdf
-2014-wideband-waveform-design-for-robust-target-detection.pdf
-2017-good-code-sets-from-complementary-pairs-via-discrete-frequency-chips.pdf
-2021-exploring-the-interdependencies-between-transmit-waveform-ambiguity.pdf
-2022-a-novel-lfm-waveform-for-terahertz-band-joint-radar-and-communications.pdf
-2025-performance-analysis-of-communication-signals-for-localization-in-un.pdf
-2026-waveform-design-for-partial-time-superimposed-isac-systems.pdf
-```
+- [2013-a-novel-carrier-waveform-inter-displacement-modulation-method-in-und.pdf](2013-a-novel-carrier-waveform-inter-displacement-modulation-method-in-und.pdf)
+- [2014-identification-of-linear-time-varying-systems-through-waveform-diver.pdf](2014-identification-of-linear-time-varying-systems-through-waveform-diver.pdf)
+- [2014-wideband-waveform-design-for-robust-target-detection.pdf](2014-wideband-waveform-design-for-robust-target-detection.pdf)
+- [2017-good-code-sets-from-complementary-pairs-via-discrete-frequency-chips.pdf](2017-good-code-sets-from-complementary-pairs-via-discrete-frequency-chips.pdf)
+- [2021-exploring-the-interdependencies-between-transmit-waveform-ambiguity.pdf](2021-exploring-the-interdependencies-between-transmit-waveform-ambiguity.pdf)
+- [2022-a-novel-lfm-waveform-for-terahertz-band-joint-radar-and-communications.pdf](2022-a-novel-lfm-waveform-for-terahertz-band-joint-radar-and-communications.pdf)
+- [2025-performance-analysis-of-communication-signals-for-localization-in-un.pdf](2025-performance-analysis-of-communication-signals-for-localization-in-un.pdf)
+- [2026-waveform-design-for-partial-time-superimposed-isac-systems.pdf](2026-waveform-design-for-partial-time-superimposed-isac-systems.pdf)
+
 
 ## Cite, obtain via institution
 

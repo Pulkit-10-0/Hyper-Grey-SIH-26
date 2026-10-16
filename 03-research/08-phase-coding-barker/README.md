@@ -1,5 +1,7 @@
 # 08-phase-coding-barker
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 Barker-13, its 22.3 dB peak-to-sidelobe ratio, and constant-envelope phase coding.
@@ -25,18 +27,17 @@ Includes number-theoretic work on Barker sequences, which is what establishes th
 | 7 | 2021 | A note on barker sequences of even length | arXiv | - |
 | 8 | 2021 | Design of pulsed waveforms for space debris detection with atlas | arXiv | - |
 
-## Filenames
+## Local PDFs
 
-```
-2012-a-note-on-barker-polynomials.pdf
-2014-run-vector-analysis-and-barker-sequences-of-odd-length.pdf
-2015-barker-sequences-of-odd-length.pdf
-2019-intra-pulse-polyphase-coding-system-for-second-trip-suppression-in-a-w.pdf
-2019-linear-structures-of-correlation-function-of-odd-length-generalized.pdf
-2020-vibro-thermal-wave-radar-application-of-barker-coded-amplitude-modulat.pdf
-2021-a-note-on-barker-sequences-of-even-length.pdf
-2021-design-of-pulsed-waveforms-for-space-debris-detection-with-atlas.pdf
-```
+- [2012-a-note-on-barker-polynomials.pdf](2012-a-note-on-barker-polynomials.pdf)
+- [2014-run-vector-analysis-and-barker-sequences-of-odd-length.pdf](2014-run-vector-analysis-and-barker-sequences-of-odd-length.pdf)
+- [2015-barker-sequences-of-odd-length.pdf](2015-barker-sequences-of-odd-length.pdf)
+- [2019-intra-pulse-polyphase-coding-system-for-second-trip-suppression-in-a-w.pdf](2019-intra-pulse-polyphase-coding-system-for-second-trip-suppression-in-a-w.pdf)
+- [2019-linear-structures-of-correlation-function-of-odd-length-generalized.pdf](2019-linear-structures-of-correlation-function-of-odd-length-generalized.pdf)
+- [2020-vibro-thermal-wave-radar-application-of-barker-coded-amplitude-modulat.pdf](2020-vibro-thermal-wave-radar-application-of-barker-coded-amplitude-modulat.pdf)
+- [2021-a-note-on-barker-sequences-of-even-length.pdf](2021-a-note-on-barker-sequences-of-even-length.pdf)
+- [2021-design-of-pulsed-waveforms-for-space-debris-detection-with-atlas.pdf](2021-design-of-pulsed-waveforms-for-space-debris-detection-with-atlas.pdf)
+
 
 ## Cite, obtain via institution
 

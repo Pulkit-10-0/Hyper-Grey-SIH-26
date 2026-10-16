@@ -1,8 +1,10 @@
 # 09-adaptive-cognitive-sonar
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
-The core claim: adapting the transmitted waveform to the measured environment, in a closed loop.
+The research concept of adapting a transmitted waveform to environmental observations and received feedback. The current TX/RX projects do not yet implement that complete loop.
 
 ## Where it is used in our work
 
@@ -27,20 +29,19 @@ The most important folder in this tree. Cognitive radar and adaptive sonar share
 | 9 | 2025 | Waveform design based on mutual information upper bound for joint dete | arXiv | - |
 | 10 | 2026 | RL-aided cognitive ISAC: robust detection and sensing–communication trade-offs | Journal on Wireless Communications | [link](https://doi.org/10.1186/s13638-026-02625-6) |
 
-## Filenames
+## Local PDFs
 
-```
-2014-wideband-signal-design-for-over-the-horizon-radar-in-cochannel-inter.pdf
-2017-performance-of-time-delay-estimation-in-a-cognitive-radar.pdf
-2019-pdf-euclidean-distance-based-adaptive-waveform-selection-for-maximiz.pdf
-2019-transmit-mimo-radar-beampattern-design-via-optimization-on-the-compl.pdf
-2020-adaptive-transmit-waveform-design-using-multi-tone-sinusoidal-frequenc.pdf
-2020-robust-cognitive-radar-tracking-based-on-adaptive-unscented-kalman-f.pdf
-2024-real-time-parameter-estimation-for-adaptive-ofdmotfs-selection.pdf
-2025-power-aware-cognitive-radar-multi-target-tracking-under-unknown-distur.pdf
-2025-waveform-design-based-on-mutual-information-upper-bound-for-joint-dete.pdf
-2026-rl-aided-cognitive-isac-robust-detection-and-sensingcommunication-tr.pdf
-```
+- [2014-wideband-signal-design-for-over-the-horizon-radar-in-cochannel-inter.pdf](2014-wideband-signal-design-for-over-the-horizon-radar-in-cochannel-inter.pdf)
+- [2017-performance-of-time-delay-estimation-in-a-cognitive-radar.pdf](2017-performance-of-time-delay-estimation-in-a-cognitive-radar.pdf)
+- [2019-pdf-euclidean-distance-based-adaptive-waveform-selection-for-maximiz.pdf](2019-pdf-euclidean-distance-based-adaptive-waveform-selection-for-maximiz.pdf)
+- [2019-transmit-mimo-radar-beampattern-design-via-optimization-on-the-compl.pdf](2019-transmit-mimo-radar-beampattern-design-via-optimization-on-the-compl.pdf)
+- [2020-adaptive-transmit-waveform-design-using-multi-tone-sinusoidal-frequenc.pdf](2020-adaptive-transmit-waveform-design-using-multi-tone-sinusoidal-frequenc.pdf)
+- [2020-robust-cognitive-radar-tracking-based-on-adaptive-unscented-kalman-f.pdf](2020-robust-cognitive-radar-tracking-based-on-adaptive-unscented-kalman-f.pdf)
+- [2024-real-time-parameter-estimation-for-adaptive-ofdmotfs-selection.pdf](2024-real-time-parameter-estimation-for-adaptive-ofdmotfs-selection.pdf)
+- [2025-power-aware-cognitive-radar-multi-target-tracking-under-unknown-distur.pdf](2025-power-aware-cognitive-radar-multi-target-tracking-under-unknown-distur.pdf)
+- [2025-waveform-design-based-on-mutual-information-upper-bound-for-joint-dete.pdf](2025-waveform-design-based-on-mutual-information-upper-bound-for-joint-dete.pdf)
+- [2026-rl-aided-cognitive-isac-robust-detection-and-sensingcommunication-tr.pdf](2026-rl-aided-cognitive-isac-robust-detection-and-sensingcommunication-tr.pdf)
+
 
 ## Cite, obtain via institution
 

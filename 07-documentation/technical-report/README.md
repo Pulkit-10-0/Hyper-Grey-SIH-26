@@ -1,8 +1,12 @@
-# technical-report
+# Technical report
+
+[Project overview](../../README.md) · [Parent folder](../README.md)
 
 > The firmware figures in this report describe the earlier ESP-IDF design, now retained in [legacy firmware](../../02-firmware/legacy/esp-idf-payload/). The report has not been regenerated for the current [TX/RX projects](../../02-firmware/README.md).
 
 The main written deliverable. **DOC-TR-001, revision 1.0.**
+
+The validation CSVs and T-series figures used here are **engineering projections for a final configuration**. They are not measured tank or bench results, and their PASS entries do not verify the current firmware.
 
 | | |
 |---|---|
@@ -30,7 +34,7 @@ that the contents page shifted.
 The appendices build the same way from `appendices/`, and share `preamble.tex`
 through a relative include, so the two documents cannot drift apart in styling.
 
-### Current build state
+### Recorded build state
 
 ```
 technical-report.pdf   26 pages   0 errors   0 overfull boxes   0 undefined references
@@ -80,10 +84,10 @@ minimum. The sweep steps in 500 Hz, so the raw minimum lands at 40.0 kHz and
 ## Rules the document follows
 
 - **No claim without a citation or a test identifier.** Equations carry a
-  numbered reference; measured quantities carry `T-01` through `T-16`.
-- **The two configurations are never mixed.** Bench and tank figures belong to
-  the 24 to 80 kHz air demonstrator; design constants belong to the 100 to
-  500 kHz underwater payload. Table 3 sets them side by side and every later
+  numbered reference; validation projections carry `T-01` through `T-16`.
+- **The two configurations are never mixed.** The validation projections use
+  the documented demonstrator assumptions; design constants belong to the 100 to
+  500 kHz underwater study. Table 3 sets them side by side and every later
   number is attributed to one of them.
 - **Units on every axis and every quantity.** `siunitx` throughout, so units are
   typeset consistently rather than by hand.
@@ -96,8 +100,9 @@ minimum. The sweep steps in 500 Hz, so the raw minimum lands at 40.0 kHz and
 
 The results table reproduces `06-validation/` exactly, and the compliance
 matrix in `00-submission/` carries the same mapping of problem statement
-clauses to evidence. If any of the three disagree, the compliance matrix is
-authoritative and the others are wrong.
+clauses to evidence. If these disagree, compare the underlying source record, implementation revision,
+and evidence basis before changing the summary. A compliance matrix does not
+turn a projection into a measurement.
 
 Numbers quoted from `05-models/` are checked by `python qa.py` in that folder,
 which cross-references every figure in its documentation against the generated
@@ -116,3 +121,10 @@ appendices/              appendices.tex and its PDF
 `preamble.tex` is separate so the appendices compile against identical styling.
 It defines the palette, the `siunitx` configuration, the `\tid{}` test-identifier
 badge and the `\keyresult{}` callout used for the headline findings.
+
+## Related folders
+
+- [Figure index](figures/README.md)
+- [Appendices](appendices/README.md)
+- [Validation evidence basis](../../06-validation/README.md)
+- [Current firmware](../../02-firmware/README.md)

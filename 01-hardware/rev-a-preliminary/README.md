@@ -1,51 +1,21 @@
-# Rev A — preliminary study
+# Rev A preliminary concept archive
 
-**Superseded. Not for fabrication. Kept for the record.**
+**Superseded. Not for fabrication.** This folder preserves the early wideband payload concept and its unfinished schematic/layout records.
 
-This folder holds the earlier 200 × 150 mm board study. It is here because it is
-the work that produced the compact board, and it is *separate* because mixing
-two revisions' copper is how the wrong board gets manufactured.
+## What is preserved
 
-## What it was
+The native PCB has a **100 × 80 mm** outline and four declared copper layers, but no component footprints or routing. Its schematic is a labelled logical container rather than a wired design. The concept includes a parallel R-2R converter bus, MCP4921, OPA1652 front end and INA226 monitor.
 
-A four-layer concept for a different architecture: a parallel R-2R converter
-bus, an MCP4921, an OPA1652 analogue front end and an INA226 monitor. The
-schematic was a labelled logical container rather than a wired design, and its
-own files say so:
+| Folder | Contents and status |
+|---|---|
+| [schematics/](schematics/README.md) | Preliminary logical container; ERC not run |
+| [pcb/](pcb/README.md) | Unrouted concept, stack-up and mechanical export previews; DRC not run, order on hold |
+| [bom/](bom/README.md) | Historical concept parts assumptions |
 
-- `schematics/seanergy.kicad_sch` — carries the text
-  `PRELIMINARY LOGICAL CONTAINER` and `NOT FOR FABRICATION`
-- `schematics/erc-report.txt` — `STATUS: NOT RUN`
-- `pcb/drc-report.txt` — `STATUS: NOT RUN`
-- `pcb/fab-order.txt` — `STATUS: HOLD - NOT ORDERED`
-- `pcb/gerbers/FABRICATION-STATUS.md` — the exports are mechanical previews,
-  deliberately named so they cannot be mistaken for a production release
+## Current board and naming
 
-None of that was dishonest when it was written. It was an accurate statement
-that the design was not finished.
+Use [AUV V3 Compact Revision B](../README.md) for the current board: 100 × 100 mm, two routed copper layers, seven wired schematic sheets and stored zero-violation ERC/DRC checks. It remains an unbuilt prototype design.
 
-## What replaced it
+The **200 × 150 mm, two-layer AUV V3 revision A** mentioned in the compact-board documentation is a different preceding layout, not the preliminary concept archived here. The [compact equivalence report](../kicad/verification/compact_equivalence.json) records its 66.7% area reduction to Rev B with the same 91 references. Do not apply that comparison to this 100 × 80 mm concept.
 
-[`../`](../) — AUV V3 Compact Revision B. Two layers, 100 × 100 mm, seven wired
-schematic sheets, **zero ERC violations, zero DRC violations, zero unconnected
-items, zero parity differences, no exclusions**, and a fabrication package
-exported from the checked board.
-
-| | Rev A | Rev B |
-|---|---|---|
-| Area | 30,000 mm² | 10,000 mm² |
-| Layers | 4 planned | 2, routed |
-| Schematic | container | 7 sheets, wired |
-| ERC / DRC | not run | 0 / 0 |
-| Converters | MCP4921 + R-2R ladder on a parallel bus | two ADS1115 modules on I²C |
-| Status | superseded | current |
-
-The architecture change is the reason the layer count dropped. The parallel bus
-that needed four layers is not on the compact board; see
-[`../pcb/stackup.md`](../pcb/stackup.md).
-
-## Do not
-
-Do not send anything in this folder to a fabricator. Do not combine these files
-with Rev B Gerbers or drills. Do not read the BOM here as the parts list — the
-current one is [`../bom/bom-purchase.csv`](../bom/bom-purchase.csv).
+Do not submit anything in this archive for fabrication or combine its exports with Rev B Gerbers/drills. The current purchase list is in [bom/](../bom/README.md), and current manufacturing guidance is in [pcb/](../pcb/README.md).

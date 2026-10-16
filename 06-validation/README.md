@@ -1,31 +1,23 @@
-# SeaNergy Validation Dossier
+# Validation dossier
 
-End-to-end validation package for SIH 2026 Problem Statement 26058. The
-numerical dataset is an engineering projection for the final product
-configuration and is carried consistently through raw CSV records, plots,
-result tables, acceptance verdicts and the two submission PDFs.
+[Project overview](../README.md) · [Parent folder](../README.md)
 
-## Submission outputs
+This package contains test plans, equipment protocols, traceability, and a numerical dossier for a proposed final configuration. The CSV records, plotted results, acceptance tables, and report are explicitly based on **engineering projections**. A `PASS` in those records is a projected acceptance verdict, not proof that a physical tank or bench test occurred.
 
-- `test-plan/test-plan.pdf`: eight-page controlled validation plan.
-- `validation-report.pdf`: eleven-page results and evidence report.
-- `test-plan/traceability.csv`: problem-statement clause to evidence map.
-- `bench-results/`: signal, timing, power and algorithm validation.
-- `tank-results/`: range, resolution, adaptation, convergence and immersion.
-- `instruments/`: equipment configuration, settings and uncertainty budget.
+## Navigate
 
-## Headline product numbers
+| Folder or file | Purpose |
+|---|---|
+| [Test plan](test-plan/README.md) | T-01–T-16 methods, acceptance criteria, and requirement mapping |
+| [Bench results](bench-results/README.md) | Projected signal, timing, power, and synthesis results |
+| [Tank results](tank-results/README.md) | Projected range, adaptation, convergence, and immersion results |
+| [Instruments](instruments/README.md) | Proposed equipment, settings, uncertainty, and limitations |
+| [Validation report](validation-report.pdf) | Compiled dossier |
 
-| Metric | Final-product projection |
-|---|---:|
-| Sustained DAC rate | 2.003 MSps |
-| CPU idle during transmit during DMA transmit | 97.6% |
-| DAC THD at 40 kHz | 0.31% |
-| Spurious-free dynamic range | 51.6 dBc |
-| Pulse-compression gain | 19.8 dB |
-| Barker-13 peak-to-sidelobe ratio | 21.7 dB |
-| Range mean absolute error | 0.8 cm |
-| Minimum resolved target separation | 20 mm |
-| Adaptation latency, 95th percentile | 38.6 ms |
-| Complete range-ping energy | 0.93 mJ |
-| Below-noise detection input | -7.5 dB SNR |
+## Evidence boundaries
+
+The dossier includes projections such as 2.003 MSps sustained DAC output, 97.6% CPU idle, 0.93 mJ per ping, 0.8 cm range MAE, and 20 mm target separation. These describe its assumed configuration and must not be reused as measured performance of the current TX/RX firmware or the photographed prototype.
+
+The current [TX and RX projects](../02-firmware/README.md) have their own build and implementation records. [Prototype photos and scope captures](../08-media/README.md) document physical bench activity; their provenance and limits are recorded with the media. [Model evaluations](../05-models/evaluation/README.md) provide generated-data and host-benchmark results, a third evidence class.
+
+Before replacing any projected row with a measured result, retain its test ID, record the actual board/firmware revision, instrument settings and calibration, raw capture, units, conditions, and uncertainty. Update the result, figure, report, and compliance reference together so the evidence remains traceable.

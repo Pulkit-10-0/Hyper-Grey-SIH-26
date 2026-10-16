@@ -1,5 +1,7 @@
 # 11-transducers-matching
 
+[Project overview](../../README.md) · [Parent folder](../README.md)
+
 ## What this folder supports
 
 Transducer resonance, clamped capacitance, and the series matching network.
@@ -27,20 +29,19 @@ A piezo transducer is a capacitor with a sharp mechanical resonance. These paper
 | 9 | 2023 | Resonance magnetoelectric effect analysis and output power optimization of nonlinear magnetoelectric transduce | Acta Physica Sinica | [link](https://doi.org/10.7498/aps.72.20222277) |
 | 10 | 2025 | Design and vibration performance study of longitudinal-bending orthogonal coupled piezoelectric ultrasonic vib | Acta Physica Sinica | [link](https://doi.org/10.7498/aps.74.20250294) |
 
-## Filenames
+## Local PDFs
 
-```
-2010-nonlinear-modeling-of-an-immersed-transmitting-capacitive-micromachi.pdf
-2014-a-new-method-of-designing-electrical-impedance-matching-network-for.pdf
-2016-effect-of-temperature-on-the-performance-of-a-giant-magnetostrictive.pdf
-2019-a-nonlinear-lumped-equivalent-circuit-model-for-a-single-uncollapsed.pdf
-2020-design-and-analysis-of-ultrasonic-composite-transducer-with-a-quarte.pdf
-2023-design-of-a-novel-2d-ultrasonic-transducer-for-2d-high-frequency-vib.pdf
-2023-design-ultrasonic-power-generators-for-welding-machines-using-piezoe.pdf
-2023-impedance-characterization-of-substrate-leakage-in-wafer-bonded-cmut.pdf
-2023-resonance-magnetoelectric-effect-analysis-and-output-power-optimizat.pdf
-2025-design-and-vibration-performance-study-of-longitudinal-bending-ortho.pdf
-```
+- [2010-nonlinear-modeling-of-an-immersed-transmitting-capacitive-micromachi.pdf](2010-nonlinear-modeling-of-an-immersed-transmitting-capacitive-micromachi.pdf)
+- [2014-a-new-method-of-designing-electrical-impedance-matching-network-for.pdf](2014-a-new-method-of-designing-electrical-impedance-matching-network-for.pdf)
+- [2016-effect-of-temperature-on-the-performance-of-a-giant-magnetostrictive.pdf](2016-effect-of-temperature-on-the-performance-of-a-giant-magnetostrictive.pdf)
+- [2019-a-nonlinear-lumped-equivalent-circuit-model-for-a-single-uncollapsed.pdf](2019-a-nonlinear-lumped-equivalent-circuit-model-for-a-single-uncollapsed.pdf)
+- [2020-design-and-analysis-of-ultrasonic-composite-transducer-with-a-quarte.pdf](2020-design-and-analysis-of-ultrasonic-composite-transducer-with-a-quarte.pdf)
+- [2023-design-of-a-novel-2d-ultrasonic-transducer-for-2d-high-frequency-vib.pdf](2023-design-of-a-novel-2d-ultrasonic-transducer-for-2d-high-frequency-vib.pdf)
+- [2023-design-ultrasonic-power-generators-for-welding-machines-using-piezoe.pdf](2023-design-ultrasonic-power-generators-for-welding-machines-using-piezoe.pdf)
+- [2023-impedance-characterization-of-substrate-leakage-in-wafer-bonded-cmut.pdf](2023-impedance-characterization-of-substrate-leakage-in-wafer-bonded-cmut.pdf)
+- [2023-resonance-magnetoelectric-effect-analysis-and-output-power-optimizat.pdf](2023-resonance-magnetoelectric-effect-analysis-and-output-power-optimizat.pdf)
+- [2025-design-and-vibration-performance-study-of-longitudinal-bending-ortho.pdf](2025-design-and-vibration-performance-study-of-longitudinal-bending-ortho.pdf)
+
 
 ## Cite, obtain via institution
 
