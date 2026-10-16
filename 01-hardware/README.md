@@ -87,6 +87,8 @@ amplifier, with a 100 Ω resistor separating the output from GPIO34.
 
 ## What the firmware has to know
 
+The notes below describe the historical board companion sketch. Current firmware lives in [TX](../02-firmware/tx/) and [RX](../02-firmware/rx/). The imported TX expects five potentiometer inputs and reports the ADS1115 node voltages without the old TDS/turbidity divider compensation. See [current compatibility notes](../02-firmware/docs/architecture.md) before using it with this PCB.
+
 The circuit is unchanged from Rev A, so the firmware is too, with **one
 exception**: the TDS and turbidity ADC voltages are multiplied by two to undo the
 new 2:1 input dividers. Potentiometer voltages and the transmit GPIO phase are
@@ -97,8 +99,9 @@ That change is a four-line patch, not a rewrite:
 with the original source hashes in
 [`kicad/firmware/source_change_record.json`](kicad/firmware/source_change_record.json).
 
-The console app reads this payload over the link specified in
+The console app's expected payload interface is specified in
 [`../07-documentation/api/console-link.md`](../07-documentation/api/console-link.md).
+The current TX/RX projects do not implement that NDJSON interface.
 
 ---
 

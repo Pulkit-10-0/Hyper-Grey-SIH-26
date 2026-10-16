@@ -33,6 +33,13 @@ xcuserdata/
 **/.toolchain/*
 !**/.toolchain/env.ps1
 
+# Firmware build outputs and RX viewer's local Python environment.
+**/.pio/
+**/.build/
+**/__pycache__/
+**/.venv/
+*.pyc
+
 # Signing material never belongs in this repository.
 *.keystore
 *.jks

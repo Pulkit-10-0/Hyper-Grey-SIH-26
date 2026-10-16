@@ -1,5 +1,7 @@
 # ESP32-S3 firmware for PCB revisions A and B
 
+> **Historical board companion.** This source and divider patch are retained with the PCB snapshot for traceability. The current firmware is [ESP32-S3 TX](../../../02-firmware/tx/) and [ESP32 RX](../../../02-firmware/rx/). Review the [current wiring and protocol differences](../../../02-firmware/docs/architecture.md) before using the imported projects with this board. The following notes describe the original companion sketch.
+
 `ESP32-S3/` contains the same source copy supplied with revision A, also used by the compact revision B PCB, and its original PlatformIO configuration. The source comments still say Rev A because the electrical divider circuit is unchanged. Your source project is untouched. Only the TDS and turbidity voltage calculations are multiplied by 2, because the PCB divides those sensor voltages by 2 before ADS1115 #1. The three potentiometer calculations are unchanged.
 
 Open `ESP32-S3/` as a separate PlatformIO project, or review `main_cpp_sensor_dividers.patch` and apply its two changes to a separate copy of your own source. Do not also multiply the voltage elsewhere: that would compensate twice. Recalibrate sensor conversions against known reference measurements; this change reports the sensor's original output voltage, not ppm or NTU.

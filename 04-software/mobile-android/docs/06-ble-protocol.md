@@ -1,5 +1,7 @@
 # 06 — BLE protocol (superseded design note)
 
+> The ESP-IDF implementation discussed below is now archived. Current [TX/RX firmware](../../../02-firmware/README.md) implements neither this binary BLE design nor the console NDJSON contract.
+
 > **Superseded by [11-link-protocol.md](11-link-protocol.md).** This was the
 > plan: a custom GATT service with its own UUIDs, frozen early so firmware and
 > app could be built in parallel.
@@ -12,7 +14,7 @@
 >
 > The custom binary protocol was not abandoned as an idea — it is the right
 > answer for a power-constrained flight payload, and it is specified in
-> `02-firmware/docs/ble-gatt-spec.md` in the submission repository. This
+> `02-firmware/legacy/esp-idf-payload/docs/ble-gatt-spec.md` in the submission repository. This
 > document is kept because the reasoning below still explains why the mission
 > mode powers the radio down, which is unchanged.
 

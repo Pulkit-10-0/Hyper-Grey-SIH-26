@@ -1,5 +1,7 @@
 # Console link protocol
 
+> **Current firmware integration status:** this is the mobile app's expected interface. The current [TX and RX projects](../../02-firmware/README.md) emit their own human-readable serial formats and do not implement these NDJSON records, Wi-Fi, or BLE. The binary BLE design compared below belongs to the archived ESP-IDF implementation.
+
 This document defines SeaNergy console link protocol version `1`. It is the
 contract between the **operator console** in
 [`../../04-software/mobile-android/`](../../04-software/mobile-android/) and the
@@ -172,11 +174,11 @@ is found by this scanner too.
 
 ## Which link is which
 
-Two link layers exist in this project and they are not competing designs.
+The two specifications below describe the archived binary BLE design and the console's NDJSON integration contract. Neither is implemented by the current imported TX/RX pair.
 
 | | [`ble-gatt.md`](ble-gatt.md) | This document |
 |---|---|---|
-| Speaks to | The flight firmware, `02-firmware/src/components/link/link.cpp` | The bench payload, an ESP32-S3 |
+| Intended endpoint | Archived flight firmware, `02-firmware/legacy/esp-idf-payload/src/components/link/link.cpp` | An ESP32-S3 bench payload implementing the console contract |
 | Encoding | Binary, little-endian, fixed 20 B and 48 B packets | UTF-8 text, newline-delimited JSON |
 | Integrity | CRC-16/CCITT-FALSE on every packet | None; the transports supply it |
 | Transports | BLE only, custom GATT service | USB-C, Wi-Fi, BLE over Nordic UART |

@@ -1,0 +1,54 @@
+{
+  "importedOn": "2026-10-16",
+  "previousRepositoryCommit": "1aefc666fdd0ff8c5f59cf81eab9f118f20d9a76",
+  "tx": {
+    "input": "seanergy-sonar-firmware/",
+    "destination": "02-firmware/tx/",
+    "filesSha256": {
+      ".gitignore": "a547c51ca4b2f0327a60409e57d1666327f962b0260dde09216d6c94bd2e352b",
+      "HARDWARE.md": "4bcb27b1110b5cbfc2fc38153dc438352458033e7a5695010c60bd6fe625fe9a",
+      "README.md": "edebfa672825c1347e9b418a988c26713864fa15819330dd17e6cb6b5d106a1f",
+      "include/board_config.h": "bebb229e20e7a92badfb8a5f1036cb75bfe39b5bae830320cccf83543f5ff182",
+      "include/displays.h": "b6bac79be9356f858b654b86ab7e52cf91bb4e582ddbdf8c2108ed043a89cfdd",
+      "include/environment.h": "abc5bdd74ab8825a66fe4dd854c038813e1d1797243c7c2b0939df09be110cac",
+      "include/transmitter.h": "fa8d29d636d3a19f2a26a786cd555513d9b775d547b97507c60b4d65aad9e692",
+      "include/waveform.h": "4852977d1a9a2da88e77bef780fa243ebf8eec5cdba8dbc10f748919e60f0d74",
+      "platformio.ini": "0c3285b30bd751a5fae11ff3e5d4abaf09e27caad486469fece66fca41d9a7b0",
+      "src/displays.cpp": "804a0eab92187860bda889827a6b5e1e8a2000c7dbc8689109d5c501ec0621aa",
+      "src/environment.cpp": "d388290e852f29a6d3cbef8a7345fe8e40e3167a149cf020dc767bb53d3e036a",
+      "src/main.cpp": "b352b03978e24860afdf2b8cb39d0ccbfd92f2cc0d06d4700ddf3cf52e3d5b4c",
+      "src/transmitter.cpp": "3e59be47c11e7a4cea5b630f7275b0cea3461af9c868f6458e2b5be74b5fb199",
+      "src/waveform.cpp": "719b62d68b62d878e9687b155c2af9c4bdf4c6a8899afe0bc917d12b4bb821ae",
+      "tests/waveform_test.cpp": "648b5885d92e113596b69907360472ac28d8ce13dbd4bae5c11c4e22554c76e9"
+    }
+  },
+  "rx": {
+    "input": "flying-fish-rx-with-graph-main.zip",
+    "archiveSha256": "87dba6112b68bf7f62b1559ff8dd217218ecc142e20cdf1c96b696499cf1b500",
+    "destination": "02-firmware/rx/",
+    "filesSha256": {
+      "src/main.cpp": "5f49b745fbf121c0ada68194f2c22a8148cb5e6a64f87ebb9007a50848435182",
+      "seanergy_rx_live.py": "46686e94f8c497664a82cb6968fbdfc50a895d39de5429f2601e3622977d686b",
+      "platformio.ini": "a5414aa5c8f838e241403d514a1a041b0de7d32fa71495b42d85becf12f40957",
+      ".gitignore": "67cca8c6c85c4698d0b5592a07a40ef2c16e9270cbe2773c6798944272525125"
+    },
+    "documentationChanges": [
+      "Replaced README.md",
+      "Added requirements.txt"
+    ],
+    "omitted": [
+      ".vscode/extensions.json"
+    ],
+    "postImportCommentCleanup": {
+      "description": "Comment-only cleanup; C++ executable content and Python AST/non-comment tokens verified unchanged.",
+      "currentFilesSha256": {
+        "src/main.cpp": "f308eaf2549ee905c90940fb405a32c9cea89215cbde26b74c199fae3eba4bec",
+        "seanergy_rx_live.py": "b9fc9b1fd41518a17e95a2122820b2a356863a9a5a929f36eec4edf20d91aca0"
+      }
+    }
+  },
+  "legacy": {
+    "destination": "02-firmware/legacy/esp-idf-payload/",
+    "unchangedFiles": 64
+  }
+}

@@ -1,7 +1,9 @@
 # BLE GATT protocol
 
+> **Historical firmware contract.** This specification belongs to the replaced ESP-IDF implementation in [legacy/esp-idf-payload/](../../02-firmware/legacy/esp-idf-payload/). The current [TX and RX](../../02-firmware/README.md) projects do not implement BLE or these binary packets.
+
 This document defines SeaNergy BLE GATT protocol version `1`. It is the client
-contract for the **flight firmware** in `02-firmware/src/components/link/link.cpp`.
+contract for the archived **flight firmware** in `02-firmware/legacy/esp-idf-payload/src/components/link/link.cpp`.
 All multi-byte integers are little-endian. A client must treat all packets as
 binary data, not text.
 

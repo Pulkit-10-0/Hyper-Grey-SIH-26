@@ -1,5 +1,7 @@
 # technical-report
 
+> The firmware figures in this report describe the earlier ESP-IDF design, now retained in [legacy firmware](../../02-firmware/legacy/esp-idf-payload/). The report has not been regenerated for the current [TX/RX projects](../../02-firmware/README.md).
+
 The main written deliverable. **DOC-TR-001, revision 1.0.**
 
 | | |
@@ -38,15 +40,15 @@ appendices.pdf          5 pages   0 errors   0 overfull boxes
 ## Figures
 
 ```
-figures/f01  architecture            02-firmware/docs/figures/
+figures/f01  architecture            02-firmware/legacy/esp-idf-payload/docs/figures/
 figures/f02  absorption              05-models/notebook/figures/
 figures/f03  waveform families       05-models/notebook/figures/
 figures/f04  window sidelobes        05-models/notebook/figures/
 figures/f05  pulse compression       05-models/notebook/figures/
 figures/f06  feasible region         05-models/notebook/figures/
 figures/f07  downband walk           05-models/evaluation/figures/
-figures/f08  state machine           02-firmware/docs/figures/
-figures/f09  timing budget           02-firmware/docs/figures/
+figures/f08  state machine           02-firmware/legacy/esp-idf-payload/docs/figures/
+figures/f09  timing budget           02-firmware/legacy/esp-idf-payload/docs/figures/
 figures/f10  T-01 impedance          make-figures.py
 figures/f11  T-04 windows            06-validation/bench-results/figures/
 figures/f12  T-06 compression        06-validation/bench-results/figures/
